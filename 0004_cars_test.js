@@ -3,6 +3,7 @@ import * as Common from "../../../../setup/common.js";
 import cyInterfaceCARS from "./test_setup/cy_interface/interface.js";
 
 const navigators = "[data-cy=\"portal_work_menu_sidebar\"]";
+const sql = ['db_init'];
 
 describe("Adding New Child:", () => {
     before(() => {
@@ -11,7 +12,7 @@ describe("Adding New Child:", () => {
         cy.request("POST", "/test/import", {
             file: `imports/test_cars/test_import/module.json`,
          });
-        cy.exec(`bash ./cypress/integration/test_cars/test_setup/sql/init.sh`);
+        cy.exec(`bash ./cypress/integration/test_cars/test_setup/sql/init.sh ${sql.join(' ')}`);
     });
 
     beforeEach(() => {
