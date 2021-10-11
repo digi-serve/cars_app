@@ -1,0 +1,69 @@
+{
+    "children": [
+        {
+            "no": "1",
+            "firstName": "Satoshi",
+            "lastName": "Nakamoto",
+            "nickname": "Sato",
+            "profilePhoto": "",
+            "birthday": "05/04/1975",
+            "gender": "Male",
+            "religion": "Other",
+            "race": "Human",
+            "nationality": "Japanese",
+            "home": "Home 1",
+            "typeReceived": "Permanent",
+            "timeReceivedfor": "05/04/1975 17:00 PM",
+            "relatives": {
+                "firstName": "Taylor",
+                "lastName": "Swift",
+                "contacts": {
+                    "mobilePhone": "0801234567",
+                    "homePhone": "053123456",
+                    "email": "taylor_swift@email.com",
+                    "lineID": "taylorswift",
+                    "facebookID": "1234567890123456"
+                },
+                "relationType": "Mother"
+            },
+            "carsProject": "CARS Project 1",
+            
+            "idIssueDate": "10/08/1980",
+            "idExpireDate": "10/08/2000",
+            "idNumber": "1111122222333",
+            "address": {
+                "type": "Current", 
+                "addressNo": "123/4",
+                "moo": "1",
+                "district": "Mueang Chiang Mai",
+                "city": "Suthep",
+                "province": "Chiang Mai",
+                "postalCode": "50000"
+            }
+        }
+    ],
+    
+    "homes": [
+        {
+            "homeName": "Home 1",
+            "director": "John Lennon",
+            "socialWorker": "Chris Martin",
+            "staff": "John Lennon",
+            "address": {
+                "type": "Current", 
+                "addressNo": "123/4",
+                "moo": "1",
+                "district": "Mueang Chiang Mai",
+                "city": "Suthep",
+                "province": "Chiang Mai",
+                "postalCode": "50000"
+            },
+            "carsProject": {
+                "name": "CARS Project 1",
+                "projectStaff": "John Lennon"
+            },
+
+            "phoneNumber": "0987654321"
+        }
+    ]
+}
