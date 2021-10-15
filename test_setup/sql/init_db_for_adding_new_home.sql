@@ -1,0 +1,12 @@
+LOCK TABLES `AB_CARS_CARsProject` WRITE;
+INSERT INTO `AB_CARS_CARsProject` (`uuid`, `created_at`, `updated_at`, `translations`) VALUES ("cb46b6b4-dc25-4915-80f7-c1febf26da4a", "2021-09-20 06:25:36", "2021-09-20 06:25:36", "[{\"language_code\":\"en\",\"Name\":\"CARS Project 1\"}]");
+UNLOCK TABLES;
+LOCK TABLES `AB_CARS_Staff` WRITE;
+INSERT INTO `AB_CARS_Staff` (`uuid`, `created_at`, `updated_at`, `translations`, `Phone`, `CARs Project512`, `Staff User`) VALUES ("e746f80b-3fbe-4aeb-9fdf-2707740eeaca", "2021-09-20 07:08:59", "2021-09-20 07:08:59", "[{\"language_code\":\"en\",\"Position\":\"Director\",\"First Name\":\"John\",\"Last Name\":\"Lennon\"}]", "0899999999", "cb46b6b4-dc25-4915-80f7-c1febf26da4a", "admin");
+UNLOCK TABLES;
+LOCK TABLES `AB_CARS_Address` WRITE;
+INSERT INTO `AB_CARS_Address` (`uuid`, `created_at`, `updated_at`, `translations`, `Type`, `Postal Code`, `Address No`, `Moo`) VALUES ("cb46b6b4-dc25-4915-80f7-c1febf26da4a", "2021-09-20 06:33:44", "2021-09-20 06:33:44", "[{\"language_code\":\"en\",\"District\":\"Mueang Chiang Mai\",\"City\":\"Suthep\",\"Province\":\"Chiang Mai\"}]", "1507575935373", "50000", "123/4", '1');
+UNLOCK TABLES;
+LOCK TABLES `AB_JOINMN_Staff_CARs Project_CARsProject` WRITE;
+INSERT INTO `AB_JOINMN_Staff_CARs Project_CARsProject` (`id`, `CARs Project`, `Staff`) VALUES (1, "cb46b6b4-dc25-4915-80f7-c1febf26da4a", "e746f80b-3fbe-4aeb-9fdf-2707740eeaca");
+UNLOCK TABLES;
