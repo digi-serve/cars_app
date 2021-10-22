@@ -1,5 +1,6 @@
 #!/bin/bash
-ID_Service=`docker ps | grep 'test_ab-v2-dev_db' | awk '{ print $1 }'`
+Runtime_Dirname=${PWD%/*/*}
+ID_Service=`docker ps | grep "test_${Runtime_Dirname##*/}_db" | awk '{ print $1 }'`
 for FILE_SQL in "$@"; do
 	if [ -z "$ID_Service" ]
 	then
