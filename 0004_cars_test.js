@@ -24,6 +24,7 @@ import * as Common from "../../../../setup/common.js";
 
 import cyInterfaceCARS from "./test_setup/cy_interface/interface.json";
 import example from "./test_example/example.json";
+import * as path from 'path'
 
 // CARS setup
 const moduleCARS = module[module.indexOf("cars")];
@@ -34,9 +35,13 @@ const navigator = () => {
 }
 
 const sqlManager = (sqlFile) => {
-    cy.exec(`ls ./cypress/integration/test_cars/test_setup/sql`).then((files) => {
-        const sqlFiles = files.stdout.split('\n').filter(e => e.includes(".sql"));
-        cy.exec(`bash ./cypress/integration/test_cars/test_setup/sql/sql_manager.sh ${sqlFiles[sqlFiles.indexOf(sqlFile)]}`);
+    //cy.log(cy.exec(`ls ${ path.normalize('cypress\\integration\\test_cars\\test_setup\\sql')}`))
+    cy.exec(`ls ${path.normalize('cypress\\integration\\test_cars\\test_setup\\sql')}`,{log:true}).then((files) => {
+        //cy.log(files)
+        const sqlFiles = files.stdout.split(/[\s\n\\]+/).filter(e => e.includes(".sql"));
+        //cy.log(sqlFiles)
+        cy.exec(`bash ${('./cypress/integration/test_cars/test_setup/sql/sql_manager.sh')} ${sqlFiles[sqlFiles.indexOf(sqlFile)]}`);
+
     });
 }
 
