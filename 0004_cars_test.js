@@ -16,6 +16,17 @@ const importModule = (moduleName) => {
     cy.request("POST", "/test/import", {
         file: `imports/test_${moduleName.toLowerCase()}/test_import/module.json`,
     });
+
+    //fix file import
+    const commands = ["reset", "import-files"];
+    cy.exec(`bash ${path.join("cypress", "integration" ,`test_${moduleName.toLowerCase()}`, "test_setup", "commands", "file_manager.sh")} ${commands.join(' ')}`);
+}
+
+const sqlManager = (moduleName, sqlFile) => {
+    cy.exec(`ls ${path.join("cypress", "integration", `test_${moduleName.toLowerCase()}`, "test_setup", "sql")}`).then(files => {
+        const sqlFiles = files.stdout.split('\n').filter(e => e.includes(".sql"));
+        cy.exec(`bash ${path.join("cypress", "integration", `test_${moduleName.toLowerCase()}`, "test_setup", "commands", "sql_manager.sh")} ${sqlFiles[sqlFiles.indexOf(sqlFile)]}`);
+    });
 }
 
 // =====================================================================================================================
@@ -24,6 +35,7 @@ import * as Common from "../../../../setup/common.js";
 
 import cyInterfaceCARS from "./test_setup/cy_interface/interface.json";
 import example from "./test_example/example.json";
+import path from "path";
 
 // CARS setup
 const moduleCARS = module[module.indexOf("cars")];
@@ -33,14 +45,7 @@ const navigator = () => {
     cy.get(cyInterfaceCARS.navigator).click();
 }
 
-const sqlManager = (sqlFile) => {
-    cy.exec(`ls ./cypress/integration/test_cars/test_setup/sql`).then((files) => {
-        const sqlFiles = files.stdout.split('\n').filter(e => e.includes(".sql"));
-        cy.exec(`bash ./cypress/integration/test_cars/test_setup/sql/sql_manager.sh ${sqlFiles[sqlFiles.indexOf(sqlFile)]}`);
-    });
-}
-
-const childVisit = (indexOfChild) =>{
+const childVisit = (indexOfChild) => {
     cy.get(cyInterfaceCommon.button.menu, { timeout: 5000 }).click();
     cy.get(cyInterfaceCARS.navigator).click();
     cy.get(cyInterfaceCARS.tab.socialWorker).click();
@@ -53,7 +58,7 @@ const childVisit = (indexOfChild) =>{
         });
 };
 
-const homeAdministrationVisit = (indexOfHome) =>{
+const homeAdministrationVisit = (indexOfHome) => {
     cy.get(cyInterfaceCommon.button.menu, { timeout: 5000 }).click();
     cy.get(cyInterfaceCARS.navigator).click();
     cy.get(cyInterfaceCARS.tab.administration).click();
@@ -78,7 +83,7 @@ describe("Test Child:", () => {
 
     beforeEach(() => {
         Common.AuthLogin(cy);
-        sqlManager("reset_db.sql");
+        sqlManager(moduleCARS,"reset-db");
         cy.wait(1500);
     });
 
@@ -89,7 +94,7 @@ describe("Test Child:", () => {
         const child = example.children[childrenIndex];
 
         //act
-        sqlManager("init_db_for_adding_new_child.sql");
+        sqlManager(moduleCARS, "init_db_for_adding_new_child.sql");
         cy.visit("/").wait(2500);
         navigator();
         cy.get(cyInterfaceCARS.tab.socialWorker).click();
@@ -119,11 +124,12 @@ describe("Test Child:", () => {
         cy.get(cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.button.save).click()
 
         // prepare for assertion
-        cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.basicInfo.page.basicInfo.field.firstName, { timeout: 30000 });
-        cy.get('.ab-menu-left .webix_list_item').click();
+        // cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.basicInfo.page.basicInfo.field.firstName, { timeout: 30000 });
+        // cy.get('.ab-menu-left .webix_list_item').click();
 
-        // TODO: shouldn't need to wait.
+        // TODO: shouldn't need to wait and reload.
         cy.wait(2500);
+        cy.visit("/").wait(2500);
 
         //assert
         //assert in the Chindren container
@@ -144,7 +150,7 @@ describe("Test Child:", () => {
         const child = example.children[childrenIndex];
 
         // act
-        sqlManager("init_db_for_viewing_a_child_profile.sql");
+        sqlManager(moduleCARS, "init_db_for_viewing_a_child_profile.sql");
 
         // prepare for assertion
         cy.visit("/").wait(2500);
@@ -198,7 +204,7 @@ describe("Test Child:", () => {
         const child = example.children[childrenIndex];
 
         //act
-        sqlManager("init_db_for_editing_a_child.sql");
+        sqlManager(moduleCARS, "init_db_for_editing_a_child.sql");
         cy.visit("/").wait(2500);
         navigator();
         childVisit(childrenIndex);
@@ -241,6 +247,54 @@ describe("Test Child:", () => {
     });
 });
 
+describe("Test Report:", () => {
+    before(() => {
+        Common.ResetDB(cy);
+        cy.wait(1500);
+        Common.AuthLogin(cy);
+        importModule(moduleCARS);
+        cy.wait(1500);
+    });
+
+    beforeEach(() => {
+        Common.AuthLogin(cy);
+        sqlManager(moduleCARS, "reset-db");
+        cy.wait(1500);
+    });
+
+    it("Export basic report", () => {
+
+        //arrange
+        const childrenIndex = 0;
+        const child = example.children[childrenIndex];
+
+        //act
+        sqlManager(moduleCARS, "init_db_default.sql");
+        cy.visit("/").wait(2500);
+        navigator();
+        childVisit(childrenIndex);
+        cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.basicInfo.page.basicInfo.button.reports).click();
+
+        // TODO: Shouldn't wait
+        cy.wait(1000);
+
+        cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.basicInfo.page.basicInfo.page.reports.button.dowloads.one).click();
+
+        // prepare for assertion
+        // TODO: Shouldn't wait
+        cy.wait(1000);
+        
+        // assert
+        //${path.join("cypress", "downloads")}
+        cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.basicInfo.page.basicInfo.page.reports.button.dowloads.one).then(data => {
+            cy.exec(`ls ${path.join("cypress", "downloads")}`).should(files => {
+                const downloadFiles = files.stdout.split('\n').map((e, i) => e.match(/(.+)\..+$/)[1]);
+                expect(downloadFiles, "File Downloads").to.contain(data.text());
+            });
+        });
+    });
+});
+
 describe("Test Home:", () => {
     before(() =>{
         Common.ResetDB(cy);
@@ -252,7 +306,7 @@ describe("Test Home:", () => {
 
     beforeEach(() => {
         Common.AuthLogin(cy);
-        sqlManager("reset_db.sql");
+        sqlManager(moduleCARS, "reset-db");
         cy.wait(1500);
     });
 
@@ -263,7 +317,7 @@ describe("Test Home:", () => {
         const home = example.homes[homesIndex];
 
         // act
-        sqlManager("init_db_for_adding_new_home.sql");
+        sqlManager(moduleCARS, "init_db_for_adding_new_home.sql");
         cy.visit("/").wait(2500);
         navigator();
         cy.get(cyInterfaceCARS.page.socialWorker.tab.home).click();
@@ -285,7 +339,7 @@ describe("Test Home:", () => {
         // assert
         // assert in the Home container
         cy.get(cyInterfaceCARS.page.socialWorker.page.home.view.homes.container)
-            .should((data) =>{
+            .should((data) => {
                 expect(data.text().includes(home.homeName) ? home.homeName: "", "Home Name").to.eq(home.homeName);
                 expect(data.text().includes(home.director) ? home.director: "", "Director").to.eq(home.director);
                 expect(data.text().includes(home.socialWorker) ? home.socialWorker: "", "Social Worker").to.eq(home.socialWorker);
@@ -300,7 +354,7 @@ describe("Test Home:", () => {
             .find(".webix_vscroll_x")
             .scrollTo("right")
             .get(cyInterfaceCARS.page.socialWorker.page.home.view.homes.container)
-                .should((data) =>{
+            .should((data) =>{
                     expect(data.text().includes(home.carsProject.name) ? home.carsProject.name: "", "CARS Project").to.eq(home.carsProject.name);
                 });
     });
@@ -312,7 +366,7 @@ describe("Test Home:", () => {
         const home = example.homes[homesIndex];
 
         // act
-        sqlManager("init_db_for_updating_existing_home.sql");
+        sqlManager(moduleCARS, "init_db_for_updating_existing_home.sql");
         cy.visit("/").wait(2500);
         navigator();
         cy.get(cyInterfaceCARS.tab.administration).click();
@@ -321,16 +375,16 @@ describe("Test Home:", () => {
         cy.get(cyInterfaceCARS.page.administration.page.home.view.home.form.field.phoneNumber).type(home.phoneNumber);
         cy.get(cyInterfaceCARS.page.administration.page.home.view.home.form.button.save).click();
 
-        //prepare for assertion
+        // prepare for assertion
         cy.get(cyInterfaceCARS.tab.socialWorker).click();
         cy.get(cyInterfaceCARS.page.socialWorker.tab.home).click();
 
         // assert
         cy.get(cyInterfaceCARS.page.socialWorker.page.home.view.homes.container)
-        .find(".webix_vscroll_x")
-        .scrollTo("right")
-        .get(cyInterfaceCARS.page.socialWorker.page.home.view.homes.container)
-            .should((data) =>{
+            .find(".webix_vscroll_x")
+            .scrollTo("right")
+            .get(cyInterfaceCARS.page.socialWorker.page.home.view.homes.container)
+            .should(data => {
                 expect(data.text().includes(home.phoneNumber) ? home.phoneNumber: "", "Phone Number").to.eq(home.phoneNumber);
             });
     });
