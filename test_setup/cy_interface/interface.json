@@ -304,6 +304,21 @@
                                                         "relatives": []
                                                     }
                                                 }
+                                            },
+                                            "page": {
+                                                "reports":{
+                                                    "button": {
+                                                        "close": "",
+                                                        "dowloads": {
+                                                            "one": "[data-cy=\"docx download Reports 98f89441-1ce2-4586-a139-845731ce08c8\"]",
+                                                            "twoA": "[data-cy=\"docx download Reports a0568c6b-e62b-4be0-8ab3-896e0f312409\"]",
+                                                            "twoB": "[data-cy=\"docx download Reports 4ed6e840-be3d-4096-b0fc-50eeca5d5d9d\"]",
+                                                            "twoC": "[data-cy=\"docx download Reports fe4e895f-6ecd-40db-9fe9-d72b591e77dd\"]",
+                                                            "twoD": "[data-cy=\"docx download Reports a7dd4525-b6ec-4ea3-aff8-12917d357e8c\"]",
+                                                            "twoE": "[data-cy=\"docx download Reports 57468e36-67cc-4e89-b05b-b6073ba11213\"]"
+                                                        }
+                                                    }
+                                                }
                                             }
                                         }
                                     },
