@@ -118,9 +118,7 @@
                   "fullName":  "John Lennon"
               }
             ],
-            "carsHomes": {
-                "name": "Home 1"
-            }
+            "carsHomes": "Home 1"
         },
         {
             "projectName": "CARS Project 2",

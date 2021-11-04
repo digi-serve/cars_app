@@ -74,7 +74,8 @@
                 },
                 "staff": {
                     "button": {
-                        "addStaff": "[data-cy=\"menu-item Add Staff f6952af4-58d2-47c9-91ff-59137ade2b04 f81e3ca2-fafa-4dd6-909b-64ddceef7ef9\"]"
+                        "addStaff": "[data-cy=\"menu-item Add Staff f6952af4-58d2-47c9-91ff-59137ade2b04 f81e3ca2-fafa-4dd6-909b-64ddceef7ef9\"]",
+                        "editStaff": "[data-cy=\"dataview item button Staff e746f80b-3fbe-4aeb-9fdf-2707740eeaca 513d727e-e395-4f46-b9a0-31f3a687a336\"]"
                     },
                     "form": {
                         "addStaff": {
@@ -95,6 +96,31 @@
                                     "[data-cy=\"user options admin 5cfb8cb4-26db-4204-a4d0-7c822eda4291 0eab74c9-f13b-4343-ab71-5e50875f8403\"]"
                                 ],
                                 "home": []
+                            }
+                        },
+                        "editStaff": {
+                            "button": {
+                                "close": ".webix_scroll_cont > .webix_view:nth-child(2) .webix_button",
+                                "save": "[data-cy=\"button save d7a6b341-3140-4f8e-bedf-2ae8bc2e4186\"]"
+                            },
+                            "field": {
+                                "position": "[data-cy=\"string Position 94c09c11-713b-43f3-b9f2-5b074f37d27c d7a6b341-3140-4f8e-bedf-2ae8bc2e4186\"]",
+                                "firstName": "[data-cy=\"string First Name 151535fe-c83c-4821-b031-74f24e2aa48b d7a6b341-3140-4f8e-bedf-2ae8bc2e4186\"]",
+                                "lastName": "[data-cy=\"string Last Name 0a3ce77d-796f-4d35-a98c-50b0c369580e d7a6b341-3140-4f8e-bedf-2ae8bc2e4186\"]",
+                                "phone": "[data-cy=\"string Phone 03d0b757-f48e-4fc9-81d5-adf09c631cde d7a6b341-3140-4f8e-bedf-2ae8bc2e4186\"]",
+                                "staffUser": "[data-cy=\"user Staff User 5cfb8cb4-26db-4204-a4d0-7c822eda4291 d7a6b341-3140-4f8e-bedf-2ae8bc2e4186\"]",
+                                "home": "[data-cy=\"connectObject Home ea33376e-a991-497f-93e1-8d853cc27de2\"]"
+                            }
+                        }
+                    },
+                    "view": {
+                        "staff": {
+                            "container": "[data-cy=\"ABViewContainer_389c7a4c-e65c-4049-822f-223b98761ef2513d727e-e395-4f46-b9a0-31f3a687a336_component1636015424986\"]",
+                            "detail": {
+                                "position": "[data-cy=\"detail text Position 94c09c11-713b-43f3-b9f2-5b074f37d27c 513d727e-e395-4f46-b9a0-31f3a687a336\"]",
+                                "user": "[data-cy=\"detail text Staff User 5cfb8cb4-26db-4204-a4d0-7c822eda4291 513d727e-e395-4f46-b9a0-31f3a687a336\"]",
+                                "firstName": "[data-cy=\"detail text First Name 151535fe-c83c-4821-b031-74f24e2aa48b 513d727e-e395-4f46-b9a0-31f3a687a336\"]",
+                                "lastName": "[data-cy=\"detail text Last Name 0a3ce77d-796f-4d35-a98c-50b0c369580e 513d727e-e395-4f46-b9a0-31f3a687a336\"]"
                             }
                         }
                     }

@@ -71,6 +71,20 @@ const homeAdministrationVisit = (indexOfHome) =>{
         });
 };
 
+// TODO check this
+const projectAdministrationVisit = (indexOfProject) =>{
+    cy.get(cyInterfaceCommon.button.menu, { timeout: 5000 }).click();
+    cy.get(cyInterfaceCARS.navigator).click();
+    cy.get(cyInterfaceCARS.tab.administration).click();
+    cy.get(cyInterfaceCARS.page.administration.tab.project).click(); // or gratipay?
+    cy.get(cyInterfaceCARS.page.administration.page.project.view.project.container)
+        .find(cyInterfaceCARS.page.administration.page.project.view.project.index.replace("[index]", (9 + indexOfProject).toString()))
+        .invoke("attr", "class")
+        .then((data) => {
+            cy.get(cyInterfaceCARS.page.administration.page.project.view.project.button.replace("[projectID]", data.split(' ')[3].replace("ab-record-", ''))).click({ force: true });
+        });
+};
+
 // End to End Testing
 describe("Test Child:", () => {
     before(() =>{
@@ -131,7 +145,7 @@ describe("Test Child:", () => {
         cy.wait(2500);
 
         //assert
-        //assert in the Chindren container
+        //assert in the Children container
         cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.children.container).should((data) =>{
             expect(data.text().includes(`Registration number (TH): ${child.no}`) ? child.no: "", "Registration number").to.eq(child.no);
             expect(data.text().includes(`${child.firstName}`) ? child.firstName: "", "First Name").to.eq(child.firstName);
@@ -287,6 +301,8 @@ describe("Test Home:", () => {
             .find(cyInterfaceCARS.page.socialWorker.page.home.form.addChildrenHome.button.save)
             .click();
 
+        cy.get(cyInterfaceCARS.page.socialWorker.tab.children).click().wait(500);
+        cy.get(cyInterfaceCARS.page.socialWorker.tab.home).click();
         // assert
         // assert in the Home container
         cy.get(cyInterfaceCARS.page.socialWorker.page.home.view.homes.container)
@@ -340,3 +356,59 @@ describe("Test Home:", () => {
             });
     });
 });
+
+describe("Test Project:", () => {
+    before(() =>{
+        cy.wait(2500);
+        Common.ResetDB(cy);
+        cy.wait(1500);
+        Common.AuthLogin(cy);
+        importModule(moduleCARS);
+        cy.wait(1500);
+    });
+
+    beforeEach(() => {
+        Common.AuthLogin(cy);
+        sqlManager("reset_db.sql");
+        cy.wait(1500);
+    });
+
+    it("Test Add New Project", () => {
+
+        // arrange
+        const homesIndex = 1;
+        const home = example.homes[homesIndex];
+        const project = example.projects[0];
+
+        // act
+        sqlManager("init_db_for_adding_new_project.sql");
+        cy.visit("/").wait(2500);
+        navigator();
+
+        cy.get(cyInterfaceCARS.tab.administration).click();
+        cy.get(cyInterfaceCARS.page.administration.tab.project).click().wait(100);
+        cy.get(cyInterfaceCARS.page.administration.page.project.button.addProject).click().wait(300);
+        cy.get(cyInterfaceCARS.page.administration.page.project.form.addProject.field.name).type(example.projects[0].projectName);
+        cy.get(cyInterfaceCARS.page.administration.page.project.form.addProject.field.projectHome).click().wait(500);
+        cy.get(".selectivity-result-item").click();
+
+        cy.get(cyInterfaceCARS.page.administration.page.project.form.addProject.button.save).click();
+
+        cy.get(cyInterfaceCARS.page.administration.tab.home).click();
+        cy.get(cyInterfaceCARS.page.administration.tab.project).click().wait(800);
+
+        // assert
+        // assert in the Home container
+        cy.get(cyInterfaceCARS.page.administration.page.project.view.projects.detail.projectName)
+        .find(".ab-detail-component-holder") // ab-detail-component-holder
+          .should((data) =>{
+            //cy.log(data.0)
+            //cy.log(Object.keys(data))
+            expect(data.text().includes(project.projectName) ? project.projectName: "", "Project Name").to.eq(project.projectName);
+          })
+          .get(cyInterfaceCARS.page.administration.page.project.view.projects.detail.homeName).find(".selectivity-multiple-selected-item ").should((data) => {
+            expect(data.text().includes(project.carsHomes) ? project.carsHomes: "", "Home").to.eq(project.carsHomes);
+          });
+    });
+});
+    });
