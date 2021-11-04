@@ -101,7 +101,8 @@
                 },
                 "project": {
                     "button": {
-                        "addProject": "[data-cy=\"menu-item Add Project c994d74d-425f-4de1-86aa-fb1858127d80 3dbfb8c6-8582-4da6-bd3d-1862fc37af80\"]"
+                        "addProject": "[data-cy=\"menu-item Add Project c994d74d-425f-4de1-86aa-fb1858127d80 3dbfb8c6-8582-4da6-bd3d-1862fc37af80\"]",
+                        "editProject": "[data-cy=\"dataview item button Projects cb46b6b4-dc25-4915-80f7-c1febf26da4a 55a0ace1-d2f9-4a2f-8486-4a485cca6e3f\"]"
                     },
                     "form": {
                         "addProject": {
@@ -114,6 +115,43 @@
                             },
                             "option": {
                                 "projectHome": []
+                            }
+                        },
+                        "editProject": {
+                            "button": {
+                                "save": "[data-cy=\"button save 84a84d56-9574-467b-85d6-df949c454c9e\"]"
+                            },
+                            "field": {
+                                "name": "[data-cy=\"string Name 9f9817e9-68d7-44a9-b57e-8c1a41f37f13 84a84d56-9574-467b-85d6-df949c454c9e\"]",
+                                "projectHome": "[data-cy=\"connectObject Project Homes f9f7fdc8-cd57-44c5-b18d-2af4b0bf09e9\"]",
+                                "projectStaff": "[data-cy=\"connectObject Staff737 8a2b66b7-4e6c-405e-a3be-11edb75df265\"]"
+                            },
+                            "option": {
+                                "projectHome": []
+                            }
+                        }
+                    },
+                    "view": {
+                        "projects": {
+                            "container": "[data-cy=\"dataview container Projects 55a0ace1-d2f9-4a2f-8486-4a485cca6e3f\"]",
+                            "index": "div[view_id=\"$headerlayout[index]\"]",
+                            "detail": {
+                                "projectName": "[data-cy=\"detail text Name 9f9817e9-68d7-44a9-b57e-8c1a41f37f13 55a0ace1-d2f9-4a2f-8486-4a485cca6e3f\"]",
+                                "homeName": "[data-cy=\"detail selectivity Project Homes f9f7fdc8-cd57-44c5-b18d-2af4b0bf09e9 55a0ace1-d2f9-4a2f-8486-4a485cca6e3f\"]"
+                            }
+                        },
+                        "project": {
+                            "button": "[data-cy=\"dataview item button Homes [homeID] 55a0ace1-d2f9-4a2f-8486-4a485cca6e3f\"]",
+                            "position": "[data-cy=\"dataview item Homes [homeID] 55a0ace1-d2f9-4a2f-8486-4a485cca6e3f\"]",
+                            "form": {
+                                "button": {
+                                    "address": "[]",
+                                    "save": "[data-cy=\"button save 69e9a7b4-f459-470a-9ae2-965692d9fd6b\"]"
+                                },
+                                "field": {
+                                    "projectName": "[data-cy=\"string Project Name f82f6ac3-e75f-4328-803c-4b712d9930e8e6d88e7e-2e06-41c3-935f-a256d4f611d2\"]",
+                                    "homeName": "[data-cy=\"connectObject Project Homes 540d2d40-5790-45ae-b84d-7ea9d8b913b1\"]"
+                                }
                             }
                         }
                     }
@@ -241,7 +279,7 @@
                         }
                     },
                     "view": {
-                        "children": { 
+                        "children": {
                             "container": "[data-cy=\"dataview container Children b3aa04d7-7528-40fb-b947-cef0c4dd52e9\"]",
                             "index": "div[view_id=\"$headerlayout[index]\"]"
                         },
