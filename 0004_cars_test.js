@@ -358,6 +358,49 @@ describe("Test Home:", () => {
 });
 
 describe("Test Project:", () => {
+    it("Test Update existing Project", () => {
+
+        sqlManager("reset_db.sql");
+        cy.wait(1500);
+
+        // arrange
+        const projectIndex = 0;
+        const project = example.projects[projectIndex];
+
+        // act
+        sqlManager("init_db_for_updating_existing_project.sql");
+        cy.visit("/").wait(2500);
+        navigator();
+        cy.get(cyInterfaceCARS.tab.administration).click();
+        cy.get(cyInterfaceCARS.page.administration.tab.project).click().wait(100);
+        cy.get(cyInterfaceCARS.page.administration.page.project.view.projects.detail.projectName).invoke('mouseover').wait(500)
+        cy.get(cyInterfaceCARS.page.administration.page.project.button.editProject).click({force: true});
+        cy.get(cyInterfaceCARS.page.administration.page.project.form.editProject.field.name).type("337");
+        cy.get(cyInterfaceCARS.page.administration.page.project.form.editProject.field.projectHome).click().wait(500);
+        cy.get(".selectivity-result-item").click();
+        cy.get(cyInterfaceCARS.page.administration.page.project.form.editProject.field.projectStaff).click().wait(500);
+        cy.get(".selectivity-result-item").click();
+        cy.get(cyInterfaceCARS.page.administration.page.project.form.editProject.button.save).click().wait(500);
+
+        //prepare for assertion
+        cy.get(cyInterfaceCARS.page.administration.tab.home).click();
+        cy.get(cyInterfaceCARS.page.administration.tab.project).click().wait(500);
+
+        // assert
+        // assert in the Home container
+        cy.get(cyInterfaceCARS.page.administration.page.project.view.projects.container)
+        .should((data) =>{
+          expect(data.text().includes(project.projectName) ? project.projectName: "", "Project Name").to.eq(project.projectName+"337");
+        });
+        // cy.get(cyInterfaceCARS.page.administration.page.project.view.projects.container)
+        // .find(".selectivity-multiple-selected-item ").should((data) => { // selectivity-multiple-selected-item
+        //   //cy.log(data)
+        //   //expect(data).to.have.string(project.carsHomes)
+        //   expect(data.text().includes(project.carsHomes) ? project.carsHomes: "", "Home Name").to.eq(project.carsHomes);
+        //   //expect(expect(data).to.include(project.carsHomes) ? project.carsHomes: "", "Home Name").to.eq(project.carsHomes);
+        // })
+});
+});
     before(() =>{
         cy.wait(2500);
         Common.ResetDB(cy);
