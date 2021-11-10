@@ -12,11 +12,6 @@ const cyInterfaceCommon = {
 }
 const module = ["cars"];
 
-const importModule = (moduleName) => {
-    cy.request("POST", "/test/import", {
-        file: `imports/test_${moduleName.toLowerCase()}/test_import/module.json`,
-    });
-}
 
 // =====================================================================================================================
 
@@ -25,6 +20,14 @@ import * as Common from "../../../../setup/common.js";
 import cyInterfaceCARS from "./test_setup/cy_interface/interface.json";
 import example from "./test_example/example.json";
 import * as path from 'path'
+
+const importModule = (moduleName) => {
+    var modpath = path.normalize(`imports\\test_${moduleName.toLowerCase()}\\test_import\\module.json`);
+    cy.request("POST", "/test/import", {
+        file: modpath
+    });
+    ////file: `imports/test_${moduleName.toLowerCase()}/test_import/module.json`,
+}
 
 // CARS setup
 const moduleCARS = module[module.indexOf("cars")];

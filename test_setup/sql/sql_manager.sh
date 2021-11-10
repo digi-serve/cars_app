@@ -1,7 +1,6 @@
 #!/bin/bash
 ID_Service=$(docker ps | grep 'test_' | grep '_db' | awk '{ print $1 }')
-for FILE_SQL in "$@"
-do
+for FILE_SQL in "$@"; do
 	if [ -z "$ID_Service" ]
 	then
 		echo ""
