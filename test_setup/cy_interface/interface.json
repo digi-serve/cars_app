@@ -110,7 +110,15 @@
                                 "phone": "[data-cy=\"string Phone 03d0b757-f48e-4fc9-81d5-adf09c631cde d7a6b341-3140-4f8e-bedf-2ae8bc2e4186\"]",
                                 "staffUser": "[data-cy=\"user Staff User 5cfb8cb4-26db-4204-a4d0-7c822eda4291 d7a6b341-3140-4f8e-bedf-2ae8bc2e4186\"]",
                                 "home": "[data-cy=\"connectObject Home ea33376e-a991-497f-93e1-8d853cc27de2\"]"
+                            },
+                            "option": {
+                                "staffUser": [
+                                    "[data-cy=\"user options admin 5cfb8cb4-26db-4204-a4d0-7c822eda4291 0eab74c9-f13b-4343-ab71-5e50875f8403\"]",
+                                    "[webix_l_id=\"admin\"]"
+                                ],
+                                "home": []
                             }
+
                         }
                     },
                     "view": {

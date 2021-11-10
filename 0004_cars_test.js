@@ -176,7 +176,7 @@ describe("Test Child:", () => {
 
         // TODO: shouldn't need to wait.
         cy.wait(2500);
-        
+
         // assert
         cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.basicInfo.page.basicInfo.field.timeReceivedfor).should((data) => {
             expect(data.text().includes(child.timeReceivedfor) ? child.timeReceivedfor: "", "Time Recieved for").to.eq(child.timeReceivedfor);
@@ -231,9 +231,9 @@ describe("Test Child:", () => {
         cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.basicInfo.page.basicInfo.form.editBasicInfo.field.idExpireDate).type(child.idExpireDate);
         cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.basicInfo.page.basicInfo.form.editBasicInfo.field.idNumber).type(child.idNumber);
         cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.basicInfo.page.basicInfo.form.editBasicInfo.field.address).click();
-        cy.get('.selectivity-result-item').click();  
+        cy.get('.selectivity-result-item').click();
         cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.basicInfo.page.basicInfo.form.editBasicInfo.button.save).click();
-        
+
         // prepare for assertion
         // TODO: shouldn't need to reload.
         cy.visit("/").wait(2500);
@@ -279,7 +279,7 @@ describe("Test Home:", () => {
     });
 
     it("Test Add New Home", () => {
-        
+
         // arrange
         const homesIndex = 0;
         const home = example.homes[homesIndex];
@@ -320,8 +320,8 @@ describe("Test Home:", () => {
                 expect(data.text().includes(home.address.province) ? home.address.province: "", "Province").to.eq(home.address.province);
                 expect(data.text().includes(home.address.postalCode) ? home.address.postalCode: "", "Postal Code").to.eq(home.address.postalCode);
                 expect(data.text().includes(home.staff) ? home.staff: "", "Staff").to.eq(home.staff);
-            })
-            .find(".webix_vscroll_x")
+              })
+              .find(".webix_vscroll_x")
             .scrollTo("right")
             .get(cyInterfaceCARS.page.socialWorker.page.home.view.homes.container)
                 .should((data) =>{
@@ -351,8 +351,8 @@ describe("Test Home:", () => {
 
         // assert
         cy.get(cyInterfaceCARS.page.socialWorker.page.home.view.homes.container)
-        .find(".webix_vscroll_x")
-        .scrollTo("right")
+        .find(".webix_vscroll_x").debug()
+        .scrollTo("right",{ force: true })
         .get(cyInterfaceCARS.page.socialWorker.page.home.view.homes.container)
             .should((data) =>{
                 expect(data.text().includes(home.phoneNumber) ? home.phoneNumber: "", "Phone Number").to.eq(home.phoneNumber);
@@ -361,51 +361,7 @@ describe("Test Home:", () => {
 });
 
 describe("Test Project:", () => {
-    it("Test Update existing Project", () => {
-
-        sqlManager("reset_db.sql");
-        cy.wait(1500);
-
-        // arrange
-        const projectIndex = 0;
-        const project = example.projects[projectIndex];
-
-        // act
-        sqlManager("init_db_for_updating_existing_project.sql");
-        cy.visit("/").wait(2500);
-        navigator();
-        cy.get(cyInterfaceCARS.tab.administration).click();
-        cy.get(cyInterfaceCARS.page.administration.tab.project).click().wait(100);
-        cy.get(cyInterfaceCARS.page.administration.page.project.view.projects.detail.projectName).invoke('mouseover').wait(500)
-        cy.get(cyInterfaceCARS.page.administration.page.project.button.editProject).click({force: true});
-        cy.get(cyInterfaceCARS.page.administration.page.project.form.editProject.field.name).type("337");
-        cy.get(cyInterfaceCARS.page.administration.page.project.form.editProject.field.projectHome).click().wait(500);
-        cy.get(".selectivity-result-item").click();
-        cy.get(cyInterfaceCARS.page.administration.page.project.form.editProject.field.projectStaff).click().wait(500);
-        cy.get(".selectivity-result-item").click();
-        cy.get(cyInterfaceCARS.page.administration.page.project.form.editProject.button.save).click().wait(500);
-
-        //prepare for assertion
-        cy.get(cyInterfaceCARS.page.administration.tab.home).click();
-        cy.get(cyInterfaceCARS.page.administration.tab.project).click().wait(500);
-
-        // assert
-        // assert in the Home container
-        cy.get(cyInterfaceCARS.page.administration.page.project.view.projects.container)
-        .should((data) =>{
-          expect(data.text().includes(project.projectName) ? project.projectName: "", "Project Name").to.eq(project.projectName+"337");
-        });
-        // cy.get(cyInterfaceCARS.page.administration.page.project.view.projects.container)
-        // .find(".selectivity-multiple-selected-item ").should((data) => { // selectivity-multiple-selected-item
-        //   //cy.log(data)
-        //   //expect(data).to.have.string(project.carsHomes)
-        //   expect(data.text().includes(project.carsHomes) ? project.carsHomes: "", "Home Name").to.eq(project.carsHomes);
-        //   //expect(expect(data).to.include(project.carsHomes) ? project.carsHomes: "", "Home Name").to.eq(project.carsHomes);
-        // })
-});
-});
     before(() =>{
-        cy.wait(2500);
         Common.ResetDB(cy);
         cy.wait(1500);
         Common.AuthLogin(cy);
@@ -456,5 +412,205 @@ describe("Test Project:", () => {
             expect(data.text().includes(project.carsHomes) ? project.carsHomes: "", "Home").to.eq(project.carsHomes);
           });
     });
-});
+
+    it("Test Update existing Project", () => {
+
+        sqlManager("reset_db.sql");
+        cy.wait(1500);
+
+        // arrange
+        const projectIndex = 0;
+        const project = example.projects[projectIndex];
+
+        // act
+        sqlManager("init_db_for_updating_existing_project.sql");
+        cy.visit("/").wait(2500);
+        navigator();
+        cy.get(cyInterfaceCARS.tab.administration).click();
+        cy.get(cyInterfaceCARS.page.administration.tab.project).click().wait(100);
+        cy.get(cyInterfaceCARS.page.administration.page.project.view.projects.detail.projectName).invoke('mouseover').wait(500)
+        cy.get(cyInterfaceCARS.page.administration.page.project.button.editProject).click({force: true});
+        cy.get(cyInterfaceCARS.page.administration.page.project.form.editProject.field.name).type("337");
+        cy.get(cyInterfaceCARS.page.administration.page.project.form.editProject.field.projectHome).click().wait(500);
+        cy.get(".selectivity-result-item").click();
+        cy.get(cyInterfaceCARS.page.administration.page.project.form.editProject.field.projectStaff).click().wait(500);
+        cy.get(".selectivity-result-item").click();
+        cy.get(cyInterfaceCARS.page.administration.page.project.form.editProject.button.save).click().wait(500);
+
+        //prepare for assertion
+        cy.get(cyInterfaceCARS.page.administration.tab.home).click();
+        cy.get(cyInterfaceCARS.page.administration.tab.project).click().wait(500);
+
+        // assert
+        // assert in the Home container
+        cy.get(cyInterfaceCARS.page.administration.page.project.view.projects.container)
+        .should((data) =>{
+          expect(data.text().includes(project.projectName) ? project.projectName: "", "Project Name").to.eq(project.projectName+"337");
+        });
+        // cy.get(cyInterfaceCARS.page.administration.page.project.view.projects.container)
+        // .find(".selectivity-multiple-selected-item ").should((data) => { // selectivity-multiple-selected-item
+        //   //cy.log(data)
+        //   //expect(data).to.have.string(project.carsHomes)
+        //   expect(data.text().includes(project.carsHomes) ? project.carsHomes: "", "Home Name").to.eq(project.carsHomes);
+        //   //expect(expect(data).to.include(project.carsHomes) ? project.carsHomes: "", "Home Name").to.eq(project.carsHomes);
+        // })
     });
+});
+
+describe("Test Staff:", () => {
+    before(() =>{
+        Common.ResetDB(cy);
+        cy.wait(1500);
+        Common.AuthLogin(cy);
+        importModule(moduleCARS);
+        cy.wait(1500);
+    });
+
+    beforeEach(() => {
+        Common.AuthLogin(cy);
+        sqlManager("reset_db.sql");
+        cy.wait(1500);
+    });
+
+    it("Test Add New Staff", () => {
+
+        // arrange
+        const homesIndex = 1;
+        const home = example.homes[homesIndex];
+        const staff = example.staff[1];
+
+        // act
+        sqlManager("init_db_for_adding_new_staff.sql");
+        cy.visit("/").wait(2500);
+        navigator();
+
+        cy.get(cyInterfaceCARS.tab.administration).click();
+        cy.get(cyInterfaceCARS.page.administration.tab.staff).click().wait(100);
+        cy.get(cyInterfaceCARS.page.administration.page.staff.button.addStaff).click().wait(300);
+        cy.get(cyInterfaceCARS.page.administration.page.staff.form.addStaff.field.position).type(staff.position);
+        cy.get(cyInterfaceCARS.page.administration.page.staff.form.addStaff.field.firstName).type(staff.firstName);
+        cy.get(cyInterfaceCARS.page.administration.page.staff.form.addStaff.field.lastName).type(staff.lastName);
+        cy.get(cyInterfaceCARS.page.administration.page.staff.form.addStaff.field.phone).type(staff.phone);
+
+        cy.get(cyInterfaceCARS.page.administration.page.staff.form.addStaff.field.home).click().wait(500);
+        cy.get(".selectivity-result-item").click();
+
+        cy.get(cyInterfaceCARS.page.administration.page.staff.form.addStaff.field.staffUser).click().wait(500);
+        cy.get(cyInterfaceCARS.page.administration.page.staff.form.addStaff.option.staffUser[0]).click
+
+        //cy.get(cyInterfaceCARS.page.administration.page.staff.button.addStaff)
+        cy.get(".webix_view webix_window webix_popup")
+          .find(".webix_list_item ")
+          .should((data) =>{
+            cy.log(data)
+            // expect(data.text().includes(staff.position) ? staff.position: "", "Worker").to.eq(staff.position);
+          })
+
+        cy.get(cyInterfaceCARS.page.administration.page.staff.form.addStaff.option.staffUser[1])
+          .should((data) =>{
+            cy.log(data)
+            // expect(data.text().includes(staff.position) ? staff.position: "", "Worker").to.eq(staff.position);
+          })
+
+        //cy.get(cyInterfaceCARS.page.administration.page.staff.form.addStaff.option.staffUser).click();
+          //.find(".webix_list_item")
+
+        //cy.get(cyInterfaceCARS.page.administration.page.staff.form.addStaff.option.staffUser).click().wait(50);
+
+        cy.get(cyInterfaceCARS.page.administration.page.staff.form.addStaff.button.save).click().wait(300);
+
+        cy.get(cyInterfaceCARS.page.administration.tab.home).click().wait(700);
+        cy.get(cyInterfaceCARS.page.administration.tab.staff).click().wait(700);
+
+        // assert
+        // assert in the Home container
+        cy.get(cyInterfaceCARS.page.administration.page.staff.view.staff.detail.position)
+          .should((data) =>{
+            expect(data.text().includes(staff.position) ? staff.position: "", "Worker").to.eq(staff.position);
+          })
+          .get(cyInterfaceCARS.page.administration.page.staff.view.staff.detail.firstName)
+          .should((data) =>{
+            expect(data.text().includes(staff.firstName) ? staff.firstName: "", "First Name").to.eq(staff.firstName);
+          })
+          .get(cyInterfaceCARS.page.administration.page.staff.view.staff.detail.lastName)
+          .should((data) =>{
+            expect(data.text().includes(staff.lastName) ? staff.lastName: "", "Last Name").to.eq(staff.lastName);
+          })
+          .get(cyInterfaceCARS.page.administration.page.staff.view.staff.detail.user)
+          .should((data) =>{
+            expect(data.text().includes(staff.staffUser) ? staff.staffUser: "", "Admin").to.eq(staff.staffUser);
+          });
+    });
+
+    it("Test Update existing Staff", () => {
+
+        sqlManager("reset_db.sql");
+        cy.wait(1500);
+
+        // arrange
+        const projectIndex = 0;
+        const staff = example.staff[projectIndex];
+
+        // act
+        sqlManager("init_db_for_updating_existing_staff.sql");
+        cy.visit("/").wait(2500);
+        navigator();
+
+        cy.get(cyInterfaceCARS.tab.administration).click();
+        cy.get(cyInterfaceCARS.page.administration.tab.staff).click().wait(100);
+        cy.get(cyInterfaceCARS.page.administration.page.staff.button.editStaff).click().wait(300);
+        cy.get(cyInterfaceCARS.page.administration.page.staff.form.editStaff.field.position).type(staff.position);
+        cy.get(cyInterfaceCARS.page.administration.page.staff.form.editStaff.field.firstName).type(staff.firstName);
+        cy.get(cyInterfaceCARS.page.administration.page.staff.form.editStaff.field.lastName).type(staff.lastName);
+        cy.get(cyInterfaceCARS.page.administration.page.staff.form.editStaff.field.phone).type(staff.phone);
+
+        cy.get(cyInterfaceCARS.page.administration.page.staff.form.editStaff.field.home).click().wait(500);
+        cy.get(".selectivity-result-item").click();
+
+        cy.get(cyInterfaceCARS.page.administration.page.staff.form.editStaff.field.staffUser).click().wait(500);
+        cy.get(cyInterfaceCARS.page.administration.page.staff.form.editStaff.option.staffUser[0]).click
+
+        //cy.get(cyInterfaceCARS.page.administration.page.staff.button.editStaff)
+        cy.get(".webix_view webix_window webix_popup")
+          .find(".webix_list_item ")
+          .should((data) =>{
+            cy.log(data)
+            // expect(data.text().includes(staff.position) ? staff.position: "", "Worker").to.eq(staff.position);
+          })
+
+        cy.get(cyInterfaceCARS.page.administration.page.staff.form.editStaff.option.staffUser[1])
+          .should((data) =>{
+            cy.log(data)
+            // expect(data.text().includes(staff.position) ? staff.position: "", "Worker").to.eq(staff.position);
+          })
+
+        //cy.get(cyInterfaceCARS.page.administration.page.staff.form.editStaff.option.staffUser).click();
+          //.find(".webix_list_item")
+
+        //cy.get(cyInterfaceCARS.page.administration.page.staff.form.editStaff.option.staffUser).click().wait(50);
+
+        cy.get(cyInterfaceCARS.page.administration.page.staff.form.editStaff.button.save).click().wait(300);
+
+        cy.get(cyInterfaceCARS.page.administration.tab.home).click().wait(700);
+        cy.get(cyInterfaceCARS.page.administration.tab.staff).click().wait(700);
+
+        // assert
+        // assert in the Home container
+        cy.get(cyInterfaceCARS.page.administration.page.staff.view.staff.detail.position)
+          .should((data) =>{
+            expect(data.text().includes(staff.position) ? staff.position: "", "Worker").to.eq(staff.position);
+          })
+          .get(cyInterfaceCARS.page.administration.page.staff.view.staff.detail.firstName)
+          .should((data) =>{
+            expect(data.text().includes(staff.firstName) ? staff.firstName: "", "First Name").to.eq(staff.firstName);
+          })
+          .get(cyInterfaceCARS.page.administration.page.staff.view.staff.detail.lastName)
+          .should((data) =>{
+            expect(data.text().includes(staff.lastName) ? staff.lastName: "", "Last Name").to.eq(staff.lastName);
+          })
+          .get(cyInterfaceCARS.page.administration.page.staff.view.staff.detail.user)
+          .should((data) =>{
+            expect(data.text().includes(staff.staffUser) ? staff.staffUser: "", "Admin").to.eq(staff.staffUser);
+          });
+    });
+});
