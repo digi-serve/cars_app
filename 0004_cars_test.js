@@ -13,8 +13,9 @@ const cyInterfaceCommon = {
 const module = ["cars"];
 
 const importModule = (moduleName) => {
+    var modpath = path.normalize(`imports\\test_${moduleName.toLowerCase()}\\test_import\\module.json`);
     cy.request("POST", "/test/import", {
-        file: `imports/test_${moduleName.toLowerCase()}/test_import/module.json`,
+        file: modpath
     });
 
     //fix file import
@@ -24,10 +25,11 @@ const importModule = (moduleName) => {
 
 const sqlManager = (moduleName, sqlFile) => {
     cy.exec(`ls ${path.join("cypress", "integration", `test_${moduleName.toLowerCase()}`, "test_setup", "sql")}`).then(files => {
-        const sqlFiles = files.stdout.split('\n').filter(e => e.includes(".sql"));
+        const sqlFiles = files.stdout.split(/[\s\n\\]+/).filter(e => e.includes(".sql"));
         cy.exec(`bash ${path.join("cypress", "integration", `test_${moduleName.toLowerCase()}`, "test_setup", "commands", "sql_manager.sh")} ${sqlFiles[sqlFiles.indexOf(sqlFile)]}`);
     });
 }
+
 
 // =====================================================================================================================
 
@@ -37,13 +39,6 @@ import cyInterfaceCARS from "./test_setup/cy_interface/interface.json";
 import example from "./test_example/example.json";
 import path from "path";
 
-const importModule = (moduleName) => {
-    var modpath = path.normalize(`imports\\test_${moduleName.toLowerCase()}\\test_import\\module.json`);
-    cy.request("POST", "/test/import", {
-        file: modpath
-    });
-    ////file: `imports/test_${moduleName.toLowerCase()}/test_import/module.json`,
-}
 
 // CARS setup
 const moduleCARS = module[module.indexOf("cars")];
@@ -53,16 +48,6 @@ const navigator = () => {
     cy.get(cyInterfaceCARS.navigator).click();
 }
 
-const sqlManager = (sqlFile) => {
-    //cy.log(cy.exec(`ls ${ path.normalize('cypress\\integration\\test_cars\\test_setup\\sql')}`))
-    cy.exec(`ls ${path.normalize('cypress\\integration\\test_cars\\test_setup\\sql')}`,{log:true}).then((files) => {
-        //cy.log(files)
-        const sqlFiles = files.stdout.split(/[\s\n\\]+/).filter(e => e.includes(".sql"));
-        //cy.log(sqlFiles)
-        cy.exec(`bash ${('./cypress/integration/test_cars/test_setup/sql/sql_manager.sh')} ${sqlFiles[sqlFiles.indexOf(sqlFile)]}`);
-
-    });
-}
 
 const childVisit = (indexOfChild) =>{
     cy.get(cyInterfaceCommon.button.menu, { timeout: 5000 }).click();
@@ -316,7 +301,7 @@ describe("Test Report:", () => {
         // prepare for assertion
         // TODO: Shouldn't wait
         cy.wait(1000);
-        
+
         // assert
         //${path.join("cypress", "downloads")}
         cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.basicInfo.page.basicInfo.page.reports.button.dowloads.one).then(data => {
