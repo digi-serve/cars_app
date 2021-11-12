@@ -24,7 +24,7 @@ const importModule = (moduleName) => {
 }
 
 const sqlManager = (moduleName, sqlFile) => {
-    cy.exec(`ls ${path.join("cypress", "integration", `test_${moduleName.toLowerCase()}`, "test_setup", "sql")}`).then(files => {
+    cy.exec(`ls ${path.normalize('cypress\\integration\\test_cars\\test_setup\\sql')}`,{log:true}).then((files) => {
         const sqlFiles = files.stdout.split(/[\s\n\\]+/).filter(e => e.includes(".sql"));
         cy.exec(`bash ${path.join("cypress", "integration", `test_${moduleName.toLowerCase()}`, "test_setup", "commands", "sql_manager.sh")} ${sqlFiles[sqlFiles.indexOf(sqlFile)]}`);
     });
@@ -676,7 +676,7 @@ describe("Test Social Worker Note:", () => {
 
     beforeEach(() => {
         Common.AuthLogin(cy);
-        sqlManager("reset_db.sql");
+        sqlManager('cars',"reset_db");
         cy.wait(1500);
     });
 
@@ -694,7 +694,7 @@ describe("Test Social Worker Note:", () => {
         //navigator();
 
         //act
-        sqlManager("init_db_for_editing_a_child.sql");
+        sqlManager('cars',"init_db_for_editing_a_child.sql");
         cy.visit("/").wait(2500);
         navigator();
         childVisit(childrenIndex);

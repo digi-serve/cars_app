@@ -134,5 +134,10 @@
                 "name": "Home 2"
             }
         }
-    ]
+    ],
+  "note":{
+    "title":"Test Note number 1",
+    "date":"10/08/2022",
+    "text":"Note to self, get more coffee beans"
+  }
 }
