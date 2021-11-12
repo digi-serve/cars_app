@@ -382,10 +382,51 @@
                                     "tab": {
                                         "basicInfo": ".webix_view:nth-child(1) > .webix_scroll_cont:nth-child(1) > .webix_view:nth-child(1) > .webix_view:nth-child(1) .webix_tree_branch_1:nth-child(1) > .webix_tree_item:nth-child(1)"
                                     }
+                                },
+                                "socialWork": {
+                                  "page": {
+                                    "notes":{
+                                      "button": {
+                                          "addNote": "[data-cy=\"menu-item Add Note_8c5a 5d81aecc-8c5a-4d02-933c-86c434ea3bdc 6472a0bf-65e0-4e14-be48-819477edb23b\"]"
+                                      },
+                                      "field":{
+                                        "title": "[data-cy=\"TODO\"]",
+                                        "date": "[data-cy=\"TODO\"]",
+                                        "text": "[data-cy=\" TODO \"]",
+                                        "file": "[data-cy=\"TODO\"]",
+                                        "categories": "[data-cy=\"TODO\"]"
+                                      },
+                                      "form": {
+                                        "addNote": {
+                                          "button": {
+                                            "file": "[]",
+                                            "categories": "[]",
+                                            "save": "[data-cy=\"button save f807c3b6-1359-4cb6-823f-ccc1bf676e97\"]"
+                                          },
+                                          "field": {
+                                            "title": "[data-cy=\"string Title 4bef656d-e062-41c3-93ce-cfc7e5b42176 f807c3b6-1359-4cb6-823f-ccc1bf676e97\"]",
+                                            "date": "[data-cy=\"date Date bd2de56e-f76d-4ae4-81a5-cb2a03af0f4c f807c3b6-1359-4cb6-823f-ccc1bf676e97\"]",
+                                            "text": "[data-cy=\" TODO \"]",
+                                            "file": "[data-cy=\"connectObject File47 bd49d7b7-697b-4f0f-a4f4-12ca407fdc65\"]",
+                                            "categories": "[data-cy=\"connectObject Categories 84157ae7-caf3-4eae-bdf4-bf374b837d3c\"]"
+                                          },
+                                          "option": {
+                                            "file": [],
+                                            "categories": []
+                                          }
+                                        }
+                                      },
+                                      "grid": "[data-cy=\"ABViewGrid_a2e24efa-2b3a-4f62-9861-62743e194689\"]"
+                                    }
+                                  },
+                                  "tab": {
+                                      "note": "[data-cy=\"tab-Notes-56841b8f-2984-45de-8a82-cf14a6ecca99-ca3bf320-50a3-4928-aa13-549d89c37f70\"]"
+                                  }
                                 }
                             },
                             "tab": {
-                                "basicInfo": "[data-cy=\"tab-BasicInfo-8a41a127-98ed-43d1-bcc7-a58630cb7610-bbef30a6-8b04-49c3-8520-818568ccaa79\"]"
+                                "basicInfo": "[data-cy=\"tab-BasicInfo-8a41a127-98ed-43d1-bcc7-a58630cb7610-bbef30a6-8b04-49c3-8520-818568ccaa79\"]",
+                                "socialWork": "[data-cy=\"tab-SocialWork-90503323-2007-4740-84e1-2381a3396610-bbef30a6-8b04-49c3-8520-818568ccaa79\"]"
                             }
                         }
                     }
