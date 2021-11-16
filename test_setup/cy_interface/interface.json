@@ -74,7 +74,8 @@
                 },
                 "staff": {
                     "button": {
-                        "addStaff": "[data-cy=\"menu-item Add Staff f6952af4-58d2-47c9-91ff-59137ade2b04 f81e3ca2-fafa-4dd6-909b-64ddceef7ef9\"]"
+                        "addStaff": "[data-cy=\"menu-item Add Staff f6952af4-58d2-47c9-91ff-59137ade2b04 f81e3ca2-fafa-4dd6-909b-64ddceef7ef9\"]",
+                        "editStaff": "[data-cy=\"dataview item button Staff e746f80b-3fbe-4aeb-9fdf-2707740eeaca 513d727e-e395-4f46-b9a0-31f3a687a336\"]"
                     },
                     "form": {
                         "addStaff": {
@@ -96,12 +97,46 @@
                                 ],
                                 "home": []
                             }
+                        },
+                        "editStaff": {
+                            "button": {
+                                "close": ".webix_scroll_cont > .webix_view:nth-child(2) .webix_button",
+                                "save": "[data-cy=\"button save d7a6b341-3140-4f8e-bedf-2ae8bc2e4186\"]"
+                            },
+                            "field": {
+                                "position": "[data-cy=\"string Position 94c09c11-713b-43f3-b9f2-5b074f37d27c d7a6b341-3140-4f8e-bedf-2ae8bc2e4186\"]",
+                                "firstName": "[data-cy=\"string First Name 151535fe-c83c-4821-b031-74f24e2aa48b d7a6b341-3140-4f8e-bedf-2ae8bc2e4186\"]",
+                                "lastName": "[data-cy=\"string Last Name 0a3ce77d-796f-4d35-a98c-50b0c369580e d7a6b341-3140-4f8e-bedf-2ae8bc2e4186\"]",
+                                "phone": "[data-cy=\"string Phone 03d0b757-f48e-4fc9-81d5-adf09c631cde d7a6b341-3140-4f8e-bedf-2ae8bc2e4186\"]",
+                                "staffUser": "[data-cy=\"user Staff User 5cfb8cb4-26db-4204-a4d0-7c822eda4291 d7a6b341-3140-4f8e-bedf-2ae8bc2e4186\"]",
+                                "home": "[data-cy=\"connectObject Home ea33376e-a991-497f-93e1-8d853cc27de2\"]"
+                            },
+                            "option": {
+                                "staffUser": [
+                                    "[data-cy=\"user options admin 5cfb8cb4-26db-4204-a4d0-7c822eda4291 0eab74c9-f13b-4343-ab71-5e50875f8403\"]",
+                                    "[webix_l_id=\"admin\"]"
+                                ],
+                                "home": []
+                            }
+
+                        }
+                    },
+                    "view": {
+                        "staff": {
+                            "container": "[data-cy=\"ABViewContainer_389c7a4c-e65c-4049-822f-223b98761ef2513d727e-e395-4f46-b9a0-31f3a687a336_component1636015424986\"]",
+                            "detail": {
+                                "position": "[data-cy=\"detail text Position 94c09c11-713b-43f3-b9f2-5b074f37d27c 513d727e-e395-4f46-b9a0-31f3a687a336\"]",
+                                "user": "[data-cy=\"detail text Staff User 5cfb8cb4-26db-4204-a4d0-7c822eda4291 513d727e-e395-4f46-b9a0-31f3a687a336\"]",
+                                "firstName": "[data-cy=\"detail text First Name 151535fe-c83c-4821-b031-74f24e2aa48b 513d727e-e395-4f46-b9a0-31f3a687a336\"]",
+                                "lastName": "[data-cy=\"detail text Last Name 0a3ce77d-796f-4d35-a98c-50b0c369580e 513d727e-e395-4f46-b9a0-31f3a687a336\"]"
+                            }
                         }
                     }
                 },
                 "project": {
                     "button": {
-                        "addProject": "[data-cy=\"menu-item Add Project c994d74d-425f-4de1-86aa-fb1858127d80 3dbfb8c6-8582-4da6-bd3d-1862fc37af80\"]"
+                        "addProject": "[data-cy=\"menu-item Add Project c994d74d-425f-4de1-86aa-fb1858127d80 3dbfb8c6-8582-4da6-bd3d-1862fc37af80\"]",
+                        "editProject": "[data-cy=\"dataview item button Projects cb46b6b4-dc25-4915-80f7-c1febf26da4a 55a0ace1-d2f9-4a2f-8486-4a485cca6e3f\"]"
                     },
                     "form": {
                         "addProject": {
@@ -114,6 +149,43 @@
                             },
                             "option": {
                                 "projectHome": []
+                            }
+                        },
+                        "editProject": {
+                            "button": {
+                                "save": "[data-cy=\"button save 84a84d56-9574-467b-85d6-df949c454c9e\"]"
+                            },
+                            "field": {
+                                "name": "[data-cy=\"string Name 9f9817e9-68d7-44a9-b57e-8c1a41f37f13 84a84d56-9574-467b-85d6-df949c454c9e\"]",
+                                "projectHome": "[data-cy=\"connectObject Project Homes f9f7fdc8-cd57-44c5-b18d-2af4b0bf09e9\"]",
+                                "projectStaff": "[data-cy=\"connectObject Staff737 8a2b66b7-4e6c-405e-a3be-11edb75df265\"]"
+                            },
+                            "option": {
+                                "projectHome": []
+                            }
+                        }
+                    },
+                    "view": {
+                        "projects": {
+                            "container": "[data-cy=\"dataview container Projects 55a0ace1-d2f9-4a2f-8486-4a485cca6e3f\"]",
+                            "index": "div[view_id=\"$headerlayout[index]\"]",
+                            "detail": {
+                                "projectName": "[data-cy=\"detail text Name 9f9817e9-68d7-44a9-b57e-8c1a41f37f13 55a0ace1-d2f9-4a2f-8486-4a485cca6e3f\"]",
+                                "homeName": "[data-cy=\"detail selectivity Project Homes f9f7fdc8-cd57-44c5-b18d-2af4b0bf09e9 55a0ace1-d2f9-4a2f-8486-4a485cca6e3f\"]"
+                            }
+                        },
+                        "project": {
+                            "button": "[data-cy=\"dataview item button Homes [homeID] 55a0ace1-d2f9-4a2f-8486-4a485cca6e3f\"]",
+                            "position": "[data-cy=\"dataview item Homes [homeID] 55a0ace1-d2f9-4a2f-8486-4a485cca6e3f\"]",
+                            "form": {
+                                "button": {
+                                    "address": "[]",
+                                    "save": "[data-cy=\"button save 69e9a7b4-f459-470a-9ae2-965692d9fd6b\"]"
+                                },
+                                "field": {
+                                    "projectName": "[data-cy=\"string Project Name f82f6ac3-e75f-4328-803c-4b712d9930e8e6d88e7e-2e06-41c3-935f-a256d4f611d2\"]",
+                                    "homeName": "[data-cy=\"connectObject Project Homes 540d2d40-5790-45ae-b84d-7ea9d8b913b1\"]"
+                                }
                             }
                         }
                     }
@@ -128,6 +200,10 @@
         "socialWorker": {
             "page": {
                 "children": {
+                    "existingChildButton":[
+                      "[data-cy=\"dataview item Children 0e41a300-4698-40c8-9c5f-f96ea2ceadf6 b3aa04d7-7528-40fb-b947-cef0c4dd52e9\"]",
+                      "[data-cy=\"dataview item button Children 0e41a300-4698-40c8-9c5f-f96ea2ceadf6 b3aa04d7-7528-40fb-b947-cef0c4dd52e9\"]"
+                    ],
                     "button": {
                         "addChildren": "[data-cy=\"menu-item Add Children 530d110e-98c4-4096-a0bb-ccd3d451bcec 17d7c444-ebb9-4c19-bdf3-61e2f44a2b81\"]",
                         "allChildren": "[data-cy=\"menu-item All Children 534f83f6-8a63-4a8a-8645-1140d28a0de1 17d7c444-ebb9-4c19-bdf3-61e2f44a2b81\"]",
@@ -241,7 +317,7 @@
                         }
                     },
                     "view": {
-                        "children": { 
+                        "children": {
                             "container": "[data-cy=\"dataview container Children b3aa04d7-7528-40fb-b947-cef0c4dd52e9\"]",
                             "index": "div[view_id=\"$headerlayout[index]\"]"
                         },
@@ -325,10 +401,71 @@
                                     "tab": {
                                         "basicInfo": ".webix_view:nth-child(1) > .webix_scroll_cont:nth-child(1) > .webix_view:nth-child(1) > .webix_view:nth-child(1) .webix_tree_branch_1:nth-child(1) > .webix_tree_item:nth-child(1)"
                                     }
+                                },
+                                "socialWork": {
+                                  "page": {
+                                    "notes":{
+                                      "button": {
+                                          "addNote": "[data-cy=\"menu-item Add Note_8c5a 5d81aecc-8c5a-4d02-933c-86c434ea3bdc 6472a0bf-65e0-4e14-be48-819477edb23b\"]"
+                                      },
+                                      "field":{
+                                        "title": "[data-cy=\"TODO\"]",
+                                        "date": "[data-cy=\"TODO\"]",
+                                        "text": "[data-cy=\" TODO \"]",
+                                        "file": "[data-cy=\"TODO\"]",
+                                        "categories": "[data-cy=\"TODO\"]"
+                                      },
+                                      "form": {
+                                        "addNote": {
+                                          "button": {
+                                            "file": "[]",
+                                            "categories": "[]",
+                                            "save": "[data-cy=\"button save f807c3b6-1359-4cb6-823f-ccc1bf676e97\"]"
+                                          },
+                                          "field": {
+                                            "title": "[data-cy=\"string Title 4bef656d-e062-41c3-93ce-cfc7e5b42176 f807c3b6-1359-4cb6-823f-ccc1bf676e97\"]",
+                                            "date": "[data-cy=\"date Date bd2de56e-f76d-4ae4-81a5-cb2a03af0f4c f807c3b6-1359-4cb6-823f-ccc1bf676e97\"]",
+                                            "text": "[data-cy=\" TODO \"]",
+                                            "file": "[data-cy=\"connectObject File47 bd49d7b7-697b-4f0f-a4f4-12ca407fdc65\"]",
+                                            "categories": "[data-cy=\"connectObject Categories 84157ae7-caf3-4eae-bdf4-bf374b837d3c\"]"
+                                          },
+                                          "option": {
+                                            "file": [],
+                                            "categories": []
+                                          }
+                                        },
+                                        "addFile":{
+                                          "button": {
+                                            "save": "[data-cy=\"button save 2ea329a8-a075-43cd-9ff9-fc77821e2f66\"]"
+                                          },
+                                          "label": "[data-cy=\"string Label fe4f8118-eba7-4cd1-b642-daf246521400 2ea329a8-a075-43cd-9ff9-fc77821e2f66\"]"
+                                        },
+                                        "addCategory":{
+                                          "button": {
+                                            "save": "[data-cy=\"button save d10efe5b-c7b7-4862-9faa-18077f89ff47\"]"
+                                          },
+                                          "label": "[data-cy=\"string Label 48ea550b-bd2a-4abd-b6dd-576da70ec684 d10efe5b-c7b7-4862-9faa-18077f89ff47\"]"
+                                        }
+                                      },
+                                      "grid": "[data-cy=\"ABViewGrid_a2e24efa-2b3a-4f62-9861-62743e194689\"]",
+                                      "columns":[
+                                        "[column=\"0\"]",
+                                        "[column=\"1\"]",
+                                        "[column=\"2\"]",
+                                        "[column=\"3\"]",
+                                        "[column=\"4\"]",
+                                        "[column=\"5\"]"
+                                      ]
+                                    }
+                                  },
+                                  "tab": {
+                                      "notes": "[data-cy=\"tab-Notes-56841b8f-2984-45de-8a82-cf14a6ecca99-ca3bf320-50a3-4928-aa13-549d89c37f70\"]"
+                                  }
                                 }
                             },
                             "tab": {
-                                "basicInfo": "[data-cy=\"tab-BasicInfo-8a41a127-98ed-43d1-bcc7-a58630cb7610-bbef30a6-8b04-49c3-8520-818568ccaa79\"]"
+                                "basicInfo": "[data-cy=\"tab-BasicInfo-8a41a127-98ed-43d1-bcc7-a58630cb7610-bbef30a6-8b04-49c3-8520-818568ccaa79\"]",
+                                "socialWork": "[data-cy=\"tab-SocialWork-90503323-2007-4740-84e1-2381a3396610-bbef30a6-8b04-49c3-8520-818568ccaa79\"]"
                             }
                         }
                     }
