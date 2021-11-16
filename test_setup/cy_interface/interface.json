@@ -200,6 +200,10 @@
         "socialWorker": {
             "page": {
                 "children": {
+                    "existingChildButton":[
+                      "[data-cy=\"dataview item Children 0e41a300-4698-40c8-9c5f-f96ea2ceadf6 b3aa04d7-7528-40fb-b947-cef0c4dd52e9\"]",
+                      "[data-cy=\"dataview item button Children 0e41a300-4698-40c8-9c5f-f96ea2ceadf6 b3aa04d7-7528-40fb-b947-cef0c4dd52e9\"]"
+                    ],
                     "button": {
                         "addChildren": "[data-cy=\"menu-item Add Children 530d110e-98c4-4096-a0bb-ccd3d451bcec 17d7c444-ebb9-4c19-bdf3-61e2f44a2b81\"]",
                         "allChildren": "[data-cy=\"menu-item All Children 534f83f6-8a63-4a8a-8645-1140d28a0de1 17d7c444-ebb9-4c19-bdf3-61e2f44a2b81\"]",
@@ -429,13 +433,33 @@
                                             "file": [],
                                             "categories": []
                                           }
+                                        },
+                                        "addFile":{
+                                          "button": {
+                                            "save": "[data-cy=\"button save 2ea329a8-a075-43cd-9ff9-fc77821e2f66\"]"
+                                          },
+                                          "label": "[data-cy=\"string Label fe4f8118-eba7-4cd1-b642-daf246521400 2ea329a8-a075-43cd-9ff9-fc77821e2f66\"]"
+                                        },
+                                        "addCategory":{
+                                          "button": {
+                                            "save": "[data-cy=\"button save d10efe5b-c7b7-4862-9faa-18077f89ff47\"]"
+                                          },
+                                          "label": "[data-cy=\"string Label 48ea550b-bd2a-4abd-b6dd-576da70ec684 d10efe5b-c7b7-4862-9faa-18077f89ff47\"]"
                                         }
                                       },
-                                      "grid": "[data-cy=\"ABViewGrid_a2e24efa-2b3a-4f62-9861-62743e194689\"]"
+                                      "grid": "[data-cy=\"ABViewGrid_a2e24efa-2b3a-4f62-9861-62743e194689\"]",
+                                      "columns":[
+                                        "[column=\"0\"]",
+                                        "[column=\"1\"]",
+                                        "[column=\"2\"]",
+                                        "[column=\"3\"]",
+                                        "[column=\"4\"]",
+                                        "[column=\"5\"]"
+                                      ]
                                     }
                                   },
                                   "tab": {
-                                      "note": "[data-cy=\"tab-Notes-56841b8f-2984-45de-8a82-cf14a6ecca99-ca3bf320-50a3-4928-aa13-549d89c37f70\"]"
+                                      "notes": "[data-cy=\"tab-Notes-56841b8f-2984-45de-8a82-cf14a6ecca99-ca3bf320-50a3-4928-aa13-549d89c37f70\"]"
                                   }
                                 }
                             },

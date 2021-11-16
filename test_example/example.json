@@ -95,15 +95,16 @@
             "phone": "55555555555",
             "staffUser": "admin",
             "home": {
-                "name": "Home 1"
+              "name": "Home 1"
             },
             "CARs Project":"CARS Project 1"
-        },
-        {
+          },
+          {
             "position": "Worker",
             "firstName": "Alice",
             "lastName": "Smith",
             "phone": "55555555556",
+            "staffUser": "admin",
             "home": {
                 "name": "Home 2"
             },
@@ -135,9 +136,11 @@
             }
         }
     ],
-  "note":{
+  "note":[{
     "title":"Test Note number 1",
     "date":"10/08/2022",
-    "text":"Note to self, get more coffee beans"
-  }
+    "text":"Note to self, get more coffee beans",
+    "fileName": "New Test File",
+    "category": "New Category"
+  }]
 }
