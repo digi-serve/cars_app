@@ -104,7 +104,7 @@
             "firstName": "Alice",
             "lastName": "Smith",
             "phone": "55555555556",
-            "staffUser": "admin",
+            "staffUser": "alice_smith",
             "home": {
                 "name": "Home 2"
             },

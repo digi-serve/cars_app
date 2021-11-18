@@ -75,7 +75,8 @@
                 "staff": {
                     "button": {
                         "addStaff": "[data-cy=\"menu-item Add Staff f6952af4-58d2-47c9-91ff-59137ade2b04 f81e3ca2-fafa-4dd6-909b-64ddceef7ef9\"]",
-                        "editStaff": "[data-cy=\"dataview item button Staff e746f80b-3fbe-4aeb-9fdf-2707740eeaca 513d727e-e395-4f46-b9a0-31f3a687a336\"]"
+                        "editStaff": "[data-cy=\"dataview item button Staff e746f80b-3fbe-4aeb-9fdf-2707740eeaca 513d727e-e395-4f46-b9a0-31f3a687a336\"]",
+                        "editStaff1": "[data-cy=\"dataview item button Staff cd4d0cfe-1e49-4e39-a4c1-5b26a599e313 513d727e-e395-4f46-b9a0-31f3a687a336\"]"
                     },
                     "form": {
                         "addStaff": {
@@ -123,7 +124,9 @@
                     },
                     "view": {
                         "staff": {
-                            "container": "[data-cy=\"ABViewContainer_389c7a4c-e65c-4049-822f-223b98761ef2513d727e-e395-4f46-b9a0-31f3a687a336_component1636015424986\"]",
+                            "container": "[data-cy=\"dataview item Staff e746f80b-3fbe-4aeb-9fdf-2707740eeaca 513d727e-e395-4f46-b9a0-31f3a687a336\"]",
+                            "this container2 is useless": "[data-cy=\"ABViewContainer_e746f80b-3fbe-4aeb-9fdf-2707740eeaca513d727e-e395-4f46-b9a0-31f3a687a336_component1637205095228\"]",
+
                             "detail": {
                                 "position": "[data-cy=\"detail text Position 94c09c11-713b-43f3-b9f2-5b074f37d27c 513d727e-e395-4f46-b9a0-31f3a687a336\"]",
                                 "user": "[data-cy=\"detail text Staff User 5cfb8cb4-26db-4204-a4d0-7c822eda4291 513d727e-e395-4f46-b9a0-31f3a687a336\"]",
@@ -432,6 +435,20 @@
                                           "option": {
                                             "file": [],
                                             "categories": []
+                                          }
+                                        },
+                                        "editNote": {
+                                          "button": {
+                                            "file": "[]",
+                                            "categories": "[]",
+                                            "save": "[data-cy=\"button save 8129e697-a2a3-4fd1-a576-ec758cd54662\"]"
+                                          },
+                                          "field": {
+                                            "title": "[data-cy=\"string Title 4bef656d-e062-41c3-93ce-cfc7e5b42176 8129e697-a2a3-4fd1-a576-ec758cd54662\"]",
+                                            "date": "[data-cy=\"date Date bd2de56e-f76d-4ae4-81a5-cb2a03af0f4c 8129e697-a2a3-4fd1-a576-ec758cd54662\"]",
+                                            "text": "[data-cy=\" TODO \"]",
+                                            "file": "[data-cy=\"connectObject File47 bd49d7b7-697b-4f0f-a4f4-12ca407fdc65\"]",
+                                            "categories": "[data-cy=\"connectObject Categories 84157ae7-caf3-4eae-bdf4-bf374b837d3c\"]"
                                           }
                                         },
                                         "addFile":{
