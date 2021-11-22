@@ -16,7 +16,8 @@ jobs:
   install-ab:
     runs-on: ubuntu-latest
     steps:
-
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
       # Setup
       - name: Install AppBuilder
         run: npx digi-serve/ab-cli install ab
