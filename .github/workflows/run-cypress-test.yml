@@ -20,6 +20,12 @@ jobs:
       # Setup
       - name: Install AppBuilder
         run: npx digi-serve/ab-cli install ab
+        
+      - run: |
+          while read -r cmd
+          do
+            eval sudo $cmd
+          done < <(Rscript -e 'cat(remotes::system_requirements("ubuntu", "20.04"), sep = "\n")')
 
       # Up
       - name: Bring up AppBuilder
