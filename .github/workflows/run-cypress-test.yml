@@ -20,6 +20,8 @@ jobs:
       # Setup
       - name: Install AppBuilder
         run: npx digi-serve/ab-cli install ab
+        
+      - uses: actions/checkout@v2
 
       # Up
       - name: Bring up AppBuilder
