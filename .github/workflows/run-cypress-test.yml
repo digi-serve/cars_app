@@ -16,14 +16,11 @@ jobs:
   install-ab:
     runs-on: ubuntu-latest
     steps:
-
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
       # Setup
       - name: Install AppBuilder
-        run: npx digi-serve/ab-cli install ab |
-          while read -r cmd
-          do
-            eval sudo $cmd
-          done < <(Rscript -e 'cat(remotes::system_requirements("ubuntu", "20.04"), sep = "\n")')
+        run: npx digi-serve/ab-cli install ab
 
       # Up
       - name: Bring up AppBuilder
