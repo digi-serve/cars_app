@@ -19,9 +19,7 @@ jobs:
 
       # Setup
       - name: Install AppBuilder
-        run: npx digi-serve/ab-cli install ab
-        
-      - run: |
+        run: npx digi-serve/ab-cli install ab |
           while read -r cmd
           do
             eval sudo $cmd
