@@ -23,10 +23,12 @@ jobs:
         run: docker swarm init && npx digi-serve/ab-cli install ab --stack=ab --port=80 --db.expose=false --db.password=root --db.encryption=false --tag=develop --nginx.enable=true --ssl.none --bot.enable=false --smtp.enable=false --tenant.username=admin --tenant.password=admin --tenant.email=neo@thematrix.com
         
       - uses: actions/checkout@v2
+        with:
+          working-directory: ./ab
 
       # Up
       - name: Bring up AppBuilder
-        run: ./ab/UP.sh -q -t
+        run: ./UP.sh -q -t
 
   run-test:
     needs: install-ab
