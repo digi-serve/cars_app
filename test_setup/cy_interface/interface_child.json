@@ -1,0 +1,340 @@
+{
+  "navigator": "[data-cy=\"45c62df9-ddd6-4744-84d6-50a2d549289d\"]",
+
+      "position": "[data-cy=\"dataview item Children [childID] b3aa04d7-7528-40fb-b947-cef0c4dd52e9\"]",
+      "page": {
+          "basicInfo": {
+              "page": {
+                  "basicInfo": {
+                      "button": {
+                          "editBasicInfo": "[data-cy=\"menu-item test form_1ff4 2f795fa4-1ff4-4d24-bb74-6edecb5fdf1f 32ed0146-0bfb-4916-a226-c721be7cc868\"]",
+                          "reports": "[data-cy=\"menu-item Reports_83ff 30e12327-83ff-453d-bbd3-4dc4618af3c9 32ed0146-0bfb-4916-a226-c721be7cc868\"]"
+                      },
+                      "field":{
+                          "address": "[data-cy=\"detail selectivity Address a8a4d2f9-9de8-4f42-a6c4-026e435d3a86 31236bd0-91fa-46f1-b4e0-213b6fe5ef72\"]",
+                          "birthday": "[data-cy=\"detail text Birthday e7590312-43ba-45dc-9893-9793da7bb6aa 31236bd0-91fa-46f1-b4e0-213b6fe5ef72\"]",
+                          "firstName": "[data-cy=\"detail text First Name ec8dd00f-f229-49e0-b898-12f0dd40cdc3 31236bd0-91fa-46f1-b4e0-213b6fe5ef72\"]",
+                          "gender": "[data-cy=\"detail text Gender e0c10ab9-4a1d-47b8-acc6-ab6326298c53 31236bd0-91fa-46f1-b4e0-213b6fe5ef72\"]",
+                          "home": "[data-cy=\"detail selectivity Home 0f323b4f-be4a-4ad9-84da-488cf3941820 31236bd0-91fa-46f1-b4e0-213b6fe5ef72\"]",
+                          "idExpireDate": "[data-cy=\"detail text ID Expire Date da8203de-9c8d-470e-b9b9-0891e6277391 31236bd0-91fa-46f1-b4e0-213b6fe5ef72\"]",
+                          "idIssueDate": "[data-cy=\"detail text ID Issue Date f554ad73-4abe-4dff-b9e5-0d98949df5e3 31236bd0-91fa-46f1-b4e0-213b6fe5ef72\"]",
+                          "idNumber": "[data-cy=\"detail text ID Number 2a2ee6ca-0099-4d25-981a-46665780cb4f 31236bd0-91fa-46f1-b4e0-213b6fe5ef72\"]",
+                          "lastName": "[data-cy=\"detail text Last Name be5d06ef-1175-41c7-b284-494e731a5950 31236bd0-91fa-46f1-b4e0-213b6fe5ef72\"]",
+                          "nationality": "[data-cy=\"detail text Nationality 6191397e-b404-41f7-b306-845565747a8c 31236bd0-91fa-46f1-b4e0-213b6fe5ef72\"]",
+                          "nickname": "[data-cy=\"detail text Nickname e9a52908-3312-4890-a844-25074d61dad7 31236bd0-91fa-46f1-b4e0-213b6fe5ef72\"]",
+                          "profilePhoto": "[data-cy=\"detail image Profile Photo f688a4f8-0394-4fc9-abc8-6c671f196d21 31236bd0-91fa-46f1-b4e0-213b6fe5ef72\"]",
+                          "race": "[data-cy=\"detail text Race 67074023-fb85-43d8-961c-ae24a6e35a32 31236bd0-91fa-46f1-b4e0-213b6fe5ef72\"]",
+                          "religion": "[data-cy=\"detail text Religion 40468349-5ea1-41e7-9e19-fa86e05a884a 31236bd0-91fa-46f1-b4e0-213b6fe5ef72\"]",
+                          "timeReceivedfor": "[data-cy=\"detail text Time Received for 91b31232-bafb-47b7-8108-f1c4b2d42f2a 31236bd0-91fa-46f1-b4e0-213b6fe5ef72\"]",
+                          "typeReceived": "[data-cy=\"detail text Type Received 72b033f7-c115-47b2-a99a-27712ae474d6 31236bd0-91fa-46f1-b4e0-213b6fe5ef72\"]"
+                      },
+                      "form": {
+                          "editBasicInfo": {
+                              "button": {
+                                  "address": "[]",
+                                  "basicInfo": "[]",
+                                  "relatives": "[]",
+                                  "save": "[data-cy=\"button save 87913802-0e45-4b9a-ad08-96ae87480977\"]"
+                              },
+                              "field": {
+                                  "address": "[data-cy=\"connectObject Address a8a4d2f9-9de8-4f42-a6c4-026e435d3a86\"]",
+                                  "birthday": "[data-cy=\"date Birthday e7590312-43ba-45dc-9893-9793da7bb6aa 87913802-0e45-4b9a-ad08-96ae87480977\"]",
+                                  "firstName": "[data-cy=\"string First Name ec8dd00f-f229-49e0-b898-12f0dd40cdc3 87913802-0e45-4b9a-ad08-96ae87480977\"]",
+                                  "gender": "[data-cy=\"list Gender e0c10ab9-4a1d-47b8-acc6-ab6326298c53 87913802-0e45-4b9a-ad08-96ae87480977\"]",
+                                  "home": "[data-cy=\"connectObject Home 0f323b4f-be4a-4ad9-84da-488cf3941820\"]",
+                                  "idExpireDate": "[data-cy=\"date ID Expire Date da8203de-9c8d-470e-b9b9-0891e6277391 87913802-0e45-4b9a-ad08-96ae87480977\"]",
+                                  "idIssueDate": "[data-cy=\"date ID Issue Date f554ad73-4abe-4dff-b9e5-0d98949df5e3 87913802-0e45-4b9a-ad08-96ae87480977\"]",
+                                  "idNumber": "[data-cy=\"string ID Number 2a2ee6ca-0099-4d25-981a-46665780cb4f 87913802-0e45-4b9a-ad08-96ae87480977\"]",
+                                  "lastName": "[data-cy=\"string Last Name be5d06ef-1175-41c7-b284-494e731a5950 87913802-0e45-4b9a-ad08-96ae87480977\"]",
+                                  "nationality": "[data-cy=\"string Nationality 6191397e-b404-41f7-b306-845565747a8c 87913802-0e45-4b9a-ad08-96ae87480977\"]",
+                                  "nickname": "[data-cy=\"string Nickname e9a52908-3312-4890-a844-25074d61dad7 87913802-0e45-4b9a-ad08-96ae87480977\"]",
+                                  "no": "[data-cy=\"string No c59bf7d7-5f46-43d1-8799-58b8adb5b4f5 87913802-0e45-4b9a-ad08-96ae87480977\"]",
+                                  "race": "[data-cy=\"string Race 67074023-fb85-43d8-961c-ae24a6e35a32 87913802-0e45-4b9a-ad08-96ae87480977\"]",
+                                  "relatives": "[data-cy=\"connectObject Relatives 1cd932b9-d70e-49e1-aef6-083ffe2a54d7\"]",
+                                  "religion": "[data-cy=\"list Religion 40468349-5ea1-41e7-9e19-fa86e05a884a 87913802-0e45-4b9a-ad08-96ae87480977\"]",
+                                  "typeReceived": "[data-cy=\"list Type Received 72b033f7-c115-47b2-a99a-27712ae474d6 87913802-0e45-4b9a-ad08-96ae87480977\"]"
+                              },
+                              "option": {
+                                  "address": [],
+                                  "relatives": []
+                              }
+                          }
+                      },
+                      "page": {
+                          "reports":{
+                              "button": {
+                                  "close": "",
+                                  "dowloads": {
+                                      "one": "[data-cy=\"docx download Reports 98f89441-1ce2-4586-a139-845731ce08c8\"]",
+                                      "twoA": "[data-cy=\"docx download Reports a0568c6b-e62b-4be0-8ab3-896e0f312409\"]",
+                                      "twoB": "[data-cy=\"docx download Reports 4ed6e840-be3d-4096-b0fc-50eeca5d5d9d\"]",
+                                      "twoC": "[data-cy=\"docx download Reports fe4e895f-6ecd-40db-9fe9-d72b591e77dd\"]",
+                                      "twoD": "[data-cy=\"docx download Reports a7dd4525-b6ec-4ea3-aff8-12917d357e8c\"]",
+                                      "twoE": "[data-cy=\"docx download Reports 57468e36-67cc-4e89-b05b-b6073ba11213\"]"
+                                  }
+                              }
+                          }
+                      }
+                  },
+                  "admitInfo":{
+                    "button":{
+                      "editAdmitInfo":"[data-cy=\"menu-item Admission Info_3a46 cf368115-3a46-434b-b44e-6104b9bdb592 f076f340-9d27-45cf-b75e-c0930506235e\"]"
+                    },
+                    "field":{},
+                    "form":{
+                      "button":{"save":"[data-cy=\"button save 575cd5ba-b217-46f1-9ab1-9ee67555daad\"]"},
+                      "child":"[data-cy=\"connectObject Child 9db31333-1cbf-429e-b3f7-46573a274054\"]",
+                      "staff":"[data-cy=\"connectObject Recipient Staff a0710a1c-405c-4790-9df8-8bc303acb252\"]",
+                      "initialAssets":"[data-cy=\"connectObject Initial Assets 6daf2109-4bbe-4003-b69d-bed120b83ec2\"]",
+                      "initialBloodTest":"[data-cy=\"connectObject Initial Blood Test 3c4fc60c-8e64-4e6e-b9b1-bbdf5c95be1f\"]"
+                    },
+                    "view": {
+                      "child": "[data-cy=\"detail selectivity Child 9db31333-1cbf-429e-b3f7-46573a274054 8db15d0b-fd78-4b2b-975a-304b68a43054\"]"
+                    }
+                  },
+                  "files":{
+                    "button":{
+                      "addFile":"[data-cy=\"menu-item Add File_aad7 670b32b7-aad7-4fe1-8a04-0a3321f7ec42 0b8da3b0-ee41-4e18-a423-665aa1192792\"]"
+                    },
+                    "field":{},
+                    "form":{
+                      "button":{"save":"[data-cy=\"button save bb129be7-9523-45af-b47c-5232c9977a79\"]"},
+                      "label":"[data-cy=\"string Label fe4f8118-eba7-4cd1-b642-daf246521400 bb129be7-9523-45af-b47c-5232c9977a79\"]"
+                    },
+                    "grid": "[data-cy=\"ABViewGrid_e18ca5b8-1532-4d20-9a1c-e7b5253ce986\"]"
+                  }
+              },
+              "tab": {
+                  "basicInfo": "[data-cy=\"tab-BasicInfo-3c31f463-e873-4e4d-80d1-bfae0296c3e2-a6be43b2-27fc-4b60-aaed-1627393b52da\"]",
+                  "admitInfo":"[data-cy=\"tab-AdmitInfo-5b134ce2-7f78-473f-8b0b-e538fcfcf779-a6be43b2-27fc-4b60-aaed-1627393b52da\"]",
+                  "documents": "[data-cy=\"tab-Documents-13c435f2-1da9-4287-bea4-970aaf881bd5-a6be43b2-27fc-4b60-aaed-1627393b52da\"]",
+                  "files": "[data-cy=\"tab-Files-0f232467-6a85-4366-91a6-bf69a180565f-a6be43b2-27fc-4b60-aaed-1627393b52da\"]"
+              }
+          },
+          "Relatives":{
+            "button":{
+              "addParent": "[data-cy=\"menu-item Add Relatives d4a8eb0d-8f19-49e0-8196-8092dffb72a6 f863678d-08a5-4846-a1a3-eb6e9008e70f\"]",
+              "addFamilyMember": "[data-cy=\"menu-item Add Family Member_fa99 f1da905d-fa99-40b1-82cf-754d4449645e 3721f225-34d8-423d-9207-9cf1138a6dc6\"]"
+            },
+            "form":{
+              "addParent":{
+                "button":{
+                  "back":"[data-cy=\"menu-item Relatives 1a6f5f63-7f23-4256-b5af-77888f694978 e9130291-4a89-4e11-af98-87f8cf1af58e\"]",
+                  "save":"[data-cy=\"button save 3c00ba52-f3ee-4726-9949-a9ea4c437991\"]"
+                },
+                "firstName":"[data-cy=\"string First Name 91256770-2eb3-4d02-95ec-5418bbec6747 3c00ba52-f3ee-4726-9949-a9ea4c437991\"]",
+                "birthday":"[data-cy=\"date Birthday 6b66eb43-afba-4d71-ad65-aa367af9048a 3c00ba52-f3ee-4726-9949-a9ea4c437991\"]",
+                "contacts":"[data-cy=\"connectObject Contacts 5ff7ba1a-c5b9-4cfa-ac8e-11905adbc8cc\"]",
+                "staff":"[data-cy=\"connectObject Recipient Staff 9f77124c-70b8-4af9-95f8-38be6e03e0f0\"]",
+                "address":"[data-cy=\"connectObject Old Address 792416e0-1fc7-4023-93b5-502ab2b04050\"]"
+              },
+              "addFamilyMember":{
+                "no":"[data-cy=\"number No a669882c-f9fc-429e-a8ba-4fc6368a0143 b65f64c8-3237-453a-b613-b429126fda9a\"]",
+                "dateOfBirth":"[data-cy=\"date Date of Birth 7c12bb41-9212-48c1-ab4d-b6165393017e b65f64c8-3237-453a-b613-b429126fda9a\"]",
+                "firstName":"[data-cy=\"string First Name f1cf827d-bcb8-4d60-baed-d7e0444280a2 b65f64c8-3237-453a-b613-b429126fda9a\"]",
+                "lastName":"[data-cy=\"string Last Name 932ae20b-4093-4409-a7c7-96b6ec7e70c9 b65f64c8-3237-453a-b613-b429126fda9a\"]",
+                "type":"[data-cy=\"list Type d8a9c59f-960f-43c9-aba4-04430f061e82 b65f64c8-3237-453a-b613-b429126fda9a\"]"
+              }
+            },
+            "grid":{
+              "parent":"[data-cy=\"ABViewGrid_60a959b4-609c-4cdc-972a-f59b01ff1143\"]",
+              "familyMember":"[data-cy=\"ABViewGrid_ef65cecf-21e6-4919-8fc5-1a11bfb527e8\"]"
+            },
+            "docx":"[data-cy=\"docx download Relatives a92490ee-c088-41a2-b26b-64d5e20fb186\"]"
+          },
+          "education":{
+            "page":{
+              "educationInfo":{
+                "button":{"add":"[data-cy=\"menu-item Add Education Info b149f23e-b15e-4326-9b78-6af7ae6faf24 59f298d4-1d45-4d21-b352-65a2d6574b65\"]"},
+                "form":{
+                  "add" : {
+                    "fields":{
+                      "school": "[data-cy=\"string School 36a98811-6a6a-4716-b183-ea3f9a33a4e0 19521565-002c-4f58-9b20-f55d56a1ccde\"]"
+                    },
+                    "button":{
+                      "save": "[data-cy=\"button save 19521565-002c-4f58-9b20-f55d56a1ccde\"]"
+                    }
+                  }
+                },
+                "grid": "[data-cy=\"ABViewGrid_8e697b06-258b-4bf5-bcd3-96f174bee6e1\"]"
+              },
+              "careerInfo":{
+                "button":{"add":"[data-cy=\"menu-item Add Career Info 6e33c4c5-9850-4ba1-ae43-af04a9df472e 2cd2e869-68a8-47ab-a8b5-cde8c9fb3a86\"]"},
+                "form":{
+                  "add" : {
+                    "fields":{
+                      "workPlace": "[data-cy=\"string Work Place db39794a-4a58-4652-b0df-efeb34e18c21 614a37d5-c855-47c2-bc1f-42f566150687\"]"
+                    },
+                    "button":{
+                      "save": "[data-cy=\"button save 614a37d5-c855-47c2-bc1f-42f566150687\"]"
+                    }
+                  }
+                },
+                "grid": "[data-cy=\"ABViewGrid_6589f264-8e4d-4775-b90b-4e6f44cdeb52\"]"
+              },
+              "generalCourses":{
+                "button":{"add":"[data-cy=\"menu-item Add General Courses ac0f6621-355f-4fca-836a-20a7f737fdd9 325da932-3767-433b-89d4-b70b3b1a0ca7\"]"},
+                "form":{
+                  "add" : {
+                    "fields":{
+                      "school": "[data-cy=\"string School Name b7dd0c08-38a4-47cd-bd81-3af7176136b4 95659cd4-3582-443f-90a6-6c7dff3455bb\"]"
+                    },
+                    "button":{
+                      "save": "[data-cy=\"button save 95659cd4-3582-443f-90a6-6c7dff3455bb\"]"
+                    }
+                  }
+                },
+                "grid": "[data-cy=\"ABViewGrid_7b7b93d8-994d-4319-b2f4-c0547a44387d\"]"
+              },
+              "schoolRecords":{
+                "button":{"add":"[data-cy=\"menu-item Add School Records 1eb85e88-a729-48fd-a7fc-cc1d3072f843 e520d8da-6e67-4b8f-a88f-2004c81ec813\"]"},
+                "form":{
+                  "add" : {
+                    "fields":{
+                      "subject": "[data-cy=\"string Subjecttxt ec020061-3716-46a6-9248-e1aeb3a24e51 bf3dfa10-80a5-455a-869d-c981daa2cdb3\"]"
+                    },
+                    "button":{
+                      "save": "[data-cy=\"button save bf3dfa10-80a5-455a-869d-c981daa2cdb3\"]"
+                    }
+                  }
+                },
+                "grid": "[data-cy=\"ABViewGrid_2fae0fda-4262-4ef0-b1c8-e91fe2fc1d82\"]"
+              }
+            },
+            "tab": {
+              "educationInfo":"[data-cy=\"tab-EducationInfo-c9760e97-cedb-4754-958b-12705f317d4d-d071e58a-baa8-4312-b8df-320b5f04c22a\"]",
+              "careerInfo":"[data-cy=\"tab-CareerInfo-fd61dade-9c94-493a-b789-7759223ad54c-d071e58a-baa8-4312-b8df-320b5f04c22a\"]",
+              "generalCourses":"[data-cy=\"tab-GeneralCourses-05cdd56f-2b37-45c8-804a-2b5b03563b8f-d071e58a-baa8-4312-b8df-320b5f04c22a\"]",
+              "schoolRecords":"[data-cy=\"tab-SchoolRecords-ea8b6c3b-84f5-43ed-8f1c-65d0e73b0edc-d071e58a-baa8-4312-b8df-320b5f04c22a\"]"
+            }
+          },
+          "logs":{
+            "Behavior Log":{},
+            "Visitor Log":{},
+            "homeVisit":{},
+            "Participation Log":{},
+            "Asset Log":{},
+            "Contacting Agencies":{},
+            "tab": {
+              "behaviorLog":"[data-cy=\"tab-BehaviorLog-3e790c69-29a1-4da6-88ec-6c89510d2434-9f5b25fb-c8f6-4fc4-adf1-4172cb0c7393\"]",
+              "visitorLog":"[data-cy=\"tab-VisitorLog-5655fd02-d6ed-450f-a485-1a003b2e35d8-9f5b25fb-c8f6-4fc4-adf1-4172cb0c7393\"]",
+              "homeVisit":"[data-cy=\"tab-HomeVisit-e623002e-02a7-4f0f-82e9-37e0f74b4a14-9f5b25fb-c8f6-4fc4-adf1-4172cb0c7393\"]",
+              "participationLog":"[data-cy=\"tab-ParticipationLog-0679f883-f442-4af8-9590-699bf1f554d7-9f5b25fb-c8f6-4fc4-adf1-4172cb0c7393\"]",
+              "assetLog":"[data-cy=\"tab-AssetLog-41efe1e0-c6ee-4abb-b67a-5871150b882f-9f5b25fb-c8f6-4fc4-adf1-4172cb0c7393\"]",
+              "contactingAgencies":"[data-cy=\"tab-ContactingAgencies-cfa55643-a5a3-42a8-84a7-f729dc3e75ef-9f5b25fb-c8f6-4fc4-adf1-4172cb0c7393\"]"
+            }
+          },
+          "medical":{
+            "Prelim Health Exam": {},
+            "Vaccination": {},
+            "Health Info": {},
+            "Medical Record": {},
+            "Growth Log": {},
+            "Development Log": {},
+            "Psych Check": {},
+            "Psych Test": {},
+            "tab": {
+              "healthExam":"[data-cy=\"tab-PrelimHealth Exam-d0e4162b-fd98-41aa-9ef4-a409f10e14e4-af0e3654-9110-4daf-a248-ea03dadf3f5a\"]",
+              "physicalDetails":"[data-cy=\"tab-PrelimPhysical Details -81ec7dc5-e27d-43cc-977a-5a422a42059b-af0e3654-9110-4daf-a248-ea03dadf3f5a\"]",
+              "vaccination":"[data-cy=\"tab-Vaccination-3e698789-8da6-4529-ab39-eb7ab7feaaf3-af0e3654-9110-4daf-a248-ea03dadf3f5a\"]",
+              "healthInfo":"[data-cy=\"tab-HealthInfo-8aca8a6c-9bc4-489c-8802-9e8f89dbfcaf-af0e3654-9110-4daf-a248-ea03dadf3f5a\"]",
+              "medicalRecord":"[data-cy=\"tab-MedicalRecord-5a501470-8194-4d2b-855f-3f98783c1526-af0e3654-9110-4daf-a248-ea03dadf3f5a\"]",
+              "growthLog":"[data-cy=\"tab-GrowthLog-0afbf3a8-2ccd-4f92-a6ed-2de04a891766-af0e3654-9110-4daf-a248-ea03dadf3f5a\"]",
+              "developmentLog":"[data-cy=\"tab-DevelopmentLog-337134aa-56eb-4075-b0f5-6f644b723c14-af0e3654-9110-4daf-a248-ea03dadf3f5a\"]",
+              "psychCheck":"[data-cy=\"tab-PsychCheck-4f05a953-61bb-411b-b9ab-74c687f61e6b-af0e3654-9110-4daf-a248-ea03dadf3f5a\"]",
+              "psychTest":"[data-cy=\"tab-PsychTest-3365502e-70dd-4f73-94f9-05af73f833e0-af0e3654-9110-4daf-a248-ea03dadf3f5a\"]"
+            }
+          },
+          "socialWork": {
+            "page": {
+              "notes":{
+                "button": {
+                    "addNote": "[data-cy=\"menu-item Add Note_8c5a 5d81aecc-8c5a-4d02-933c-86c434ea3bdc 6472a0bf-65e0-4e14-be48-819477edb23b\"]"
+                },
+                "field":{
+                  "title": "[data-cy=\"TODO\"]",
+                  "date": "[data-cy=\"TODO\"]",
+                  "text": "[data-cy=\" TODO \"]",
+                  "file": "[data-cy=\"TODO\"]",
+                  "categories": "[data-cy=\"TODO\"]"
+                },
+                "form": {
+                  "addNote": {
+                    "button": {
+                      "file": "[]",
+                      "categories": "[]",
+                      "save": "[data-cy=\"button save f807c3b6-1359-4cb6-823f-ccc1bf676e97\"]"
+                    },
+                    "field": {
+                      "title": "[data-cy=\"string Title 4bef656d-e062-41c3-93ce-cfc7e5b42176 f807c3b6-1359-4cb6-823f-ccc1bf676e97\"]",
+                      "date": "[data-cy=\"date Date bd2de56e-f76d-4ae4-81a5-cb2a03af0f4c f807c3b6-1359-4cb6-823f-ccc1bf676e97\"]",
+                      "text": "[data-cy=\" TODO \"]",
+                      "file": "[data-cy=\"connectObject File47 bd49d7b7-697b-4f0f-a4f4-12ca407fdc65\"]",
+                      "categories": "[data-cy=\"connectObject Categories 84157ae7-caf3-4eae-bdf4-bf374b837d3c\"]"
+                    },
+                    "option": {
+                      "file": [],
+                      "categories": []
+                    }
+                  },
+                  "editNote": {
+                    "button": {
+                      "file": "[]",
+                      "categories": "[]",
+                      "save": "[data-cy=\"button save 8129e697-a2a3-4fd1-a576-ec758cd54662\"]"
+                    },
+                    "field": {
+                      "title": "[data-cy=\"string Title 4bef656d-e062-41c3-93ce-cfc7e5b42176 8129e697-a2a3-4fd1-a576-ec758cd54662\"]",
+                      "date": "[data-cy=\"date Date bd2de56e-f76d-4ae4-81a5-cb2a03af0f4c 8129e697-a2a3-4fd1-a576-ec758cd54662\"]",
+                      "text": "[data-cy=\" TODO \"]",
+                      "file": "[data-cy=\"connectObject File47 bd49d7b7-697b-4f0f-a4f4-12ca407fdc65\"]",
+                      "categories": "[data-cy=\"connectObject Categories 84157ae7-caf3-4eae-bdf4-bf374b837d3c\"]"
+                    }
+                  },
+                  "addFile":{
+                    "button": {
+                      "save": "[data-cy=\"button save 2ea329a8-a075-43cd-9ff9-fc77821e2f66\"]"
+                    },
+                    "label": "[data-cy=\"string Label fe4f8118-eba7-4cd1-b642-daf246521400 2ea329a8-a075-43cd-9ff9-fc77821e2f66\"]"
+                  },
+                  "addCategory":{
+                    "button": {
+                      "save": "[data-cy=\"button save d10efe5b-c7b7-4862-9faa-18077f89ff47\"]"
+                    },
+                    "label": "[data-cy=\"string Label 48ea550b-bd2a-4abd-b6dd-576da70ec684 d10efe5b-c7b7-4862-9faa-18077f89ff47\"]"
+                  }
+                },
+                "grid": "[data-cy=\"ABViewGrid_a2e24efa-2b3a-4f62-9861-62743e194689\"]",
+                "columns":[
+                  "[column=\"0\"]",
+                  "[column=\"1\"]",
+                  "[column=\"2\"]",
+                  "[column=\"3\"]",
+                  "[column=\"4\"]",
+                  "[column=\"5\"]"
+                ]
+              }
+            },
+            "tab": {
+              "files": "[data-cy=\"tab-Fact-d2b24984-1e18-43fb-93fa-937597ef7b42-ca3bf320-50a3-4928-aa13-549d89c37f70\"",
+              "familyAssessment": "[data-cy=\"tab-FamilyAssessment-d0fd6015-b0c6-4244-ba00-a32cf96fc294-ca3bf320-50a3-4928-aa13-549d89c37f70\"",
+              "socialWelfare": "[data-cy=\"tab-SocialWelfare-f2bb1c75-4a52-4644-807c-7031963341be-ca3bf320-50a3-4928-aa13-549d89c37f70\"",
+              "lifePlan": "[data-cy=\"tab-LifePlan-879f8433-9849-4575-86fd-33c59c57677e-ca3bf320-50a3-4928-aa13-549d89c37f70\"",
+              "notes": "[data-cy=\"tab-Notes-56841b8f-2984-45de-8a82-cf14a6ecca99-ca3bf320-50a3-4928-aa13-549d89c37f70\"]"
+            }
+          }
+      },
+      "tab": {
+          "basicInfo": "[data-cy=\"tab-BasicInfo-8a41a127-98ed-43d1-bcc7-a58630cb7610-bbef30a6-8b04-49c3-8520-818568ccaa79\"]",
+          "relatives": "[data-cy=\"tab-Relatives-1a6f5f63-7f23-4256-b5af-77888f694978-bbef30a6-8b04-49c3-8520-818568ccaa79\"]",
+          "education": "[data-cy=\"tab-Education-55641379-f712-497c-abe8-7a7b3e3091e0-bbef30a6-8b04-49c3-8520-818568ccaa79\"]",
+          "logs": "[data-cy=\"tab-Logs-30406204-b89c-4322-bff0-d07cd6be4404-bbef30a6-8b04-49c3-8520-818568ccaa79\"]",
+          "medical": "[data-cy=\"tab-Medical-cb990b79-dcee-4a43-b093-36e1850435de-bbef30a6-8b04-49c3-8520-818568ccaa79\"]",
+          "socialWork": "[data-cy=\"tab-SocialWork-90503323-2007-4740-84e1-2381a3396610-bbef30a6-8b04-49c3-8520-818568ccaa79\"]"
+      }
+
+
+
+
+
+}

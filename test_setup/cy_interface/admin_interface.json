@@ -47,6 +47,14 @@
                                 "en": "[data-item-id=\"04b8b355-2832-4331-bfec-34875ca51181\"]"
                             }
                         }
+                    },
+                    "editUser": {
+                        "button": {
+                            "save": "[data-cy=\"button save e72e1ced-7606-4f2e-9c25-92d9f3e63f1a\"]"
+                        },
+                        "field": {
+                            "isactive": "[data-cy=\"boolean isActive 1f022d07-1829-4257-acac-d9347c74b939 e72e1ced-7606-4f2e-9c25-92d9f3e63f1a\"]"
+                        }
                     }
                 }
             },
