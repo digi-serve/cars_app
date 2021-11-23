@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run Cypress Tests
-        run: ls -la
+        run: ls -la && pwd
       - name: Run Cypress Tests
         uses: cypress-io/github-action@v2
         with:
