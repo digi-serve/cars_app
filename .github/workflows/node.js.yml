@@ -24,7 +24,8 @@ jobs:
 
       # Up
       - name: Bring up AppBuilder
-        run: ls ./ab
+        run: ./ab/UP.sh -q -t
+        
   run-test:
     needs: install-ab
     runs-on: ubuntu-latest
