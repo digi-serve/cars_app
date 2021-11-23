@@ -26,7 +26,7 @@ jobs:
 
       # Up
       - name: Bring up AppBuilder
-        run: cd .. && cd .. && cd .. && ls -la
+        run: cd .. && cd .. && cd .. && ls -la && pwd
 
   run-test:
     needs: install-ab
