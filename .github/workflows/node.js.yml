@@ -20,7 +20,7 @@ jobs:
 
       # Setup
       - name: Install AppBuilder
-        run: npx digi-serve/ab-cli install ab --stack=ab --port=80
+        run: npx digi-serve/ab-cli install ab --stack=ab --port=80 --db.expose=false --db.password=root --db.encryption=false --tenant.username=admin --tenant.password=admin --tenant.email=neo@thematrix.com
         
       - uses: actions/checkout@v2
 
