@@ -17,16 +17,15 @@ jobs:
   install-ab:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
 
       # Setup
       - name: Install AppBuilder
-        run: docker swarm init && npx digi-serve/ab-cli install ab --stack=ab --port=80 --db.expose=false --db.password=root --db.encryption=false --tag=develop --nginx.enable=true --ssl.none --bot.enable=false --smtp.enable=false --tenant.username=admin --tenant.password=admin --tenant.email=neo@thematrix.com
+        run: docker swarm init && npx digi-serve/ab-cli install ab --stack=ab --port=80 --db.expose=false --db.password=root --db.encryption=false --tag=develop --nginx.enable=true --ssl.none --bot.enable=false --smtp.enable=false --tenant.username=admin --tenant.password=admin --tenant.email=neo@thematrix.com && systemctl restart docker
 
       # Up
       - name: Bring up AppBuilder
         working-directory: ./ab
-        run: sudo systemctl restart docker && ./UP.sh -q -t
+        run: ./UP.sh -q -t
       
   run-test:
     needs: install-ab
