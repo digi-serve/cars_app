@@ -17,6 +17,7 @@ jobs:
   install-ab:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
 
       # Setup
       - name: Install AppBuilder
