@@ -26,7 +26,7 @@ jobs:
       # Up
       - name: Bring up AppBuilder
         working-directory: ./ab
-        run: docker service create --network ab && ./UP.sh -q -t
+        run: docker service create --network ab_default && ./UP.sh -q -t
       
   run-test:
     needs: install-ab
