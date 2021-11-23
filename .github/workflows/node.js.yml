@@ -32,6 +32,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run Cypress Tests
+        run: ls -la
+      - name: Run Cypress Tests
         uses: cypress-io/github-action@v2
         with:
           working-directory: ./ab
