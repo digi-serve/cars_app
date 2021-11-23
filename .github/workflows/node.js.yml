@@ -26,7 +26,7 @@ jobs:
       # Up
       - name: Bring up AppBuilder
         working-directory: ./ab
-        run: docker swarm leave && docker swarm init && ./UP.sh -q -t
+        run: docker network rm ab_default && docker network create -d overlay ab_defaut &&./UP.sh -q -t
       
   run-test:
     needs: install-ab
