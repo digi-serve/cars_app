@@ -24,7 +24,7 @@ jobs:
 
       # Up
       - name: Bring up AppBuilder
-        run: ./ab/UP.sh -q -t
+        run: ./ab/UP.sh -q -t && ls -la
         
   run-test:
     needs: install-ab
