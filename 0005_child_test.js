@@ -174,6 +174,49 @@ describe("Test add-new forms:", () => {
     saveAndCheck("logs","contactingAgencies","name");
   });
 
+  // Medical //
+  it("Test vaccination", () => {
+    saveAndCheck("medical","vaccination","otherVacc")
+  });
+  it("Test healthInfo", () => {
+    saveAndCheck("medical","healthInfo","injections")
+  });
+  it("Test medicalRecord", () => {
+    saveAndCheck("medical","medicalRecord","symptoms")
+  });
+  it("Test growthLog", () => {
+    saveAndCheck("medical","growthLog","note")
+  });
+  it("Test developmentLog", () => {
+    saveAndCheck("medical","developmentLog","notes")
+  });
+  it("Test psychCheck", () => {
+    saveAndCheck("medical","psychCheck","preAssessmentObservations")
+  });
+  it("Test psychTest", () => {
+    // todo tool adding
+    saveAndCheck("medical","psychTest","educationLevel")
+  });
+
+  // Social Work //
+  it("Test facts", () => {
+    saveAndCheck("socialWork","facts","details")
+  })
+  it("Test familyAssessment", () => {
+    saveAndCheck("socialWork","familyAssessment","environment")
+  })
+  it("Test socialWelfare", () => {
+    saveAndCheck("socialWork","socialWelfare","history")
+  })
+  it("Test lifePlan", () => {
+    saveAndCheck("socialWork","lifePlan","action")
+  })
+  // it("Test lifePlan", () => {
+  //   //
+  //   // editPlan // goal
+  //   saveAndCheck("socialWork","lifePlan","details")
+  // })
+
 });
 
 // describe("Test Child:", () => {
