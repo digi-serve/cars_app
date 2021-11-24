@@ -28,13 +28,13 @@ jobs:
         working-directory: ./ab
         
       #Run test
+      - run: cat ./ab/test/e2e/cypress.json && rm ./ab/test/e2e/cypress.json && echo "{\ \"baseUrl\":\ "http://localhost:8080",\ \"ignoreTestFiles\":\ \"**/*.json\",\ \"video\":\ false}" && mkdir ./ab/test/e2e/cypress/integration/test_car
       - name: Check out
         uses: actions/checkout@v2
         with:
           path: ./ab/test/e2e/cypress/integration/test_car
-          clean: false
       - name: xxxyyy
-        run: cd ./ab/test/e2e/cypress/integration && ls -la && pwd
+        run: cd ./ab/test/e2e/cypress/integration/test_car && ls -la && pwd
       - name: Run Cypress Tests
         uses: cypress-io/github-action@v2
         with:
