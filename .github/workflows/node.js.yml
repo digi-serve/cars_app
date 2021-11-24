@@ -20,27 +20,26 @@ jobs:
 
       # Setup
       - name: Install AppBuilder
-        run: docker swarm init && npx digi-serve/ab-cli install ab --stack=ab --port=8080 --db.expose=false --db.password=root --db.encryption=false --tag=develop --nginx.enable=true --ssl.none --bot.enable=false --smtp.enable=false --tenant.username=admin --tenant.password=admin --tenant.email=neo@thematrix.com && sudo systemctl restart docker
+        run: docker swarm init && npx digi-serve/ab-cli install ab --stack=ab --port=8080 --db.expose=false --db.password=root --db.encryption=false --tag=develop --nginx.enable=true --ssl.none --bot.enable=false --smtp.enable=false --tenant.username=admin --tenant.password=admin --tenant.email=neo@thematrix.com && mkdir ./ab/test/e2e/cypress/integration/test_cars && sudo systemctl restart docker
 
       # Up
       - name: Bring up AppBuilder
-        run: ./UP.sh -q -t
+        run: ./UP.sh -q -
         working-directory: ./ab
-        
-      #Run test
-      - name: Prepare the test env 
-        run: rm ./ab/test/e2e/cypress.json && echo "{\"baseUrl\":\"http://localhost:8088\",\"testFiles\":\"**/*.js\",\"video\":false}" > ./ab/test/e2e/cypress.json && mkdir ./ab/test/e2e/cypress/integration/test_cars
+      
+
       - name: Check out
         uses: actions/checkout@v2
         with:
           path: ./ab/test/e2e/cypress/integration/test_cars
+        
+      #Run test
       - name: Run Cypress Tests
         uses: cypress-io/github-action@v2
         with:
           working-directory: ./ab
           project: ./test/e2e
-          path: ./test/e2e
-          config: baseUrl=http://localhost:8080
+          config: baseUrl=http://localhost:8080,testFiles=**/*.js
 
           # Wait for the site to be ready
           wait-on: "http://localhost:8080"
