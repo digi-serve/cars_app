@@ -28,13 +28,14 @@ jobs:
         working-directory: ./ab
         
       #Run test
-      - run: cat ./ab/test/e2e/cypress.json && rm ./ab/test/e2e/cypress.json && echo "{ \"baseUrl\":\"http://localhost:8080\",\"testFiles\":\"**/*.js\",\"video\":false}" > ./ab/test/e2e/cypress.json && mkdir ./ab/test/e2e/cypress/integration/test_car && cd ./ab/test/e2e && ls -la && pwd && cat ./cypress.json
+      - name: Prepare the test env 
+        run: cat ./ab/test/e2e/cypress.json && rm ./ab/test/e2e/cypress.json && echo "{\"baseUrl\":\"http://localhost:8088\",\"testFiles\":\"**/*.js\",\"video\":false}" > ./ab/test/e2e/cypress.json && mkdir ./ab/test/e2e/cypress/integration/test_car
       - name: Check out
         uses: actions/checkout@v2
         with:
           path: ./ab/test/e2e/cypress/integration/test_car
       - name: xxxyyy
-        run: cd ./ab/test/e2e/cypress/integration/test_car && ls -la && pwd
+        run: ls -la ./ab/test/e2e/cypress/integration/test_car && pwd
       - name: Run Cypress Tests
         uses: cypress-io/github-action@v2
         with:
