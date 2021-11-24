@@ -29,7 +29,7 @@ jobs:
         
       #Run test
       - name: xxxyyy
-        run: cd ./ab && ls -la && pwd
+        run: ls -la && pwd && cd ./ab && ls -la && pwd && cd .. && cd .. && ls -la && pwd && cd .. && ls -la && pwd && cd .. && ls -la && pwd && cd .. && ls -la && pwd
       - name: Run Cypress Tests
         uses: cypress-io/github-action@v2
         with:
