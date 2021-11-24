@@ -31,7 +31,7 @@ jobs:
       - name: Check out
         uses: actions/checkout@v2
         with:
-          path: ./ab/test/e2e/cypress/integration
+          path: ./ab/test/e2e/cypress/integration/test_car
           clean: false
       - name: xxxyyy
         run: cd ./ab/test/e2e/cypress/integration && ls -la && pwd
