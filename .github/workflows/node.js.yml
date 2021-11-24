@@ -39,8 +39,8 @@ jobs:
       - name: Run Cypress Tests
         uses: cypress-io/github-action@v2
         with:
-          working-directory: ./ab/test/e2e
-          project: ./
+          working-directory: ./ab
+          path: ./test/e2e
           config: baseUrl=http://localhost:8080
 
           # Wait for the site to be ready
