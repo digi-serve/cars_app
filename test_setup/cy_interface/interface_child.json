@@ -163,7 +163,8 @@
                 "form":{
                   "add" : {
                     "fields":{
-                      "workPlace": "[data-cy=\"string Work Place db39794a-4a58-4652-b0df-efeb34e18c21 614a37d5-c855-47c2-bc1f-42f566150687\"]"
+                      "workPlace": "[data-cy=\"string Work Place db39794a-4a58-4652-b0df-efeb34e18c21 614a37d5-c855-47c2-bc1f-42f566150687\"]",
+                      "occupationExp": "[data-cy=\"string Occupation Exp c7300e9b-d95b-455f-b2ce-d477e4dad3a9 614a37d5-c855-47c2-bc1f-42f566150687\"]"
                     },
                     "button":{
                       "save": "[data-cy=\"button save 614a37d5-c855-47c2-bc1f-42f566150687\"]"
@@ -209,12 +210,104 @@
             }
           },
           "logs":{
-            "Behavior Log":{},
-            "Visitor Log":{},
-            "homeVisit":{},
-            "Participation Log":{},
-            "Asset Log":{},
-            "Contacting Agencies":{},
+            "page":{
+              "behaviorLog":{
+                "button":{"add":"[data-cy=\"menu-item Add Behavior Log ed140836-c05c-434a-b700-2f559d1d3775 10c2b635-bf4e-4aa7-8409-99334a3452a9\"]"},
+                "form":{
+                  "add" : {
+                    "fields":{
+                      "process": "[data-cy=\"string Process 2d7173f0-e693-4ef8-ad57-863d85b27889 56395743-699a-45a7-9a94-9429dfa3b2f7\"]"
+                    },
+                    "button":{
+                      "save": "[data-cy=\"button save 56395743-699a-45a7-9a94-9429dfa3b2f7\"]"
+                    }
+                  }
+                },
+                "grid": "[data-cy=\"ABViewGrid_c2e31c4e-8a5d-4bc0-bafe-4db95ff03d69_ABViewGrid_c2e31c4e-8a5d-4bc0-bafe-4db95ff03d69_datatable1637730103581\"]"
+              },
+              "visitorLog":{
+                "button":{"add":"[data-cy=\"menu-item Add Visits a11691e0-0e04-4c5d-871c-2c9f441e4c63 0acf13cf-bc59-4e9c-a03a-641cb39f5b64\"]"},
+                "form":{
+                  "add" : {
+                    "fields":{
+                      "staff": "[data-cy=\"connectObject Recorded by f272d0b3-855d-467b-9438-3971ba00213d\"]",
+                      "address": "[data-cy=\"connectObject Address 9dd47339-90f6-4f31-bc0a-4636d55152ec\"]",
+                      "visitor": "[data-cy=\"connectObject Visitor 20cf53e2-e566-4bfa-8e70-395f56f7640e\"]",
+                      "details": "[data-cy=\"LongText Notes ccd24fed-9643-44ce-8890-082b6366d239 978eec5a-1bdd-42cd-95d0-4e6c54e2cab7\"]",
+                      "date": "[data-cy=\"date Date ca3e0aac-eb33-46f0-82b2-8f44dffa63e6 978eec5a-1bdd-42cd-95d0-4e6c54e2cab7\"]"
+                    },
+                    "button":{
+                      "addVisitor": "[data-cy=\"\"]",
+                      "addAddress": "[data-cy=\"\"]",
+                      "save": "[data-cy=\"button save 978eec5a-1bdd-42cd-95d0-4e6c54e2cab7\"]"
+                    }
+                  }
+                },
+                "grid": "[data-cy=\"ABViewGrid_75501667-a822-453a-a676-0e274977468e\"]"
+              },
+              "homeVisit":{
+                "button":{"add":"[data-cy=\"menu-item Add Home Visit_94ba 1fadbc55-94ba-400c-9afc-56349a3c6375 db0da219-e611-42fe-b195-543fb8699f1d\"]"},
+                "form":{
+                  "add" : {
+                    "fields":{
+                      "no": "[data-cy=\"string Visit No dc788ca6-65ef-4195-a4f5-cb1b23d745f7 a0658515-5b59-48de-9176-d0822a97fdc9\"]",
+                      "address": "[data-cy=\"connectObject Address dac28c37-4c4e-4399-8b4e-d2062fd83864\"]",
+                      "contact": "[data-cy=\"connectObject Contact 1eac5f24-edce-4b9e-9d5b-008b680eb6b9\"]",
+                      "map": "[data-cy=\"string\"]",
+                      "familyMembers": "[data-cy=\"connectObject Family Members becaf60e-3c66-4f2b-9057-d1ed0521d144\"]",
+                      "visitDate": "[data-cy=\"date Visit Date 2fde7974-f8c2-4bfa-87b0-620af3d7a007 a0658515-5b59-48de-9176-d0822a97fdc9\"]"
+                    },
+                    "button":{
+                      "save": "[data-cy=\"button save a0658515-5b59-48de-9176-d0822a97fdc9\"]"
+                    }
+                  }
+                },
+                "grid": "[data-cy=\"ABViewGrid_cc01e916-b85d-4470-8e95-ebe1cded8477\"]"
+              },
+              "participationLog":{
+                "button":{"add":"[data-cy=\"menu-item Add Participation Log 1f07f7eb-ebb0-411e-9922-9c207b48aac7 7dadba26-9990-40ed-9256-a381aa5c523f\"]"},
+                "form":{
+                  "add" : {
+                    "fields":{
+                      "behavior": "[data-cy=\"string Behavior b94e8fb6-d4e5-4f05-a774-c9dc30770e7e a9f4682e-e7e8-4593-8e8c-65aff7692f1d\"]",
+                      "occupationExp": "[data-cy=\"string\"]"
+                    },
+                    "button":{
+                      "save": "[data-cy=\"button save a9f4682e-e7e8-4593-8e8c-65aff7692f1d\"]"
+                    }
+                  }
+                },
+                "grid": "[data-cy=\"ABViewGrid_8d8ee503-9a5e-4f81-ad8b-07d4b9133f59\"]"
+              },
+              "assetLog":{
+                "button":{"add":"[data-cy=\"menu-item Add Assets Log fd0bbb13-cab0-4393-a29b-34b1cd466873 16966204-acbb-4a44-97a4-c1eb05d836a3\"]"},
+                "form":{
+                  "add" : {
+                    "fields":{
+                      "assetDescription": "[data-cy=\"LongText Asset Description f2b65cf6-5f67-4aa2-83e6-350cf0705ff1 7a3b8980-e30d-4135-8b01-a4e06fcac9f2\"]"
+                    },
+                    "button":{
+                      "save": "[data-cy=\"button save 7a3b8980-e30d-4135-8b01-a4e06fcac9f2\"]"
+                    }
+                  }
+                },
+                "grid": "[data-cy=\"ABViewGrid_11c6e28c-4503-41c2-a6ce-93098212568d\"]"
+              },
+              "contactingAgencies":{
+                "button":{"add":"[data-cy=\"menu-item Contacting Agencies - Add_b3ab efb64f63-b3ab-4563-87cd-49e47b59da3a 21fbab57-917c-43f1-a237-273777bde57a\"]"},
+                "form":{
+                  "add" : {
+                    "fields":{
+                      "name": "[data-cy=\"string Name 9225b6d4-6783-49e4-a18b-96c1060114a6 6dd07923-7763-497f-9484-3b16d3b9d780\"]"
+                    },
+                    "button":{
+                      "save": "[data-cy=\"button save 6dd07923-7763-497f-9484-3b16d3b9d780\"]"
+                    }
+                  }
+                },
+                "grid": "[data-cy=\"ABViewGrid_27d2abaf-76af-4f90-afbb-688753307c3e\"]"
+              }
+            },
             "tab": {
               "behaviorLog":"[data-cy=\"tab-BehaviorLog-3e790c69-29a1-4da6-88ec-6c89510d2434-9f5b25fb-c8f6-4fc4-adf1-4172cb0c7393\"]",
               "visitorLog":"[data-cy=\"tab-VisitorLog-5655fd02-d6ed-450f-a485-1a003b2e35d8-9f5b25fb-c8f6-4fc4-adf1-4172cb0c7393\"]",

@@ -169,6 +169,14 @@ describe("Test Child:", () => {
             expect(data.text().includes(`${child.home}`) ? child.home: "", "Home").to.eq(child.home);
             expect(data.text().includes(`${child.birthday}`) ? child.birthday: "", "Birthday").to.eq(child.birthday);
         });
+        // TODO assert that:
+        // perhaps these can be checked in the sql?
+        // admit info generated
+        // prelim health exam generated
+        // physcial details generated
+        // vaccination generated (and connected)
+        // growth log generated (and connected)
+        // asset log generated (and connected)
     });
 
     it("Test Viewing A Child's Profile", () => {

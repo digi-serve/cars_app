@@ -57,24 +57,142 @@ const childVisit = () =>{
     //     });
 };
 
-// // End to End Testing
-describe("Test Child:", () => {
-    before(() =>{
-        Common.ResetDB(cy);
-        cy.wait(1500);
-        Common.AuthLogin(cy);
-        importModule(moduleCARS);
-        cy.wait(1500);
-        sqlManager(moduleCARS, "init_db_for_updating_a_childs_data.sql");
-    });
+// End to End Testing
+describe("Test add-new forms:", () => {
+  before(() =>{
+      Common.ResetDB(cy);
+      cy.wait(1500);
+      Common.AuthLogin(cy);
+      importModule(moduleCARS);
+      cy.wait(1500);
+      sqlManager(moduleCARS, "init_db_for_updating_a_childs_data.sql");
+      Common.AuthLogin(cy);
+      cy.wait(1500);
+  });
 
-    beforeEach(() => {
-        Common.AuthLogin(cy);
-        // sqlManager(moduleCARS,"reset-db");
-        cy.wait(1500);
-        cy.visit("/").wait(2500);
-        childVisit();
-    });
+  beforeEach(() => {
+    Common.AuthLogin(cy);
+    cy.visit("/").wait(2500);
+    childVisit();
+  });
+
+  const text = 'Hello World';
+  function saveAndCheck(parent,child,field){
+    cy.log(parent,child,field);
+    cy.get(cyInterfaceCHILD.tab[parent]).click().wait(250)
+    cy.get(cyInterfaceCHILD.page[parent].tab[child]).click().wait(200)
+    cy.get(cyInterfaceCHILD.page[parent].page[child].button.add).click().wait(100)
+    cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.fields[field]).type(text)
+    cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.button.save).click().wait(300)
+    cy.get(".webix_warn")
+    .find(".webix_button").click({ force: true }).wait(1500)
+    cy.get(cyInterfaceCHILD.page[parent].page[child].grid).contains(text).log();
+  }
+  it("Test file", () => {
+
+    //act
+    cy.get(cyInterfaceCHILD.page.basicInfo.tab.files).click().wait(100)
+    cy.get(cyInterfaceCHILD.page.basicInfo.page.files.button.addFile).click().wait(100)
+    cy.get(cyInterfaceCHILD.page.basicInfo.page.files.form.label).type(text)
+    //
+    // TODO add file
+    //
+    cy.get(cyInterfaceCHILD.page.basicInfo.page.files.form.button.save).click().wait(1000)
+
+    cy.get(".webix_warn")
+      .find(".webix_button")
+      .click().wait(500)
+    // should contain new data in grid
+    cy.get(cyInterfaceCHILD.page.basicInfo.page.files.grid).contains(text)
+  });
+
+
+  // Education //
+  it("Test educationInfo", () => {
+    // Cannot click on already viewed child page
+    let parent = "education";
+    let child = "educationInfo";
+    let field = "school";
+    cy.log(parent,child,field);
+    cy.get(cyInterfaceCHILD.tab[parent]).click().wait(250)
+    //cy.get(cyInterfaceCHILD.page[parent].tab[child]).click().wait(200)
+    cy.get(cyInterfaceCHILD.page[parent].page[child].button.add).click().wait(100)
+    cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.fields[field]).type(text)
+    cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.button.save).click().wait(300)
+    cy.get(".webix_warn")
+    .find(".webix_button").click({ force: true }).wait(1500)
+    cy.get(cyInterfaceCHILD.page[parent].page[child].grid).contains(text).log();
+  });
+  it("Test careerInfo", () => {
+    // TODO grid is too small
+    saveAndCheck("education","careerInfo","workPlace")
+  });
+  it("Test generalCourses", () => {
+    saveAndCheck("education","generalCourses","school")
+  });
+  it("Test file", () => {
+    saveAndCheck("education","schoolRecords","subject")
+  });
+
+
+  // Logs //
+  it("Test behaviorLog", () => {
+    // Cannot click on already viewed child page
+    let parent = "logs";
+    let child = "behaviorLog";
+    let field = "behavior";
+    cy.log(parent,child,field);
+    cy.get(cyInterfaceCHILD.tab[parent]).click().wait(250)
+    //cy.get(cyInterfaceCHILD.page[parent].tab[child]).click().wait(200)
+    cy.get(cyInterfaceCHILD.page[parent].page[child].button.add).click().wait(100)
+    cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.fields[field]).type(text)
+    cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.button.save).click().wait(300)
+    cy.get(".webix_warn")
+    .find(".webix_button").click({ force: true }).wait(1500)
+    cy.get(cyInterfaceCHILD.page[parent].page[child].grid).contains(text).log();
+  });
+  it("Test visitorLog", () => {
+
+    //
+    // TODO this has a lot more to test about it
+    // sub-forms
+    // [+] address
+    // [+] visitor
+
+    saveAndCheck("logs","visitorLog","details")
+  });
+  it("Test homeVisit", () => {
+    saveAndCheck("logs","homeVisit","no")
+  });
+  it("Test participationLog", () => {
+    saveAndCheck("logs","participationLog","behavior");
+  });
+  it("Test assetLog", () => {
+    saveAndCheck("logs","assetLog","assetDescription");
+  });
+  it("Test contactingAgencies", () => {
+    saveAndCheck("logs","contactingAgencies","name");
+  });
+
+});
+
+// describe("Test Child:", () => {
+//     before(() =>{
+//         Common.ResetDB(cy);
+//         cy.wait(1500);
+//         Common.AuthLogin(cy);
+//         importModule(moduleCARS);
+//         cy.wait(1500);
+//         sqlManager(moduleCARS, "init_db_for_updating_a_childs_data.sql");
+//     });
+
+//     beforeEach(() => {
+//         Common.AuthLogin(cy);
+//         // sqlManager(moduleCARS,"reset-db");
+//         cy.wait(1500);
+//         cy.visit("/").wait(2500);
+//         childVisit();
+//     });
 
     // it("Test Viewing all Subpages", () => {
 
@@ -134,132 +252,20 @@ describe("Test Child:", () => {
     // });
 
     // it("Test records auto generated by adding child", () => {
-
-    //     //arrange
-    //     const childrenIndex = 0;
-    //     const child = example.children[childrenIndex];
-
     //     //act
     //     // create child
 
     //     //assert
     //     // Basic info intact
-
-    //     //assert
     //     // admit info generated
-
-    //     //assert
     //     // prelim health exam generated
     //     // physcial details generated
     //     // vaccination generated (and connected)
     //     // growth log generated
     //     // asset log generated
-
-
     // });
 
-    it("Test editing a child", () => {
 
-        //arrange
-        const childrenIndex = 0;
-        const child = example.children[childrenIndex];
-
-        //act
-        cy.get(cyInterfaceCHILD.page.basicInfo.tab.files).click().wait(100)
-        cy.get(cyInterfaceCHILD.page.basicInfo.page.files.button.addFile).click().wait(100)
-        cy.get(cyInterfaceCHILD.page.basicInfo.page.files.form.label).type("Hello World")
-        // TODO add file
-        cy.get(cyInterfaceCHILD.page.basicInfo.page.files.form.button.save).click().wait(500)
-
-        cy.get(".webix_warn")
-          .find(".webix_button")
-          .click().wait(500)
-
-        // should contain new data in grid
-        cy.get(cyInterfaceCHILD.page.basicInfo.page.files.grid).should((data) => {
-          expect(data.text().includes("Hello World") ? "Hello World": "", "File Name").to.eq("Hello World");
-        });
-
-        // Data needs to already exist
-        cy.get(cyInterfaceCHILD.page.basicInfo.tab.admitInfo).click().wait(100)
-        cy.get(cyInterfaceCHILD.page.basicInfo.page.admitInfo.button.editAdmitInfo).click().wait(100)
-        //
-        cy.get(cyInterfaceCHILD.page.basicInfo.page.admitInfo.form.child).should((data) => {
-          expect(data.text().includes("1 NakamotoSatoshi") ? "1 NakamotoSatoshi": "", "ID Number").to.eq("1 NakamotoSatoshi");
-        });
-
-        //act
-        //Add parent
-        //assert
-        //parent in grid
-
-        //act
-        //add family memeber
-        //assert
-        // family member in grid
-
-        //act
-        //assert
-
-        //act
-        //assert
-
-        //assert
-
-    });
-    it("Test education submitting", () => {
-
-        //arrange
-        const childrenIndex = 0;
-        const child = example.children[childrenIndex];
-        const text = 'Hello World';
-
-        cy.get(cyInterfaceCHILD.tab.education).click().wait(250)
-        cy.get(cyInterfaceCHILD.page.education.tab.schoolRecords).click().wait(100)
-        cy.get(cyInterfaceCHILD.page.education.page.schoolRecords.button.add).click().wait(500)
-        cy.get(cyInterfaceCHILD.page.education.page.schoolRecords.form.add.fields.subject).type(text)
-        cy.get(cyInterfaceCHILD.page.education.page.schoolRecords.form.add.button.save).click().wait(250)
-        cy.get(".webix_warn")
-        .find(".webix_button").click().wait(500)
-        //cy.get(cyInterfaceCHILD.page.education.page.schoolRecords.grid)
-        // assert
-
-
-         cy.get(cyInterfaceCHILD.page.education.tab.generalCourses).click().wait(100)
-        cy.get(cyInterfaceCHILD.page.education.page.generalCourses.button.add).click().wait(500)
-        cy.get(cyInterfaceCHILD.page.education.page.generalCourses.form.add.fields.school).type(text)
-        cy.get(cyInterfaceCHILD.page.education.page.generalCourses.form.add.button.save).click().wait(250)
-        cy.get(".webix_warn")
-        .find(".webix_button").click().wait(500)
-        //cy.get(cyInterfaceCHILD.page.education.page.schoolRecords.grid)
-        // assert
-
-         cy.get(cyInterfaceCHILD.page.education.tab.careerInfo).click().wait(100)
-        cy.get(cyInterfaceCHILD.page.education.page.careerInfo.button.add).click().wait(500)
-        cy.get(cyInterfaceCHILD.page.education.page.careerInfo.form.add.fields.workPlace).type(text)
-        cy.get(cyInterfaceCHILD.page.education.page.careerInfo.form.add.button.save).click().wait(250)
-        cy.get(".webix_warn")
-        .find(".webix_button").click().wait(500)
-        //cy.get(cyInterfaceCHILD.page.education.page.schoolRecords.grid)
-        // assert
-
-         cy.get(cyInterfaceCHILD.page.education.tab.educationInfo).click().wait(100)
-        cy.get(cyInterfaceCHILD.page.education.page.educationInfo.button.add).click().wait(500)
-        cy.get(cyInterfaceCHILD.page.education.page.educationInfo.form.add.fields.school).type(text)
-        cy.get(cyInterfaceCHILD.page.education.page.educationInfo.form.add.button.save).click().wait(250)
-        cy.get(".webix_warn")
-        .find(".webix_button").click().wait(500)
-        // cy.get(cyInterfaceCHILD.page.education.page.educationInfo.grid).should((data) => {
-        //   expect(data.text().includes(text) ? text: "", "hello world").to.eq(text);
-        // })
-        cy.get(cyInterfaceCHILD.page.education.page.educationInfo.grid).contains(text).exists();
-        // assert
-
-        // cy.get(cyInterfaceCHILD.page.education.tab.generalCourses).click().wait(100)
-        // cy.get(cyInterfaceCHILD.page.education.tab.careerInfo).click().wait(100)
-        // cy.get(cyInterfaceCHILD.page.education.tab.educationInfo).click().wait(100);
-
-    });
     // it('should upload a pdf to the file picker', () => {
     //   cy.fixture('./test_import/file.pdf').as('newpdf');
 
@@ -291,7 +297,7 @@ describe("Test Child:", () => {
 
     //   cy.get('#file-upload').next().next().should('be.visible');
     // });
-});
+// });
 
 
 // describe("Test Social Worker Note:", () => {
