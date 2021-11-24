@@ -28,11 +28,9 @@ jobs:
         run: ./UP.sh -q -t
         
       #Run test
+      - uses: actions/checkout@v2
       - name: xxxyyy
         run: ls -la && pwd && cd ./ab && ls -la && pwd && cd .. && cd .. && ls -la && pwd && cd .. && ls -la && pwd && cd .. && ls -la && pwd && cd .. && ls -la && pwd
-      - uses: actions/checkout@v2
-        with:
-          repository: ./
       - name: Run Cypress Tests
         uses: cypress-io/github-action@v2
         with:
