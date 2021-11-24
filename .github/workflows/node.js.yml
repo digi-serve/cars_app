@@ -28,6 +28,8 @@ jobs:
         run: ./UP.sh -q -t
         
       #Run test
+      - name: xxxyyy
+        run: ls -la
       - name: Run Cypress Tests
         uses: cypress-io/github-action@v2
         with:
