@@ -28,7 +28,7 @@ jobs:
         working-directory: ./ab
         
       #Run test
-      - run: cat ./ab/test/e2e/cypress.json && rm ./ab/test/e2e/cypress.json && echo "{\ \"baseUrl\":\ "http://localhost:8080",\ \"testFiles\":\ \"**/*.js\",\ \"video\":\ false}" > ./ab/test/e2e/cypress.json && cat ./ab/test/e2e/cypress.json && mkdir ./ab/test/e2e/cypress/integration/test_car &&
+      - run: cat ./ab/test/e2e/cypress.json && rm ./ab/test/e2e/cypress.json && echo "{\ \"baseUrl\":\ "http://localhost:8080",\ \"testFiles\":\ \"**/*.js\",\ \"video\":\ false}" > ./ab/test/e2e/cypress.json && cat ./ab/test/e2e/cypress.json && mkdir ./ab/test/e2e/cypress/integration/test_car
       - name: Check out
         uses: actions/checkout@v2
         with:
