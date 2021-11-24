@@ -33,7 +33,7 @@ jobs:
       - name: Check out
         uses: actions/checkout@v2
         with:
-          path: ./ab/test/e2e/cypress/integration/test_car
+          path: ./ab/test/e2e/cypress/integration/test_cars
       - name: Run Cypress Tests
         uses: cypress-io/github-action@v2
         with:
