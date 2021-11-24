@@ -24,13 +24,17 @@ jobs:
 
       # Up
       - name: Bring up AppBuilder
-        working-directory: ./ab
         run: ./UP.sh -q -t
+        working-directory: ./ab
         
       #Run test
-      - uses: actions/checkout@v2
+      - name: Check out
+        uses: actions/checkout@v2
+        with:
+          path: ./ab/test/e2e/cypress/integration
+          clean: false
       - name: xxxyyy
-        run: ls -la && pwd && cd ./ab && ls -la && pwd && cd .. && cd .. && ls -la && pwd && cd .. && ls -la && pwd && cd .. && ls -la && pwd && cd .. && ls -la && pwd
+        run: cd ./ab/test/e2e/cypress/integration && ls -la && pwd
       - name: Run Cypress Tests
         uses: cypress-io/github-action@v2
         with:
