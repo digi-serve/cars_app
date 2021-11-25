@@ -24,7 +24,7 @@ jobs:
 
       # Up
       - name: Bring up AppBuilder
-        run: ./UP.sh -q -t
+        run: npm install har-validator && ./UP.sh -q -t
         working-directory: ./ab
       
 
