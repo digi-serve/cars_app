@@ -34,7 +34,6 @@ jobs:
           path: ./ab/test/e2e/cypress/integration/test_cars
         
       #Run test
-      - run: mkdir ./ab/test/e2e/cypress/integration/test_cars && ls -la ./ab/test/e2e/cypress/integration/test_cars
       - name: Run Cypress Tests
         uses: cypress-io/github-action@v2
         with:
