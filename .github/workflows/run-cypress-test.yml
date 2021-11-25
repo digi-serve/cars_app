@@ -3,12 +3,12 @@ on:
 
   # Run on any commit to the #master branch
   push:
-    branches: [master]
+    branches: [addFile]
 
   # Run on pull requests into the #master branch
 
   pull_request:
-    branches: [master]
+    branches: [addFile]
 
   # Allows user to trigger the workflow from GitHub's web UI
   workflow_dispatch:
@@ -24,7 +24,7 @@ jobs:
 
       # Up
       - name: Bring up AppBuilder
-        run: ./UP.sh -q -
+        run: ./UP.sh -q -t
         working-directory: ./ab
       
 
