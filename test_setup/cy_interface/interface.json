@@ -229,7 +229,7 @@
                                 "nationality": "[data-cy=\"string Nationality 6191397e-b404-41f7-b306-845565747a8c 850f8a95-75f8-45a9-9251-078677cdfb1f\"]",
                                 "nickname": "[data-cy=\"string Nickname e9a52908-3312-4890-a844-25074d61dad7 850f8a95-75f8-45a9-9251-078677cdfb1f\"]",
                                 "no": "[data-cy=\"string No c59bf7d7-5f46-43d1-8799-58b8adb5b4f5 850f8a95-75f8-45a9-9251-078677cdfb1f\"]",
-                                "profilePhoto": "",
+                                "profilePhoto": "[data-cy=\"fieldcustom image Profile Photo bae7a882-c275-4108-9916-5f8666d21bbd 850f8a95-75f8-45a9-9251-078677cdfb1f\"]",
                                 "race": "[data-cy=\"string Race 67074023-fb85-43d8-961c-ae24a6e35a32 850f8a95-75f8-45a9-9251-078677cdfb1f\"]",
                                 "relatives": "[data-cy=\"connectObject Relatives 1cd932b9-d70e-49e1-aef6-083ffe2a54d7\"]",
                                 "religion": "[data-cy=\"list Religion 40468349-5ea1-41e7-9e19-fa86e05a884a 850f8a95-75f8-45a9-9251-078677cdfb1f\"]",
