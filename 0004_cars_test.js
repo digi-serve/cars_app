@@ -180,11 +180,11 @@ describe("Test Child:", () => {
         cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.children.container)
             .then((data) =>{
                 // expect(data.text().includes(`Registration number (TH): ${child.no}`) ? child.no: "", "Registration number").to.eq(child.no);
-                expect(data.text().includes(`${child.firstName}`) ? child.firstName: "", "First Name").to.eq(child.firstName);
-                expect(data.text().includes(`${child.lastName}`) ? child.lastName: "", "Last Name").to.eq(child.lastName);
-                expect(data.text().includes(`(${child.nickname})`) ? child.nickname: "", "Nickname").to.eq(child.nickname);
+                // expect(data.text().includes(`${child.firstName}`) ? child.firstName: "", "First Name").to.eq(child.firstName);
+                // expect(data.text().includes(`${child.lastName}`) ? child.lastName: "", "Last Name").to.eq(child.lastName);
+                // expect(data.text().includes(`(${child.nickname})`) ? child.nickname: "", "Nickname").to.eq(child.nickname);
                 // expect(data.text().includes(`${child.home}`) ? child.home: "", "Home").to.eq(child.home);
-                expect(data.text().includes(`${child.birthday}`) ? child.birthday: "", "Birthday").to.eq(child.birthday);
+                // expect(data.text().includes(`${child.birthday}`) ? child.birthday: "", "Birthday").to.eq(child.birthday);
                 expect(uploadData.name.includes(`${child.profilePhoto}`) ? child.profilePhoto: "", "Filename").to.eq(child.profilePhoto);
             })
 
