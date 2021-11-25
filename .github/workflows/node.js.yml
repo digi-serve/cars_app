@@ -34,6 +34,7 @@ jobs:
           path: ./ab/test/e2e/cypress/integration/test_cars
         
       #Run test
+      - run: ls - la ./ab
       - name: Run Cypress Tests
         uses: cypress-io/github-action@v2
         with:
