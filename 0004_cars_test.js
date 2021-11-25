@@ -157,8 +157,8 @@ describe("Test Child:", () => {
         cy.get(cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.option.religion[3]).click();
         cy.get(cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field.race).type(child.race);
         cy.get(cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field.nationality).type(child.nationality);
-        cy.get(cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field.home).click();
-        cy.get('.selectivity-result-item').click();
+        // cy.get(cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field.home).click();
+        // cy.get('.selectivity-result-item').click();
         cy.get(cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field.typeReceived).click();
         cy.get(cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.option.typeReceived[0]).click();
         cy.get(cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field.timeReceivedfor).type(child.timeReceivedfor);
