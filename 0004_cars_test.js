@@ -162,10 +162,10 @@ describe("Test Child:", () => {
         cy.get(cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field.typeReceived).click();
         cy.get(cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.option.typeReceived[0]).click();
         cy.get(cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field.timeReceivedfor).type(child.timeReceivedfor);
-        cy.get(cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field.relatives).click();
-        cy.get('.selectivity-result-item').click();
-        cy.get(cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field.carsProject).click();
-        cy.get('.selectivity-result-item').click();
+        // cy.get(cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field.relatives).click();
+        // cy.get('.selectivity-result-item').click();
+        // cy.get(cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field.carsProject).click();
+        // cy.get('.selectivity-result-item').click();
         cy.get(cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.button.save).click()
 
         // prepare for assertion
