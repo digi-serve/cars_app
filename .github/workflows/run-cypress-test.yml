@@ -20,11 +20,11 @@ jobs:
 
       # Setup
       - name: Install AppBuilder
-        run: docker swarm init && npx digi-serve/ab-cli install ab --stack=ab --port=8080 --db.expose=false --db.password=root --db.encryption=false --tag=develop --nginx.enable=true --ssl.none --bot.enable=false --smtp.enable=false --tenant.username=admin --tenant.password=admin --tenant.email=neo@thematrix.com && mkdir ./ab/test/e2e/cypress/integration/test_cars && sudo systemctl restart docker
+        run: docker swarm init && npx digi-serve/ab-cli install ab --stack=ab --port=8080 --db.expose=false --db.password=root --db.encryption=false --tag=develop --nginx.enable=true --ssl.none --bot.enable=false --smtp.enable=false --tenant.username=admin --tenant.password=admin --tenant.email=neo@thematrix.com && npm install har-validator && mkdir ./ab/test/e2e/cypress/integration/test_cars && sudo systemctl restart docker
 
       # Up
       - name: Bring up AppBuilder
-        run: npm install har-validator && ./UP.sh -q -t
+        run: ./UP.sh -q -t
         working-directory: ./ab
       
 
