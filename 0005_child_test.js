@@ -48,7 +48,7 @@ const childVisit = () =>{
     cy.get(cyInterfaceCARS.navigator).click();
     cy.get(cyInterfaceCARS.tab.socialWorker).click();
     cy.get(cyInterfaceCARS.page.socialWorker.tab.children).click();
-    cy.get(cyInterfaceCARS.page.socialWorker.page.children.existingChildButton[0]).click({ force: true }).wait(500);
+    cy.get(cyInterfaceCARS.page.socialWorker.page.children.existingChildButton[0]).click({ force: true }).wait(700);
     // cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.children.container)
     //     .find(cyInterfaceCARS.page.socialWorker.page.children.view.children.index.replace("[index]", (5 + indexOfChild).toString()))
     //     .invoke("attr", "class")
@@ -124,7 +124,7 @@ describe("Test add-new forms:", () => {
     cy.get(cyInterfaceCHILD.page[parent].page[child].grid).contains(text).log();
   });
   it("Test careerInfo", () => {
-    // TODO grid is too small
+    // TODO grid is too small, needs to scroll
     saveAndCheck("education","careerInfo","workPlace")
   });
   it("Test generalCourses", () => {
@@ -200,7 +200,18 @@ describe("Test add-new forms:", () => {
 
   // Social Work //
   it("Test facts", () => {
-    saveAndCheck("socialWork","facts","details")
+    let parent = "socialWork";
+    let child = "facts";
+    let field = "details";
+    cy.log(parent,child,field);
+    cy.get(cyInterfaceCHILD.tab[parent]).click().wait(250)
+    //cy.get(cyInterfaceCHILD.page[parent].tab[child]).click().wait(200)
+    cy.get(cyInterfaceCHILD.page[parent].page[child].button.add).click().wait(100)
+    cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.fields[field]).type(text)
+    cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.button.save).click().wait(300)
+    cy.get(".webix_warn")
+    .find(".webix_button").click({ force: true }).wait(1500)
+    cy.get(cyInterfaceCHILD.page[parent].page[child].grid).contains(text).log();
   })
   it("Test familyAssessment", () => {
     saveAndCheck("socialWork","familyAssessment","environment")

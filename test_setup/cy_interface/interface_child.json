@@ -318,8 +318,8 @@
             }
           },
           "medical":{
-            "pages":{
-              "Prelim Health Exam":{
+            "page":{
+              "prelimHealthExam":{
                 "button":{"edit":"[data-cy=\"menu\"]"},
                 "form":{
                   "edit" : {
