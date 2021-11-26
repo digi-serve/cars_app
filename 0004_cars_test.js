@@ -11,9 +11,9 @@ const cyInterfaceCommon = {
     }
 }
 const module = ["cars"];
+const folderName = __dirname.match(/[^\\\/]+$/)
 
 const importModule = (moduleName) => {
-  const folderName = __dirname.match(/[^\\\/]+$/)
 
   cy.request("POST", "/test/import", {
     file: `imports/${folderName}/test_import/module.json`
@@ -27,7 +27,7 @@ const importModule = (moduleName) => {
 const sqlManager = (moduleName, sqlFile) => {
   cy.exec(`bash -c "ls ${path.join(__dirname, "test_setup", "sql").replace(/\\/g, '/')}"`).then((files) => {
     const sqlFiles = files.stdout.split(/[\s\n\\]+/).filter(e => e.includes(".sql"));
-    cy.exec(`bash ${path.join(__dirname, "test_setup", "commands", "sql_manager.sh")} ${sqlFiles[sqlFiles.indexOf(sqlFile)]}`);
+    cy.exec(`bash ${path.join(__dirname, "test_setup", "commands", "sql_manager.sh")} ${folderName} ${sqlFiles[sqlFiles.indexOf(sqlFile)]}`);
   });
 }
 
