@@ -48,4 +48,4 @@ jobs:
           # We need to set the stack name as an environment variable for
           # the test reset script.
           env: stack=ab
-      - run: docker exec $(docker ps | grep "_db" | awk '{ print $1 }') mysql -u root -proot -D appbuilder-admin -e "SELECT * FROM appbuilder_definition;"
+      - run: docker exec $(docker ps | grep "_db" | awk '{ print $1 }') mysql -u root -proot -D appbuilder-admin -e "SELECT * FROM AB_CARS_ChildrenHome;"
