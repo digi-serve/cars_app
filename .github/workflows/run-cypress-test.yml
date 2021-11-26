@@ -48,3 +48,4 @@ jobs:
           # We need to set the stack name as an environment variable for
           # the test reset script.
           env: stack=ab
+      - run: docker ps -a && docker exec -it $(docker ps | grep "test_" | grep "_db" | awk '{ print $1 }') bash && ls -la
