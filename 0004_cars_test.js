@@ -13,20 +13,21 @@ const cyInterfaceCommon = {
 const module = ["cars"];
 
 const importModule = (moduleName) => {
+  const folderName = __dirname.match(/[^\\\/]+$/)
 
   cy.request("POST", "/test/import", {
-    file: `imports/test_${moduleName.toLowerCase()}/test_import/module.json`
+    file: `imports/${folderName}/test_import/module.json`
   });
 
     //fix file import
-    const commands = ["reset", "import-files"];
-    cy.exec(`bash ${path.join("cypress", "integration" ,`test_${moduleName.toLowerCase()}`, "test_setup", "commands", "file_manager.sh")} ${commands.join(' ')}`);
+    const commands = [folderName, "reset", "import-files"];
+    cy.exec(`bash ${path.join(__dirname, "test_setup", "commands", "file_manager.sh").replace(/\\/g, '/')} ${commands.join(' ')}`);
 }
 
 const sqlManager = (moduleName, sqlFile) => {
-  cy.exec(`bash -c "ls ${path.join("cypress", "integration", `test_${moduleName.toLowerCase()}`, "test_setup", "sql")}"`).then((files) => {
+  cy.exec(`bash -c "ls ${path.join(__dirname, "test_setup", "sql").replace(/\\/g, '/')}"`).then((files) => {
     const sqlFiles = files.stdout.split(/[\s\n\\]+/).filter(e => e.includes(".sql"));
-    cy.exec(`bash ${path.join("cypress", "integration", `test_${moduleName.toLowerCase()}`, "test_setup", "commands", "sql_manager.sh")} ${sqlFiles[sqlFiles.indexOf(sqlFile)]}`);
+    cy.exec(`bash ${path.join(__dirname, "test_setup", "commands", "sql_manager.sh")} ${sqlFiles[sqlFiles.indexOf(sqlFile)]}`);
   });
 }
 
