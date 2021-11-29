@@ -4,8 +4,8 @@ Module="cars"
 for Command in "$@"; do
     case $Command in
         import-files | reset)
-            ID_Container_FILE_PROCESSOR=`docker ps | grep "test_" | grep "_file_processor" | awk '{ print $1 }'`
-            ID_Container_DB=`docker ps | grep "test_" | grep "_db" | awk '{ print $1 }'`
+            ID_Container_FILE_PROCESSOR=`docker ps | grep "_file_processor" | awk '{ print $1 }'`
+            ID_Container_DB=`docker ps | grep "_db" | awk '{ print $1 }'`
             if [ -z "$ID_Container_FILE_PROCESSOR" ] || [ -z "$ID_Container_DB" ]
             then
                 echo ""
