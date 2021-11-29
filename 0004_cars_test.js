@@ -11,22 +11,23 @@ const cyInterfaceCommon = {
     }
 }
 const module = ["cars"];
+const folderName = __dirname.match(/[^\\\/]+$/)
 
 const importModule = (moduleName) => {
 
   cy.request("POST", "/test/import", {
-    file: `imports/test_${moduleName.toLowerCase()}/test_import/module.json`
+    file: `imports/${folderName}/test_import/module.json`
   });
 
     //fix file import
-    const commands = ["reset", "import-files"];
-    cy.exec(`bash ${path.join("cypress", "integration" ,`test_${moduleName.toLowerCase()}`, "test_setup", "commands", "file_manager.sh")} ${commands.join(' ')}`);
+    const commands = [folderName, "reset", "import-files"];
+    cy.exec(`bash ${path.join(__dirname, "test_setup", "commands", "file_manager.sh").replace(/\\/g, '/')} ${commands.join(' ')}`);
 }
 
 const sqlManager = (moduleName, sqlFile) => {
-  cy.exec(`bash -c "ls ${path.join("cypress", "integration", `test_${moduleName.toLowerCase()}`, "test_setup", "sql")}"`).then((files) => {
+  cy.exec(`bash -c "ls ${path.join(__dirname, "test_setup", "sql").replace(/\\/g, '/')}"`).then((files) => {
     const sqlFiles = files.stdout.split(/[\s\n\\]+/).filter(e => e.includes(".sql"));
-    cy.exec(`bash ${path.join("cypress", "integration", `test_${moduleName.toLowerCase()}`, "test_setup", "commands", "sql_manager.sh")} ${sqlFiles[sqlFiles.indexOf(sqlFile)]}`);
+    cy.exec(`bash ${path.join(__dirname, "test_setup", "commands", "sql_manager.sh")} ${folderName} ${sqlFiles[sqlFiles.indexOf(sqlFile)]}`);
   });
 }
 
@@ -111,7 +112,7 @@ describe("Test Child:", () => {
 
     beforeEach(() => {
         Common.AuthLogin(cy);
-        sqlManager(moduleCARS,"reset-db");
+        sqlManager(moduleCARS, "reset_db.sql");
         cy.wait(1500);
     });
 
@@ -120,6 +121,8 @@ describe("Test Child:", () => {
         //arrange
         const childrenIndex = 0;
         const child = example.children[childrenIndex];
+        const photoPath = path.join("..", "integration", `${folderName}`, "test_example", "images", child.profilePhoto);
+        const fileExtension = child.profilePhoto.match(/(.+)\.(.+)$/)[2];
 
         //act
         sqlManager(moduleCARS, "init_db_for_adding_new_child.sql");
@@ -132,6 +135,27 @@ describe("Test Child:", () => {
         cy.get(cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field.firstName).type(child.firstName);
         cy.get(cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field.lastName).type(child.lastName);
         cy.get(cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field.nickname).type(child.nickname);
+
+        let uploadData;
+        cy.get(cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field.profilePhoto)
+            .invoke("attr", "data-uploader-id")
+            .then(uploader => {
+                cy.fixture(photoPath).then(data => {
+                    const blob = Cypress.Blob.base64StringToBlob(data,  `image/${fileExtension}`);
+                    const file = new File([blob], photoPath, {
+                        type: `image/${fileExtension}`
+                    });
+                    cy.window().then((win) => {
+                        return win.$$(uploader).addFile(file, file.size, fileExtension)
+                    })
+                    .then((result) => {
+                        uploadData = result;
+                    });
+                });
+            });
+
+        cy.wait(500);
+
         cy.get(cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field.birthday).type(child.birthday);
         cy.get(cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field.birthday).click();
         cy.get(cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field.gender).click();
@@ -155,20 +179,28 @@ describe("Test Child:", () => {
         // cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.basicInfo.page.basicInfo.field.firstName, { timeout: 30000 });
         // cy.get('.ab-menu-left .webix_list_item').click();
 
-        // TODO: shouldn't need to wait and reload.
+        // TODO: shouldn't need to wait.
         cy.wait(2500);
-        cy.visit("/").wait(2500);
 
         //assert
         //assert in the Children container
-        cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.children.container).should((data) =>{
+        cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.children.container)
+          .should((data) =>{
             expect(data.text().includes(`Registration number (TH): ${child.no}`) ? child.no: "", "Registration number").to.eq(child.no);
             expect(data.text().includes(`${child.firstName}`) ? child.firstName: "", "First Name").to.eq(child.firstName);
             expect(data.text().includes(`${child.lastName}`) ? child.lastName: "", "Last Name").to.eq(child.lastName);
             expect(data.text().includes(`(${child.nickname})`) ? child.nickname: "", "Nickname").to.eq(child.nickname);
             expect(data.text().includes(`${child.home}`) ? child.home: "", "Home").to.eq(child.home);
             expect(data.text().includes(`${child.birthday}`) ? child.birthday: "", "Birthday").to.eq(child.birthday);
-        });
+            expect(uploadData.name.includes(`${child.profilePhoto}`) ? child.profilePhoto: "", "Filename").to.eq(child.profilePhoto);
+          })
+
+          // assert the image by uuid
+          .find('img')
+          .invoke('attr', 'src')
+          .then((data) => {
+              expect(data.includes(`${uploadData.data.uuid}`) ? uploadData.data.uuid: "", "FileUUID").to.eq(uploadData.data.uuid);
+          });
         // TODO assert that:
         // perhaps these can be checked in the sql?
         // admit info generated
@@ -294,7 +326,7 @@ describe("Test Report:", () => {
 
     beforeEach(() => {
         Common.AuthLogin(cy);
-        sqlManager(moduleCARS, "reset-db");
+        sqlManager(moduleCARS, "reset_db.sql");
         cy.wait(1500);
     });
 
@@ -342,7 +374,7 @@ describe("Test Home:", () => {
 
     beforeEach(() => {
         Common.AuthLogin(cy);
-        sqlManager(moduleCARS, "reset-db");
+        sqlManager(moduleCARS, "reset_db.sql");
         cy.wait(1500);
     });
 
@@ -439,7 +471,7 @@ describe("Test Project:", () => {
 
     beforeEach(() => {
         Common.AuthLogin(cy);
-        sqlManager(moduleCARS,"reset_db.sql");
+        sqlManager(moduleCARS, "reset_db.sql");
         cy.wait(1500);
     });
 
@@ -483,7 +515,7 @@ describe("Test Project:", () => {
 
     it("Test Update existing Project", () => {
 
-        sqlManager(moduleCARS,"reset_db.sql");
+        sqlManager(moduleCARS, "reset_db.sql");
         cy.wait(1500);
 
         // arrange
@@ -537,7 +569,7 @@ describe("Test Staff:", () => {
 
     beforeEach(() => {
         Common.AuthLogin(cy);
-        sqlManager(moduleCARS,"reset_db.sql");
+        sqlManager(moduleCARS, "reset_db.sql");
         cy.wait(1500);
     });
 
@@ -622,7 +654,7 @@ describe("Test Staff:", () => {
 
     it("Test Update existing Staff", () => {
 
-        sqlManager(moduleCARS,"reset_db.sql");
+        sqlManager(moduleCARS, "reset_db.sql");
         cy.wait(1500);
 
         // arrange
@@ -701,7 +733,7 @@ describe("Test Staff:", () => {
     });
     it("Test Remove existing Staff", () => {
 
-        sqlManager(moduleCARS,"reset_db.sql");
+        sqlManager(moduleCARS, "reset_db.sql");
         cy.wait(1500);
 
         // arrange
