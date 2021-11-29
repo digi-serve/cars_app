@@ -15,6 +15,6 @@ for FILE_SQL in "$@"; do
 		DB_Init=`cat ./cypress/integration/test_$Module/test_setup/sql/$FILE_SQL`
 		docker exec $ID_Service bash -c "echo '$DB_Init' > ./sql/${Module}_$FILE_SQL"
 		docker exec $ID_Service bash -c "mysql -u root -proot \"appbuilder-admin\" < ./sql/${Module}_$FILE_SQL"
-		docker exec $ID_Service bash -c "rm ./sql/${Module}_$FILE_SQL"
+		# docker exec $ID_Service bash -c "rm ./sql/${Module}_$FILE_SQL"
 	fi
 done

@@ -48,5 +48,7 @@ jobs:
           # We need to set the stack name as an environment variable for
           # the test reset script.
           env: stack=ab
-      - run: docker exec $(docker ps | grep "_db" | awk '{ print $1 }') mysql -u root -proot -D appbuilder-admin -e "LOCK TABLES \`AB_CARS_CARsProject\` WRITE; INSERT INTO \`AB_CARS_CARsProject\` (\`uuid\`, \`created_at\`, \`updated_at\`, \`translations\`) VALUES (\"cb46b6b4-dc25-4915-80f7-c1febf26da4a\", \"2021-09-20 06:25:36\", \"2021-09-20 06:25:36\", '[{\"language_code\":\"en\",\"Name\":\"CARS Project 1\"}]'); UNLOCK TABLES; SELECT * FROM \`AB_CARS_CARsProject\`;"
+
+      - run: docker exec $(docker ps | grep "_db" | awk '{ print $1 }') ls ./sql
+      # - run: docker exec $(docker ps | grep "_db" | awk '{ print $1 }') mysql -u root -proot -D appbuilder-admin -e "LOCK TABLES \`AB_CARS_CARsProject\` WRITE; INSERT INTO \`AB_CARS_CARsProject\` (\`uuid\`, \`created_at\`, \`updated_at\`, \`translations\`) VALUES (\"cb46b6b4-dc25-4915-80f7-c1febf26da4a\", \"2021-09-20 06:25:36\", \"2021-09-20 06:25:36\", '[{\"language_code\":\"en\",\"Name\":\"CARS Project 1\"}]'); UNLOCK TABLES; SELECT * FROM \`AB_CARS_CARsProject\`;"
       # - run: docker exec $(docker ps | grep "_db" | awk '{ print $1 }') mysql -u root -proot -D appbuilder-admin -e "SELECT * FROM AB_CARS_ChildrenHome;"
