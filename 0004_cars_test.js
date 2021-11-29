@@ -408,13 +408,13 @@ describe("Test Home:", () => {
                 expect(data.text().includes(home.address.postalCode) ? home.address.postalCode: "", "Postal Code").to.eq(home.address.postalCode);
                 expect(data.text().includes(home.staff) ? home.staff: "", "Staff").to.eq(home.staff);
               })
-            .wait(500)
-            .find(".webix_vscroll_x")
-            .scrollTo("right")
-            .get(cyInterfaceCARS.page.socialWorker.page.home.view.homes.container)
-                .should((data) =>{
-                    expect(data.text().includes(home.carsProject.name) ? home.carsProject.name: "", "CARS Project").to.eq(home.carsProject.name);
-                });
+            // .wait(500)
+            // .find(".webix_vscroll_x")
+            // .scrollTo("right")
+            // .get(cyInterfaceCARS.page.socialWorker.page.home.view.homes.container)
+            //     .should((data) =>{
+            //         expect(data.text().includes(home.carsProject.name) ? home.carsProject.name: "", "CARS Project").to.eq(home.carsProject.name);
+            //     });
     });
 
     // it("Test Update existing Home", () => {
