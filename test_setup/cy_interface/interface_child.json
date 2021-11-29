@@ -345,7 +345,7 @@
                       "otherVacc": "[data-cy=\"LongText Other Vacc 28f600b3-91e9-4d6c-9654-2fe6a248c9cc e2e2a548-0473-4bbe-8840-f86c09fed2c3\"]"
                     },
                     "button":{
-                      "save": "[data-cy=\"button\"]"
+                      "save": "[data-cy=\"button save e2e2a548-0473-4bbe-8840-f86c09fed2c3\"]"
                     }
                   }
                 },
@@ -498,7 +498,7 @@
                       "date": "[data-cy=\"date Record DateRecord Date b0e01bea-4f53-409b-bba0-e66c8362b9b5 bf955706-5f14-4f38-a46b-e0ec1559d45f\"]"
                     },
                     "button":{
-                      "save": "[data-cy=\"button\"]"
+                      "save": "[data-cy=\"button save bf955706-5f14-4f38-a46b-e0ec1559d45f\"]"
                     }
                   }
                 },

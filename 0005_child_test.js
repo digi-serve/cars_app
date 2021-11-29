@@ -46,8 +46,8 @@ const navigator = () => {
 const childVisit = () =>{
     cy.get(cyInterfaceCommon.button.menu, { timeout: 5000 }).click();
     cy.get(cyInterfaceCARS.navigator).click();
-    cy.get(cyInterfaceCARS.tab.socialWorker).click();
-    cy.get(cyInterfaceCARS.page.socialWorker.tab.children).click();
+    cy.get(cyInterfaceCARS.tab.socialWorker).click().wait(100);
+    cy.get(cyInterfaceCARS.page.socialWorker.tab.children).click().wait(100);
     cy.get(cyInterfaceCARS.page.socialWorker.page.children.existingChildButton[0]).click({ force: true }).wait(700);
     // cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.children.container)
     //     .find(cyInterfaceCARS.page.socialWorker.page.children.view.children.index.replace("[index]", (5 + indexOfChild).toString()))
@@ -82,8 +82,8 @@ describe("Test add-new forms:", () => {
     cy.get(cyInterfaceCHILD.tab[parent]).click().wait(250)
     cy.get(cyInterfaceCHILD.page[parent].tab[child]).click().wait(200)
     cy.get(cyInterfaceCHILD.page[parent].page[child].button.add).click().wait(100)
-    cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.fields[field]).type(text)
-    cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.button.save).click().wait(300)
+    cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.fields[field]).scrollIntoView().type(text)
+    cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.button.save).scrollIntoView().click().wait(300)
     cy.get(".webix_warn")
     .find(".webix_button").click({ force: true }).wait(1500)
     cy.get(cyInterfaceCHILD.page[parent].page[child].grid).contains(text).log();
@@ -116,16 +116,30 @@ describe("Test add-new forms:", () => {
     cy.log(parent,child,field);
     cy.get(cyInterfaceCHILD.tab[parent]).click().wait(250)
     //cy.get(cyInterfaceCHILD.page[parent].tab[child]).click().wait(200)
-    cy.get(cyInterfaceCHILD.page[parent].page[child].button.add).click().wait(100)
+    cy.get(cyInterfaceCHILD.page[parent].page[child].button.add).click().wait(300)
     cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.fields[field]).type(text)
-    cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.button.save).click().wait(300)
+    cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.button.save).click().wait(600)
     cy.get(".webix_warn")
     .find(".webix_button").click({ force: true }).wait(1500)
     cy.get(cyInterfaceCHILD.page[parent].page[child].grid).contains(text).log();
   });
   it("Test careerInfo", () => {
     // TODO grid is too small, needs to scroll
-    saveAndCheck("education","careerInfo","workPlace")
+    //saveAndCheck("education","careerInfo","workPlace")
+    let parent = "education";
+    let child = "careerInfo";
+    let field = "workPlace";
+    cy.log(parent,child,field);
+    cy.get(cyInterfaceCHILD.tab[parent]).click().wait(250)
+    cy.get(cyInterfaceCHILD.page[parent].tab[child]).click().wait(200)
+    cy.get(cyInterfaceCHILD.page[parent].page[child].button.add).click().wait(300)
+    cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.fields[field]).type(text)
+    cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.button.save).click().wait(600)
+    cy.get(".webix_warn")
+    .find(".webix_button").click({ force: true }).wait(1500)
+    cy.get(cyInterfaceCHILD.page[parent].page[child].grid)
+      .find(".webix_vscroll_x").scrollTo('right')
+    cy.get(cyInterfaceCHILD.page[parent].page[child].grid).contains(text).log();
   });
   it("Test generalCourses", () => {
     saveAndCheck("education","generalCourses","school")
@@ -140,7 +154,7 @@ describe("Test add-new forms:", () => {
     // Cannot click on already viewed child page
     let parent = "logs";
     let child = "behaviorLog";
-    let field = "behavior";
+    let field = "process";
     cy.log(parent,child,field);
     cy.get(cyInterfaceCHILD.tab[parent]).click().wait(250)
     //cy.get(cyInterfaceCHILD.page[parent].tab[child]).click().wait(200)
