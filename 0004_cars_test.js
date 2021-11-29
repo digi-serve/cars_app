@@ -400,20 +400,20 @@ describe("Test Home:", () => {
                 expect(data.text().includes(home.homeName) ? home.homeName: "", "Home Name").to.eq(home.homeName);
                 expect(data.text().includes(home.director) ? home.director: "", "Director").to.eq(home.director);
                 expect(data.text().includes(home.socialWorker) ? home.socialWorker: "", "Social Worker").to.eq(home.socialWorker);
-                expect(data.text().includes(home.address.addressNo) ? home.address.addressNo: "", "Address No").to.eq(home.address.addressNo);
-                expect(data.text().includes(` ${home.address.addressNo} `) ? home.address.moo: "", "Moo").to.eq(home.address.moo);
-                expect(data.text().includes(home.address.district) ? home.address.district: "", "District").to.eq(home.address.district);
-                expect(data.text().includes(home.address.city) ? home.address.city: "", "City").to.eq(home.address.city);
-                expect(data.text().includes(home.address.province) ? home.address.province: "", "Province").to.eq(home.address.province);
-                expect(data.text().includes(home.address.postalCode) ? home.address.postalCode: "", "Postal Code").to.eq(home.address.postalCode);
-                expect(data.text().includes(home.staff) ? home.staff: "", "Staff").to.eq(home.staff);
+                // expect(data.text().includes(home.address.addressNo) ? home.address.addressNo: "", "Address No").to.eq(home.address.addressNo);
+                // expect(data.text().includes(` ${home.address.addressNo} `) ? home.address.moo: "", "Moo").to.eq(home.address.moo);
+                // expect(data.text().includes(home.address.district) ? home.address.district: "", "District").to.eq(home.address.district);
+                // expect(data.text().includes(home.address.city) ? home.address.city: "", "City").to.eq(home.address.city);
+                // expect(data.text().includes(home.address.province) ? home.address.province: "", "Province").to.eq(home.address.province);
+                // expect(data.text().includes(home.address.postalCode) ? home.address.postalCode: "", "Postal Code").to.eq(home.address.postalCode);
+                // expect(data.text().includes(home.staff) ? home.staff: "", "Staff").to.eq(home.staff);
               })
-              .find(".webix_vscroll_x")
-            .scrollTo("right")
-            .get(cyInterfaceCARS.page.socialWorker.page.home.view.homes.container)
-            .should((data) =>{
-                    expect(data.text().includes(home.carsProject.name) ? home.carsProject.name: "", "CARS Project").to.eq(home.carsProject.name);
-                });
+            //   .find(".webix_vscroll_x")
+            // .scrollTo("right")
+            // .get(cyInterfaceCARS.page.socialWorker.page.home.view.homes.container)
+            // .should((data) =>{
+            //         expect(data.text().includes(home.carsProject.name) ? home.carsProject.name: "", "CARS Project").to.eq(home.carsProject.name);
+            //     });
     });
 
     // it("Test Update existing Home", () => {
