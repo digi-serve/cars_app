@@ -380,16 +380,16 @@ describe("Test Home:", () => {
         cy.get(cyInterfaceCARS.page.socialWorker.page.home.form.addChildrenHome.field.homeName).type(home.homeName);
         cy.get(cyInterfaceCARS.page.socialWorker.page.home.form.addChildrenHome.field.director).type(home.director);
         cy.get(cyInterfaceCARS.page.socialWorker.page.home.form.addChildrenHome.field.socialWorker).type(home.socialWorker);
-        cy.get(cyInterfaceCARS.page.socialWorker.page.home.form.addChildrenHome.field.staff).click();
-        cy.get(".selectivity-result-item").click();
-        cy.get(cyInterfaceCARS.page.socialWorker.page.home.form.addChildrenHome.field.address).click();
-        cy.get(".selectivity-result-item").click();
-        cy.get(cyInterfaceCARS.page.socialWorker.page.home.form.addChildrenHome.field.carsProject).click();
-        cy.get(".selectivity-result-item").click();
-        cy.get(".webix_layout_form")
-            .find("div[view_id=\"$layout560\"]")
-            .find(cyInterfaceCARS.page.socialWorker.page.home.form.addChildrenHome.button.save)
-            .click();
+        // cy.get(cyInterfaceCARS.page.socialWorker.page.home.form.addChildrenHome.field.staff).click();
+        // cy.get(".selectivity-result-item").click();
+        // cy.get(cyInterfaceCARS.page.socialWorker.page.home.form.addChildrenHome.field.address).click();
+        // cy.get(".selectivity-result-item").click();
+        // cy.get(cyInterfaceCARS.page.socialWorker.page.home.form.addChildrenHome.field.carsProject).click();
+        // cy.get(".selectivity-result-item").click();
+        // cy.get(".webix_layout_form")
+        //     .find("div[view_id=\"$layout560\"]")
+        //     .find(cyInterfaceCARS.page.socialWorker.page.home.form.addChildrenHome.button.save)
+        //     .click();
 
         cy.get(cyInterfaceCARS.page.socialWorker.tab.children).click().wait(500);
         cy.get(cyInterfaceCARS.page.socialWorker.tab.home).click();
