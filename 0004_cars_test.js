@@ -686,13 +686,10 @@ describe("Test Home:", () => {
             .carsProject
       ).click();
       cy.get(".selectivity-result-item").click();
-      cy.get(".webix_layout_form")
-         .find('div[view_id="$layout560"]')
-         .find(
-            cyInterfaceCARS.page.socialWorker.page.home.form.addChildrenHome
-               .button.save
-         )
-         .click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.home.form.addChildrenHome.button
+            .save
+      ).click();
 
       cy.get(cyInterfaceCARS.page.socialWorker.tab.children).click();
       cy.get(cyInterfaceCARS.page.socialWorker.tab.home).click();
