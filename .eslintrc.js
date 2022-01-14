@@ -30,6 +30,8 @@ module.exports = {
    // activating eslint-plugin-prettier (--fix stuff)
    // plugins: ["prettier"],
 
+   ignorePatterns: ["*.json"],
+
    rules: {
       // customizing prettier rules (unfortunately not many of them are customizable)
       "prettier/prettier": [

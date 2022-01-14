@@ -1,146 +1,159 @@
 {
-    "children": [
-        {
-            "no": "1",
-            "firstName": "Satoshi",
-            "lastName": "Nakamoto",
-            "nickname": "Sato",
-            "profilePhoto": "satoshi_nakamoto.jpeg",
-            "birthday": "05/04/1975",
-            "gender": "Male",
-            "religion": "Other",
-            "race": "Human",
-            "nationality": "Japanese",
-            "home": "Home 1",
-            "typeReceived": "Permanent",
-            "timeReceivedfor": "05/04/1975 17:00 PM",
-            "relatives": {
-                "firstName": "Taylor",
-                "lastName": "Swift",
-                "contacts": {
-                    "mobilePhone": "0801234567",
-                    "homePhone": "053123456",
-                    "email": "taylor_swift@email.com",
-                    "lineID": "taylorswift",
-                    "facebookID": "1234567890123456"
-                },
-                "relationType": "Mother"
+   "children": [
+      {
+         "no": "1",
+         "firstName": "Satoshi",
+         "lastName": "Nakamoto",
+         "nickname": "Sato",
+         "profilePhoto": "satoshi_nakamoto.jpeg",
+         "birthday": "05/04/1975",
+         "gender": "Male",
+         "religion": "Other",
+         "race": "Human",
+         "nationality": "Japanese",
+         "home": "Home 1",
+         "typeReceived": "Permanent",
+         "timeReceivedfor": "05/04/1975 17:00 PM",
+         "relatives": {
+            "firstName": "Taylor",
+            "lastName": "Swift",
+            "contacts": {
+               "mobilePhone": "0801234567",
+               "homePhone": "053123456",
+               "email": "taylor_swift@email.com",
+               "lineID": "taylorswift",
+               "facebookID": "1234567890123456"
             },
-            "carsProject": "CARS Project 1",
+            "relationType": "Mother"
+         },
+         "carsProject": "CARS Project 1",
 
-            "idIssueDate": "10/08/1980",
-            "idExpireDate": "10/08/2000",
-            "idNumber": "1111122222333",
-            "address": {
-                "type": "Current",
-                "addressNo": "123/4",
-                "moo": "1",
-                "district": "Mueang Chiang Mai",
-                "city": "Suthep",
-                "province": "Chiang Mai",
-                "postalCode": "50000"
+         "idIssueDate": "10/08/1980",
+         "idExpireDate": "10/08/2000",
+         "idNumber": "1111122222333",
+         "address": {
+            "type": "Current",
+            "addressNo": "123/4",
+            "moo": "1",
+            "district": "Mueang Chiang Mai",
+            "city": "Suthep",
+            "province": "Chiang Mai",
+            "postalCode": "50000"
+         }
+      }
+   ],
+
+   "homes": [
+      {
+         "homeName": "Home 1",
+         "director": "John Lennon",
+         "socialWorker": "Chris Martin",
+         "staff": "John Lennon",
+         "address": {
+            "type": "Current",
+            "addressNo": "123/4",
+            "moo": "1",
+            "district": "Mueang Chiang Mai",
+            "city": "Suthep",
+            "province": "Chiang Mai",
+            "postalCode": "50000"
+         },
+         "carsProject": {
+            "name": "CARS Project 1",
+            "projectStaff": "John Lennon"
+         },
+
+         "phoneNumber": "0987654321"
+      },
+      {
+         "homeName": "Home 2",
+         "director": "John Lennon",
+         "socialWorker": "Chris Martin",
+         "staff": "Alice Smith",
+         "address": {
+            "type": "Current",
+            "addressNo": "123/45",
+            "moo": "51",
+            "district": "Mueang Chiang Rai",
+            "city": "Suthep",
+            "province": "Chiang Rai",
+            "postalCode": "50001"
+         },
+         "carsProject": {
+            "name": "CARS Project 1",
+            "projectStaff": "John Lennon"
+         },
+
+         "phoneNumber": "0987654321"
+      }
+   ],
+   "staff": [
+      {
+         "position": "Director",
+         "firstName": "John",
+         "lastName": "Lennon",
+         "phone": "55555555555",
+         "staffUser": "admin",
+         "home": {
+            "name": "Home 1"
+         },
+         "CARs Project": "CARS Project 1"
+      },
+      {
+         "position": "Worker",
+         "firstName": "Alice",
+         "lastName": "Smith",
+         "phone": "55555555556",
+         "staffUser": "alice_smith",
+         "home": {
+            "name": "Home 2"
+         },
+         "CARs Project": "CARS Project 2"
+      },
+      {
+         "position": "Directory",
+         "firstName": "Alice",
+         "lastName": "Cooper",
+         "phone": "55555555556",
+         "staffUser": "alice_cooper",
+         "home": {
+            "name": "Home 2"
+         },
+         "CARs Project": "CARS Project 1"
+      }
+   ],
+   "projects": [
+      {
+         "projectName": "CARS Project 1",
+         "staff": [
+            {
+               "fullName": "John Lennon"
             }
-        }
-    ],
-
-    "homes": [
-        {
-            "homeName": "Home 1",
-            "director": "John Lennon",
-            "socialWorker": "Chris Martin",
-            "staff": "John Lennon",
-            "address": {
-                "type": "Current",
-                "addressNo": "123/4",
-                "moo": "1",
-                "district": "Mueang Chiang Mai",
-                "city": "Suthep",
-                "province": "Chiang Mai",
-                "postalCode": "50000"
+         ],
+         "carsHomes": "Home 1"
+      },
+      {
+         "projectName": "CARS Project 2",
+         "staff": [
+            {
+               "fullName": "John Lennon"
             },
-            "carsProject": {
-                "name": "CARS Project 1",
-                "projectStaff": "John Lennon"
-            },
-
-            "phoneNumber": "0987654321"
-        },
-        {
-            "homeName": "Home 2",
-            "director": "John Lennon",
-            "socialWorker": "Chris Martin",
-            "staff": "Alice Smith",
-            "address": {
-                "type": "Current",
-                "addressNo": "123/45",
-                "moo": "51",
-                "district": "Mueang Chiang Rai",
-                "city": "Suthep",
-                "province": "Chiang Rai",
-                "postalCode": "50001"
-            },
-            "carsProject": {
-                "name": "CARS Project 1",
-                "projectStaff": "John Lennon"
-            },
-
-            "phoneNumber": "0987654321"
-        }
-    ],
-    "staff": [
-        {
-            "position": "Director",
-            "firstName": "John",
-            "lastName": "Lennon",
-            "phone": "55555555555",
-            "staffUser": "admin",
-            "home": {
-              "name": "Home 1"
-            },
-            "CARs Project":"CARS Project 1"
-          },
-          {
-            "position": "Worker",
-            "firstName": "Alice",
-            "lastName": "Smith",
-            "phone": "55555555556",
-            "staffUser": "alice_smith",
-            "home": {
-                "name": "Home 2"
-            },
-            "CARs Project": "CARS Project 2"
-        }
-    ],
-    "projects": [
-        {
-            "projectName": "CARS Project 1",
-            "staff": [
-              {
-                  "fullName":  "John Lennon"
-              }
-            ],
-            "carsHomes": "Home 1"
-        },
-        {
-            "projectName": "CARS Project 2",
-            "staff": [
-              {
-                  "fullName":  "John Lennon"
-              },
-              {
-                  "fullName":  "Alice Smith"
-              }
-            ],
-            "carsHomes": {
-                "name": "Home 2"
+            {
+               "fullName": "Alice Smith"
             }
-        }
-    ],
-  "note":[{
-    "title":"Test Note number 1",
-    "date":"10/08/2022",
-    "text":"Note to self, get more coffee beans",
-    "fileName": "New Test File",
-    "category": "New Category"
-  }]
+         ],
+         "carsHomes": {
+            "name": "Home 2"
+         }
+      }
+   ],
+   "note": [
+      {
+         "title": "Test Note number 1",
+         "date": "10/08/2022",
+         "text": "Note to self, get more coffee beans",
+         "fileName": "123.file",
+         "category": "New Category"
+      }
+   ]
 }

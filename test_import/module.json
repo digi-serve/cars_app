@@ -107858,7 +107858,7 @@
       "json": {
         "id": "b05defaa-4f11-4a9d-a762-66acb555ea09",
         "type": "view",
-        "key": "detailtext",
+        "key": "detailconnect",
         "icon": "etsy",
         "name": "Staff.dataview.detailtext",
         "settings": {
