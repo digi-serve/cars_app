@@ -465,7 +465,8 @@
                                        "label": "[data-cy=\"string Label 48ea550b-bd2a-4abd-b6dd-576da70ec684 d10efe5b-c7b7-4862-9faa-18077f89ff47\"]"
                                     }
                                  },
-                                 "grid": "[data-cy=\"ABViewGrid_a2e24efa-2b3a-4f62-9861-62743e194689\"]",
+                                 "grid": "[data-cy=\"ABViewGrid_a2e24efa-2b3a-4f62-9861-62743e194689_datatable\"]",
+                                 "viewGrid": "ABViewGrid_a2e24efa-2b3a-4f62-9861-62743e194689_datatable",
                                  "columns": [
                                     "[column=\"0\"]",
                                     "[column=\"1\"]",
@@ -550,7 +551,8 @@
                },
                "view": {
                   "homes": {
-                     "container": "[data-cy=\"ABViewGrid_6aac7a56-c849-4833-bc7d-85dbadf649be\"]"
+                     "container": "[data-cy=\"ABViewGrid_6aac7a56-c849-4833-bc7d-85dbadf649be_datatable\"]",
+                     "viewGrid": "ABViewGrid_6aac7a56-c849-4833-bc7d-85dbadf649be_datatable"
                   },
                   "home": {
                      "position": {

@@ -1,74 +1,74 @@
 {
-   "navigator": "[data-cy=\"227bcbb3-437f-4bb5-a5a1-ec3198696206\"]",
-   "page": {
-      "roles": {
-         "page": {
-            "info": {
-               "button": {
-                  "save": "[data-cy=\"button save abae9cec-6ec0-4191-9f72-8f85f6197e38\"]"
-               },
-               "field": {
-                  "name": "[data-cy=\"string name f1fccbbf-f226-4e9e-aa6a-119f8cc309b6 abae9cec-6ec0-4191-9f72-8f85f6197e38\"]",
-                  "description": "[data-cy=\"LongText description 07e6a725-aba0-42e6-9b38-984fef7e8274 abae9cec-6ec0-4191-9f72-8f85f6197e38\"]"
-               }
-            }
-         },
-         "button": {
-            "addRole": "[data-cy=\"menu-item Add Role 43f3500f-5345-429e-8343-718a11d30d61 4e696b9a-4ee9-4097-ad27-a274215bda32\"]"
-         },
-         "form": {
-            "abc": "placeholder"
-         },
-         "tab": {
-            "info": "[data-cy=\"tab Info b614f104-f8b9-41cd-a8a1-1a203e75d630 ba2a9e04-4a7c-46d9-8158-3caf91c41f72\"]",
-            "scopes": "[data-cy=\"tab Scopes 996feaaf-40d8-4cb9-b252-e935b7fd4372 ba2a9e04-4a7c-46d9-8158-3caf91c41f72\"]",
-            "users": "[data-cy=\"tab Users 7691ceb8-c7ad-4614-af08-06e08f9f7559 ba2a9e04-4a7c-46d9-8158-3caf91c41f72\"]"
-         }
+  "navigator": "[data-cy=\"227bcbb3-437f-4bb5-a5a1-ec3198696206\"]",
+  "page": {
+    "roles": {
+      "page": {
+        "info": {
+          "button": {
+            "save": "[data-cy=\"button save abae9cec-6ec0-4191-9f72-8f85f6197e38\"]"
+          },
+          "field": {
+            "name": "[data-cy=\"string name f1fccbbf-f226-4e9e-aa6a-119f8cc309b6 abae9cec-6ec0-4191-9f72-8f85f6197e38\"]",
+            "description": "[data-cy=\"LongText description 07e6a725-aba0-42e6-9b38-984fef7e8274 abae9cec-6ec0-4191-9f72-8f85f6197e38\"]"
+          }
+        }
       },
-      "users": {
-         "page": {
-            "button": {
-               "addUser": "[data-cy=\"menu-item Add site user e70ffd56-81a8-407d-bc72-53c6db7a86c3 a1e6a732-702f-4843-be0c-c190d3b21898\"]"
-            },
-            "form": {
-               "addUser": {
-                  "button": {
-                     "save": "[data-cy=\"button save d4ee30af-a252-4883-9a7f-6ca2ab34e4e1\"]"
-                  },
-                  "field": {
-                     "username": "[data-cy=\"string username 5760560b-c078-47ca-98bf-e18ac492a561 d4ee30af-a252-4883-9a7f-6ca2ab34e4e1\"]",
-                     "password": "[data-cy=\"LongText password 1d5f9d6a-6221-448e-b380-081851bb5e17 d4ee30af-a252-4883-9a7f-6ca2ab34e4e1\"]",
-                     "email": "[data-cy=\"LongText email 6d86c133-34b3-4569-b42e-1b1fe0e8e9cc d4ee30af-a252-4883-9a7f-6ca2ab34e4e1\"]",
-                     "isactive": "[data-cy=\"boolean isActive 1f022d07-1829-4257-acac-d9347c74b939 d4ee30af-a252-4883-9a7f-6ca2ab34e4e1\"]",
-                     "languagecode": "[data-cy=\"connectObject languageCode 412ffc8d-3342-4f7d-8345-5434e11a8fd8 d4ee30af-a252-4883-9a7f-6ca2ab34e4e1\"]"
-                  },
-                  "option": {
-                     "languageCode": {
-                        "en": "[data-item-id=\"04b8b355-2832-4331-bfec-34875ca51181\"]"
-                     }
-                  }
-               },
-               "editUser": {
-                  "button": {
-                     "save": "[data-cy=\"button save e72e1ced-7606-4f2e-9c25-92d9f3e63f1a\"]"
-                  },
-                  "field": {
-                     "isactive": "[data-cy=\"boolean isActive 1f022d07-1829-4257-acac-d9347c74b939 e72e1ced-7606-4f2e-9c25-92d9f3e63f1a\"]"
-                  }
-               }
-            },
-            "grid": "[data-cy=\"ABViewGrid_26116e8f-79de-40a9-9464-f073d3c46dd7\"]"
-         },
-         "tab": {
-            "children": "[data-cy=\"tab Children 8beb9e43-947a-4390-93dd-651a9733e941 4d0bcb94-bb0d-4179-a325-be1cf7f92399\"]",
-            "home": "[data-cy=\"tab Homes d86538b7-d394-4d9c-b7b9-8cf717d304e7 4d0bcb94-bb0d-4179-a325-be1cf7f92399\"]",
-            "staff": "[data-cy=\"tab Staff 0dce9ea5-3c0b-4017-984d-7c3e07e1d8ad 4d0bcb94-bb0d-4179-a325-be1cf7f92399\"]"
-         }
+      "button": {
+        "addRole": "[data-cy=\"menu-item Add Role 43f3500f-5345-429e-8343-718a11d30d61 4e696b9a-4ee9-4097-ad27-a274215bda32\"]"
+      },
+      "form": {
+        "abc": "placeholder"
+      },
+      "tab": {
+        "info": "[data-cy=\"tab Info b614f104-f8b9-41cd-a8a1-1a203e75d630 ba2a9e04-4a7c-46d9-8158-3caf91c41f72\"]",
+        "scopes": "[data-cy=\"tab Scopes 996feaaf-40d8-4cb9-b252-e935b7fd4372 ba2a9e04-4a7c-46d9-8158-3caf91c41f72\"]",
+        "users": "[data-cy=\"tab Users 7691ceb8-c7ad-4614-af08-06e08f9f7559 ba2a9e04-4a7c-46d9-8158-3caf91c41f72\"]"
       }
-   },
-   "tab": {
-      "administration": "[data-cy=\"227bcbb3-437f-4bb5-a5a1-ec3198696206\"]",
-      "roles": "[data-cy=\"tab-Roles-1a3e991e-aa1e-4eef-8cf8-fd7c5d97ae53-63a4cd7c-795e-4aa6-aae5-b6a08e0b39dd\"]",
-      "users": "[data-cy=\"tab-Users-f37866de-d38d-4153-a775-8b47af0d6db1-63a4cd7c-795e-4aa6-aae5-b6a08e0b39dd\"]"
-   }
+    },
+    "users": {
+      "page": {
+        "button": {
+          "addUser": "[data-cy=\"menu-item Add site user e70ffd56-81a8-407d-bc72-53c6db7a86c3 a1e6a732-702f-4843-be0c-c190d3b21898\"]"
+        },
+        "form": {
+          "addUser": {
+            "button": {
+              "save": "[data-cy=\"button save d4ee30af-a252-4883-9a7f-6ca2ab34e4e1\"]"
+            },
+            "field": {
+              "username": "[data-cy=\"string username 5760560b-c078-47ca-98bf-e18ac492a561 d4ee30af-a252-4883-9a7f-6ca2ab34e4e1\"]",
+              "password": "[data-cy=\"LongText password 1d5f9d6a-6221-448e-b380-081851bb5e17 d4ee30af-a252-4883-9a7f-6ca2ab34e4e1\"]",
+              "email": "[data-cy=\"LongText email 6d86c133-34b3-4569-b42e-1b1fe0e8e9cc d4ee30af-a252-4883-9a7f-6ca2ab34e4e1\"]",
+              "isactive": "[data-cy=\"boolean isActive 1f022d07-1829-4257-acac-d9347c74b939 d4ee30af-a252-4883-9a7f-6ca2ab34e4e1\"]",
+              "languagecode": "[data-cy=\"connectObject languageCode 412ffc8d-3342-4f7d-8345-5434e11a8fd8 d4ee30af-a252-4883-9a7f-6ca2ab34e4e1\"]"
+            },
+            "option": {
+              "languageCode": {
+                "en": "[data-item-id=\"04b8b355-2832-4331-bfec-34875ca51181\"]"
+              }
+            }
+          },
+          "editUser": {
+            "button": {
+              "save": "[data-cy=\"button save e72e1ced-7606-4f2e-9c25-92d9f3e63f1a\"]"
+            },
+            "field": {
+              "isactive": "[data-cy=\"boolean isActive 1f022d07-1829-4257-acac-d9347c74b939 e72e1ced-7606-4f2e-9c25-92d9f3e63f1a\"]"
+            }
+          }
+        },
+        "grid": "[data-cy=\"ABViewGrid_26116e8f-79de-40a9-9464-f073d3c46dd7_datatable\"]"
+      },
+      "tab": {
+        "children": "[data-cy=\"tab Children 8beb9e43-947a-4390-93dd-651a9733e941 4d0bcb94-bb0d-4179-a325-be1cf7f92399\"]",
+        "home": "[data-cy=\"tab Homes d86538b7-d394-4d9c-b7b9-8cf717d304e7 4d0bcb94-bb0d-4179-a325-be1cf7f92399\"]",
+        "staff": "[data-cy=\"tab Staff 0dce9ea5-3c0b-4017-984d-7c3e07e1d8ad 4d0bcb94-bb0d-4179-a325-be1cf7f92399\"]"
+      }
+    }
+  },
+  "tab": {
+    "administration": "[data-cy=\"227bcbb3-437f-4bb5-a5a1-ec3198696206\"]",
+    "roles": "[data-cy=\"tab-Roles-1a3e991e-aa1e-4eef-8cf8-fd7c5d97ae53-63a4cd7c-795e-4aa6-aae5-b6a08e0b39dd\"]",
+    "users": "[data-cy=\"tab-Users-f37866de-d38d-4153-a775-8b47af0d6db1-63a4cd7c-795e-4aa6-aae5-b6a08e0b39dd\"]"
+  }
 }
