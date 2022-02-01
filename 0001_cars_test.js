@@ -1,3 +1,10 @@
+import * as Common from "../../../../setup/common.js";
+
+import cyInterfaceCARS from "./test_setup/cy_interface/interface.json";
+import cyInterfaceADMIN from "./test_setup/cy_interface/admin_interface.json";
+import example from "./test_example/example.json";
+import path from "path";
+
 Cypress.on("uncaught:exception", (err, runnable) => {
    // returning false here prevents Cypress from
    // failing the test
@@ -17,51 +24,19 @@ var cyInterfaceCommon = {
    },
 };
 var module = ["cars"];
-const folderName = __dirname.match(/[^\\\/]+$/);
 
 var importModule = (moduleName) => {
+const folderName = __dirname.match(/[^\\/]+$/);
    cy.request("POST", "/test/import", {
       file: `imports/${folderName}/test_import/module.json`,
    });
 
    //fix file import
-   var commands = [folderName, "reset", "import-files"];
-   cy.exec(
-      `bash ${path
-         .join(__dirname, "test_setup", "commands", "file_manager.sh")
-         .replace(/\\/g, "/")} ${commands.join(" ")}`
-   );
-};
-
-var sqlManager = (moduleName, sqlFile) => {
-   cy.exec(
-      `bash -c "ls ${path
-         .join(__dirname, "test_setup", "sql")
-         .replace(/\\/g, "/")}"`
-   ).then((files) => {
-      var sqlFiles = files.stdout
-         .split(/[\s\n\\]+/)
-         .filter((e) => e.includes(".sql"));
-      cy.exec(
-         `bash ${path.join(
-            __dirname,
-            "test_setup",
-            "commands",
-            "sql_manager.sh"
-         )} ${folderName} ${sqlFiles[sqlFiles.indexOf(sqlFile)]}`
-      );
-   });
+   var commands = ["reset", "import-files"];
+   Common.RunSQL(cy, folderName, commands);
 };
 
 // =====================================================================================================================
-
-import * as Common from "../../../../setup/common.js";
-
-import cyInterfaceCARS from "./test_setup/cy_interface/interface.json";
-import cyInterfaceADMIN from "./test_setup/cy_interface/admin_interface.json";
-import example from "./test_example/example.json";
-import path from "path";
-
 // CARS setup
 var moduleCARS = module[module.indexOf("cars")];
 
@@ -146,7 +121,7 @@ before(() => {
 
 beforeEach(() => {
    Common.AuthLogin(cy);
-   sqlManager(moduleCARS, "reset_db.sql");
+   Common.RunSQL(cy, folderName, ["reset_db.sql"]);
 });
 
 // End to End Testing
@@ -166,7 +141,7 @@ describe("Test Child:", () => {
       const fileExtension = child.profilePhoto.match(/(.+)\.(.+)$/)[2];
 
       //act
-      sqlManager(moduleCARS, "init_db_for_adding_new_child.sql");
+      Common.RunSQL(cy, folderName, ["init_db_for_adding_new_child.sql"]);
       cy.visit("/");
       navigator();
       cy.get(cyInterfaceCARS.tab.socialWorker).click();
@@ -349,7 +324,9 @@ describe("Test Child:", () => {
       var child = example.children[childrenIndex];
 
       // act
-      sqlManager(moduleCARS, "init_db_for_viewing_a_child_profile.sql");
+      Common.RunSQL(cy, folderName, [
+         "init_db_for_viewing_a_child_profile.sql",
+      ]);
 
       // prepare for assertion
       cy.visit("/");
@@ -481,7 +458,7 @@ describe("Test Child:", () => {
       var child = example.children[childrenIndex];
 
       //act
-      sqlManager(moduleCARS, "init_db_for_editing_a_child.sql");
+      Common.RunSQL(cy, folderName, ["init_db_for_editing_a_child.sql"]);
       cy.visit("/");
       navigator();
       childVisit(childrenIndex);
@@ -605,7 +582,7 @@ describe("Test Report:", () => {
       var child = example.children[childrenIndex];
 
       //act
-      sqlManager(moduleCARS, "init_db_default.sql");
+      Common.RunSQL(cy, folderName, ["init_db_default.sql"]);
       cy.visit("/");
       // navigator();
       childVisit(childrenIndex);
@@ -664,7 +641,7 @@ describe("Test Home:", () => {
       var home = example.homes[homesIndex];
 
       // act
-      sqlManager(moduleCARS, "init_db_for_adding_new_home.sql");
+      Common.RunSQL(cy, folderName, ["init_db_for_adding_new_home.sql"]);
       cy.visit("/");
       navigator();
       cy.get(cyInterfaceCARS.page.socialWorker.tab.home).click();
@@ -792,7 +769,7 @@ describe("Test Home:", () => {
       var home = example.homes[homesIndex];
 
       // act
-      sqlManager(moduleCARS, "init_db_for_updating_existing_home.sql");
+      Common.RunSQL(cy, folderName, ["init_db_for_updating_existing_home.sql"]);
       cy.visit("/");
       homeAdministrationVisit(homesIndex);
       cy.get(
@@ -842,7 +819,7 @@ describe("Test Project:", () => {
       var project = example.projects[0];
 
       // act
-      sqlManager(moduleCARS, "init_db_for_adding_new_project.sql");
+      Common.RunSQL(cy, folderName, ["init_db_for_adding_new_project.sql"]);
       cy.visit("/");
       navigator();
 
@@ -907,7 +884,9 @@ describe("Test Project:", () => {
       var project = example.projects[projectIndex];
 
       // act
-      sqlManager(moduleCARS, "init_db_for_updating_existing_project.sql");
+      Common.RunSQL(cy, folderName, [
+         "init_db_for_updating_existing_project.sql",
+      ]);
       cy.visit("/");
       navigator();
       cy.get(cyInterfaceCARS.tab.administration).click();
@@ -965,7 +944,7 @@ describe("Test Staff:", () => {
       var home = example.homes[homesIndex];
       var staff = example.staff[1];
 
-      sqlManager(moduleCARS, "init_db_for_adding_new_staff.sql");
+      Common.RunSQL(cy, folderName, ["init_db_for_adding_new_staff.sql"]);
       // act
 
       // CREATE USER
@@ -1100,7 +1079,9 @@ describe("Test Staff:", () => {
       var staff = example.staff[1];
 
       // act
-      sqlManager(moduleCARS, "init_db_for_updating_existing_staff.sql");
+      Common.RunSQL(cy, folderName, [
+         "init_db_for_updating_existing_staff.sql",
+      ]);
       cy.visit("/");
       navigator();
 
@@ -1229,7 +1210,9 @@ describe("Test Staff:", () => {
       var staff = example.staff[2];
 
       // act
-      sqlManager(moduleCARS, "init_db_for_removing_existing_staff.sql");
+      Common.RunSQL(cy, folderName, [
+         "init_db_for_removing_existing_staff.sql",
+      ]);
       cy.visit("/");
 
       // CREATE USER
@@ -1336,7 +1319,7 @@ describe("Test Social Worker Note:", () => {
       var note = example.note[0];
 
       //act
-      sqlManager(moduleCARS, "init_db_for_updating_existing_note.sql");
+      Common.RunSQL(cy, folderName, ["init_db_for_updating_existing_note.sql"]);
       navToNote();
 
       cy.get(
@@ -1489,7 +1472,7 @@ describe("Test Social Worker Note:", () => {
       var note = example.note[0];
       // TODO act
       //act
-      sqlManager(moduleCARS, "init_db_for_adding_new_note.sql");
+      Common.RunSQL(cy, folderName, ["init_db_for_adding_new_note.sql"]);
       navToNote();
 
       cy.get(
