@@ -59,7 +59,7 @@ const childVisit = () =>{
 };
 
 // End to End Testing
-describe("Test add-new forms:", () => {
+describe.skip("Test add-new forms:", () => {
   before(() =>{
       Common.ResetDB(cy);
       cy.wait(1500);
