@@ -122,7 +122,7 @@ beforeEach(() => {
 describe("Test Child:", () => {
    const childrenIndex = 0;
    const child = example.children[childrenIndex];
-   it.skip("Test Adding New Child", () => {
+   it.only("Test Adding New Child", () => {
       //arrange
       const photoPath = path.join(
          "..",
@@ -254,9 +254,9 @@ describe("Test Child:", () => {
       // TODO: shouldn't need to wait and reload.
       // cy.visit("/");
 
-      cy.get(".webix_progress_state.wxi-sync.webix_spin").should(
-         "not.be.visible"
-      );
+      cy.get(".webix_progress_state.wxi-sync.webix_spin", {
+         timeout: 30000,
+      }).should("not.be.visible");
 
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.children.container
