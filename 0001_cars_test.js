@@ -122,7 +122,7 @@ beforeEach(() => {
 describe("Test Child:", () => {
    const childrenIndex = 0;
    const child = example.children[childrenIndex];
-   it.only("Test Adding New Child", () => {
+   it("Test Adding New Child", () => {
       //arrange
       const photoPath = path.join(
          "..",
@@ -254,9 +254,7 @@ describe("Test Child:", () => {
       // TODO: shouldn't need to wait and reload.
       // cy.visit("/");
 
-      cy.get(".webix_progress_state.wxi-sync.webix_spin", {
-         timeout: 30000,
-      }).should("not.be.visible");
+      cy.get(".webix_progress_state.wxi-sync.webix_spin").should("not.be.visible");
 
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.children.container
@@ -596,10 +594,7 @@ describe("Test Report:", () => {
          // browser might take a while to download the file,
          // so use "cy.readFile" to retry until the file exists
          // and has length - and we assume that it has finished downloading then
-         cy.readFile(filename, { timeout: 15000 }).should(
-            "have.length.gt",
-            500
-         );
+         cy.readFile(filename).should("have.length.gt", 500);
       });
    });
 });
