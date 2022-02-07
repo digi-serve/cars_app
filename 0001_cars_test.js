@@ -599,7 +599,7 @@ describe("Test Child:", () => {
 });
 
 describe("Test Report:", () => {
-   it("Export basic report", () => {
+   it.only("Export basic report", () => {
       //arrange
       var childrenIndex = 0;
       var child = example.children[childrenIndex];

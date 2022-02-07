@@ -52,3 +52,6 @@ jobs:
           # We need to set the stack name as an environment variable for
           # the test reset script.
           env: stack=ab
+
+      - name: test
+        run: ls ab/test/e2e/cypress/download
