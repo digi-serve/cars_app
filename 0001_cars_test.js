@@ -150,7 +150,7 @@ beforeEach(() => {
 });
 
 // End to End Testing
-describe("Test Child:", () => {
+describe.only("Test Child:", () => {
    it("Test Adding New Child", () => {
       //arrange
       var childrenIndex = 0;
