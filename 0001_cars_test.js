@@ -641,6 +641,7 @@ describe("Test Report:", () => {
          //    }
          // });
          // file path is relative to the working folder
+         cy.exec("ls ../../download")
          const filename = path.join(
             Cypress.config("downloadsFolder"),
             data.text() + ".docx"
