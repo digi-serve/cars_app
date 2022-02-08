@@ -624,6 +624,12 @@ describe("Test Report:", () => {
       ).click({ force: true });
 
       // prepare for assertion
+      cy.exec("ls ../../download").then(data => {
+         cy.exec("pwd").then(data2 => {
+            cy.log(data2)
+         });
+         cy.log(data);
+      });
 
       // assert
       cy.get(
@@ -641,7 +647,6 @@ describe("Test Report:", () => {
          //    }
          // });
          // file path is relative to the working folder
-         cy.exec("ls ../../download")
          const filename = path.join(
             Cypress.config("downloadsFolder"),
             data.text() + ".docx"
