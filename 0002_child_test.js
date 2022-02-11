@@ -371,7 +371,7 @@ describe("Test add-new forms:", () => {
    it.skip("Test familyAssessment", () => {
       saveAndCheck("socialWork", "familyAssessment", "environment");
    });
-   it.only("Test socialWelfare", () => {
+   it("Test socialWelfare", () => {
       saveAndCheck("socialWork", "socialWelfare", "history");
    });
    it("Test lifePlan", () => {
