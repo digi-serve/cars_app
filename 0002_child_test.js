@@ -375,7 +375,10 @@ describe("Test add-new forms:", () => {
       saveAndCheck("socialWork", "socialWelfare", "history");
    });
    it("Test lifePlan", () => {
-      saveAndCheck("socialWork", "lifePlan", "action");
+      save("socialWork", "lifePlan", "action");
+      cy.get(cyInterfaceCHILD.page.socialWork.page.lifePlan.grid)
+         .contains(text)
+         .log();
    });
    // it("Test lifePlan", () => {
    //   //
