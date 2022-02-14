@@ -1,6 +1,5 @@
 {
    "navigator": "[data-cy=\"45c62df9-ddd6-4744-84d6-50a2d549289d\"]",
-
    "position": "[data-cy=\"dataview item Children [childID] b3aa04d7-7528-40fb-b947-cef0c4dd52e9\"]",
    "page": {
       "basicInfo": {
@@ -96,14 +95,18 @@
             },
             "files": {
                "button": {
-                  "addFile": "[data-cy=\"menu-item Add File_aad7 670b32b7-aad7-4fe1-8a04-0a3321f7ec42 0b8da3b0-ee41-4e18-a423-665aa1192792\"]"
+                  "add": "[data-cy=\"menu-item Add File_aad7 670b32b7-aad7-4fe1-8a04-0a3321f7ec42 0b8da3b0-ee41-4e18-a423-665aa1192792\"]"
                },
                "field": {},
                "form": {
-                  "button": {
-                     "save": "[data-cy=\"button save bb129be7-9523-45af-b47c-5232c9977a79\"]"
-                  },
-                  "label": "[data-cy=\"string Label fe4f8118-eba7-4cd1-b642-daf246521400 bb129be7-9523-45af-b47c-5232c9977a79\"]"
+                  "add": {
+                     "button": {
+                        "save": "[data-cy=\"button save bb129be7-9523-45af-b47c-5232c9977a79\"]"
+                     },
+                     "fields": {
+                        "label": "[data-cy=\"string Label fe4f8118-eba7-4cd1-b642-daf246521400 bb129be7-9523-45af-b47c-5232c9977a79\"]"
+                     }
+                  }
                },
                "grid": "[data-cy=\"ABViewGrid_e18ca5b8-1532-4d20-9a1c-e7b5253ce986_datatable\"]"
             }
@@ -344,7 +347,9 @@
       "medical": {
          "page": {
             "Prelim Health Exam": {
-               "button": { "edit": "[data-cy=\"menu\"]" },
+               "button": {
+                  "edit": "[data-cy=\"menu\"]"
+               },
                "form": {
                   "edit": {
                      "fields": {
@@ -598,7 +603,7 @@
                      "field": {
                         "title": "[data-cy=\"string Title 4bef656d-e062-41c3-93ce-cfc7e5b42176 f807c3b6-1359-4cb6-823f-ccc1bf676e97\"]",
                         "date": "[data-cy=\"date Date bd2de56e-f76d-4ae4-81a5-cb2a03af0f4c f807c3b6-1359-4cb6-823f-ccc1bf676e97\"]",
-                        "text": "[data-cy=\" TODO \"]",
+                        "text": "[data-cy=\"textbox rich Text d63f21d8-ac2f-4e3f-8038-f2c778942b5e 8129e697-a2a3-4fd1-a576-ec758cd54662\"]",
                         "file": "[data-cy=\"connectObject File47 bd49d7b7-697b-4f0f-a4f4-12ca407fdc65 f807c3b6-1359-4cb6-823f-ccc1bf676e97\"]",
                         "categories": "[data-cy=\"connectObject Categories 84157ae7-caf3-4eae-bdf4-bf374b837d3c f807c3b6-1359-4cb6-823f-ccc1bf676e97\"]"
                      },
@@ -616,7 +621,7 @@
                      "field": {
                         "title": "[data-cy=\"string Title 4bef656d-e062-41c3-93ce-cfc7e5b42176 8129e697-a2a3-4fd1-a576-ec758cd54662\"]",
                         "date": "[data-cy=\"date Date bd2de56e-f76d-4ae4-81a5-cb2a03af0f4c 8129e697-a2a3-4fd1-a576-ec758cd54662\"]",
-                        "text": "[data-cy=\" TODO \"]",
+                        "text": "[data-cy=\"textbox rich Text 1ab9a889-d470-4eb9-9efa-305f47b6cac5 f807c3b6-1359-4cb6-823f-ccc1bf676e97\"]",
                         "file": "[data-cy=\"connectObject File47 bd49d7b7-697b-4f0f-a4f4-12ca407fdc65 8129e697-a2a3-4fd1-a576-ec758cd54662\"]",
                         "categories": "[data-cy=\"connectObject Categories 84157ae7-caf3-4eae-bdf4-bf374b837d3c 8129e697-a2a3-4fd1-a576-ec758cd54662\"]"
                      }

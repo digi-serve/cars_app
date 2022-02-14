@@ -53876,13 +53876,8 @@
           ],
           "submitRules": [
             {
-              "selectedAction": "ABViewRuleActionFormSubmitRuleExistPage",
-              "queryRules": "",
-              "actionSettings": {
-                "valueRules": {
-                  "pageId": "e01542a8-03ef-485d-8124-90b227ab093e"
-                }
-              }
+              "selectedAction": "ABViewRuleActionFormSubmitRuleClosePopup",
+              "queryRules": ""
             }
           ]
         },
@@ -61832,6 +61827,10 @@
           ],
           "submitRules": [
             {
+              "selectedAction": "ABViewRuleActionFormSubmitRuleClosePopup",
+              "queryRules": ""
+            },
+            {
               "selectedAction": "ABViewRuleActionFormSubmitRuleConfirmMessage",
               "queryRules": "",
               "actionSettings": {
@@ -64090,7 +64089,13 @@
           "popupHeight": "450",
           "pageWidth": "",
           "fixedPageWidth": "0",
-          "pageBackground": "ab-background-default"
+          "pageBackground": "ab-background-default",
+          "submitRules": [
+            {
+              "selectedAction": "ABViewRuleActionFormSubmitRuleClosePopup",
+              "queryRules": ""
+            }
+          ]
         },
         "accessLevels": {
           "128ac31f-29b0-4848-aa22-48ca1f63bb4b": "2",
@@ -64171,6 +64176,12 @@
           ],
           "gravity": [
             "1"
+          ],
+          "submitRules": [
+            {
+              "selectedAction": "ABViewRuleActionFormSubmitRuleClosePopup",
+              "queryRules": ""
+            }
           ]
         },
         "translations": [
@@ -77481,7 +77492,6 @@
           "0c3ea17a-a11b-4d85-8026-3edf4d1b0dfd",
           "b872a67e-227c-4a92-9583-7a065bbd443a",
           "8c62767a-c7cc-4123-96e8-04521715c8fd",
-          "965f4cc7-3aa8-4c08-8d3c-9ba8a6db1473",
           "034d1902-1e65-4c9b-81d8-47d8fdd4cf3d",
           "7f1848d0-d6b3-464d-a3f5-a66c6b6d9e97",
           "850e3ab8-7760-4414-a57f-af5e553cd961"
@@ -77680,44 +77690,7 @@
         "isRoot": "false"
       },
       "createdAt": "2020-10-07T03:02:11.000Z",
-      "updatedAt": "2022-01-31T06:39:21.000Z"
-    },
-    {
-      "id": "965f4cc7-3aa8-4c08-8d3c-9ba8a6db1473",
-      "name": "Add Family Assessment.form.button",
-      "type": "view",
-      "json": {
-        "id": "965f4cc7-3aa8-4c08-8d3c-9ba8a6db1473",
-        "type": "view",
-        "key": "button",
-        "icon": "square",
-        "name": "Add Family Assessment.form.button",
-        "settings": {
-          "includeSave": "true",
-          "includeCancel": "false",
-          "includeReset": "false",
-          "isDefault": "false"
-        },
-        "translations": [
-          {
-            "language_code": "en",
-            "label": "Add Family Assessment.form.button"
-          },
-          {
-            "language_code": "th",
-            "label": "[th]Add Family Assessment.form.button"
-          }
-        ],
-        "position": {
-          "dx": "1",
-          "dy": "1",
-          "y": "4",
-          "x": "1"
-        },
-        "isRoot": "false"
-      },
-      "createdAt": "2020-10-07T03:02:11.000Z",
-      "updatedAt": "2022-01-31T06:39:21.000Z"
+      "updatedAt": "2022-02-11T06:32:15.000Z"
     },
     {
       "id": "034d1902-1e65-4c9b-81d8-47d8fdd4cf3d",
@@ -86194,14 +86167,8 @@
           "dataviewID": "268ca2d5-7b23-4ce1-b857-c082e077176f",
           "submitRules": [
             {
-              "selectedAction": "ABViewRuleActionFormSubmitRuleExistPage",
-              "queryRules": "",
-              "actionSettings": {
-                "valueRules": {
-                  "pageId": "0b22c3a9-4732-43b1-b503-85f1dc62e5af",
-                  "tabId": "8a41a127-98ed-43d1-bcc7-a58630cb7610"
-                }
-              }
+              "selectedAction": "ABViewRuleActionFormSubmitRuleClosePopup",
+              "queryRules": ""
             }
           ]
         },
@@ -92462,13 +92429,8 @@
           "height": "200",
           "submitRules": [
             {
-              "selectedAction": "ABViewRuleActionFormSubmitRuleExistPage",
-              "queryRules": "",
-              "actionSettings": {
-                "valueRules": {
-                  "pageId": "aed7b096-d7ef-4208-bc2c-58a09b1b8365"
-                }
-              }
+              "selectedAction": "ABViewRuleActionFormSubmitRuleClosePopup",
+              "queryRules": ""
             }
           ],
           "dataviewID": "8ca044db-f8c5-400e-bf3e-37413bb49ed0",
@@ -93592,13 +93554,8 @@
           "dataviewID": "67992bf5-30b6-479e-b887-b665fb3adec2",
           "submitRules": [
             {
-              "selectedAction": "ABViewRuleActionFormSubmitRuleExistPage",
-              "queryRules": "",
-              "actionSettings": {
-                "valueRules": {
-                  "pageId": "f5210e24-06ee-491d-9c66-f3579697dd81"
-                }
-              }
+              "selectedAction": "ABViewRuleActionFormSubmitRuleClosePopup",
+              "queryRules": ""
             }
           ],
           "recordRules": [
