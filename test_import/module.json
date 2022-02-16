@@ -14028,7 +14028,9 @@
           }
         ],
         "fieldIDs": [
+          "bf5c38fb-14b7-4123-ba0c-cb68d42bb10b",
           "a574524b-f753-4b7f-9370-f61a2aab258b",
+          "28f600b3-91e9-4d6c-9654-2fe6a248c9cc",
           "5c460c2b-2efc-40e5-88a4-f89e431711d9",
           "4a3a9940-8157-4a79-bd99-d45e15a36a5c",
           "2430862c-8987-4413-95b5-cc5d5b7b74a0",
@@ -14039,8 +14041,6 @@
           "75d415ac-c0aa-4ca4-bc97-9c94ff21ebec",
           "7762a91a-b1c6-4b90-8dac-fd18f761fa8c",
           "8044a3d7-65cc-447d-a4c6-a873a4370b4b",
-          "bf5c38fb-14b7-4123-ba0c-cb68d42bb10b",
-          "28f600b3-91e9-4d6c-9654-2fe6a248c9cc",
           "09d46c49-79c7-4242-849d-0d97ed110f4f",
           "abf11485-beaa-44f3-a45d-01e466c6e024",
           "63cc3beb-b756-4005-b32d-4234bbd6f16c"
@@ -15296,6 +15296,7 @@
           }
         ],
         "fieldIDs": [
+          "f521e239-4448-4ded-a6a8-47b8b51090fd",
           "764976e4-aed6-45c0-9599-7d57aec7b12f",
           "369fbafb-3d63-4bde-a4ef-d2b7997e4725",
           "be68d7d5-4a53-4be7-99ca-893e05b222cb",
@@ -15304,7 +15305,6 @@
           "9938a840-01b6-4f59-bd7c-0bd91279e906",
           "17cca467-c984-4d29-9118-80469df00d20",
           "bc4cc2cb-5ea5-4573-8897-d4e46fe4b224",
-          "f521e239-4448-4ded-a6a8-47b8b51090fd",
           "1e57b0b3-850e-41fc-bc06-2ac8e06b1cba",
           "73d356a4-eef6-4761-80cd-6cfda0d4c847",
           "038b52ca-879d-4946-a992-69c472b9af3e",
@@ -15345,6 +15345,48 @@
       },
       "createdAt": "2020-10-07T03:02:06.000Z",
       "updatedAt": "2022-01-31T06:39:15.000Z"
+    },
+    {
+      "id": "f521e239-4448-4ded-a6a8-47b8b51090fd",
+      "name": "Injections",
+      "type": "field",
+      "json": {
+        "id": "f521e239-4448-4ded-a6a8-47b8b51090fd",
+        "key": "LongText",
+        "icon": "align-right",
+        "isImported": "0",
+        "columnName": "Injections",
+        "settings": {
+          "showIcon": 1,
+          "required": 0,
+          "default": "",
+          "supportMultilingual": 1,
+          "width": 285,
+          "unique": 0,
+          "translations": [
+            {
+              "language_code": "en",
+              "default": ""
+            },
+            {
+              "language_code": "th",
+              "default": ""
+            }
+          ]
+        },
+        "translations": [
+          {
+            "language_code": "en",
+            "label": "Injections"
+          },
+          {
+            "language_code": "th",
+            "label": " โรคประจำตัว"
+          }
+        ]
+      },
+      "createdAt": "2020-10-07T03:02:06.000Z",
+      "updatedAt": "2022-01-31T06:39:14.000Z"
     },
     {
       "id": "f7430423-1372-4332-8fcc-52793f20046b",
@@ -15699,48 +15741,7 @@
       "createdAt": "2020-10-07T03:02:06.000Z",
       "updatedAt": "2022-01-31T06:39:14.000Z"
     },
-    {
-      "id": "f521e239-4448-4ded-a6a8-47b8b51090fd",
-      "name": "Injections",
-      "type": "field",
-      "json": {
-        "id": "f521e239-4448-4ded-a6a8-47b8b51090fd",
-        "key": "LongText",
-        "icon": "align-right",
-        "isImported": "0",
-        "columnName": "Injections",
-        "settings": {
-          "showIcon": 1,
-          "required": 0,
-          "default": "",
-          "supportMultilingual": 1,
-          "width": 285,
-          "unique": 0,
-          "translations": [
-            {
-              "language_code": "en",
-              "default": ""
-            },
-            {
-              "language_code": "th",
-              "default": ""
-            }
-          ]
-        },
-        "translations": [
-          {
-            "language_code": "en",
-            "label": "Injections"
-          },
-          {
-            "language_code": "th",
-            "label": " โรคประจำตัว"
-          }
-        ]
-      },
-      "createdAt": "2020-10-07T03:02:06.000Z",
-      "updatedAt": "2022-01-31T06:39:14.000Z"
-    },
+
     {
       "id": "1e57b0b3-850e-41fc-bc06-2ac8e06b1cba",
       "name": "Contagious Diseases",
@@ -50596,7 +50597,8 @@
           "editPage": "9a37cd20-61c7-493f-a444-3dac012b92eb",
           "objectWorkspace": {
             "hiddenFields": [
-              "Children"
+              "Children",
+              "Vaccinations"
             ],
             "frozenColumnID": ""
           },
@@ -62807,7 +62809,7 @@
                 "valueRules": {
                   "fieldOperations": [
                     {
-                      "fieldID": "51b038ea-77c9-45d9-a710-66e6fa82c856",
+                      "fieldID": "a574524b-f753-4b7f-9370-f61a2aab258b",
                       "value": "39032bc8-38c7-4581-aaea-9fb4b5d3b111",
                       "queryField": "",
                       "op": "set",
@@ -89976,7 +89978,7 @@
               "queryRules": "",
               "actionSettings": {
                 "valueRules": {
-                  "pageId": "af9a29f4-a8eb-4fb9-a913-4f98cfbee546"
+                  "pageId": "f2bb1c75-4a52-4644-807c-7031963341be"
                 }
               }
             }
