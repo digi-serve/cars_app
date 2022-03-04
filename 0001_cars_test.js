@@ -145,7 +145,9 @@ describe("Test Child:", () => {
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
             .no
-      ).type(child.no);
+      )
+         .click()
+         .type(child.no);
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
             .firstName
@@ -247,14 +249,9 @@ describe("Test Child:", () => {
             .save
       ).click();
 
-      // prepare for assertion
-      // cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.basicInfo.page.basicInfo.field.firstName, { timeout: 30000 });
-      // cy.get('.ab-menu-left .webix_list_item').click();
-
-      // TODO: shouldn't need to wait and reload.
-      // cy.visit("/");
-
-      cy.get(".webix_progress_state.wxi-sync.webix_spin").should("not.be.visible");
+      cy.get(".webix_progress_state.wxi-sync.webix_spin").should(
+         "not.be.visible"
+      );
 
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.children.container
@@ -784,7 +781,9 @@ describe("Test Project:", () => {
       cy.get(
          cyInterfaceCARS.page.administration.page.project.form.addProject.field
             .name
-      ).type(example.projects[0].projectName);
+      )
+         .click()
+         .type(example.projects[0].projectName);
       cy.get(
          cyInterfaceCARS.page.administration.page.project.form.addProject.field
             .projectHome
@@ -892,14 +891,13 @@ describe("Test Staff:", () => {
 
       // CREATE USER
       // TODO move to admin tests area?
-      // cy.visit("/").wait(2500);
       cy.visit("/");
       cy.get(cyInterfaceCommon.button.menu).click();
       cy.get(cyInterfaceADMIN.tab.users).click();
       cy.get(cyInterfaceADMIN.page.users.page.button.addUser).click();
-      cy.get(cyInterfaceADMIN.page.users.page.form.addUser.field.username).type(
-         staff.staffUser
-      );
+      cy.get(cyInterfaceADMIN.page.users.page.form.addUser.field.username)
+         .click()
+         .type(staff.staffUser);
       cy.get(cyInterfaceADMIN.page.users.page.form.addUser.field.password).type(
          "Password"
       );
@@ -932,7 +930,9 @@ describe("Test Staff:", () => {
       cy.get(
          cyInterfaceCARS.page.administration.page.staff.form.addStaff.field
             .position
-      ).type(staff.position);
+      )
+         .click()
+         .type(staff.position);
       cy.get(
          cyInterfaceCARS.page.administration.page.staff.form.addStaff.field
             .firstName
@@ -1451,14 +1451,9 @@ describe("Test Social Worker Note:", () => {
       // prepare for assertion
       // click reload data button
       // TODO replace with data-cy
-      cy.get(".webix_warn")
-         .find(".webix_button")
-         .should("be.visible")
-         .click({ multiple: true });
+      cy.get(".webix_warn > div > button").should("be.visible").first().click();
 
       //assert
-      //tabindex="0"
-
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.grid
