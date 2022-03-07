@@ -44,6 +44,7 @@ jobs:
           working-directory: ./ab
           project: ./test/e2e
           config: baseUrl=http://localhost:8080,testFiles=**/*.js,responseTimeout=100000,defaultCommandTimeout=30000,retries=2
+          browser: chrome
 
           # Wait for the site to be ready
           wait-on: "http://localhost:8080"
@@ -56,4 +57,4 @@ jobs:
         if: failure()
         with:
           name: cypress-videos
-          path: cypress/videos
+          path: an/test/e2e/cypress/videos
