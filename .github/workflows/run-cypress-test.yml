@@ -45,6 +45,7 @@ jobs:
           project: ./test/e2e
           config: baseUrl=http://localhost:8080,testFiles=**/*.js,responseTimeout=100000,defaultCommandTimeout=30000,retries=0
           browser: chrome
+          headless: false
 
           # Wait for the site to be ready
           wait-on: "http://localhost:8080"
@@ -59,4 +60,9 @@ jobs:
         if: failure()
         with:
           name: cypress-videos
-          path: test/e2e/cypress/videos
+          path: cars_app/ab/test/e2e/cypress/videos
+      - uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cars_app/ab/test/e2e/cypress/screenshot
