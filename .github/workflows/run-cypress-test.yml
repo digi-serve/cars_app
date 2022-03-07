@@ -43,7 +43,7 @@ jobs:
         with:
           working-directory: ./ab
           project: ./test/e2e
-          config: baseUrl=http://localhost:8080,testFiles=**/*.js,responseTimeout=100000,defaultCommandTimeout=30000,retries=2
+          config: baseUrl=http://localhost:8080,testFiles=**/*.js,responseTimeout=100000,defaultCommandTimeout=30000,retries=0
           browser: chrome
 
           # Wait for the site to be ready
@@ -53,8 +53,10 @@ jobs:
           # We need to set the stack name as an environment variable for
           # the test reset script.
           env: stack=ab
+        env:
+          DEBUG: '@cypress/github-action'
       - uses: actions/upload-artifact@v2
         if: failure()
         with:
           name: cypress-videos
-          path: ab/test/e2e/cypress/videos
+          path: test/e2e/cypress/videos
