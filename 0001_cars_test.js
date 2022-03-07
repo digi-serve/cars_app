@@ -782,6 +782,7 @@ describe("Test Project:", () => {
          cyInterfaceCARS.page.administration.page.project.form.addProject.field
             .name
       )
+         .should("exist")
          .click()
          .type(example.projects[0].projectName);
       cy.get(

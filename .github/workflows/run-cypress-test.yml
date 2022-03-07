@@ -1,63 +1,58 @@
 name: Cypress Test
 on:
+   # Run on any commit to the #master branch
+   push:
+      branches: [master]
 
-  # Run on any commit to the #master branch
-  push:
-    branches: [master]
+   # Run on pull requests into the #master branch
 
-  # Run on pull requests into the #master branch
+   pull_request:
+      branches: [master]
 
-  pull_request:
-    branches: [master]
-
-  # Allows user to trigger the workflow from GitHub's web UI
-  workflow_dispatch:
+   # Allows user to trigger the workflow from GitHub's web UI
+   workflow_dispatch:
 
 jobs:
-  cypress-test:
-    runs-on: ubuntu-latest
-    steps:
+   cypress-test:
+      runs-on: ubuntu-latest
+      steps:
+         # Setup
+         - name: Install AppBuilder
+           run: docker swarm init && npx digi-serve/ab-cli install ab --stack=ab --port=8080 --db.expose=false --db.password=root --db.encryption=false --tag=develop --nginx.enable=true --ssl.none --bot.enable=false --smtp.enable=false --tenant.username=admin --tenant.password=admin --tenant.email=neo@thematrix.com
 
-      # Setup
-      - name: Install AppBuilder
-        run: docker swarm init && npx digi-serve/ab-cli install ab --stack=ab --port=8080 --db.expose=false --db.password=root --db.encryption=false --tag=develop --nginx.enable=true --ssl.none --bot.enable=false --smtp.enable=false --tenant.username=admin --tenant.password=admin --tenant.email=neo@thematrix.com
+         # Docker's daemon couldn't find the network "ab_default" so the services aren't created
+         - name: Restart Docker
+           run: sudo systemctl restart docker
 
-      # Docker's daemon couldn't find the network "ab_default" so the services aren't created
-      - name: Restart Docker
-        run: sudo systemctl restart docker
+         # Up
+         - name: Bring up AppBuilder
+           run: ./UP.sh -q -t
+           working-directory: ./ab
 
-      # Up
-      - name: Bring up AppBuilder
-        run: ./UP.sh -q -t
-        working-directory: ./ab
+         - name: Check out
+           uses: actions/checkout@v2
+           with:
+              path: ab/test/e2e/cypress/integration/cars_app
 
+         #Run test
+         - name: Run Cypress Tests
+           uses: cypress-io/github-action@v2
+           with:
+              working-directory: ./ab
+              project: ./test/e2e
+              config: baseUrl=http://localhost:8080,testFiles=**/*.js,responseTimeout=100000,defaultCommandTimeout=30000,retries=2,ignoreTestFiles=0001_portal_auth_login.js
+              browser: chrome
 
-      - name: Check out
-        uses: actions/checkout@v2
-        with:
-          path: ab/test/e2e/cypress/integration/cars_app
+              # Wait for the site to be ready
+              wait-on: "http://localhost:8080"
+              wait-on-timeout: 300
 
-      #Run test
-      - name: Run Cypress Tests
-        uses: cypress-io/github-action@v2
-        with:
-          working-directory: ./ab
-          project: ./test/e2e
-          config: baseUrl=http://localhost:8080,testFiles=**/*.js,responseTimeout=100000,defaultCommandTimeout=30000,retries=0
-          browser: chrome
-          headless: false
+              # We need to set the stack name as an environment variable for
+              # the test reset script.
+              env: stack=ab
 
-          # Wait for the site to be ready
-          wait-on: "http://localhost:8080"
-          wait-on-timeout: 300
-
-          # We need to set the stack name as an environment variable for
-          # the test reset script.
-          env: stack=ab
-        env:
-          DEBUG: '@cypress/github-action'
-      - uses: actions/upload-artifact@v2
-        if: failure()
-        with:
-          name: cypress-screenshots
-          path: test/e2e/cypress/screenshots
+         - uses: actions/upload-artifact@v2
+           if: failure()
+           with:
+              name: cypress-screenshots
+              path: ./test/e2e/cypress/screenshots
