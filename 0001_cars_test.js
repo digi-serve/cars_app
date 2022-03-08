@@ -145,7 +145,10 @@ describe("Test Child:", () => {
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
             .no
-      ).type(child.no);
+      )
+         .should("be.visible")
+         .click()
+         .type(child.no);
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
             .firstName
@@ -219,7 +222,12 @@ describe("Test Child:", () => {
          cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
             .home
       ).click();
-      cy.get(".selectivity-result-item").click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.option
+            .home[0]
+      )
+         .should("be.visible")
+         .click();
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
             .typeReceived
@@ -236,12 +244,26 @@ describe("Test Child:", () => {
          cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
             .relatives
       ).click();
-      cy.get(".selectivity-result-item").click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.option
+            .relatives[0]
+      )
+         .should("be.visible")
+         .click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .relatives
+      ).click();
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
             .carsProject
       ).click();
-      cy.get(".selectivity-result-item").click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.option
+            .project[0]
+      )
+         .should("be.visible")
+         .click();
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.button
             .save
@@ -254,7 +276,9 @@ describe("Test Child:", () => {
       // TODO: shouldn't need to wait and reload.
       // cy.visit("/");
 
-      cy.get(".webix_progress_state.wxi-sync.webix_spin").should("not.be.visible");
+      cy.get(".webix_progress_state.wxi-sync.webix_spin").should(
+         "not.be.visible"
+      );
 
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.children.container
@@ -469,7 +493,14 @@ describe("Test Child:", () => {
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .basicInfo.page.basicInfo.form.editBasicInfo.field.address
       ).click();
-      cy.get(".selectivity-result-item").click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .basicInfo.page.basicInfo.form.editBasicInfo.option.address[0]
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .basicInfo.page.basicInfo.form.editBasicInfo.field.address
+      ).click();
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .basicInfo.page.basicInfo.form.editBasicInfo.button.save
@@ -626,17 +657,36 @@ describe("Test Home:", () => {
          cyInterfaceCARS.page.socialWorker.page.home.form.addChildrenHome.field
             .staff
       ).click();
-      cy.get(".selectivity-result-item").click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.home.form.addChildrenHome.option
+            .staff[0]
+      )
+         .should("be.visible")
+         .click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.home.form.addChildrenHome.field
+            .staff
+      ).click();
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.home.form.addChildrenHome.field
             .address
       ).click();
-      cy.get(".selectivity-result-item").click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.home.form.addChildrenHome.option
+            .address[0]
+      )
+         .should("be.visible")
+         .click();
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.home.form.addChildrenHome.field
             .carsProject
       ).click();
-      cy.get(".selectivity-result-item").click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.home.form.addChildrenHome.option
+            .carsProject[0]
+      )
+         .should("be.visible")
+         .click();
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.home.form.addChildrenHome.button
             .save
@@ -668,7 +718,7 @@ describe("Test Home:", () => {
             "Address No"
          ).to.eq(home.address.addressNo);
          expect(
-            data.text().includes(` ${home.address.addressNo} `)
+            data.text().includes(home.address.addressNo)
                ? home.address.moo
                : "",
             "Moo"
@@ -784,13 +834,25 @@ describe("Test Project:", () => {
       cy.get(
          cyInterfaceCARS.page.administration.page.project.form.addProject.field
             .name
-      ).type(example.projects[0].projectName);
+      )
+         .should("be.visible")
+         .type("Please work")
+         .clear()
+         .type(project.projectName);
       cy.get(
          cyInterfaceCARS.page.administration.page.project.form.addProject.field
             .projectHome
       ).click();
-      cy.get(".selectivity-result-item").click();
-
+      cy.get(
+         cyInterfaceCARS.page.administration.page.project.form.addProject.option
+            .projectHome[0]
+      )
+         .should("be.visible")
+         .click();
+      cy.get(
+         cyInterfaceCARS.page.administration.page.project.form.addProject.field
+            .projectHome
+      ).click();
       cy.get(
          cyInterfaceCARS.page.administration.page.project.form.addProject.button
             .save
@@ -807,8 +869,6 @@ describe("Test Project:", () => {
       )
          .find(".ab-detail-component-holder") // ab-detail-component-holder
          .should((data) => {
-            //cy.log(data.0)
-            //cy.log(Object.keys(data))
             expect(
                data.text().includes(project.projectName)
                   ? project.projectName
@@ -820,7 +880,7 @@ describe("Test Project:", () => {
             cyInterfaceCARS.page.administration.page.project.view.projects
                .detail.homeName
          )
-         .find(".selectivity-multiple-selected-item ")
+         .find(".webix_multicombo_value")
          .should((data) => {
             expect(
                data.text().includes(project.carsHomes) ? project.carsHomes : "",
@@ -852,12 +912,30 @@ describe("Test Project:", () => {
          cyInterfaceCARS.page.administration.page.project.form.editProject.field
             .projectHome
       ).click();
-      cy.get(".selectivity-result-item").click();
+      cy.get(
+         cyInterfaceCARS.page.administration.page.project.form.editProject
+            .option.projectHome[0]
+      )
+         .should("be.visible")
+         .click();
+      cy.get(
+         cyInterfaceCARS.page.administration.page.project.form.editProject.field
+            .projectHome
+      ).click();
       cy.get(
          cyInterfaceCARS.page.administration.page.project.form.editProject.field
             .projectStaff
       ).click();
-      cy.get(".selectivity-result-item").click();
+      cy.get(
+         cyInterfaceCARS.page.administration.page.project.form.editProject
+            .option.projectStaff[0]
+      )
+         .should("be.visible")
+         .click();
+      cy.get(
+         cyInterfaceCARS.page.administration.page.project.form.editProject.field
+            .projectStaff
+      ).click();
       cy.get(
          cyInterfaceCARS.page.administration.page.project.form.editProject
             .button.save
@@ -872,13 +950,6 @@ describe("Test Project:", () => {
       cy.get(
          cyInterfaceCARS.page.administration.page.project.view.projects.project
       ).contains(project.projectName + "337");
-      // cy.get(cyInterfaceCARS.page.administration.page.project.view.projects.container)
-      // .find(".selectivity-multiple-selected-item ").should((data) => { // selectivity-multiple-selected-item
-      //   //cy.log(data)
-      //   //expect(data).to.have.string(project.carsHomes)
-      //   expect(data.text().includes(project.carsHomes) ? project.carsHomes: "", "Home Name").to.eq(project.carsHomes);
-      //   //expect(expect(data).to.include(project.carsHomes) ? project.carsHomes: "", "Home Name").to.eq(project.carsHomes);
-      // })
    });
 });
 
@@ -897,9 +968,11 @@ describe("Test Staff:", () => {
       cy.get(cyInterfaceCommon.button.menu).click();
       cy.get(cyInterfaceADMIN.tab.users).click();
       cy.get(cyInterfaceADMIN.page.users.page.button.addUser).click();
-      cy.get(cyInterfaceADMIN.page.users.page.form.addUser.field.username).type(
-         staff.staffUser
-      );
+      cy.get(cyInterfaceADMIN.page.users.page.form.addUser.field.username)
+         .should("be.visible")
+         .type("Please work")
+         .clear()
+         .type(staff.staffUser);
       cy.get(cyInterfaceADMIN.page.users.page.form.addUser.field.password).type(
          "Password"
       );
@@ -909,11 +982,6 @@ describe("Test Staff:", () => {
       cy.get(
          cyInterfaceADMIN.page.users.page.form.addUser.field.isactive
       ).click();
-      // TODO this is two elements somehow?????
-      // cy.get(cyInterfaceADMIN.page.users.page.form.addUser.field.languagecode)
-      //   .find(".selectivity-single-result-container").click({ multiple: true, force: true }).wait(100);
-      // cy.get(".selectivity-result-item")
-      //   .find(".highlight").click();
 
       cy.get(cyInterfaceADMIN.page.users.page.form.addUser.button.save).click();
       cy.get(cyInterfaceADMIN.page.users.page.grid).should(
@@ -932,7 +1000,11 @@ describe("Test Staff:", () => {
       cy.get(
          cyInterfaceCARS.page.administration.page.staff.form.addStaff.field
             .position
-      ).type(staff.position);
+      )
+         .should("be.visible")
+         .type("Please work")
+         .clear()
+         .type(staff.position);
       cy.get(
          cyInterfaceCARS.page.administration.page.staff.form.addStaff.field
             .firstName
@@ -949,7 +1021,17 @@ describe("Test Staff:", () => {
       cy.get(
          cyInterfaceCARS.page.administration.page.staff.form.addStaff.field.home
       ).click();
-      cy.get(".selectivity-result-item").click();
+
+      cy.get(
+         cyInterfaceCARS.page.administration.page.staff.form.addStaff.option
+            .home[0]
+      )
+         .should("be.visible")
+         .click();
+
+      cy.get(
+         cyInterfaceCARS.page.administration.page.staff.form.addStaff.field.home
+      ).click();
 
       cy.get(
          cyInterfaceCARS.page.administration.page.staff.form.addStaff.field
@@ -961,7 +1043,9 @@ describe("Test Staff:", () => {
       cy.get(
          cyInterfaceCARS.page.administration.page.staff.form.addStaff.option
             .staffUser[1]
-      ).click();
+      )
+         .should("be.visible")
+         .click();
 
       cy.get(
          cyInterfaceCARS.page.administration.page.staff.form.addStaff.button
@@ -1068,7 +1152,12 @@ describe("Test Staff:", () => {
          cyInterfaceCARS.page.administration.page.staff.form.editStaff.field
             .home
       ).click();
-      cy.get(".selectivity-result-item").click();
+      cy.get(
+         cyInterfaceCARS.page.administration.page.staff.form.editStaff.option
+            .home[0]
+      )
+         .should("be.visible")
+         .click();
 
       cy.get(
          cyInterfaceCARS.page.administration.page.staff.form.editStaff.field
@@ -1188,7 +1277,7 @@ describe("Test Staff:", () => {
          cyInterfaceCARS.page.administration.page.staff.form.editStaff.field
             .home
       )
-         .find(".selectivity-multiple-selected-item-remove")
+         .find(".webix_multicombo_delete")
          .click();
 
       cy.get(
@@ -1313,12 +1402,16 @@ describe("Test Social Worker Note:", () => {
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.editNote.field.file
       ).click();
-      cy.get(".selectivity-result-item").click();
-
-      // TODO multiple item bug again
-      // //cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.form.addCategory.label).type(note.category);
-      // cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.form.editNote.field.categories).click().wait(50);
-      // cy.get('.selectivity-result-item').click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .socialWork.page.notes.form.editNote.option.file[0]
+      )
+         .should("be.visible")
+         .click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .socialWork.page.notes.form.editNote.field.file
+      ).click();
 
       //save
       cy.get(
@@ -1415,6 +1508,8 @@ describe("Test Social Worker Note:", () => {
       )
          .should("be.visible")
          .click()
+         .type("Please work")
+         .clear()
          .type(note.title);
 
       cy.get(
@@ -1426,22 +1521,21 @@ describe("Test Social Worker Note:", () => {
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.addNote.field.date
       ).type(note.date);
-      // TODO text data-cy
-      //cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.form.addNote.field.text).type(note.text);
-
-      // cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.form.addNote.field.file).click().wait(50);
-      // cy.get('.selectivity-result-item').click();
-      // cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.form.addNote.field.file)
-      //   .find('.ab-connect-add-new-link').click();
 
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.addNote.field.categories
       ).click();
-      cy.get(".selectivity-result-item").click();
-      // cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.form.addNote.field.categories)
-      //   .find('.ab-connect-add-new-link').click();
-      // cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.form.addCategory.label).type(note.category);
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .socialWork.page.notes.form.addNote.option.categories[0]
+      )
+         .should("be.visible")
+         .click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .socialWork.page.notes.form.addNote.field.categories
+      ).click();
       //save
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
@@ -1454,7 +1548,7 @@ describe("Test Social Worker Note:", () => {
       cy.get(".webix_warn")
          .find(".webix_button")
          .should("be.visible")
-         .click({ multiple: true });
+         .click({ multiple: true, force: true });
 
       //assert
       //tabindex="0"
