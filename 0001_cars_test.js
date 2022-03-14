@@ -269,13 +269,6 @@ describe("Test Child:", () => {
             .save
       ).click();
 
-      // prepare for assertion
-      // cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.basicInfo.page.basicInfo.field.firstName, { timeout: 30000 });
-      // cy.get('.ab-menu-left .webix_list_item').click();
-
-      // TODO: shouldn't need to wait and reload.
-      // cy.visit("/");
-
       cy.get(".webix_progress_state.wxi-sync.webix_spin").should(
          "not.be.visible"
       );
@@ -963,7 +956,6 @@ describe("Test Staff:", () => {
 
       // CREATE USER
       // TODO move to admin tests area?
-      // cy.visit("/").wait(2500);
       cy.visit("/");
       cy.get(cyInterfaceCommon.button.menu).click();
       cy.get(cyInterfaceADMIN.tab.users).click();
@@ -1551,8 +1543,6 @@ describe("Test Social Worker Note:", () => {
          .click({ multiple: true, force: true });
 
       //assert
-      //tabindex="0"
-
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.grid
