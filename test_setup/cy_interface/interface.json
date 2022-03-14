@@ -97,7 +97,9 @@
                            "[data-cy=\"user options admin 5cfb8cb4-26db-4204-a4d0-7c822eda4291 0eab74c9-f13b-4343-ab71-5e50875f8403\"]",
                            "[data-cy=\"user options alice_smith 5cfb8cb4-26db-4204-a4d0-7c822eda4291 0eab74c9-f13b-4343-ab71-5e50875f8403\"]"
                         ],
-                        "home": []
+                        "home": [
+                           "[data-cy=\"connectObject options 696cfe80-8a3e-477f-a566-3c14dac1cc2d ea33376e-a991-497f-93e1-8d853cc27de2 0eab74c9-f13b-4343-ab71-5e50875f8403\"]"
+                        ]
                      }
                   },
                   "editStaff": {
@@ -118,7 +120,9 @@
                            "[data-cy=\"user options admin 5cfb8cb4-26db-4204-a4d0-7c822eda4291 d7a6b341-3140-4f8e-bedf-2ae8bc2e4186\"]",
                            "[data-cy=\"user options alice_smith 5cfb8cb4-26db-4204-a4d0-7c822eda4291 d7a6b341-3140-4f8e-bedf-2ae8bc2e4186\"]"
                         ],
-                        "home": []
+                        "home": [
+                           "[data-cy=\"connectObject options 696cfe80-8a3e-477f-a566-3c14dac1cc2e ea33376e-a991-497f-93e1-8d853cc27de2 d7a6b341-3140-4f8e-bedf-2ae8bc2e4186\"]"
+                        ]
                      }
                   }
                },
@@ -129,7 +133,7 @@
 
                      "detail": {
                         "position": "[data-cy=\"detail text Position 94c09c11-713b-43f3-b9f2-5b074f37d27c 513d727e-e395-4f46-b9a0-31f3a687a336\"]",
-                        "user": "[data-cy=\"detail selectivity Staff User 5cfb8cb4-26db-4204-a4d0-7c822eda4291 513d727e-e395-4f46-b9a0-31f3a687a336\"]",
+                        "user": "[data-cy=\"detail connected Staff User 5cfb8cb4-26db-4204-a4d0-7c822eda4291 513d727e-e395-4f46-b9a0-31f3a687a336\"]",
                         "firstName": "[data-cy=\"detail text First Name 151535fe-c83c-4821-b031-74f24e2aa48b 513d727e-e395-4f46-b9a0-31f3a687a336\"]",
                         "lastName": "[data-cy=\"detail text Last Name 0a3ce77d-796f-4d35-a98c-50b0c369580e 513d727e-e395-4f46-b9a0-31f3a687a336\"]"
                      }
@@ -151,7 +155,9 @@
                         "projectHome": "[data-cy=\"connectObject Project Homes f9f7fdc8-cd57-44c5-b18d-2af4b0bf09e9 e0cb6a73-34f6-464f-8acb-9b3747fc1cb6\"]"
                      },
                      "option": {
-                        "projectHome": []
+                        "projectHome": [
+                           "[data-cy=\"connectObject options 696cfe80-8a3e-477f-a566-3c14dac1cc2d f9f7fdc8-cd57-44c5-b18d-2af4b0bf09e9 e0cb6a73-34f6-464f-8acb-9b3747fc1cb6\"]"
+                        ]
                      }
                   },
                   "editProject": {
@@ -164,7 +170,12 @@
                         "projectStaff": "[data-cy=\"connectObject Staff737 8a2b66b7-4e6c-405e-a3be-11edb75df265 84a84d56-9574-467b-85d6-df949c454c9e\"]"
                      },
                      "option": {
-                        "projectHome": []
+                        "projectHome": [
+                           "[data-cy=\"connectObject options 696cfe80-8a3e-477f-a566-3c14dac1cc2e f9f7fdc8-cd57-44c5-b18d-2af4b0bf09e9 84a84d56-9574-467b-85d6-df949c454c9e\"]"
+                        ],
+                        "projectStaff": [
+                           "[data-cy=\"connectObject options e746f80b-3fbe-4aeb-9fdf-2707740eeacb 8a2b66b7-4e6c-405e-a3be-11edb75df265 84a84d56-9574-467b-85d6-df949c454c9e\"]"
+                        ]
                      }
                   }
                },
@@ -175,7 +186,7 @@
                      "project": "[data-cy^=\"dataview item Projects\"]",
                      "detail": {
                         "projectName": "[data-cy=\"detail text Name 9f9817e9-68d7-44a9-b57e-8c1a41f37f13 55a0ace1-d2f9-4a2f-8486-4a485cca6e3f\"]",
-                        "homeName": "[data-cy=\"detail selectivity Project Homes f9f7fdc8-cd57-44c5-b18d-2af4b0bf09e9 55a0ace1-d2f9-4a2f-8486-4a485cca6e3f\"]"
+                        "homeName": "[data-cy=\"detail connected Project Homes f9f7fdc8-cd57-44c5-b18d-2af4b0bf09e9 55a0ace1-d2f9-4a2f-8486-4a485cca6e3f\"]"
                      }
                   },
                   "project": {
@@ -282,7 +293,15 @@
                            "[data-cy=\"list options 1507525545633 e0c10ab9-4a1d-47b8-acc6-ab6326298c53 850f8a95-75f8-45a9-9251-078677cdfb1f\"]",
                            "[data-cy=\"list options 1507525545671 e0c10ab9-4a1d-47b8-acc6-ab6326298c53 850f8a95-75f8-45a9-9251-078677cdfb1f\"]"
                         ],
-                        "relatives": [],
+                        "home": [
+                           "[data-cy=\"connectObject options 696cfe80-8a3e-477f-a566-3c14dac1cc2d 0f323b4f-be4a-4ad9-84da-488cf3941820 850f8a95-75f8-45a9-9251-078677cdfb1f\"]"
+                        ],
+                        "project": [
+                           "[data-cy=\"connectObject options cb46b6b4-dc25-4915-80f7-c1febf26da4a 5a580697-5167-423a-a076-28bd5ecfe328 850f8a95-75f8-45a9-9251-078677cdfb1f\"]"
+                        ],
+                        "relatives": [
+                           "[data-cy=\"connectObject options c58fc0e3-d3a7-4616-a701-ded0536f8b77 1cd932b9-d70e-49e1-aef6-083ffe2a54d7 850f8a95-75f8-45a9-9251-078677cdfb1f\"]"
+                        ],
                         "religion": [
                            "[data-cy=\"list options 1507525545939 40468349-5ea1-41e7-9e19-fa86e05a884a 850f8a95-75f8-45a9-9251-078677cdfb1f\"]",
                            "[data-cy=\"list options 1507525546012 40468349-5ea1-41e7-9e19-fa86e05a884a 850f8a95-75f8-45a9-9251-078677cdfb1f\"]",
@@ -336,11 +355,11 @@
                                     "reports": "[data-cy=\"menu-item Reports_83ff 30e12327-83ff-453d-bbd3-4dc4618af3c9 32ed0146-0bfb-4916-a226-c721be7cc868\"]"
                                  },
                                  "field": {
-                                    "address": "[data-cy=\"detail selectivity Address a8a4d2f9-9de8-4f42-a6c4-026e435d3a86 31236bd0-91fa-46f1-b4e0-213b6fe5ef72\"]",
+                                    "address": "[data-cy=\"detail connected Address a8a4d2f9-9de8-4f42-a6c4-026e435d3a86 31236bd0-91fa-46f1-b4e0-213b6fe5ef72\"]",
                                     "birthday": "[data-cy=\"detail text Birthday e7590312-43ba-45dc-9893-9793da7bb6aa 31236bd0-91fa-46f1-b4e0-213b6fe5ef72\"]",
                                     "firstName": "[data-cy=\"detail text First Name ec8dd00f-f229-49e0-b898-12f0dd40cdc3 31236bd0-91fa-46f1-b4e0-213b6fe5ef72\"]",
                                     "gender": "[data-cy=\"detail text Gender e0c10ab9-4a1d-47b8-acc6-ab6326298c53 31236bd0-91fa-46f1-b4e0-213b6fe5ef72\"]",
-                                    "home": "[data-cy=\"detail selectivity Home 0f323b4f-be4a-4ad9-84da-488cf3941820 31236bd0-91fa-46f1-b4e0-213b6fe5ef72\"]",
+                                    "home": "[data-cy=\"detail connected Home 0f323b4f-be4a-4ad9-84da-488cf3941820 31236bd0-91fa-46f1-b4e0-213b6fe5ef72\"]",
                                     "idExpireDate": "[data-cy=\"detail text ID Expire Date da8203de-9c8d-470e-b9b9-0891e6277391 31236bd0-91fa-46f1-b4e0-213b6fe5ef72\"]",
                                     "idIssueDate": "[data-cy=\"detail text ID Issue Date f554ad73-4abe-4dff-b9e5-0d98949df5e3 31236bd0-91fa-46f1-b4e0-213b6fe5ef72\"]",
                                     "idNumber": "[data-cy=\"detail text ID Number 2a2ee6ca-0099-4d25-981a-46665780cb4f 31236bd0-91fa-46f1-b4e0-213b6fe5ef72\"]",
@@ -380,7 +399,9 @@
                                           "typeReceived": "[data-cy=\"list Type Received 72b033f7-c115-47b2-a99a-27712ae474d6 87913802-0e45-4b9a-ad08-96ae87480977\"]"
                                        },
                                        "option": {
-                                          "address": [],
+                                          "address": [
+                                             "[data-cy=\"connectObject options cb46b6b4-dc25-4915-80f7-c1febf26da4a a8a4d2f9-9de8-4f42-a6c4-026e435d3a86 87913802-0e45-4b9a-ad08-96ae87480977\"]"
+                                          ],
                                           "relatives": []
                                        }
                                     }
@@ -435,7 +456,9 @@
                                        },
                                        "option": {
                                           "file": [],
-                                          "categories": []
+                                          "categories": [
+                                             "[data-cy=\"connectObject options 43ab8092-5878-4cf4-a98f-6e8798ff2117 84157ae7-caf3-4eae-bdf4-bf374b837d3c f807c3b6-1359-4cb6-823f-ccc1bf676e97\"]"
+                                          ]
                                        }
                                     },
                                     "editNote": {
@@ -450,6 +473,11 @@
                                           "text": "[data-cy=\" TODO \"]",
                                           "file": "[data-cy=\"connectObject File47 bd49d7b7-697b-4f0f-a4f4-12ca407fdc65 8129e697-a2a3-4fd1-a576-ec758cd54662\"]",
                                           "categories": "[data-cy=\"connectObject Categories 84157ae7-caf3-4eae-bdf4-bf374b837d3c 8129e697-a2a3-4fd1-a576-ec758cd54662\"]"
+                                       },
+                                       "option": {
+                                          "file": [
+                                             "[data-cy=\"connectObject options 16c2d1b8-4bbe-4f8d-b80e-5dc9ab61846c bd49d7b7-697b-4f0f-a4f4-12ca407fdc65 8129e697-a2a3-4fd1-a576-ec758cd54662\"]"
+                                          ]
                                        }
                                     },
                                     "addFile": {
@@ -543,9 +571,15 @@
                         }
                      },
                      "option": {
-                        "address": [],
-                        "carsProject": [],
-                        "staff": []
+                        "address": [
+                           "[data-cy=\"connectObject options cb46b6b4-dc25-4915-80f7-c1febf26da4a 52441d8e-87c6-4632-8e77-b92fa17953cd 6a398e67-1a90-423a-ad1c-6f5a13220415\"]"
+                        ],
+                        "carsProject": [
+                           "[data-cy=\"connectObject options cb46b6b4-dc25-4915-80f7-c1febf26da4a 32ecf58a-1731-4086-a355-70de640572ea 6a398e67-1a90-423a-ad1c-6f5a13220415\"]"
+                        ],
+                        "staff": [
+                           "[data-cy=\"connectObject options e746f80b-3fbe-4aeb-9fdf-2707740eeaca e58dcdef-c626-4c08-92af-7a9d00212414 6a398e67-1a90-423a-ad1c-6f5a13220415\"]"
+                        ]
                      }
                   }
                },
