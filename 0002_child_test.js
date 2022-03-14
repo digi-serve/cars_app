@@ -123,28 +123,37 @@ describe("Test Social Worker Note:", () => {
 
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
-            .socialWork.page.notes.form.editNote.field.text
-      )
-         .click()
-         .type(note.text);
+        .socialWork.page.notes.form.editNote.field.text
+    )
+      .click()
+      .type(note.text);
 
-      cy.get(
-         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
-            .socialWork.page.notes.form.editNote.field.file
-      )
-         .should("be.visible")
-         .click();
-      cy.get(".selectivity-result-item").click();
+    cy.get(
+      cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+        .socialWork.page.notes.form.editNote.field.file
+    )
+      .should("be.visible")
+      .click();
+    cy.get("[data-cy^=\"connectObject\"]").should("be.visible").click();
 
-      // TODO multiple item bug again
-      // //cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.form.addCategory.label).type(note.category);
-      cy.get(
-         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
-            .socialWork.page.notes.form.editNote.field.categories
-      ).click();
-      cy.get(".selectivity-result-item").click();
+    cy.get(
+      cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.form.editNote.field.file
+    )
+      .click();
 
-      //save
+    // TODO multiple item bug again
+    // //cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.form.addCategory.label).type(note.category);
+    cy.get(
+      cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+        .socialWork.page.notes.form.editNote.field.categories
+    ).click();
+    cy.get("[data-cy^=\"connectObject\"]").should("be.visible").click();
+    cy.get(
+      cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+        .socialWork.page.notes.form.editNote.field.categories
+    ).click();
+
+    //save
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.editNote.button.save
