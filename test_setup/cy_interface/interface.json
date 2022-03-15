@@ -130,7 +130,6 @@
                   "staff": {
                      "container": "[data-cy=\"dataview item Staff e746f80b-3fbe-4aeb-9fdf-2707740eeaca 513d727e-e395-4f46-b9a0-31f3a687a336\"]",
                      "this container2 is useless": "[data-cy=\"ABViewContainer_e746f80b-3fbe-4aeb-9fdf-2707740eeaca513d727e-e395-4f46-b9a0-31f3a687a336_component1637205095228\"]",
-
                      "detail": {
                         "position": "[data-cy=\"detail text Position 94c09c11-713b-43f3-b9f2-5b074f37d27c 513d727e-e395-4f46-b9a0-31f3a687a336\"]",
                         "user": "[data-cy=\"detail connected Staff User 5cfb8cb4-26db-4204-a4d0-7c822eda4291 513d727e-e395-4f46-b9a0-31f3a687a336\"]",
@@ -433,13 +432,6 @@
                                  "button": {
                                     "addNote": "[data-cy=\"menu-item Add Note_8c5a 5d81aecc-8c5a-4d02-933c-86c434ea3bdc 6472a0bf-65e0-4e14-be48-819477edb23b\"]"
                                  },
-                                 "field": {
-                                    "title": "[data-cy=\"TODO\"]",
-                                    "date": "[data-cy=\"TODO\"]",
-                                    "text": "[data-cy=\" TODO \"]",
-                                    "file": "[data-cy=\"TODO\"]",
-                                    "categories": "[data-cy=\"TODO\"]"
-                                 },
                                  "form": {
                                     "addNote": {
                                        "button": {
@@ -450,7 +442,7 @@
                                        "field": {
                                           "title": "[data-cy=\"string Title 4bef656d-e062-41c3-93ce-cfc7e5b42176 f807c3b6-1359-4cb6-823f-ccc1bf676e97\"]",
                                           "date": "[data-cy=\"date Date bd2de56e-f76d-4ae4-81a5-cb2a03af0f4c f807c3b6-1359-4cb6-823f-ccc1bf676e97\"]",
-                                          "text": "[data-cy=\" TODO \"]",
+                                          "text": "[data-cy^=\"textbox rich Text\"]",
                                           "file": "[data-cy=\"connectObject File47 bd49d7b7-697b-4f0f-a4f4-12ca407fdc65 f807c3b6-1359-4cb6-823f-ccc1bf676e97\"]",
                                           "categories": "[data-cy=\"connectObject Categories 84157ae7-caf3-4eae-bdf4-bf374b837d3c f807c3b6-1359-4cb6-823f-ccc1bf676e97\"]"
                                        },
@@ -459,6 +451,10 @@
                                           "categories": [
                                              "[data-cy=\"connectObject options 43ab8092-5878-4cf4-a98f-6e8798ff2117 84157ae7-caf3-4eae-bdf4-bf374b837d3c f807c3b6-1359-4cb6-823f-ccc1bf676e97\"]"
                                           ]
+                                       },
+                                       "add": {
+                                          "file": "[data-cy=\"add new CR button 670b32b7-aad7-4fe1-8a04-0a3321f7ec42 b3a55291-3797-4734-ab39-f670228a2155\"]",
+                                          "category": "[data-cy=\"add new CR button eaa1dd39-ebfc-4550-82a3-a3a879836044 3f7f9ae2-f758-40fb-8f50-d95efe99da5a\"]"
                                        }
                                     },
                                     "editNote": {
@@ -470,7 +466,7 @@
                                        "field": {
                                           "title": "[data-cy=\"string Title 4bef656d-e062-41c3-93ce-cfc7e5b42176 8129e697-a2a3-4fd1-a576-ec758cd54662\"]",
                                           "date": "[data-cy=\"date Date bd2de56e-f76d-4ae4-81a5-cb2a03af0f4c 8129e697-a2a3-4fd1-a576-ec758cd54662\"]",
-                                          "text": "[data-cy=\" TODO \"]",
+                                          "text": "[data-cy^=\"textbox rich\"]",
                                           "file": "[data-cy=\"connectObject File47 bd49d7b7-697b-4f0f-a4f4-12ca407fdc65 8129e697-a2a3-4fd1-a576-ec758cd54662\"]",
                                           "categories": "[data-cy=\"connectObject Categories 84157ae7-caf3-4eae-bdf4-bf374b837d3c 8129e697-a2a3-4fd1-a576-ec758cd54662\"]"
                                        },
@@ -482,15 +478,15 @@
                                     },
                                     "addFile": {
                                        "button": {
-                                          "save": "[data-cy=\"button save 2ea329a8-a075-43cd-9ff9-fc77821e2f66\"]"
+                                          "save": "[data-cy^=\"button save\"]"
                                        },
-                                       "label": "[data-cy=\"string Label fe4f8118-eba7-4cd1-b642-daf246521400 2ea329a8-a075-43cd-9ff9-fc77821e2f66\"]"
+                                       "label": "[data-cy^=\"string Label fe4f8118-eba7-4cd1-b642-daf246521400\"]"
                                     },
                                     "addCategory": {
                                        "button": {
-                                          "save": "[data-cy=\"button save d10efe5b-c7b7-4862-9faa-18077f89ff47\"]"
+                                          "save": "[data-cy^=\"button save\"]"
                                        },
-                                       "label": "[data-cy=\"string Label 48ea550b-bd2a-4abd-b6dd-576da70ec684 d10efe5b-c7b7-4862-9faa-18077f89ff47\"]"
+                                       "label": "[data-cy^=\"string Label 48ea550b-bd2a-4abd-b6dd-576da70ec684\"]"
                                     }
                                  },
                                  "grid": "[data-cy=\"ABViewGrid_a2e24efa-2b3a-4f62-9861-62743e194689_datatable\"]",
