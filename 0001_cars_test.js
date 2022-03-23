@@ -269,15 +269,9 @@ describe("Test Child:", () => {
             .save
       ).click();
 
-      cy.get(".webix_progress_state.wxi-sync.webix_spin").should(
-         "not.be.visible"
-      );
-
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.children.container
-      )
-         .should("be.visible")
-         .and("not.be.empty");
+      ).should("not.be.empty");
 
       //assert
       //assert in the Children container
