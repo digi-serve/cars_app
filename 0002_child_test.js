@@ -232,8 +232,6 @@ describe("Test Social Worker Note:", () => {
    });
 
    it.skip("Test Add New Note", () => {
-      // skipping, as cy disconnects from dom Many times in this particular test case
-
       // arrange
       const staff = "Alice";
       const note = {
@@ -291,10 +289,10 @@ describe("Test Social Worker Note:", () => {
       //class="mce-content-body "
       // cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.form.addNote.field.file).click();
       // cy.get('.selectivity-result-item').click();
-      // cy.get(
-      //    cyInterfaceCARS.page.socialWorker.page.children.view.child.page
-      //       .socialWork.page.notes.form.addNote.add.file
-      // ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .socialWork.page.notes.form.addNote.add.file
+      ).click();
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.addFile.label
@@ -598,7 +596,7 @@ describe("Test add-new forms:", () => {
    });
 
    // Logs //
-   it.skip("Test behaviorLog", () => {
+   it("Test behaviorLog", () => {
       // Cannot click on already viewed child page
       let parent = "logs";
       let child = "behaviorLog";
@@ -606,8 +604,7 @@ describe("Test add-new forms:", () => {
       cy.get(cyInterfaceCHILD.tab[parent]).should("be.visible").click();
       saveAndCheck(parent, child, field, true);
    });
-   // TODO skip?
-   it.skip("Test visitorLog", () => {
+   it("Test visitorLog", () => {
       //
       // TODO this has a lot more to test about it
       // sub-forms
@@ -626,7 +623,6 @@ describe("Test add-new forms:", () => {
       ).contains(text);
       checkForm("logs", "visitorLog", "details");
    });
-   // TODO: Make the form close when saved
    it("Test homeVisit", () => {
       saveAndCheck("logs", "homeVisit", "no");
    });
@@ -636,16 +632,15 @@ describe("Test add-new forms:", () => {
    it("Test assetLog", () => {
       saveAndCheck("logs", "assetLog", "assetDescription");
    });
-   it.skip("Test contactingAgencies", () => {
+   it("Test contactingAgencies", () => {
       saveAndCheck("logs", "contactingAgencies", "name");
    });
 
    // Medical //
-   // TODO skip?
-   it.skip("Test vaccination", () => {
+   it("Test vaccination", () => {
       saveAndCheck("medical", "vaccination", "otherVacc");
    });
-   it.skip("Test healthInfo", () => {
+   it("Test healthInfo", () => {
       saveAndCheck("medical", "healthInfo", "injections");
       // cy.get(".webix_warn")
       //    .find(".webix_button")
@@ -664,8 +659,7 @@ describe("Test add-new forms:", () => {
    it("Test medicalRecord", () => {
       saveAndCheck("medical", "medicalRecord", "symptoms");
    });
-   // TODO skip?
-   it.skip("Test growthLog", () => {
+   it("Test growthLog", () => {
       save("medical", "growthLog", "note");
       cy.get(".webix_warn").find(".webix_button").should("be.visible").click({ multiple: true, force: true });
       cy.window().then((win) => {
@@ -689,7 +683,7 @@ describe("Test add-new forms:", () => {
       );
       checkForm("medical", "developmentLog", "notes");
    });
-   it.skip("Test psychCheck", () => {
+   it("Test psychCheck", () => {
       saveAndCheck("medical", "psychCheck", "preAssessmentObservations");
       // cy.get(".webix_warn")
       //    .find(".webix_button")
@@ -720,11 +714,41 @@ describe("Test add-new forms:", () => {
       cy.get(cyInterfaceCHILD.tab[parent]).should("be.visible").click();
       saveAndCheck(parent, child, field, true);
    });
-   //TODO: remove second save button
-   it.skip("Test familyAssessment", () => {
-      saveAndCheck("socialWork", "familyAssessment", "environment");
+   it("Test familyAssessment", () => {
+      let parent = "socialWork";
+      let child = "familyAssessment";
+      let field = "environment";
+
+      // cy.log(parent, child, field);if (!isTopTab) {
+      cy.get(cyInterfaceCHILD.tab[parent]).should("be.visible").click();
+      cy.get(cyInterfaceCHILD.page[parent].tab[child])
+         .should("be.visible")
+         .click();
+      cy.get(cyInterfaceCHILD.page[parent].page[child].button.add)
+         .should("be.visible")
+         .click();
+      // wait for loading to go away
+      // eslint-disable-next-line prettier/prettier
+      cy.get("[class=\"webix_progress_state wxi-sync webix_spin\"]")
+         // eslint-disable-next-line prettier/prettier
+         .should("not.be.visible")
+      cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.fields[field])
+         .scrollIntoView()
+         .should("exist")
+         .type("Please work")
+         .clear()
+         .type(text);
+      cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.button.save)
+         // .scrollIntoView()
+         .should("exist")
+         .scrollIntoView()
+         .click({ force: true })
+      cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.button.save).should("not.exist"); // wait until popup goes away
+      cy.get(".webix_warn").find(".webix_button").filter(":visible").click({ multiple: true, force: true });
+      cy.get(cyInterfaceCHILD.page[parent].page[child].grid).contains(text);
+      checkForm(parent, child, field);
    });
-   it.skip("Test socialWelfare", () => {
+   it("Test socialWelfare", () => {
       saveAndCheck("socialWork", "socialWelfare", "history");
    });
    it("Test lifePlan", () => {
