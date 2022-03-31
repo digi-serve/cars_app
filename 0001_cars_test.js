@@ -315,6 +315,120 @@ describe("Test Child:", () => {
       // asset log generated (and connected)
    });
 
+   it.only("Test Adding Child on top of existing", () => {
+      //
+      // When staff wanted to add new orphan;
+      // After they clicked save, the new data replaced the recent data.
+      //
+      //act
+      Common.RunSQL(cy, folderName, [
+         "init_db_for_viewing_a_child_profile.sql",
+      ]);
+
+      childVisit();
+
+      // point the cursor at the existing child: this should be cleared later
+      cy.get('[data-cy^="menu-item Social Worker 5fea4e7b-f6ee-42da-a702-60d6d6c48f71"]')
+         .click();
+
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.button.addChildren
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .no
+      )
+         .should("be.visible")
+         .click()
+         .type("1337");
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .firstName
+      ).type("Bob");
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .lastName
+      ).type("Stone");
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .nickname
+      ).type("Hank Hill");
+
+      // cy.wait(500);
+
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .birthday
+      ).type(child.birthday);
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .birthday
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .gender
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .home
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.option
+            .home[0]
+      )
+         .should("be.visible")
+         .click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .carsProject
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.option
+            .project[0]
+      )
+         .should("be.visible")
+         .click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.button
+            .save
+      ).click();
+
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.children.container
+      ).should("not.be.empty");
+
+      cy.wait(500);
+      //assert
+      //assert in the Children container
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.children.container
+      ).should((data) => {
+         expect(
+            data.text().includes(`Registration number (TH): ${child.no}`)
+               ? child.no
+               : "",
+            "Registration number"
+         ).to.eq(child.no);
+         expect(
+            data.text().includes(`${child.lastName}`) ? child.lastName : "",
+            "Last Name"
+         ).to.eq(child.lastName);
+      });
+      // we have to wait a little for the front end to update
+      cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.children.container)
+         .contains("Bob")
+         .contains("Stone");
+
+      // is it still here on refresh?
+      openCars();
+      cy.get('[data-cy^="dataview container Children"]')
+         .contains(child.firstName)
+         .contains(child.lastName);
+      cy.get('[data-cy^="dataview container Children"]')
+         .contains("Bob")
+         .contains("Stone");
+   });
+
    it("Test Viewing A Child's Profile", () => {
       // act
       Common.RunSQL(cy, folderName, [
