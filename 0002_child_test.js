@@ -125,37 +125,37 @@ describe("Test Social Worker Note:", () => {
 
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
-        .socialWork.page.notes.form.editNote.field.text
-    )
-      .click()
-      .type(note.text);
+            .socialWork.page.notes.form.editNote.field.text
+      )
+         .click()
+         .type(note.text);
 
-    cy.get(
-      cyInterfaceCARS.page.socialWorker.page.children.view.child.page
-        .socialWork.page.notes.form.editNote.field.file
-    )
-      .should("be.visible")
-      .click();
-    cy.get("[data-cy^=\"connectObject options 16c2d1b8-4bbe-4f8d-b80e-5dc9ab61846c bd49d7b7-697b-4f0f-a4f4-12ca407fdc65 8129e697-a2a3-4fd1-a576-ec758cd54662\"]").should("be.visible").click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .socialWork.page.notes.form.editNote.field.file
+      )
+         .should("be.visible")
+         .click();
+      cy.get("[data-cy^=\"connectObject options 16c2d1b8-4bbe-4f8d-b80e-5dc9ab61846c bd49d7b7-697b-4f0f-a4f4-12ca407fdc65 8129e697-a2a3-4fd1-a576-ec758cd54662\"]").should("be.visible").click();
 
-    cy.get(
-      cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.form.editNote.field.text
-    )
-      .click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.form.editNote.field.text
+      )
+         .click();
 
-    // TODO multiple item bug again
-    // //cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.form.addCategory.label).type(note.category);
-    // cy.get(
-    //   cyInterfaceCARS.page.socialWorker.page.children.view.child.page
-    //     .socialWork.page.notes.form.editNote.field.categories
-    // ).click();
-    // cy.get("[data-cy^=\"connectObject\"]").filter(':contains("123.file")').should("be.visible").click();
-    // cy.get(
-    //   cyInterfaceCARS.page.socialWorker.page.children.view.child.page
-    //     .socialWork.page.notes.form.editNote.field.categories
-    // ).click();
+      // TODO multiple item bug again
+      // //cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.form.addCategory.label).type(note.category);
+      // cy.get(
+      //   cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+      //     .socialWork.page.notes.form.editNote.field.categories
+      // ).click();
+      // cy.get("[data-cy^=\"connectObject\"]").filter(':contains("123.file")').should("be.visible").click();
+      // cy.get(
+      //   cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+      //     .socialWork.page.notes.form.editNote.field.categories
+      // ).click();
 
-    //save
+      //save
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.editNote.button.save
@@ -320,9 +320,9 @@ describe("Test Social Worker Note:", () => {
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.addCategory.label
       )
-        .type("Please work")
-        .clear()
-        .type(note.category);
+         .type("Please work")
+         .clear()
+         .type(note.category);
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.addCategory.button.save
@@ -412,7 +412,6 @@ describe("Test Social Worker Note:", () => {
    });
 });
 
-/*
 describe("Test add-new forms:", () => {
    before(() => {
       Common.ResetDB(cy);
@@ -461,7 +460,7 @@ describe("Test add-new forms:", () => {
    function saveAndCheck(parent, child, field, isTopTab) {
       // cy.log(parent, child, field);
       save(parent, child, field, isTopTab || null);
-      cy.get(".webix_warn").find(".webix_button").filter(":visible").click({multiple: true, force: true});
+      cy.get(".webix_warn").find(".webix_button").filter(":visible").click({ multiple: true, force: true });
       cy.get(cyInterfaceCHILD.page[parent].page[child].grid).contains(text);
       checkForm(parent, child, field);
    }
@@ -481,7 +480,7 @@ describe("Test add-new forms:", () => {
                cy.get(".webix_warn").should("not.be.visible");
                cy.get(
                   cyInterfaceCHILD.page[parent].page[child].form.add.fields[
-                     field
+                  field
                   ]
                )
                   .should("not.be.disabled")
@@ -490,7 +489,7 @@ describe("Test add-new forms:", () => {
             } else {
                cy.get(
                   cyInterfaceCHILD.page[parent].page[child].form.add.fields[
-                     field
+                  field
                   ]
                )
                   .should("not.be.disabled")
@@ -545,9 +544,9 @@ describe("Test add-new forms:", () => {
       cy.get(
          cyInterfaceCHILD.page[parent].page[child].form.add.fields[field]
       )
-        .type("Please work")
-        .clear()
-        .type(text);
+         .type("Please work")
+         .clear()
+         .type(text);
       cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.button.save)
          .should("exist")
          .click();
@@ -573,9 +572,9 @@ describe("Test add-new forms:", () => {
       cy.get(
          cyInterfaceCHILD.page[parent].page[child].form.add.fields[field]
       )
-        .type("Please work")
-        .clear()
-        .type(text);
+         .type("Please work")
+         .clear()
+         .type(text);
       cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.button.save)
          .should("exist")
          .click();
@@ -599,7 +598,7 @@ describe("Test add-new forms:", () => {
    });
 
    // Logs //
-   it("Test behaviorLog", () => {
+   it.skip("Test behaviorLog", () => {
       // Cannot click on already viewed child page
       let parent = "logs";
       let child = "behaviorLog";
@@ -637,7 +636,7 @@ describe("Test add-new forms:", () => {
    it("Test assetLog", () => {
       saveAndCheck("logs", "assetLog", "assetDescription");
    });
-   it("Test contactingAgencies", () => {
+   it.skip("Test contactingAgencies", () => {
       saveAndCheck("logs", "contactingAgencies", "name");
    });
 
@@ -646,7 +645,7 @@ describe("Test add-new forms:", () => {
    it.skip("Test vaccination", () => {
       saveAndCheck("medical", "vaccination", "otherVacc");
    });
-   it("Test healthInfo", () => {
+   it.skip("Test healthInfo", () => {
       saveAndCheck("medical", "healthInfo", "injections");
       // cy.get(".webix_warn")
       //    .find(".webix_button")
@@ -690,7 +689,7 @@ describe("Test add-new forms:", () => {
       );
       checkForm("medical", "developmentLog", "notes");
    });
-   it("Test psychCheck", () => {
+   it.skip("Test psychCheck", () => {
       saveAndCheck("medical", "psychCheck", "preAssessmentObservations");
       // cy.get(".webix_warn")
       //    .find(".webix_button")
@@ -725,7 +724,7 @@ describe("Test add-new forms:", () => {
    it.skip("Test familyAssessment", () => {
       saveAndCheck("socialWork", "familyAssessment", "environment");
    });
-   it("Test socialWelfare", () => {
+   it.skip("Test socialWelfare", () => {
       saveAndCheck("socialWork", "socialWelfare", "history");
    });
    it("Test lifePlan", () => {
@@ -738,4 +737,4 @@ describe("Test add-new forms:", () => {
       checkForm(parent, child, field);
    });
 });
-*/
+
