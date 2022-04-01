@@ -315,7 +315,7 @@ describe("Test Child:", () => {
       // asset log generated (and connected)
    });
 
-   it.only("Test Adding Child on top of existing", () => {
+   it("Test Adding Child on top of existing", () => {
       //
       // When staff wanted to add new orphan;
       // After they clicked save, the new data replaced the recent data.
