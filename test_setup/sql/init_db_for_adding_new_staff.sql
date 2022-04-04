@@ -1,3 +1,8 @@
+LOCK TABLES `SITE_USER` WRITE;
+INSERT INTO `SITE_USER` (`uuid`, `created_at`, `updated_at`, `properties`, `failedLogins`, `lastLogin`, `isActive`, `sendEmailNotifications`, `image_id`, `username`, `email`, `languageCode`)
+VALUES
+	('cdc16270-d73f-463e-b227-7147cc225725', '2022-04-04 07:43:57', '2022-04-04 07:43:57', NULL, 0, NULL, 1, 1, '', 'alice_smith', 'new@user.com', 'en');
+UNLOCK TABLES;
 LOCK TABLES `AB_CARS_CARsProject` WRITE;
 INSERT INTO `AB_CARS_CARsProject` (`uuid`, `created_at`, `updated_at`, `translations`) VALUES ("cb46b6b4-dc25-4915-80f7-c1febf26da4a", "2021-09-20 06:25:36", "2021-09-20 06:25:36", "[{\"language_code\":\"en\",\"Name\":\"CARS Project 1\"}]");
 UNLOCK TABLES;

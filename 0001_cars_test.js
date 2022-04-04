@@ -328,8 +328,9 @@ describe("Test Child:", () => {
       childVisit();
 
       // point the cursor at the existing child: this should be cleared later
-      cy.get('[data-cy^="menu-item Social Worker 5fea4e7b-f6ee-42da-a702-60d6d6c48f71"]')
-         .click();
+      cy.get(
+         '[data-cy^="menu-item Social Worker 5fea4e7b-f6ee-42da-a702-60d6d6c48f71"]'
+      ).click();
 
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.button.addChildren
@@ -394,30 +395,32 @@ describe("Test Child:", () => {
       ).click();
 
       cy.get(
-         cyInterfaceCARS.page.socialWorker.page.children.view.children.container
-      ).should("not.be.empty");
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.button
+            .save
+      ).should("not.be.visible");
 
-      cy.wait(500);
-      //assert
-      //assert in the Children container
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.children.container
+      )
+         .should("be.visible")
+         .should("not.be.empty");
+
+      // we have to wait a little for the front end to update
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.children.container
       ).should((data) => {
          expect(
-            data.text().includes(`Registration number (TH): ${child.no}`)
-               ? child.no
-               : "",
+            data.text().includes(`Registration number (TH): 1337`) ? 1337 : "",
             "Registration number"
-         ).to.eq(child.no);
+         ).to.eq(1337);
+         expect(data.text().includes(`Bob`) ? "Bob" : "", "First Name").to.eq(
+            "Bob"
+         );
          expect(
-            data.text().includes(`${child.lastName}`) ? child.lastName : "",
+            data.text().includes(`Stone`) ? "Stone" : "",
             "Last Name"
-         ).to.eq(child.lastName);
+         ).to.eq("Stone");
       });
-      // we have to wait a little for the front end to update
-      cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.children.container)
-         .contains("Bob")
-         .contains("Stone");
 
       // is it still here on refresh?
       openCars();
@@ -1060,34 +1063,6 @@ describe("Test Staff:", () => {
       var staff = example.staff[1];
 
       Common.RunSQL(cy, folderName, ["init_db_for_adding_new_staff.sql"]);
-      // act
-
-      // CREATE USER
-      // TODO move to admin tests area?
-      cy.visit("/");
-      cy.get(cyInterfaceCommon.button.menu).click();
-      cy.get(cyInterfaceADMIN.tab.users).click();
-      cy.get(cyInterfaceADMIN.page.users.page.button.addUser).click();
-      cy.get(cyInterfaceADMIN.page.users.page.form.addUser.field.username)
-         .should("be.visible")
-         .type("Please work")
-         .clear()
-         .type(staff.staffUser);
-      cy.get(cyInterfaceADMIN.page.users.page.form.addUser.field.password).type(
-         "Password"
-      );
-      cy.get(cyInterfaceADMIN.page.users.page.form.addUser.field.email).type(
-         "new@user.com"
-      );
-      cy.get(
-         cyInterfaceADMIN.page.users.page.form.addUser.field.isactive
-      ).click();
-
-      cy.get(cyInterfaceADMIN.page.users.page.form.addUser.button.save).click();
-      cy.get(cyInterfaceADMIN.page.users.page.grid).should(
-         "contain",
-         staff.staffUser
-      );
 
       // Create in CARs
       openCars();
