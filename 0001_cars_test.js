@@ -1321,17 +1321,18 @@ describe("Test Staff:", () => {
       cy.get(cyInterfaceCommon.button.menu).click();
       cy.get(cyInterfaceADMIN.tab.administration).click();
       cy.get(cyInterfaceADMIN.tab.users).click();
-      cy.get(cyInterfaceADMIN.page.users.page.grid).should("be.visible");
       cy.get(cyInterfaceADMIN.page.users.page.grid)
+         .filter(":visible")
+         // cy.get(cyInterfaceADMIN.page.users.page.grid)
          .contains(staff.staffUser)
          .should("be.visible")
          .click({ force: true });
-      cy.get(
-         cyInterfaceADMIN.page.users.page.form.editUser.field.isactive
-      ).click();
-      cy.get(
-         cyInterfaceADMIN.page.users.page.form.editUser.button.save
-      ).click();
+      cy.get(cyInterfaceADMIN.page.users.page.form.editUser.field.isactive)
+         .filter(":visible")
+         .click();
+      cy.get(cyInterfaceADMIN.page.users.page.form.editUser.button.save)
+         .filter(":visible")
+         .click();
 
       // Remove in CARs
       openCars();
