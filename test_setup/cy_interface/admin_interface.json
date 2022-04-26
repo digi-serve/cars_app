@@ -50,14 +50,14 @@
           },
           "editUser": {
             "button": {
-              "save": "[data-cy=\"button save e72e1ced-7606-4f2e-9c25-92d9f3e63f1a\"]"
+              "save": "[data-cy^=\"button save \"]"
             },
             "field": {
-              "isactive": "[data-cy=\"boolean isActive 1f022d07-1829-4257-acac-d9347c74b939 e72e1ced-7606-4f2e-9c25-92d9f3e63f1a\"]"
+              "isactive": "[data-cy^=\"boolean isActive \"]"
             }
           }
         },
-        "grid": "[data-cy=\"ABViewGrid_26116e8f-79de-40a9-9464-f073d3c46dd7_datatable\"]"
+        "grid": "[data-cy^=\"ABViewGrid_\"]"
       },
       "tab": {
         "children": "[data-cy=\"tab Children 8beb9e43-947a-4390-93dd-651a9733e941 4d0bcb94-bb0d-4179-a325-be1cf7f92399\"]",
@@ -69,6 +69,6 @@
   "tab": {
     "administration": "[data-cy=\"227bcbb3-437f-4bb5-a5a1-ec3198696206\"]",
     "roles": "[data-cy=\"tab-Roles-1a3e991e-aa1e-4eef-8cf8-fd7c5d97ae53-63a4cd7c-795e-4aa6-aae5-b6a08e0b39dd\"]",
-    "users": "[data-cy=\"tab-Users-f37866de-d38d-4153-a775-8b47af0d6db1-63a4cd7c-795e-4aa6-aae5-b6a08e0b39dd\"]"
+    "users": "[data-cy^=\"tab-Users-\"]"
   }
 }
