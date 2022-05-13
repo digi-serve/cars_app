@@ -178,7 +178,7 @@
           ]
         },
         "role": "",
-        "isAdminApp": "false",
+        "isAdminApp": "0",
         "translations": [
           {
             "language_code": "en",
@@ -196,16 +196,15 @@
           "7771bdb9-616c-48dc-9574-f8d167f44022",
           "c16e4776-2621-496c-b9a8-17643f2ec6a9"
         ],
-        "isAccessManaged": "0",
+        "isAccessManaged": "1",
         "isTranslationManaged": "1",
         "accessManagers": {
-          "useRole": "0",
-          "role": "",
-          "useAccount": "1",
-          "account": [
-            "admin",
-            "1"
-          ]
+          "useRole": "1",
+          "role": [
+            "dd6c2d34-0982-48b7-bc44-2456474edbea"
+          ],
+          "useAccount": "0",
+          "account": ""
         },
         "translationManagers": {
           "useRole": "0",
@@ -224,7 +223,7 @@
         }
       },
       "createdAt": "2020-10-07T03:02:06.000Z",
-      "updatedAt": "2022-03-24T04:59:32.000Z"
+      "updatedAt": "2022-05-11T05:18:29.000Z"
     },
     {
       "id": "0314ca6a-3482-4235-9af3-43596a28c97f",
@@ -24484,6 +24483,7 @@
       "updatedAt": "2022-02-25T05:33:26.000Z"
     },
     {
+      "id": "56a1f427-83e0-4b90-b0c2-0eb125718a60",
       "name": "Career Info->Start",
       "type": "field",
       "json": {
@@ -24515,19 +24515,15 @@
           {
             "language_code": "en",
             "label": "Start"
-          },
-          {
-            "language_code": "th",
-            "label": "วันที่เริ่มต้น"
           }
         ],
         "id": "56a1f427-83e0-4b90-b0c2-0eb125718a60"
       },
-      "id": "56a1f427-83e0-4b90-b0c2-0eb125718a60",
-      "createdAt": "2022-04-26T04:32:22.290Z",
-      "updatedAt": "2022-04-26T04:32:22.290Z"
+      "createdAt": "2022-04-26T04:32:22.000Z",
+      "updatedAt": "2022-04-26T04:32:22.000Z"
     },
     {
+      "id": "b70d354f-4be9-4b78-bfc7-90c584432138",
       "name": "Career Info->End",
       "type": "field",
       "json": {
@@ -24559,17 +24555,12 @@
           {
             "language_code": "en",
             "label": "End"
-          },
-          {
-            "language_code": "th",
-            "label": "วันที่สิ้นสุด"
           }
         ],
         "id": "b70d354f-4be9-4b78-bfc7-90c584432138"
       },
-      "id": "b70d354f-4be9-4b78-bfc7-90c584432138",
-      "createdAt": "2022-04-26T04:32:29.517Z",
-      "updatedAt": "2022-04-26T04:32:29.517Z"
+      "createdAt": "2022-04-26T04:32:29.000Z",
+      "updatedAt": "2022-04-26T04:32:29.000Z"
     },
     {
       "id": "9cc9f26b-9385-468e-a820-1491daf428d8",
@@ -30821,37 +30812,22 @@
                   "type": "innerjoin",
                   "links": [
                     {
-                      "alias": "9e043f01",
+                      "alias": "14378d08",
                       "fieldId": "5cfb8cb4-26db-4204-a4d0-7c822eda4291",
                       "type": "left"
                     },
                     {
-                      "alias": "dc319fc2",
+                      "alias": "3fa2b666",
                       "fieldId": "5cfb8cb4-26db-4204-a4d0-7c822eda4291",
                       "type": "left"
                     },
                     {
-                      "alias": "fa19c8a0",
+                      "alias": "a8284ec9",
                       "fieldId": "5cfb8cb4-26db-4204-a4d0-7c822eda4291",
                       "type": "left"
                     },
                     {
-                      "alias": "d7fd7b0a",
-                      "fieldId": "5cfb8cb4-26db-4204-a4d0-7c822eda4291",
-                      "type": "left"
-                    },
-                    {
-                      "alias": "b859a089",
-                      "fieldId": "5cfb8cb4-26db-4204-a4d0-7c822eda4291",
-                      "type": "left"
-                    },
-                    {
-                      "alias": "3663f112",
-                      "fieldId": "5cfb8cb4-26db-4204-a4d0-7c822eda4291",
-                      "type": "left"
-                    },
-                    {
-                      "alias": "8b7ba6a7",
+                      "alias": "ddf812b0",
                       "fieldId": "5cfb8cb4-26db-4204-a4d0-7c822eda4291",
                       "type": "left"
                     }
@@ -31439,37 +31415,22 @@
               "type": "innerjoin"
             },
             {
-              "alias": "62e4f541",
+              "alias": "6145c8e1",
               "fieldId": "5cfb8cb4-26db-4204-a4d0-7c822eda4291",
               "type": "left"
             },
             {
-              "alias": "446b5eb3",
+              "alias": "bf193436",
               "fieldId": "5cfb8cb4-26db-4204-a4d0-7c822eda4291",
               "type": "left"
             },
             {
-              "alias": "9f49a4a6",
+              "alias": "ec319e26",
               "fieldId": "5cfb8cb4-26db-4204-a4d0-7c822eda4291",
               "type": "left"
             },
             {
-              "alias": "4fb9a69e",
-              "fieldId": "5cfb8cb4-26db-4204-a4d0-7c822eda4291",
-              "type": "left"
-            },
-            {
-              "alias": "36676861",
-              "fieldId": "5cfb8cb4-26db-4204-a4d0-7c822eda4291",
-              "type": "left"
-            },
-            {
-              "alias": "aa6d2f03",
-              "fieldId": "5cfb8cb4-26db-4204-a4d0-7c822eda4291",
-              "type": "left"
-            },
-            {
-              "alias": "cc055198",
+              "alias": "c43d8fb2",
               "fieldId": "5cfb8cb4-26db-4204-a4d0-7c822eda4291",
               "type": "left"
             }
@@ -34736,37 +34697,22 @@
               "type": "innerjoin",
               "links": [
                 {
-                  "alias": "904e941e",
+                  "alias": "6f63d711",
                   "fieldId": "5cfb8cb4-26db-4204-a4d0-7c822eda4291",
                   "type": "left"
                 },
                 {
-                  "alias": "575eb204",
+                  "alias": "d7265b6d",
                   "fieldId": "5cfb8cb4-26db-4204-a4d0-7c822eda4291",
                   "type": "left"
                 },
                 {
-                  "alias": "e18cc505",
+                  "alias": "31abc86b",
                   "fieldId": "5cfb8cb4-26db-4204-a4d0-7c822eda4291",
                   "type": "left"
                 },
                 {
-                  "alias": "39639d6f",
-                  "fieldId": "5cfb8cb4-26db-4204-a4d0-7c822eda4291",
-                  "type": "left"
-                },
-                {
-                  "alias": "33dbb6c5",
-                  "fieldId": "5cfb8cb4-26db-4204-a4d0-7c822eda4291",
-                  "type": "left"
-                },
-                {
-                  "alias": "2507d26a",
-                  "fieldId": "5cfb8cb4-26db-4204-a4d0-7c822eda4291",
-                  "type": "left"
-                },
-                {
-                  "alias": "b8166532",
+                  "alias": "a90b16b4",
                   "fieldId": "5cfb8cb4-26db-4204-a4d0-7c822eda4291",
                   "type": "left"
                 }
@@ -104726,7 +104672,7 @@
     {
       "uuid": "128ac31f-29b0-4848-aa22-48ca1f63bb4b",
       "created_at": "2022-04-08T08:25:02.000Z",
-      "updated_at": null,
+      "updated_at": "2022-05-11T04:59:57.000Z",
       "properties": null,
       "translations": [
         {
@@ -104740,27 +104686,131 @@
       "ProcessForm30__relation": [],
       "scopes": [
         {
-          "uuid": "b845c6db-f8c4-4489-b0c9-b2c5c404ab5d",
-          "created_at": "2022-04-08T08:24:49.000Z",
-          "updated_at": null,
-          "properties": null,
+          "id": "546509fe-26fc-4dbe-8346-5748a96dc6ca",
+          "uuid": "546509fe-26fc-4dbe-8346-5748a96dc6ca",
           "translations": [
             {
               "language_code": "en",
-              "name": "A Project",
+              "name": "A project",
               "description": ""
-            },
-            {
-              "language_code": "th",
-              "name": "ข้อมูลโครงการของฉัน",
-              "description": "เห็นเฉพาะข้อมูลที่เป็นของทีมของฉัน"
             }
           ],
-          "Objects": null,
-          "Filters": null,
-          "allowAll": 0,
-          "createdBy": null,
-          "objectIds": null
+          "createdBy": "admin",
+          "filter": {
+            "glue": "and",
+            "rules": [
+              {
+                "key": "32ecf58a-1731-4086-a355-70de640572ea",
+                "rule": "in_query",
+                "value": "d3669fae-9612-4cee-9726-ac221ccb3705"
+              },
+              {
+                "key": "c3d106a4-6237-40e2-8b36-0d3bebe7f567",
+                "rule": "in_query",
+                "value": "7dd3bb2a-6c40-4b95-86a2-e9bfe7bbba16"
+              },
+              {
+                "key": "c3bf85a4-d65c-449c-bffa-f9075fccfeb4",
+                "rule": "in_query",
+                "value": "7dd3bb2a-6c40-4b95-86a2-e9bfe7bbba16"
+              },
+              {
+                "key": "e1211ab4-d797-4626-ac46-d7a204000e7b",
+                "rule": "in_query",
+                "value": "7dd3bb2a-6c40-4b95-86a2-e9bfe7bbba16"
+              },
+              {
+                "key": "eccba46f-e267-42f7-816f-2039427b206f",
+                "rule": "in_query",
+                "value": "7dd3bb2a-6c40-4b95-86a2-e9bfe7bbba16"
+              },
+              {
+                "key": "11691e0a-3396-46aa-b8db-89483cd21572",
+                "rule": "in_query",
+                "value": "7dd3bb2a-6c40-4b95-86a2-e9bfe7bbba16"
+              },
+              {
+                "key": "17e29442-14f3-4e0e-a438-8072ce96deb8",
+                "rule": "in_query",
+                "value": "7dd3bb2a-6c40-4b95-86a2-e9bfe7bbba16"
+              },
+              {
+                "key": "b598cf3b-d4d7-48f4-bfd2-fc92aab270f3",
+                "rule": "in_query",
+                "value": "7dd3bb2a-6c40-4b95-86a2-e9bfe7bbba16"
+              },
+              {
+                "key": "7e538c11-8aba-4a22-ad23-9a84da03354b",
+                "rule": "in_query",
+                "value": "7dd3bb2a-6c40-4b95-86a2-e9bfe7bbba16"
+              },
+              {
+                "key": "82c485f7-66e5-4f9d-937a-714255cb7870",
+                "rule": "in_query",
+                "value": "7dd3bb2a-6c40-4b95-86a2-e9bfe7bbba16"
+              },
+              {
+                "key": "f3591532-21e8-4683-b354-1888607050d9",
+                "rule": "in_query",
+                "value": "7dd3bb2a-6c40-4b95-86a2-e9bfe7bbba16"
+              },
+              {
+                "key": "60e1fa49-2ea3-4e5b-b11b-a6e497c6b784",
+                "rule": "in_query",
+                "value": "d3669fae-9612-4cee-9726-ac221ccb3705"
+              },
+              {
+                "key": "5a580697-5167-423a-a076-28bd5ecfe328",
+                "rule": "in_query",
+                "value": "d3669fae-9612-4cee-9726-ac221ccb3705"
+              },
+              {
+                "key": "8a2b66b7-4e6c-405e-a3be-11edb75df265",
+                "rule": "in_query",
+                "value": "85c83c33-ae5b-4762-af1b-f8869580c5af"
+              }
+            ]
+          },
+          "allowAll": false,
+          "objectIds": [
+            "0314ca6a-3482-4235-9af3-43596a28c97f",
+            "0c468a6f-d217-4e2a-bfb0-9420dfe02587",
+            "116451a8-5946-4426-be25-495d8fde55fe",
+            "17dcf48e-7445-4fde-9afc-61be2836ed4f",
+            "26d07acc-3a05-4442-821a-dab4b7de0795",
+            "26f66d40-a017-4ace-b46b-9aa0879bf615",
+            "2bb74d42-6239-4bf3-bdc5-e2c4c4d11eeb",
+            "353f3dd9-7834-4c1e-9a14-d8ca701067ec",
+            "405eb066-1704-45d4-8c50-f635b9e2d915",
+            "42729e9c-5869-47af-bb1f-518d589cbb0e",
+            "5a5348cc-7685-4488-9c99-3432cd10597d",
+            "5c56157b-0a80-45a2-b607-b705c797d0dc",
+            "6ccda4a3-9cd8-44f0-87f0-c7baf6d7a293",
+            "7a3a142a-bf79-4c84-9467-deae7e3b64ed",
+            "7a4e8b2b-e368-44bc-97ec-9b9a6cd57298",
+            "7b5fefa9-6a78-4a28-bfa9-9743f23623bd",
+            "8467e8c1-b2ae-411f-bef3-d49a7db3c7c2",
+            "90e072a6-5cab-4ba0-a479-a5d1d375440b",
+            "91b72b02-efcb-4498-8b13-cfe44a849561",
+            "97b521aa-d338-4337-9926-212e9f56f115",
+            "9b8e8ec8-d6c6-4ac7-b14e-12b792cc472a",
+            "a828e25c-5fc3-4d4e-ae59-4cf69001b4ee",
+            "ad967402-8975-4afb-bcc6-fc75ca645c1c",
+            "afda960f-9f72-4fb2-8afd-c9661eaf80de",
+            "b39a3264-a9cc-4dc9-b84f-c81d4d9f5d6c",
+            "b546da41-d43a-43e8-b0a2-e86488fdaab4",
+            "b86a4a23-a443-4744-9506-84ae74be9879",
+            "bc232b72-0848-4036-b861-fbffe91fc1d6",
+            "bd822d48-93b1-401f-842f-4297adbb908c",
+            "c39e5e21-6ab6-4241-8135-7b405c82c652",
+            "d535e048-02a7-466c-b7c7-e1d862a1973c",
+            "d9ca465d-0b93-419b-be94-8cc0c704c23c",
+            "e6c6214c-d64b-4fed-9a87-6faa2ddecf4a",
+            "f2879b63-2460-4282-98d4-7b04b7a28a33",
+            "f3d047d3-e161-428d-b832-89458ff1c163",
+            "feb5184f-bcef-4358-bbcf-85056dccdf85",
+            "ff0c8281-351b-4c57-ba6e-c491f2328ba4"
+          ]
         }
       ],
       "ProcessForm30": [],
@@ -104768,9 +104818,48 @@
       "description": "See Project Data"
     },
     {
+      "uuid": "dd6c2d34-0982-48b7-bc44-2456474edbea",
+      "created_at": "2020-05-13T09:48:10.000Z",
+      "updated_at": "2022-02-10T05:16:11.000Z",
+      "properties": null,
+      "translations": [
+        {
+          "language_code": "en",
+          "name": "System Admin",
+          "description": "Full Access"
+        }
+      ],
+      "users": [],
+      "Default Role": 0,
+      "ProcessForm30__relation": [],
+      "scopes": [
+        {
+          "uuid": "838beeb9-0a13-4b0f-9780-0d47e67f3752",
+          "created_at": "2020-05-13T09:49:53.000Z",
+          "updated_at": "2022-05-11T04:39:21.000Z",
+          "properties": null,
+          "translations": [
+            {
+              "language_code": "en",
+              "name": "All Access",
+              "description": "Provide Full Data Access to All Objects."
+            }
+          ],
+          "Objects": null,
+          "Filters": null,
+          "allowAll": 1,
+          "createdBy": null,
+          "objectIds": null
+        }
+      ],
+      "ProcessForm30": [],
+      "name": "System Admin",
+      "description": "Full Access"
+    },
+    {
       "uuid": "fe92a821-9ac5-41b6-b564-173ce32ad61d",
       "created_at": "2022-04-08T08:24:49.000Z",
-      "updated_at": null,
+      "updated_at": "2022-05-11T05:00:04.000Z",
       "properties": null,
       "translations": [
         {
@@ -104784,25 +104873,20 @@
       "ProcessForm30__relation": [],
       "scopes": [
         {
-          "uuid": "b845c6db-f8c4-4489-b0c9-b2c5c404ab5d",
-          "created_at": "2022-04-08T08:24:49.000Z",
-          "updated_at": null,
+          "uuid": "838beeb9-0a13-4b0f-9780-0d47e67f3752",
+          "created_at": "2020-05-13T09:49:53.000Z",
+          "updated_at": "2022-05-11T04:39:21.000Z",
           "properties": null,
           "translations": [
             {
               "language_code": "en",
-              "name": "A Project",
-              "description": ""
-            },
-            {
-              "language_code": "th",
-              "name": "ข้อมูลโครงการของฉัน",
-              "description": "เห็นเฉพาะข้อมูลที่เป็นของทีมของฉัน"
+              "name": "All Access",
+              "description": "Provide Full Data Access to All Objects."
             }
           ],
           "Objects": null,
           "Filters": null,
-          "allowAll": 0,
+          "allowAll": 1,
           "createdBy": null,
           "objectIds": null
         }
