@@ -1,5 +1,3 @@
 # CARS
 
-Starter
-
 Hello World.
