@@ -1,0 +1,73 @@
+.center  {  
+    text-align: center;
+    position: static;  
+    top: 50%;  
+    left: 50%;  
+    margin-top: 20px;  
+    margin-left:20px;  
+            }
+
+header     {
+    background-color:#4D4B4B;
+    margin: 20px;
+    padding: 2px;
+    text-align: center;
+    font-size: 24px;
+    color: white;
+            }
+#Image      {
+    width: 50%;  
+    border: 5px solid black;
+    border-radius: 12px;
+            }
+#carspic    {
+    margin: 12px;
+    width: 900px;
+    height: 300px;
+            }
+#paragraph a    {
+    color: blue;
+    font-size: 16px;
+            }            
+#paragraph a:hover  {
+    color: red;
+    font-size: 16px;
+            }
+#consist    {
+    padding: 40px 50px;
+    background:cornsilk;
+    border-radius: 10px;
+    box-shadow: 5px 10px 18px #888888;
+    margin: 30px 20px 50px 20px;
+            }
+#paragraph{
+    padding:5px;
+    text-align: justify;
+}
+#benefits{
+    padding: 40px 50px;
+    background: #eb99ff;
+    border-radius: 5px;
+    box-shadow: 5px 10px 18px #888888;
+    margin: 30px 20px 50px 20px;
+}
+footer {
+    text-align: center;
+    padding: 5px;
+    background-color: #d5d5dd;
+    color: black;
+    padding-right: 60px;
+  }
+#copyright{
+    text-align: center;
+    background-color: #19194d;
+    width: 1350px;
+    height: 50px;
+    color: white;
+    padding-top: 5px;
+}
+
+
+
+
+
