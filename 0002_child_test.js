@@ -580,6 +580,17 @@ describe("Test add-new forms:", () => {
       checkForm("basicInfo", "files", "label");
    });
 
+   // check label of Initial Assets
+   it("Test label of Initial Assets", () => {
+      // Cannot click on already viewed child page
+
+      // cy.get(cyInterfaceCHILD.tab.basicInfo).should("be.visible").click();
+      
+      cy.get(cyInterfaceCHILD.page.basicInfo.tab.admitInfo).should("be.visible").click();
+      cy.get('[data-cy="detail connected Initial Assets 6daf2109-4bbe-4003-b69d-bed120b83ec2 8db15d0b-fd78-4b2b-975a-304b68a43054"]').contains("21/06/2022");
+
+   });
+
    // Education //
    it("Test educationInfo", () => {
       // Cannot click on already viewed child page

@@ -30,7 +30,7 @@ UNLOCK TABLES;
 LOCK TABLES `AB_CARS_AssetsLog` WRITE;
 INSERT INTO `AB_CARS_AssetsLog` ( `uuid`, `created_at`, `updated_at`, `properties`, `Date`, `translations`, `Photo`, `Children`)
 values
-('cc0567e9-844e-4527-899e-fbfd7eef39ec', '2022-06-21 07:17:48', '2022-06-21 07:17:48', NULL, NULL, '[]', NULL, '0e41a300-4698-40c8-9c5f-f96ea2ceadf6');
+('cc0567e9-844e-4527-899e-fbfd7eef39ec', '2022-06-21 07:17:48', '2022-06-21 07:17:48', NULL, '2022-06-21', '[]', NULL, '0e41a300-4698-40c8-9c5f-f96ea2ceadf6');
 UNLOCK TABLES;
 
 LOCK TABLES `AB_CARS_AdmissionInfo` WRITE;
