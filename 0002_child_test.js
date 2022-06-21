@@ -136,12 +136,16 @@ describe("Test Social Worker Note:", () => {
       )
          .should("be.visible")
          .click();
-      cy.get("[data-cy^=\"connectObject options 16c2d1b8-4bbe-4f8d-b80e-5dc9ab61846c bd49d7b7-697b-4f0f-a4f4-12ca407fdc65 8129e697-a2a3-4fd1-a576-ec758cd54662\"]").should("be.visible").click();
+      cy.get(
+         '[data-cy^="connectObject options 16c2d1b8-4bbe-4f8d-b80e-5dc9ab61846c bd49d7b7-697b-4f0f-a4f4-12ca407fdc65 8129e697-a2a3-4fd1-a576-ec758cd54662"]'
+      )
+         .should("be.visible")
+         .click();
 
       cy.get(
-         cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.form.editNote.field.text
-      )
-         .click();
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .socialWork.page.notes.form.editNote.field.text
+      ).click();
 
       // TODO multiple item bug again
       // //cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.form.addCategory.label).type(note.category);
@@ -285,7 +289,8 @@ describe("Test Social Worker Note:", () => {
             .socialWork.page.notes.form.addNote.field.date
       ).click();
       cy.get(
-         cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.form.addNote.field.file
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .socialWork.page.notes.form.addNote.field.file
       )
          .parent()
          .find(".fa-plus")
@@ -303,7 +308,7 @@ describe("Test Social Worker Note:", () => {
             .socialWork.page.notes.form.addFile.button.save
       )
          .filter(":visible")
-         .click()
+         .click();
       cy.get(".webix_spin").should("not.be.visible");
       // uncomment these when fixed
       // .should("not.be.visible");
@@ -326,7 +331,7 @@ describe("Test Social Worker Note:", () => {
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.addNote.field.title
-      ).click()
+      ).click();
       // END REMOVE
 
       // cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.form.addNote.field.categories).click();
@@ -377,7 +382,7 @@ describe("Test Social Worker Note:", () => {
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.addNote.field.title
-      ).click()
+      ).click();
       // END REMOVE
 
       //save
@@ -488,18 +493,25 @@ describe("Test add-new forms:", () => {
          // .scrollIntoView()
          .should("exist")
          .scrollIntoView()
-         .click()
-         .should("not.be.visible"); // wait until popup goes away
+         .click();
+      cy.get(
+         cyInterfaceCHILD.page[parent].page[child].form.add.fields[field]
+      ).should("not.be.visible"); // wait until popup goes away
    }
    function saveAndCheck(parent, child, field, isTopTab) {
       // cy.log(parent, child, field);
       save(parent, child, field, isTopTab || null);
-      cy.get(".webix_warn").find(".webix_button").filter(":visible").click({ multiple: true, force: true });
+      cy.get(".webix_warn")
+         .find(".webix_button")
+         .filter(":visible")
+         .click({ multiple: true, force: true });
       cy.get(cyInterfaceCHILD.page[parent].page[child].grid).contains(text);
       checkForm(parent, child, field);
    }
    function checkForm(parent, child, field) {
-      cy.get(cyInterfaceCHILD.page[parent].page[child].button.add).should("be.visible").click();
+      cy.get(cyInterfaceCHILD.page[parent].page[child].button.add)
+         .should("be.visible")
+         .click();
       // sometimes the NEW DATA dissapears on its own.
       // If it does this during the .get, cypress will
       // disconnect from the DOM; therefor it is better to wait
@@ -514,7 +526,7 @@ describe("Test add-new forms:", () => {
                cy.get(".webix_warn").should("not.be.visible");
                cy.get(
                   cyInterfaceCHILD.page[parent].page[child].form.add.fields[
-                  field
+                     field
                   ]
                )
                   .should("not.be.disabled")
@@ -523,7 +535,7 @@ describe("Test add-new forms:", () => {
             } else {
                cy.get(
                   cyInterfaceCHILD.page[parent].page[child].form.add.fields[
-                  field
+                     field
                   ]
                )
                   .should("not.be.disabled")
@@ -559,7 +571,10 @@ describe("Test add-new forms:", () => {
          .should("exist")
          .click();
 
-      cy.get(".webix_warn").find(".webix_button").should("be.visible").click({ multiple: true, force: true });
+      cy.get(".webix_warn")
+         .find(".webix_button")
+         .should("be.visible")
+         .click({ multiple: true, force: true });
       // should contain new data in grid
       cy.get(cyInterfaceCHILD.page.basicInfo.page.files.grid).contains(text);
       checkForm("basicInfo", "files", "label");
@@ -575,16 +590,17 @@ describe("Test add-new forms:", () => {
       cy.get(cyInterfaceCHILD.page[parent].page[child].button.add)
          .should("be.visible")
          .click();
-      cy.get(
-         cyInterfaceCHILD.page[parent].page[child].form.add.fields[field]
-      )
+      cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.fields[field])
          .type("Please work")
          .clear()
          .type(text);
       cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.button.save)
          .should("exist")
          .click();
-      cy.get(".webix_warn").find(".webix_button").should("be.visible").click({ multiple: true, force: true });
+      cy.get(".webix_warn")
+         .find(".webix_button")
+         .should("be.visible")
+         .click({ multiple: true, force: true });
       cy.get(cyInterfaceCHILD.page[parent].page[child].grid).contains(text);
       checkForm(parent, child, field);
    });
@@ -603,16 +619,17 @@ describe("Test add-new forms:", () => {
          .should("be.visible")
          .click()
          .should("be.visible");
-      cy.get(
-         cyInterfaceCHILD.page[parent].page[child].form.add.fields[field]
-      )
+      cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.fields[field])
          .type("Please work")
          .clear()
          .type(text);
       cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.button.save)
          .should("exist")
          .click();
-      cy.get(".webix_warn").find(".webix_button").should("be.visible").click({ multiple: true, force: true });
+      cy.get(".webix_warn")
+         .find(".webix_button")
+         .should("be.visible")
+         .click({ multiple: true, force: true });
       cy.get(
          '[data-cy="ABViewGrid_6589f264-8e4d-4775-b90b-4e6f44cdeb52_datatable"]'
       ).should("be.visible");
@@ -648,7 +665,10 @@ describe("Test add-new forms:", () => {
       // [+] visitor
 
       save("logs", "visitorLog", "details");
-      cy.get(".webix_warn").find(".webix_button").should("be.visible").click({ multiple: true, force: true });
+      cy.get(".webix_warn")
+         .find(".webix_button")
+         .should("be.visible")
+         .click({ multiple: true, force: true });
       cy.window().then((win) => {
          return win
             .$$("ABViewGrid_75501667-a822-453a-a676-0e274977468e_datatable")
@@ -708,7 +728,10 @@ describe("Test add-new forms:", () => {
    });
    it("Test developmentLog", () => {
       save("medical", "developmentLog", "notes");
-      cy.get(".webix_warn").find(".webix_button").should("be.visible").click({ multiple: true, force: true });
+      cy.get(".webix_warn")
+         .find(".webix_button")
+         .should("be.visible")
+         .click({ multiple: true, force: true });
       cy.window().then((win) => {
          return win
             .$$("ABViewGrid_c1304fbf-e972-4a14-b73a-976fca4823f1_datatable")
@@ -767,7 +790,7 @@ describe("Test add-new forms:", () => {
       // eslint-disable-next-line prettier/prettier
       cy.get("[class=\"webix_progress_state wxi-sync webix_spin\"]")
          // eslint-disable-next-line prettier/prettier
-         .should("not.be.visible")
+         .should("not.be.visible");
       cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.fields[field])
          .scrollIntoView()
          .should("exist")
@@ -778,9 +801,14 @@ describe("Test add-new forms:", () => {
          // .scrollIntoView()
          .should("exist")
          .scrollIntoView()
-         .click({ force: true })
-      cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.button.save).should("not.exist"); // wait until popup goes away
-      cy.get(".webix_warn").find(".webix_button").filter(":visible").click({ multiple: true, force: true });
+         .click({ force: true });
+      cy.get(
+         cyInterfaceCHILD.page[parent].page[child].form.add.button.save
+      ).should("not.exist"); // wait until popup goes away
+      cy.get(".webix_warn")
+         .find(".webix_button")
+         .filter(":visible")
+         .click({ multiple: true, force: true });
       cy.get(cyInterfaceCHILD.page[parent].page[child].grid).contains(text);
       checkForm(parent, child, field);
    });
@@ -797,4 +825,3 @@ describe("Test add-new forms:", () => {
       checkForm(parent, child, field);
    });
 });
-
