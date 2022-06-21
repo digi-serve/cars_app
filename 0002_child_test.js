@@ -605,6 +605,10 @@ describe("Test add-new forms:", () => {
          .type("Please work")
          .clear()
          .type(text);
+      //  Does Education Transcript field exist
+      cy.get('.file-data-field-icon')
+         .should('be.visible');
+      // TODO add file test
       cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.button.save)
          .should("exist")
          .click();
