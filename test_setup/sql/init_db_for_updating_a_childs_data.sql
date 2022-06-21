@@ -23,5 +23,23 @@ LOCK TABLES `AB_JOINMN_Staff_Children Home_Home` WRITE;
 INSERT INTO `AB_JOINMN_Staff_Children Home_Home` (`id`, `Children Home`, `Staff`) VALUES (1, "696cfe80-8a3e-477f-a566-3c14dac1cc2d", "e746f80b-3fbe-4aeb-9fdf-2707740eeaca");
 UNLOCK TABLES;
 LOCK TABLES `AB_CARS_Children` WRITE;
-INSERT INTO `AB_CARS_Children` (`uuid`, `created_at`, `updated_at`, `properties`, `translations`, `Gender`, `No`, `Religion`, `Birthday`, `ID Number`, `ID Issue Date`, `Profile Photo`, `Fingerprintss`, `Type Received`, `ID Expire Date`, `First Name`, `Last Name`, `Home`, `Address`, `CARs Project20`) VALUES ("0e41a300-4698-40c8-9c5f-f96ea2ceadf6", "2021-10-01 09:44:00", "2021-10-01 09:44:00", NULL, "[{\"language_code\":\"en\",\"Nickname\":\"Sato\",\"Race\":\"Human\",\"Nationality\":\"Japanese\",\"Time Received for\":\"05/04/1975 17:00 PM\"}]", "1507525545560", '1', "1507525546158", "1975-04-05", NULL, NULL, NULL, NULL, "1555919727844", NULL, "Satoshi", "Nakamoto", "696cfe80-8a3e-477f-a566-3c14dac1cc2d", NULL, "cb46b6b4-dc25-4915-80f7-c1febf26da4a");
+INSERT INTO `AB_CARS_Children` (`uuid`, `created_at`, `updated_at`, `properties`, `translations`, `Gender`, `No`, `Religion`, `Birthday`, `ID Number`, `ID Issue Date`, `Profile Photo`, `Fingerprintss`, `Type Received`, `ID Expire Date`, `First Name`, `Last Name`, `Home`, `Address`, `CARs Project20`) 
+VALUES ("0e41a300-4698-40c8-9c5f-f96ea2ceadf6", "2021-10-01 09:44:00", "2021-10-01 09:44:00", NULL, "[{\"language_code\":\"en\",\"Nickname\":\"Sato\",\"Race\":\"Human\",\"Nationality\":\"Japanese\",\"Time Received for\":\"05/04/1975 17:00 PM\"}]", "1507525545560", '1', "1507525546158", "1975-04-05", NULL, NULL, NULL, NULL, "1555919727844", NULL, "Satoshi", "Nakamoto", "696cfe80-8a3e-477f-a566-3c14dac1cc2d", NULL, "cb46b6b4-dc25-4915-80f7-c1febf26da4a");
 UNLOCK TABLES;
+
+LOCK TABLES `AB_CARS_AssetsLog` WRITE;
+INSERT INTO `AB_CARS_AssetsLog` ( `uuid`, `created_at`, `updated_at`, `properties`, `Date`, `translations`, `Photo`, `Children`)
+values
+('cc0567e9-844e-4527-899e-fbfd7eef39ec', '2022-06-21 07:17:48', '2022-06-21 07:17:48', NULL, NULL, '[]', NULL, '0e41a300-4698-40c8-9c5f-f96ea2ceadf6');
+UNLOCK TABLES;
+
+LOCK TABLES `AB_CARS_AdmissionInfo` WRITE;
+INSERT INTO `AB_CARS_AdmissionInfo` (
+`uuid`, `created_at`, `updated_at`, 
+`Reg Date`, `translations`, `Child`, `Recipient Staff`, `Initial Assets`)
+VALUES
+('48e72e6d-4baa-4a5a-9e22-330994b677ba', '2022-06-21 07:18:40', '2022-06-21 07:18:40',  '2022-06-21',  
+'[{\"language_code\":\"en\",\"Submitter Name\":\"\",\"Reason Received\":\"\"}]', 
+'0e41a300-4698-40c8-9c5f-f96ea2ceadf6', 'e746f80b-3fbe-4aeb-9fdf-2707740eeaca', 'cc0567e9-844e-4527-899e-fbfd7eef39ec');
+UNLOCK TABLES;
+
