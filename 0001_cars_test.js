@@ -1058,7 +1058,7 @@ describe("Test Project:", () => {
 });
 
 describe("Test Staff:", () => {
-   it("Test Add New Staff", () => {
+   it.skip("Test Add New Staff", () => {
       // arrange
       var staff = example.staff[1];
 
@@ -1173,7 +1173,7 @@ describe("Test Staff:", () => {
       });
    });
 
-   it("Test Update existing Staff", () => {
+   it.skip("Test Update existing Staff", () => {
       // arrange
       var staff = example.staff[1];
 
