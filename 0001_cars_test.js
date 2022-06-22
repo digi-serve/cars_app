@@ -1058,7 +1058,7 @@ describe("Test Project:", () => {
 });
 
 describe("Test Staff:", () => {
-   it("Test Add New Staff", () => {
+   it.only("Test Add New Staff", () => {
       // arrange
       var staff = example.staff[1];
 
@@ -1173,7 +1173,7 @@ describe("Test Staff:", () => {
       });
    });
 
-   it("Test Update existing Staff", () => {
+   it.only("Test Update existing Staff", () => {
       // arrange
       var staff = example.staff[1];
 
@@ -1234,6 +1234,7 @@ describe("Test Staff:", () => {
          .should("be.visible")
          .click();
 
+      cy.log("bug might here:");
       cy.get(
          cyInterfaceCARS.page.administration.page.staff.form.editStaff.field
             .staffUser
@@ -1297,6 +1298,8 @@ describe("Test Staff:", () => {
             "Last Name"
          ).to.eq(staff.lastName);
       });
+
+      cy.log("bug is here:");
       cy.get(
          cyInterfaceCARS.page.administration.page.staff.view.staff.detail.user
       ).should((data) => {
@@ -1392,6 +1395,7 @@ describe("Test Staff:", () => {
       ).should((data) => {
          expect(data.text().includes("N/A") ? "N/A" : "", "N/A").to.eq("N/A");
       });
+      cy.log("bug is here:");
       cy.get(
          cyInterfaceCARS.page.administration.page.staff.view.staff.detail
             .lastName
