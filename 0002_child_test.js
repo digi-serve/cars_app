@@ -593,8 +593,8 @@ describe("Test add-new forms:", () => {
       checkForm("basicInfo", "files", "label");
    });
 
-   // check label of Initial Assets
-   it("Test label of Initial Assets", () => {
+   // Checking the label of Initial Asset log
+   it("Test the label of Initial Asset log", () => {
       // Cannot click on already viewed child page
 
       // cy.get(cyInterfaceCHILD.tab.basicInfo).should("be.visible").click();
