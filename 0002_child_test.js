@@ -687,7 +687,7 @@ describe("Test add-new forms:", () => {
       cy.get(cyInterfaceCHILD.tab[parent]).should("be.visible").click();
       saveAndCheck(parent, child, field, true);
    });
-   it.skip("Test visitorLog", () => {
+   it.only("Test visitorLog", () => {
       //
       // TODO this has a lot more to test about it
       // sub-forms
@@ -715,7 +715,7 @@ describe("Test add-new forms:", () => {
    it("Test participationLog", () => {
       saveAndCheck("logs", "participationLog", "behavior");
    });
-   it.skip("Test assetLog", () => {
+   it.only("Test assetLog", () => {
       saveAndCheck("logs", "assetLog", "assetDescription");
    });
    it("Test contactingAgencies", () => {
@@ -723,7 +723,7 @@ describe("Test add-new forms:", () => {
    });
 
    // Medical //
-   it.skip("Test vaccination", () => {
+   it.only("Test vaccination", () => {
       saveAndCheck("medical", "vaccination", "otherVacc");
    });
    it("Test healthInfo", () => {
@@ -745,7 +745,7 @@ describe("Test add-new forms:", () => {
    it("Test medicalRecord", () => {
       saveAndCheck("medical", "medicalRecord", "symptoms");
    });
-   it.skip("Test growthLog", () => {
+   it.only("Test growthLog", () => {
       save("medical", "growthLog", "note");
       cy.get(".webix_warn")
          .find(".webix_button")
