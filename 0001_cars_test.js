@@ -734,6 +734,55 @@ describe("Test Report:", () => {
    });
 });
 
+describe("Test Site URL Field on Home Visit Log", () => {
+   it("Checking the existing of 'Site URL Field'", () => {
+
+      Common.RunSQL(cy, folderName, ['init_db_for_editing_a_child.sql']);
+
+      childVisit();
+
+      // Click on the tab 'Logs'
+
+      cy.get('[data-cy="tab-Logs-30406204-b89c-4322-bff0-d07cd6be4404-bbef30a6-8b04-49c3-8520-818568ccaa79"]')
+        .should('be.visible')
+        .click();
+
+      // Click on the tab 'Home Visit'
+
+      cy.get('[data-cy="tab-HomeVisit-e623002e-02a7-4f0f-82e9-37e0f74b4a14-9f5b25fb-c8f6-4fc4-adf1-4172cb0c7393"]')
+        .should('be.visible')
+        .click();
+
+      // Scroll to see the 'Site URL Field'
+
+      cy.window().then((win) => {
+         return win
+            .$$("ABViewGrid_cc01e916-b85d-4470-8e95-ebe1cded8477_datatable")
+            .scrollTo(1200, 1);
+      });
+
+      // Click on the menu item 'Add Home Visit'
+
+      cy.get('[data-cy="menu-item Add Home Visit_94ba 1fadbc55-94ba-400c-9afc-56349a3c6375 db0da219-e611-42fe-b195-543fb8699f1d"]')
+        .should('exist')
+        .click();
+
+      // Scroll to see and type the URL location on 'Site URL Field'
+
+      cy.get('[data-cy="string Site URL 72ca73ce-9e1b-4f18-8076-face07e38f95 a0658515-5b59-48de-9176-d0822a97fdc9"]')
+        .scrollIntoView()
+        .should('exist')
+        .type('www.google.com');
+
+      // Click on the button 'Save'
+
+      cy.get('[data-cy="button save a0658515-5b59-48de-9176-d0822a97fdc9"]')
+        .should('exist')
+        .click();
+
+   });
+});
+
 describe("Test Home:", () => {
    const homesIndex = 0;
    const home = example.homes[homesIndex];
