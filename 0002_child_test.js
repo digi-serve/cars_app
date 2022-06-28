@@ -711,6 +711,39 @@ describe("Test add-new forms:", () => {
    });
    it("Test homeVisit", () => {
       saveAndCheck("logs", "homeVisit", "no");
+
+      // Scroll to see and type the URL location on 'Site URL Field'
+
+      cy.get('[data-cy="string Site URL 72ca73ce-9e1b-4f18-8076-face07e38f95 a0658515-5b59-48de-9176-d0822a97fdc9"]')
+         .scrollIntoView()
+         .should('exist')
+         .type('www.google.com');
+    
+      // Click on the button 'Save'
+    
+      cy.get('[data-cy="button save a0658515-5b59-48de-9176-d0822a97fdc9"]')
+         .should('exist')
+         .click();
+
+      // Click on the button 'New data available. Click to reload.'
+
+      cy.get('.webix_warn')
+         .find('.webix_button')
+         .filter(':visible')
+         .click({ multiple: true, force: true });
+
+      // Scroll to see the 'Site URL Field'
+
+      cy.window().then((win) => {
+         return win
+            .$$("ABViewGrid_cc01e916-b85d-4470-8e95-ebe1cded8477_datatable")
+            .scrollTo(1400, 1);
+      });
+
+      // Should see 'www.google.com' in the Site URL Field
+
+      cy.get('[data-cy="ABViewGrid_cc01e916-b85d-4470-8e95-ebe1cded8477_datatable"]')
+         .contains('www.google.com');
    });
    it("Test participationLog", () => {
       saveAndCheck("logs", "participationLog", "behavior");

@@ -780,6 +780,25 @@ describe("Test Site URL Field on Home Visit Log", () => {
         .should('exist')
         .click();
 
+      // Click on the button 'New data available. Click to reload.'
+
+      cy.get('.webix_warn')
+        .find('.webix_button')
+        .filter(':visible')
+        .click({ multiple: true, force: true });
+   
+      // Scroll to see the 'Site URL Field'
+   
+      cy.window().then((win) => {
+         return win
+            .$$("ABViewGrid_cc01e916-b85d-4470-8e95-ebe1cded8477_datatable")
+            .scrollTo(1400, 1);
+      });
+   
+      // Should see 'www.google.com' in the Site URL Field
+   
+      cy.get('[data-cy="ABViewGrid_cc01e916-b85d-4470-8e95-ebe1cded8477_datatable"]')
+        .contains('www.google.com');
    });
 });
 
