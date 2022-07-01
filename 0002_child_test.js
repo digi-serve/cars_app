@@ -493,7 +493,7 @@ describe("Test add-new forms:", () => {
          .click();
       // wait for loading to go away
       // eslint-disable-next-line prettier/prettier
-      cy.get("[class=\"webix_progress_state wxi-sync webix_spin\"]")
+      cy.get('[class="webix_progress_state wxi-sync webix_spin"]')
          // eslint-disable-next-line prettier/prettier
          .should("not.be.visible");
       cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.fields[field])
@@ -687,7 +687,7 @@ describe("Test add-new forms:", () => {
       cy.get(cyInterfaceCHILD.tab[parent]).should("be.visible").click();
       saveAndCheck(parent, child, field, true);
    });
-   it.skip("Test visitorLog", () => {
+   it("Test visitorLog", () => {
       //
       // TODO this has a lot more to test about it
       // sub-forms
@@ -772,7 +772,7 @@ describe("Test add-new forms:", () => {
    it("Test participationLog", () => {
       saveAndCheck("logs", "participationLog", "behavior");
    });
-   it.skip("Test assetLog", () => {
+   it("Test assetLog", () => {
       saveAndCheck("logs", "assetLog", "assetDescription");
    });
    it("Test contactingAgencies", () => {
@@ -780,7 +780,7 @@ describe("Test add-new forms:", () => {
    });
 
    // Medical //
-   it.skip("Test vaccination", () => {
+   it("Test vaccination", () => {
       saveAndCheck("medical", "vaccination", "otherVacc");
    });
    it("Test healthInfo", () => {
@@ -802,7 +802,7 @@ describe("Test add-new forms:", () => {
    it("Test medicalRecord", () => {
       saveAndCheck("medical", "medicalRecord", "symptoms");
    });
-   it.skip("Test growthLog", () => {
+   it("Test growthLog", () => {
       save("medical", "growthLog", "note");
       cy.get(".webix_warn")
          .find(".webix_button")
@@ -878,7 +878,7 @@ describe("Test add-new forms:", () => {
          .click();
       // wait for loading to go away
       // eslint-disable-next-line prettier/prettier
-      cy.get("[class=\"webix_progress_state wxi-sync webix_spin\"]")
+      cy.get('[class="webix_progress_state wxi-sync webix_spin"]')
          // eslint-disable-next-line prettier/prettier
          .should("not.be.visible");
       cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.fields[field])
