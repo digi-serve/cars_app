@@ -13,7 +13,7 @@
          "nationality": "Japanese",
          "home": "Home 1",
          "typeReceived": "Permanent",
-         "timeReceivedfor": "05/04/1975 17:00 PM",
+         "timeReceivedfor": "Until parents can receive them",
          "relatives": {
             "firstName": "Taylor",
             "lastName": "Swift",
@@ -27,7 +27,6 @@
             "relationType": "Mother"
          },
          "carsProject": "CARS Project 1",
-
          "idIssueDate": "10/08/1980",
          "idExpireDate": "10/08/2000",
          "idNumber": "1111122222333",
@@ -42,7 +41,6 @@
          }
       }
    ],
-
    "homes": [
       {
          "homeName": "Home 1",
@@ -62,7 +60,6 @@
             "name": "CARS Project 1",
             "projectStaff": "John Lennon"
          },
-
          "phoneNumber": "0987654321"
       },
       {
@@ -83,7 +80,6 @@
             "name": "CARS Project 1",
             "projectStaff": "John Lennon"
          },
-
          "phoneNumber": "0987654321"
       }
    ],
