@@ -603,19 +603,18 @@ describe("Test add-new forms:", () => {
          .should("exist")
          .click();
       cy.get('[data-cy="detail connected Initial Assets 6daf2109-4bbe-4003-b69d-bed120b83ec2 8db15d0b-fd78-4b2b-975a-304b68a43054"]')
-         .wait(8000)  // Wait for the details showing
-         .should("exist")
-         .contains("No Item");
+         .should("exist");
       cy.get('[data-cy="menu-item Admission Info_3a46 cf368115-3a46-434b-b44e-6104b9bdb592 f076f340-9d27-45cf-b75e-c0930506235e"]')
          .should("exist")
-         .click();
+         .click()
+         .wait(8000);  // Wait for the details showing
       cy.get('[data-cy="connectObject Initial Assets 6daf2109-4bbe-4003-b69d-bed120b83ec2 575cd5ba-b217-46f1-9ab1-9ee67555daad"]')
          .scrollIntoView()
          .should("exist");
       cy.get('[data-cy="button save 575cd5ba-b217-46f1-9ab1-9ee67555daad"]')
          .scrollIntoView()
          .should("exist")
-         .click();
+         .click({ force: true });
       cy.get('[data-cy="menu-item Admission Info_3a46 cf368115-3a46-434b-b44e-6104b9bdb592 f076f340-9d27-45cf-b75e-c0930506235e"]')
          .should("exist")
          .click();
@@ -630,7 +629,7 @@ describe("Test add-new forms:", () => {
       cy.get('[data-cy="button save 575cd5ba-b217-46f1-9ab1-9ee67555daad"]')
          .scrollIntoView()
          .should("exist")
-         .click();
+         .click({ force: true });
       cy.get('[data-cy="detail connected Initial Assets 6daf2109-4bbe-4003-b69d-bed120b83ec2 8db15d0b-fd78-4b2b-975a-304b68a43054"]')
          .should("exist")
          .contains("No Item");
