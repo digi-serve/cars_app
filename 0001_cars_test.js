@@ -1058,7 +1058,7 @@ describe("Test Project:", () => {
 });
 
 describe("Test Staff:", () => {
-   it("Test Add New Staff", () => {
+   it.only("Test Add New Staff", () => {
       // arrange
       var staff = example.staff[1];
 
@@ -1071,41 +1071,6 @@ describe("Test Staff:", () => {
       cy.get(cyInterfaceCARS.page.administration.tab.staff).click();
       cy.get(
          cyInterfaceCARS.page.administration.page.staff.button.addStaff
-      ).click();
-      cy.get(
-         cyInterfaceCARS.page.administration.page.staff.form.addStaff.field
-            .position
-      )
-         .should("be.visible")
-         .type("Please work")
-         .clear()
-         .type(staff.position);
-      cy.get(
-         cyInterfaceCARS.page.administration.page.staff.form.addStaff.field
-            .firstName
-      ).type(staff.firstName);
-      cy.get(
-         cyInterfaceCARS.page.administration.page.staff.form.addStaff.field
-            .lastName
-      ).type(staff.lastName);
-      cy.get(
-         cyInterfaceCARS.page.administration.page.staff.form.addStaff.field
-            .phone
-      ).type(staff.phone);
-
-      cy.get(
-         cyInterfaceCARS.page.administration.page.staff.form.addStaff.field.home
-      ).click();
-
-      cy.get(
-         cyInterfaceCARS.page.administration.page.staff.form.addStaff.option
-            .home[0]
-      )
-         .should("be.visible")
-         .click();
-
-      cy.get(
-         cyInterfaceCARS.page.administration.page.staff.form.addStaff.field.home
       ).click();
 
       cy.get(
