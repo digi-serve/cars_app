@@ -757,7 +757,7 @@
         }
       },
       "createdAt": "2020-10-07T03:02:06.000Z",
-      "updatedAt": "2022-07-01T04:12:27.000Z"
+      "updatedAt": "2022-07-25T10:45:28.000Z"
     },
     {
       "id": "be5d06ef-1175-41c7-b284-494e731a5950",
@@ -23173,7 +23173,7 @@
           },
           "sortFields": [
             {
-              "key": "d0e54d4a-a404-4aa6-ad52-5d78fd0d0801",
+              "key": "79d81f68-2e41-47fd-a7d4-ec89ccc7dc58",
               "dir": "desc"
             }
           ],
@@ -23197,7 +23197,8 @@
           "f492a7d5-7c00-4aab-b2f9-7f8e310695dc",
           "84471651-8ef5-4724-8b1a-46138ae3cff2",
           "db528646-4ebf-41bc-8ed8-b8919c04a522",
-          "d0e54d4a-a404-4aa6-ad52-5d78fd0d0801",
+          "79d81f68-2e41-47fd-a7d4-ec89ccc7dc58",
+          "27ebf978-dfa9-4fcb-bbc4-d2c012cc7cf8",
           "c409083b-1618-4e57-8fa8-9b6bca976ad9",
           "b42650d0-100a-4e08-9bd8-2ef69d496231"
         ],
@@ -23220,7 +23221,7 @@
               "name": "Default Grid",
               "sortFields": [
                 {
-                  "key": "d0e54d4a-a404-4aa6-ad52-5d78fd0d0801",
+                  "key": "79d81f68-2e41-47fd-a7d4-ec89ccc7dc58",
                   "dir": "desc"
                 }
               ],
@@ -23234,7 +23235,7 @@
         }
       },
       "createdAt": "2020-10-07T03:02:06.000Z",
-      "updatedAt": "2022-07-21T18:13:07.000Z"
+      "updatedAt": "2022-07-26T09:57:10.000Z"
     },
     {
       "id": "e1211ab4-d797-4626-ac46-d7a204000e7b",
@@ -23488,25 +23489,169 @@
       "updatedAt": "2022-06-24T09:00:39.000Z"
     },
     {
-      "id": "d0e54d4a-a404-4aa6-ad52-5d78fd0d0801",
+      "id": "79d81f68-2e41-47fd-a7d4-ec89ccc7dc58",
       "name": "School Records->Year",
       "type": "field",
       "json": {
-        "id": "d0e54d4a-a404-4aa6-ad52-5d78fd0d0801",
+        "id": "79d81f68-2e41-47fd-a7d4-ec89ccc7dc58",
+        "type": "field",
+        "key": "list",
+        "icon": "th-list",
+        "isImported": "0",
+        "columnName": "Year",
+        "settings": {
+          "showIcon": 1,
+          "required": 0,
+          "unique": 0,
+          "validationRules": "[]",
+          "isMultiple": 0,
+          "hasColors": 0,
+          "default": "none",
+          "options": [
+            {
+              "id": "2570",
+              "text": "2570",
+              "hex": "#4CAF50",
+              "translations": [
+                {
+                  "language_code": "en",
+                  "text": "2570"
+                }
+              ]
+            },
+            {
+              "id": "2569",
+              "text": "2569",
+              "hex": "#009688",
+              "translations": [
+                {
+                  "language_code": "en",
+                  "text": "2569"
+                }
+              ]
+            },
+            {
+              "id": "2568",
+              "text": "2568",
+              "hex": "#00BCD4",
+              "translations": [
+                {
+                  "language_code": "en",
+                  "text": "2568"
+                }
+              ]
+            },
+            {
+              "id": "2567",
+              "text": "2567",
+              "hex": "#03A9F4",
+              "translations": [
+                {
+                  "language_code": "en",
+                  "text": "2567"
+                }
+              ]
+            },
+            {
+              "id": "2566",
+              "text": "2566",
+              "hex": "#2196F3",
+              "translations": [
+                {
+                  "language_code": "en",
+                  "text": "2566"
+                }
+              ]
+            },
+            {
+              "id": "2565",
+              "text": "2565",
+              "hex": "#3F51B5",
+              "translations": [
+                {
+                  "language_code": "en",
+                  "text": "2565"
+                }
+              ]
+            },
+            {
+              "id": "2564",
+              "text": "2564",
+              "hex": "#673AB7",
+              "translations": [
+                {
+                  "language_code": "en",
+                  "text": "2564"
+                }
+              ]
+            },
+            {
+              "id": "2563",
+              "text": "2563",
+              "hex": "#9C27B0",
+              "translations": [
+                {
+                  "language_code": "en",
+                  "text": "2563"
+                }
+              ]
+            },
+            {
+              "id": "2562",
+              "text": "2562",
+              "hex": "#E91E63",
+              "translations": [
+                {
+                  "language_code": "en",
+                  "text": "2562"
+                }
+              ]
+            },
+            {
+              "id": "2561",
+              "text": "2561",
+              "hex": "#F44336",
+              "translations": [
+                {
+                  "language_code": "en",
+                  "text": "2561"
+                }
+              ]
+            }
+          ],
+          "width": 0,
+          "multipleDefault": []
+        },
+        "translations": [
+          {
+            "language_code": "en",
+            "label": "Year"
+          }
+        ]
+      },
+      "createdAt": "2022-07-26T09:57:01.000Z",
+      "updatedAt": "2022-07-27T03:27:47.000Z"
+    },
+    {
+      "id": "27ebf978-dfa9-4fcb-bbc4-d2c012cc7cf8",
+      "name": "School Records->YearX",
+      "type": "field",
+      "json": {
+        "id": "27ebf978-dfa9-4fcb-bbc4-d2c012cc7cf8",
         "type": "field",
         "key": "connectObject",
         "icon": "external-link",
         "isImported": "0",
-        "columnName": "Year",
+        "columnName": "YearX",
         "settings": {
-          "showIcon": 0,
+          "showIcon": 1,
           "required": 0,
           "unique": 0,
           "validationRules": "[]",
           "linkObject": "6330e212-feb8-4484-bbec-fe32326c3382",
           "linkType": "one",
           "linkViaType": "many",
-          "linkColumn": "ff73ccf9-8c07-4862-9a86-7330bd868750",
+          "linkColumn": "2b763afe-2dfe-49b5-a0d6-4159193450bd",
           "isSource": 1,
           "isCustomFK": 0,
           "indexField": "",
@@ -23516,12 +23661,12 @@
         "translations": [
           {
             "language_code": "en",
-            "label": "Year"
+            "label": "YearX"
           }
         ]
       },
-      "createdAt": "2022-07-21T07:40:22.000Z",
-      "updatedAt": "2022-07-21T07:40:22.000Z"
+      "createdAt": "2022-07-26T09:56:05.000Z",
+      "updatedAt": "2022-07-26T09:56:05.000Z"
     },
     {
       "id": "6330e212-feb8-4484-bbec-fe32326c3382",
@@ -23531,7 +23676,7 @@
         "id": "6330e212-feb8-4484-bbec-fe32326c3382",
         "type": "object",
         "name": "Academic Year",
-        "labelFormat": "{9367c828-8700-43b0-ba42-d003758d5d3a}",
+        "labelFormat": "{424c3c55-1bd2-4414-a24a-4b10a89c2650}",
         "labelSettings": {
           "isNoLabelDisplay": 0,
           "noLabelText": "[No Label]"
@@ -23544,12 +23689,7 @@
         "urlPath": "CARS/Academic Year",
         "objectWorkspace": {
           "frozenColumnID": "",
-          "sortFields": [
-            {
-              "key": "9367c828-8700-43b0-ba42-d003758d5d3a",
-              "dir": "desc"
-            }
-          ],
+          "sortFields": [],
           "filterConditions": {},
           "hiddenFields": []
         },
@@ -23567,8 +23707,7 @@
         "fieldIDs": [
           "7f4de0b2-3244-49f6-b864-dc3805b1634c",
           "424c3c55-1bd2-4414-a24a-4b10a89c2650",
-          "ff73ccf9-8c07-4862-9a86-7330bd868750",
-          "9367c828-8700-43b0-ba42-d003758d5d3a"
+          "2b763afe-2dfe-49b5-a0d6-4159193450bd"
         ],
         "objectWorkspaceViews": {
           "currentViewID": "fa49c9c9-4b95-483b-b99d-c42f932e0a5d",
@@ -23587,12 +23726,6 @@
               ],
               "isDefaultView": "true",
               "name": "Default Grid",
-              "sortFields": [
-                {
-                  "key": "9367c828-8700-43b0-ba42-d003758d5d3a",
-                  "dir": "desc"
-                }
-              ],
               "frozenColumnID": "",
               "type": "grid"
             }
@@ -23600,7 +23733,7 @@
         }
       },
       "createdAt": "2020-10-07T03:02:06.000Z",
-      "updatedAt": "2022-07-21T19:07:48.000Z"
+      "updatedAt": "2022-07-27T02:59:00.000Z"
     },
     {
       "id": "7f4de0b2-3244-49f6-b864-dc3805b1634c",
@@ -23682,18 +23815,16 @@
       "updatedAt": "2022-06-24T09:00:39.000Z"
     },
     {
-      "id": "ff73ccf9-8c07-4862-9a86-7330bd868750",
-      "name": "Academic Year->Year",
+      "name": "Academic Year->YearX492",
       "type": "field",
       "json": {
-        "id": "ff73ccf9-8c07-4862-9a86-7330bd868750",
         "type": "field",
         "key": "connectObject",
         "icon": "external-link",
         "isImported": "0",
-        "columnName": "Year",
+        "columnName": "YearX492",
         "settings": {
-          "showIcon": 0,
+          "showIcon": 1,
           "linkObject": "2bb74d42-6239-4bf3-bdc5-e2c4c4d11eeb",
           "linkType": "many",
           "linkViaType": "one",
@@ -23704,57 +23835,19 @@
           "width": 100,
           "required": 0,
           "unique": 0,
-          "linkColumn": "d0e54d4a-a404-4aa6-ad52-5d78fd0d0801"
+          "linkColumn": "27ebf978-dfa9-4fcb-bbc4-d2c012cc7cf8"
         },
         "translations": [
           {
             "language_code": "en",
             "label": "School Records"
-          },
-          {
-            "language_code": "th",
-            "label": "ประวัติโรงเรียน"
           }
-        ]
+        ],
+        "id": "2b763afe-2dfe-49b5-a0d6-4159193450bd"
       },
-      "createdAt": "2022-07-21T07:40:22.000Z",
-      "updatedAt": "2022-07-21T08:33:16.000Z"
-    },
-    {
-      "id": "9367c828-8700-43b0-ba42-d003758d5d3a",
-      "name": "Academic Year->Specific Year",
-      "type": "field",
-      "json": {
-        "id": "9367c828-8700-43b0-ba42-d003758d5d3a",
-        "type": "field",
-        "key": "string",
-        "icon": "font",
-        "isImported": "0",
-        "columnName": "Specific Year",
-        "settings": {
-          "showIcon": 0,
-          "required": 1,
-          "unique": 0,
-          "validationRules": "[]",
-          "default": "",
-          "supportMultilingual": 1,
-          "width": 0,
-          "translations": [
-            {
-              "language_code": "en",
-              "default": ""
-            }
-          ]
-        },
-        "translations": [
-          {
-            "language_code": "en",
-            "label": "Specific Year"
-          }
-        ]
-      },
-      "createdAt": "2022-07-21T18:10:29.000Z",
-      "updatedAt": "2022-07-22T05:06:55.000Z"
+      "id": "2b763afe-2dfe-49b5-a0d6-4159193450bd",
+      "createdAt": "2022-07-26T09:56:05.507Z",
+      "updatedAt": "2022-07-26T09:56:05.507Z"
     },
     {
       "id": "c409083b-1618-4e57-8fa8-9b6bca976ad9",
@@ -36429,6 +36522,9 @@
         "type": "query",
         "name": "Children",
         "labelFormat": "",
+        "labelSettings": {
+          "isNoLabelDisplay": 0
+        },
         "isImported": "0",
         "isExternal": "0",
         "tableName": "",
@@ -36461,7 +36557,9 @@
           "4863d749-3d15-4f90-b470-3dc38cbb0195",
           "e6a79c8c-98ed-4dd8-a2fe-3b4506d46c9e",
           "62a95880-abee-4362-96bc-96e9383b8317",
-          "ec8dd00f-f229-49e0-b898-12f0dd40cdc3"
+          "ec8dd00f-f229-49e0-b898-12f0dd40cdc3",
+          "49c9eae6-837a-4c6f-9be4-943dc39c36ee",
+          "91256770-2eb3-4d02-95ec-5418bbec6747"
         ],
         "objectWorkspaceViews": {
           "currentViewID": "3f458be5-66aa-40e9-a1ef-2bdd55bfa29f",
@@ -36501,19 +36599,19 @@
             {
               "alias": "81bea147",
               "fieldID": "1cd932b9-d70e-49e1-aef6-083ffe2a54d7",
-              "type": "innerjoin",
+              "type": "left",
               "links": [
                 {
                   "alias": "15c55318",
                   "fieldID": "5ff7ba1a-c5b9-4cfa-ac8e-11905adbc8cc",
-                  "type": "innerjoin"
+                  "type": "left"
                 }
               ]
             },
             {
               "alias": "99630345",
               "fieldID": "30f9107e-5733-4ba8-a5b4-29b53e698dab",
-              "type": "innerjoin"
+              "type": "left"
             },
             {
               "alias": "fbd805aa",
@@ -36523,12 +36621,12 @@
                 {
                   "alias": "523706b2",
                   "fieldID": "6daf2109-4bbe-4003-b69d-bed120b83ec2",
-                  "type": "innerjoin"
+                  "type": "left"
                 },
                 {
                   "alias": "a24a013e",
                   "fieldID": "a0710a1c-405c-4790-9df8-8bc303acb252",
-                  "type": "innerjoin"
+                  "type": "left"
                 }
               ]
             },
@@ -36574,6 +36672,16 @@
             "alias": "BASE_OBJECT",
             "objectID": "26f66d40-a017-4ace-b46b-9aa0879bf615",
             "fieldID": "ec8dd00f-f229-49e0-b898-12f0dd40cdc3"
+          },
+          {
+            "alias": "15c55318",
+            "objectID": "7a3a142a-bf79-4c84-9467-deae7e3b64ed",
+            "fieldID": "49c9eae6-837a-4c6f-9be4-943dc39c36ee"
+          },
+          {
+            "alias": "81bea147",
+            "objectID": "d9ca465d-0b93-419b-be94-8cc0c704c23c",
+            "fieldID": "91256770-2eb3-4d02-95ec-5418bbec6747"
           }
         ],
         "where": {
@@ -36585,7 +36693,7 @@
         }
       },
       "createdAt": "2020-10-07T03:02:11.000Z",
-      "updatedAt": "2022-06-24T09:00:49.000Z"
+      "updatedAt": "2022-07-25T07:26:38.000Z"
     },
     {
       "id": "8681dabd-f6a3-4c32-ba9d-095d990cb664",
@@ -39144,11 +39252,17 @@
         "type": "datacollection",
         "settings": {
           "linkDatacollectionID": "",
-          "linkFieldID": "",
+          "linkFieldID": "e1211ab4-d797-4626-ac46-d7a204000e7b",
           "objectWorkspace": {
             "filterConditions": {
               "glue": "and"
-            }
+            },
+            "sortFields": [
+              {
+                "key": "9367c828-8700-43b0-ba42-d003758d5d3a",
+                "dir": "desc"
+              }
+            ]
           },
           "fixSelect": "",
           "loadAll": "0",
@@ -39160,12 +39274,12 @@
         "translations": [
           {
             "language_code": "en",
-            "label": "academic year"
+            "label": "Academic Year"
           }
         ]
       },
       "createdAt": "2022-07-21T07:18:29.000Z",
-      "updatedAt": "2022-07-21T07:18:37.000Z"
+      "updatedAt": "2022-07-22T08:41:32.000Z"
     },
     {
       "id": "65391352-9730-4156-91a4-74c3f1677426",
@@ -55510,7 +55624,7 @@
         "isRoot": "false"
       },
       "createdAt": "2020-10-07T03:02:11.000Z",
-      "updatedAt": "2022-06-24T09:00:46.000Z"
+      "updatedAt": "2022-07-26T04:29:02.000Z"
     },
     {
       "id": "709cb4a2-75bb-43b4-af01-3efe9302d311",
@@ -55546,7 +55660,7 @@
         "isRoot": "false"
       },
       "createdAt": "2020-10-07T03:02:11.000Z",
-      "updatedAt": "2022-06-24T09:00:46.000Z"
+      "updatedAt": "2022-07-26T04:29:01.000Z"
     },
     {
       "id": "6200cb00-2a16-4929-b0c4-59daca58ac10",
@@ -55581,7 +55695,7 @@
         "isRoot": "false"
       },
       "createdAt": "2020-10-07T03:02:11.000Z",
-      "updatedAt": "2022-06-24T09:00:46.000Z"
+      "updatedAt": "2022-07-26T04:29:01.000Z"
     },
     {
       "id": "4078d914-57e8-42ee-a502-805a446477c7",
@@ -55617,7 +55731,7 @@
         "isRoot": "false"
       },
       "createdAt": "2020-10-07T03:02:11.000Z",
-      "updatedAt": "2022-06-24T09:00:46.000Z"
+      "updatedAt": "2022-07-26T04:29:01.000Z"
     },
     {
       "id": "9a013b91-f782-4d08-8cc6-5d3c0d4c183f",
@@ -55659,7 +55773,7 @@
         "isRoot": "false"
       },
       "createdAt": "2020-10-07T03:02:11.000Z",
-      "updatedAt": "2022-06-24T09:00:46.000Z"
+      "updatedAt": "2022-07-26T04:29:01.000Z"
     },
     {
       "id": "b56263ba-6ea8-4a08-a15c-35e3cc92c78d",
@@ -55700,7 +55814,7 @@
         "isRoot": "false"
       },
       "createdAt": "2020-10-07T03:02:11.000Z",
-      "updatedAt": "2022-06-24T09:00:46.000Z"
+      "updatedAt": "2022-07-26T04:29:01.000Z"
     },
     {
       "id": "d7da6c05-d3f4-4fe2-b4cc-7fbd4bacf379",
@@ -55742,7 +55856,7 @@
         "isRoot": "false"
       },
       "createdAt": "2020-10-07T03:02:11.000Z",
-      "updatedAt": "2022-06-24T09:00:46.000Z"
+      "updatedAt": "2022-07-26T04:29:01.000Z"
     },
     {
       "id": "fd75113a-e589-42b0-b3b9-72139085326b",
@@ -55774,7 +55888,7 @@
         "isRoot": "false"
       },
       "createdAt": "2020-10-07T03:02:11.000Z",
-      "updatedAt": "2022-06-24T09:00:46.000Z"
+      "updatedAt": "2022-07-26T04:29:02.000Z"
     },
     {
       "id": "a26b0a4d-eba2-4504-b158-25b01429deab",
@@ -55810,7 +55924,7 @@
         "isRoot": "false"
       },
       "createdAt": "2020-11-09T04:21:45.000Z",
-      "updatedAt": "2022-06-24T09:00:46.000Z"
+      "updatedAt": "2022-07-26T04:29:02.000Z"
     },
     {
       "id": "5bb265b4-2f9e-426c-a446-30be67c97a41",
@@ -55843,7 +55957,7 @@
         "isRoot": "false"
       },
       "createdAt": "2020-11-09T04:21:45.000Z",
-      "updatedAt": "2022-06-24T09:00:46.000Z"
+      "updatedAt": "2022-07-26T04:29:02.000Z"
     },
     {
       "id": "57819d5b-9208-4742-a5f7-a3f7f6e0b833",
@@ -73190,7 +73304,7 @@
           "2329f0f6-acdb-4330-adec-01f11cabd84f",
           "d30fce54-e8d6-476f-b976-4d66056c310b",
           "d87b2981-b35e-47d0-a3ce-9360e11f7040",
-          "7a88528e-170d-4fc4-9549-3afc9a11a120",
+          "d5719581-6bdd-41f9-bf02-6cf72883b003",
           "fff45207-a83b-4523-9f6d-72f4ebbbb022"
         ],
         "position": {
@@ -73202,7 +73316,7 @@
         "isRoot": "false"
       },
       "createdAt": "2020-10-07T03:02:11.000Z",
-      "updatedAt": "2022-07-21T07:43:53.000Z"
+      "updatedAt": "2022-07-27T03:10:40.000Z"
     },
     {
       "id": "87414ff8-ccff-487f-b820-87db366de03f",
@@ -73234,7 +73348,7 @@
         "isRoot": "false"
       },
       "createdAt": "2020-10-07T03:02:11.000Z",
-      "updatedAt": "2022-07-21T07:43:53.000Z"
+      "updatedAt": "2022-07-26T09:58:01.000Z"
     },
     {
       "id": "a8235e30-7662-4534-af75-e2bce30440fa",
@@ -73266,7 +73380,7 @@
         "isRoot": "false"
       },
       "createdAt": "2020-10-07T03:02:11.000Z",
-      "updatedAt": "2022-07-21T07:43:53.000Z"
+      "updatedAt": "2022-07-26T09:58:01.000Z"
     },
     {
       "id": "b50d959d-6b34-4451-b171-89746a705e10",
@@ -73298,7 +73412,7 @@
         "isRoot": "false"
       },
       "createdAt": "2020-10-07T03:02:11.000Z",
-      "updatedAt": "2022-07-21T07:43:53.000Z"
+      "updatedAt": "2022-07-26T09:58:01.000Z"
     },
     {
       "id": "2329f0f6-acdb-4330-adec-01f11cabd84f",
@@ -73330,7 +73444,7 @@
         "isRoot": "false"
       },
       "createdAt": "2020-10-07T03:02:11.000Z",
-      "updatedAt": "2022-07-21T07:43:53.000Z"
+      "updatedAt": "2022-07-26T09:58:01.000Z"
     },
     {
       "id": "d30fce54-e8d6-476f-b976-4d66056c310b",
@@ -73362,7 +73476,7 @@
         "isRoot": "false"
       },
       "createdAt": "2020-10-07T03:02:11.000Z",
-      "updatedAt": "2022-07-21T07:43:53.000Z"
+      "updatedAt": "2022-07-26T09:58:01.000Z"
     },
     {
       "id": "d87b2981-b35e-47d0-a3ce-9360e11f7040",
@@ -73394,43 +73508,52 @@
         "isRoot": "false"
       },
       "createdAt": "2020-10-07T03:02:11.000Z",
-      "updatedAt": "2022-07-21T07:43:53.000Z"
+      "updatedAt": "2022-07-26T09:58:01.000Z"
     },
     {
-      "id": "7a88528e-170d-4fc4-9549-3afc9a11a120",
-      "name": "Add School Records.form.connect",
+      "id": "d5719581-6bdd-41f9-bf02-6cf72883b003",
+      "name": "Add School Records.form.selectsingle",
       "type": "view",
       "json": {
-        "id": "7a88528e-170d-4fc4-9549-3afc9a11a120",
+        "id": "d5719581-6bdd-41f9-bf02-6cf72883b003",
         "type": "view",
-        "key": "connect",
+        "key": "selectsingle",
         "icon": "list-ul",
-        "name": "Add School Records.form.connect",
         "settings": {
-          "objectId": "2bb74d42-6239-4bf3-bdc5-e2c4c4d11eeb",
-          "fieldId": "d0e54d4a-a404-4aa6-ad52-5d78fd0d0801",
-          "objectWorkspace": {
-            "filterConditions": {
-              "glue": "and"
+          "options": [
+            {
+              "id": "2564",
+              "value": "2564",
+              "hex": "#F44336"
             },
-            "sortFields": [
-              {
-                "key": "9367c828-8700-43b0-ba42-d003758d5d3a",
-                "dir": "desc"
-              }
-            ]
-          },
-          "required": "0",
-          "disable": "0",
-          "popupWidth": "700",
-          "popupHeight": "450",
-          "formView": "52d3aca8-5c14-4f42-9264-cb14ffb345ec",
-          "editForm": "none"
+            {
+              "id": "2565",
+              "value": "2565",
+              "hex": "#E91E63"
+            },
+            {
+              "id": "2566",
+              "value": "2566",
+              "hex": "#9C27B0"
+            },
+            {
+              "id": "2567",
+              "value": "2567",
+              "hex": "#673AB7"
+            },
+            {
+              "id": "2568",
+              "value": "2568",
+              "hex": "#3F51B5"
+            }
+          ],
+          "objectId": "2bb74d42-6239-4bf3-bdc5-e2c4c4d11eeb",
+          "fieldId": "79d81f68-2e41-47fd-a7d4-ec89ccc7dc58"
         },
         "translations": [
           {
             "language_code": "en",
-            "label": "Add School Records.form.connect"
+            "label": "Add School Records.form.selectsingle"
           }
         ],
         "position": {
@@ -73441,8 +73564,8 @@
         },
         "isRoot": "false"
       },
-      "createdAt": "2022-07-21T07:43:46.000Z",
-      "updatedAt": "2022-07-21T18:59:46.000Z"
+      "createdAt": "2022-07-26T09:57:45.000Z",
+      "updatedAt": "2022-07-26T09:58:01.000Z"
     },
     {
       "id": "fff45207-a83b-4523-9f6d-72f4ebbbb022",
@@ -73475,7 +73598,7 @@
         "isRoot": "false"
       },
       "createdAt": "2020-10-07T03:02:11.000Z",
-      "updatedAt": "2022-07-21T07:43:53.000Z"
+      "updatedAt": "2022-07-27T03:10:41.000Z"
     },
     {
       "id": "45a57688-1c35-41b6-a988-ec9528ab1f49",
@@ -73571,7 +73694,8 @@
           "43a83c3c-35fd-4954-aa54-e75dcc96187b",
           "fc87c7d5-4f78-4886-9203-bc9af8af90e0",
           "acfe0d0f-438d-4c6f-9e4a-88fdaa4079ca",
-          "f08df1e9-1c44-42cd-b422-edc86df63d76",
+          "6fa4450b-7dbe-4a20-a305-b25fffc93a14",
+          "64dc57e9-df93-47ff-b8e8-9dcff9b6671c",
           "943a6af6-1a68-4672-b2b1-a61db7af56b3"
         ],
         "position": {
@@ -73583,7 +73707,7 @@
         "isRoot": "false"
       },
       "createdAt": "2020-10-07T03:02:11.000Z",
-      "updatedAt": "2022-07-21T08:15:03.000Z"
+      "updatedAt": "2022-07-26T09:58:34.000Z"
     },
     {
       "id": "9973d4be-1a75-4a8a-be90-8f2aab5cb744",
@@ -73619,7 +73743,7 @@
         "isRoot": "false"
       },
       "createdAt": "2020-10-07T03:02:11.000Z",
-      "updatedAt": "2022-07-21T08:12:57.000Z"
+      "updatedAt": "2022-07-26T09:58:33.000Z"
     },
     {
       "id": "816eb23b-6e79-42bf-87b2-ec235da15974",
@@ -73655,7 +73779,7 @@
         "isRoot": "false"
       },
       "createdAt": "2020-10-07T03:02:11.000Z",
-      "updatedAt": "2022-07-21T08:12:57.000Z"
+      "updatedAt": "2022-07-26T09:58:33.000Z"
     },
     {
       "id": "5b4b2d03-a621-4363-96d5-31ab7ef0d9f7",
@@ -73687,7 +73811,7 @@
         "isRoot": "false"
       },
       "createdAt": "2020-10-07T03:02:11.000Z",
-      "updatedAt": "2022-07-21T08:12:57.000Z"
+      "updatedAt": "2022-07-26T09:58:33.000Z"
     },
     {
       "id": "43a83c3c-35fd-4954-aa54-e75dcc96187b",
@@ -73719,7 +73843,7 @@
         "isRoot": "false"
       },
       "createdAt": "2020-10-07T03:02:11.000Z",
-      "updatedAt": "2022-07-21T08:12:57.000Z"
+      "updatedAt": "2022-07-26T09:58:33.000Z"
     },
     {
       "id": "fc87c7d5-4f78-4886-9203-bc9af8af90e0",
@@ -73751,7 +73875,7 @@
         "isRoot": "false"
       },
       "createdAt": "2020-10-07T03:02:11.000Z",
-      "updatedAt": "2022-07-21T08:12:57.000Z"
+      "updatedAt": "2022-07-26T09:58:33.000Z"
     },
     {
       "id": "acfe0d0f-438d-4c6f-9e4a-88fdaa4079ca",
@@ -73783,38 +73907,26 @@
         "isRoot": "false"
       },
       "createdAt": "2022-07-20T06:40:28.000Z",
-      "updatedAt": "2022-07-21T08:12:57.000Z"
+      "updatedAt": "2022-07-26T09:58:33.000Z"
     },
     {
-      "id": "f08df1e9-1c44-42cd-b422-edc86df63d76",
+      "id": "6fa4450b-7dbe-4a20-a305-b25fffc93a14",
       "name": "Edit School Records.form.connect",
       "type": "view",
       "json": {
-        "id": "f08df1e9-1c44-42cd-b422-edc86df63d76",
+        "id": "6fa4450b-7dbe-4a20-a305-b25fffc93a14",
         "type": "view",
         "key": "connect",
         "icon": "list-ul",
         "name": "Edit School Records.form.connect",
         "settings": {
           "objectId": "2bb74d42-6239-4bf3-bdc5-e2c4c4d11eeb",
-          "fieldId": "d0e54d4a-a404-4aa6-ad52-5d78fd0d0801",
+          "fieldId": "e1211ab4-d797-4626-ac46-d7a204000e7b",
           "objectWorkspace": {
             "filterConditions": {
               "glue": "and"
-            },
-            "sortFields": [
-              {
-                "key": "9367c828-8700-43b0-ba42-d003758d5d3a",
-                "dir": "desc"
-              }
-            ]
-          },
-          "required": "0",
-          "disable": "0",
-          "popupWidth": "700",
-          "popupHeight": "450",
-          "formView": "52d3aca8-5c14-4f42-9264-cb14ffb345ec",
-          "editForm": "none"
+            }
+          }
         },
         "translations": [
           {
@@ -73826,12 +73938,69 @@
           "dx": "1",
           "dy": "1",
           "x": "0",
+          "y": "0"
+        },
+        "isRoot": "false"
+      },
+      "createdAt": "2022-07-25T03:18:37.000Z",
+      "updatedAt": "2022-07-26T09:58:33.000Z"
+    },
+    {
+      "id": "64dc57e9-df93-47ff-b8e8-9dcff9b6671c",
+      "name": "Edit School Records.form.selectsingle",
+      "type": "view",
+      "json": {
+        "id": "64dc57e9-df93-47ff-b8e8-9dcff9b6671c",
+        "type": "view",
+        "key": "selectsingle",
+        "icon": "list-ul",
+        "settings": {
+          "options": [
+            {
+              "id": "2564",
+              "value": "2564",
+              "hex": "#F44336"
+            },
+            {
+              "id": "2565",
+              "value": "2565",
+              "hex": "#E91E63"
+            },
+            {
+              "id": "2566",
+              "value": "2566",
+              "hex": "#9C27B0"
+            },
+            {
+              "id": "2567",
+              "value": "2567",
+              "hex": "#673AB7"
+            },
+            {
+              "id": "2568",
+              "value": "2568",
+              "hex": "#3F51B5"
+            }
+          ],
+          "objectId": "2bb74d42-6239-4bf3-bdc5-e2c4c4d11eeb",
+          "fieldId": "79d81f68-2e41-47fd-a7d4-ec89ccc7dc58"
+        },
+        "translations": [
+          {
+            "language_code": "en",
+            "label": "Edit School Records.form.selectsingle"
+          }
+        ],
+        "position": {
+          "dx": "1",
+          "dy": "1",
+          "x": "0",
           "y": "6"
         },
         "isRoot": "false"
       },
-      "createdAt": "2022-07-21T08:12:52.000Z",
-      "updatedAt": "2022-07-21T19:00:30.000Z"
+      "createdAt": "2022-07-26T09:58:16.000Z",
+      "updatedAt": "2022-07-26T09:58:33.000Z"
     },
     {
       "id": "943a6af6-1a68-4672-b2b1-a61db7af56b3",
@@ -73864,7 +74033,7 @@
         "isRoot": "false"
       },
       "createdAt": "2020-10-07T03:02:11.000Z",
-      "updatedAt": "2022-07-21T08:15:04.000Z"
+      "updatedAt": "2022-07-26T09:58:33.000Z"
     },
     {
       "id": "4c98fd20-0633-4118-8a57-ef191bce8fb2",
@@ -99977,7 +100146,7 @@
           "movable": "true",
           "labelPosition": "left",
           "showLabel": "1",
-          "clearOnLoad": "0",
+          "clearOnLoad": "1",
           "clearOnSave": "0",
           "labelWidth": "120",
           "height": "200",
@@ -99999,8 +100168,8 @@
           }
         ],
         "viewIDs": [
-          "35f97b1a-3f3b-4ae3-b78b-b2ca0e86ba91",
-          "62348035-e284-462b-80c0-5038d7eb27ab"
+          "62348035-e284-462b-80c0-5038d7eb27ab",
+          "35f97b1a-3f3b-4ae3-b78b-b2ca0e86ba91"
         ],
         "position": {
           "dx": "1",
@@ -100009,40 +100178,7 @@
         "isRoot": "false"
       },
       "createdAt": "2022-07-21T07:33:11.000Z",
-      "updatedAt": "2022-07-21T18:20:10.000Z"
-    },
-    {
-      "id": "35f97b1a-3f3b-4ae3-b78b-b2ca0e86ba91",
-      "name": "Add Year.form.button",
-      "type": "view",
-      "json": {
-        "id": "35f97b1a-3f3b-4ae3-b78b-b2ca0e86ba91",
-        "type": "view",
-        "key": "button",
-        "icon": "square",
-        "name": "Add Year.form.button",
-        "settings": {
-          "includeSave": "true",
-          "includeCancel": "false",
-          "includeReset": "false",
-          "isDefault": "true"
-        },
-        "translations": [
-          {
-            "language_code": "en",
-            "label": "Add Year.form.button"
-          }
-        ],
-        "position": {
-          "dx": "1",
-          "dy": "1",
-          "y": "1",
-          "x": "0"
-        },
-        "isRoot": "false"
-      },
-      "createdAt": "2022-07-21T07:33:38.000Z",
-      "updatedAt": "2022-07-21T18:20:10.000Z"
+      "updatedAt": "2022-07-27T03:09:34.000Z"
     },
     {
       "id": "62348035-e284-462b-80c0-5038d7eb27ab",
@@ -100074,7 +100210,40 @@
         "isRoot": "false"
       },
       "createdAt": "2022-07-21T18:13:43.000Z",
-      "updatedAt": "2022-07-21T18:20:10.000Z"
+      "updatedAt": "2022-07-25T03:15:54.000Z"
+    },
+    {
+      "id": "35f97b1a-3f3b-4ae3-b78b-b2ca0e86ba91",
+      "name": "Add Year.form.button",
+      "type": "view",
+      "json": {
+        "id": "35f97b1a-3f3b-4ae3-b78b-b2ca0e86ba91",
+        "type": "view",
+        "key": "button",
+        "icon": "square",
+        "name": "Add Year.form.button",
+        "settings": {
+          "includeSave": "true",
+          "includeCancel": "false",
+          "includeReset": "false",
+          "isDefault": "true"
+        },
+        "translations": [
+          {
+            "language_code": "en",
+            "label": "Add Year.form.button"
+          }
+        ],
+        "position": {
+          "dx": "1",
+          "dy": "1",
+          "y": "2",
+          "x": "0"
+        },
+        "isRoot": "false"
+      },
+      "createdAt": "2022-07-21T07:33:38.000Z",
+      "updatedAt": "2022-07-27T03:09:23.000Z"
     },
     {
       "id": "4d0bcb94-bb0d-4179-a325-be1cf7f92399",
@@ -105064,7 +105233,7 @@
         "isRoot": "false"
       },
       "createdAt": "2022-03-14T08:04:43.000Z",
-      "updatedAt": "2022-03-29T02:59:25.000Z"
+      "updatedAt": "2022-06-24T09:00:49.000Z"
     },
     {
       "id": "6bc13bfc-5883-4a10-9e43-3562aba9e6a3",

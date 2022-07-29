@@ -662,6 +662,114 @@ describe("Test add-new forms:", () => {
       cy.get(cyInterfaceCHILD.page[parent].page[child].grid).contains(text);
       checkForm(parent, child, field);
    });
+   it("Test Create and Edit Data of School Records", () => {
+      cy.get(
+         '[data-cy="tab-Education-55641379-f712-497c-abe8-7a7b3e3091e0-bbef30a6-8b04-49c3-8520-818568ccaa79"]'
+      )
+         .should("be.visible")
+         .click();
+      cy.get(
+         '[data-cy="tab-SchoolRecords-ea8b6c3b-84f5-43ed-8f1c-65d0e73b0edc-d071e58a-baa8-4312-b8df-320b5f04c22a"]'
+      )
+         .should("exist")
+         .click();
+      cy.get(
+         '[data-cy="menu-item Add School Records 1eb85e88-a729-48fd-a7fc-cc1d3072f843 e520d8da-6e67-4b8f-a88f-2004c81ec813"]'
+      )
+         .should("exist")
+         .click()
+         .wait(2000); // Wait for finish loading
+      cy.get(
+         '[data-cy="string Class Year 7e4a4937-f4a4-4ad7-95ae-06cb80c798dc bf3dfa10-80a5-455a-869d-c981daa2cdb3"]'
+      )
+         .should("exist")
+         .type("202");
+      cy.get(
+         '[data-cy="list Year 79d81f68-2e41-47fd-a7d4-ec89ccc7dc58 bf3dfa10-80a5-455a-869d-c981daa2cdb3"]'
+      )
+         .scrollIntoView()
+         .should("exist")
+         .click();
+      cy.get(
+         '[data-cy="list options 2562 79d81f68-2e41-47fd-a7d4-ec89ccc7dc58 bf3dfa10-80a5-455a-869d-c981daa2cdb3"]'
+      )
+         .should("exist")
+         .contains("2562")
+         .click();
+      cy.get('[data-cy="button save bf3dfa10-80a5-455a-869d-c981daa2cdb3"]')
+         .scrollIntoView()
+         .should("exist")
+         .contains("Save")
+         .click();
+      cy.get(".webix_warn")
+         .find(".webix_button")
+         .should("be.visible")
+         .click({ multiple: true, force: true })
+         .wait(4000); // Wait for finish loading
+      cy.get(
+         '[data-cy="ABViewGrid_2fae0fda-4262-4ef0-b1c8-e91fe2fc1d82_datatable"]'
+      )
+         .should("be.visible")
+         .contains("202");
+      cy.window().then((win) => {
+         return win
+            .$$("ABViewGrid_2fae0fda-4262-4ef0-b1c8-e91fe2fc1d82_datatable")
+            .scrollTo(400, 1);
+      });
+      cy.get(
+         '[data-cy="ABViewGrid_2fae0fda-4262-4ef0-b1c8-e91fe2fc1d82_datatable"]'
+      )
+         .should("be.visible")
+         .contains("2562");
+      cy.get(".wxi-pencil")
+         .should("be.visible")
+         .click({ force: true })
+         .wait(4000); // Wait for finish loading
+      cy.get(
+         '[data-cy="string Class Year 7e4a4937-f4a4-4ad7-95ae-06cb80c798dc 3bf905ea-5a83-4412-a89e-5991325ae3a2"]'
+      )
+         .should("exist")
+         .click({ force: true })
+         .type("0");
+      cy.get(
+         '[data-cy="list Year 79d81f68-2e41-47fd-a7d4-ec89ccc7dc58 3bf905ea-5a83-4412-a89e-5991325ae3a2"]'
+      )
+         .scrollIntoView()
+         .should("exist")
+         .click({ force: true });
+      cy.get(".webix_list_item").should("be.visible").contains("2563");
+      cy.get(
+         '[data-cy="list options 2563 79d81f68-2e41-47fd-a7d4-ec89ccc7dc58 3bf905ea-5a83-4412-a89e-5991325ae3a2"]'
+      )
+         .should("exist")
+         .click({ force: true });
+      cy.get('[data-cy="button save 3bf905ea-5a83-4412-a89e-5991325ae3a2"]')
+         .scrollIntoView()
+         .should("exist")
+         .contains("Save")
+         .click({ force: true })
+         .wait(2000); // Wait for finish loading
+      cy.window().then((win) => {
+         return win
+            .$$("ABViewGrid_2fae0fda-4262-4ef0-b1c8-e91fe2fc1d82_datatable")
+            .scrollTo(1, 400);
+      });
+      cy.get(
+         '[data-cy="ABViewGrid_2fae0fda-4262-4ef0-b1c8-e91fe2fc1d82_datatable"]'
+      )
+         .should("be.visible")
+         .contains("2020");
+      cy.window().then((win) => {
+         return win
+            .$$("ABViewGrid_2fae0fda-4262-4ef0-b1c8-e91fe2fc1d82_datatable")
+            .scrollTo(400, 1);
+      });
+      cy.get(
+         '[data-cy="ABViewGrid_2fae0fda-4262-4ef0-b1c8-e91fe2fc1d82_datatable"]'
+      )
+         .should("be.visible")
+         .contains("2563");
+   });
    it("Test careerInfo", () => {
       // TODO grid is too small, needs to scroll
       //saveAndCheck("education","careerInfo","workPlace")
