@@ -458,17 +458,17 @@ describe("Test Child:", () => {
          .should((data) => {
             expect(data).not.to.be.empty;
          });
-      // cy.get(
-      //    cyInterfaceCARS.page.socialWorker.page.children.view.child.page
-      //       .basicInfo.page.basicInfo.field.timeReceivedfor
-      // ).should((data) => {
-      //    expect(
-      //       data.text().includes(child.timeReceivedfor)
-      //          ? child.timeReceivedfor
-      //          : "",
-      //       "Time Recieved for"
-      //    ).to.eq(child.timeReceivedfor);
-      // });
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .basicInfo.page.basicInfo.field.timeReceivedfor
+      ).should((data) => {
+         expect(
+            data.text().includes(child.timeReceivedfor)
+               ? child.timeReceivedfor
+               : "",
+            "Time Recieved for"
+         ).to.eq(child.timeReceivedfor);
+      });
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .basicInfo.page.basicInfo.field.firstName
@@ -514,15 +514,15 @@ describe("Test Child:", () => {
             "Nationality"
          ).to.eq(child.nationality);
       });
-      // cy.get(
-      //    cyInterfaceCARS.page.socialWorker.page.children.view.child.page
-      //       .basicInfo.page.basicInfo.field.birthday
-      // ).should((data) => {
-      //    expect(
-      //       data.text().includes(child.birthday) ? child.birthday : "",
-      //       "Birthday"
-      //    ).to.eq(child.birthday);
-      // });
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .basicInfo.page.basicInfo.field.birthday
+      ).should((data) => {
+         expect(
+            data.text().includes(child.birthday) ? child.birthday : "",
+            "Birthday"
+         ).to.eq(child.birthday);
+      });
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .basicInfo.page.basicInfo.field.religion
