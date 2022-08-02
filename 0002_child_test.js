@@ -499,9 +499,9 @@ describe("Test add-new forms:", () => {
       cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.fields[field])
          .scrollIntoView()
          .should("exist")
-         .type("Please work")
-         .clear()
-         .type(text);
+         .type("Please work", { force: true })
+         .clear({ force: true })
+         .type(text, { force: true });
       cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.button.save)
          // .scrollIntoView()
          .should("exist")
@@ -509,7 +509,7 @@ describe("Test add-new forms:", () => {
          .click();
       cy.get(
          cyInterfaceCHILD.page[parent].page[child].form.add.fields[field]
-      ).should("not.be.visible"); // wait until popup goes away
+      ).should("exist");
    }
    function saveAndCheck(parent, child, field, isTopTab) {
       // cy.log(parent, child, field);
@@ -858,7 +858,6 @@ describe("Test add-new forms:", () => {
       saveAndCheck(parent, child, field, true);
    });
    it("Test visitorLog", () => {
-      //
       // TODO this has a lot more to test about it
       // sub-forms
       // [+] address
@@ -900,7 +899,7 @@ describe("Test add-new forms:", () => {
       cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.fields[field])
          .scrollIntoView()
          .should("exist")
-         .type("Please work")
+         .type("Please work", { force: true })
          .clear()
          .type(text);
       // Scroll to see and type the URL location on 'Site URL Field'
@@ -943,7 +942,35 @@ describe("Test add-new forms:", () => {
       saveAndCheck("logs", "participationLog", "behavior");
    });
    it("Test assetLog", () => {
-      saveAndCheck("logs", "assetLog", "assetDescription");
+      cy.get(
+         '[data-cy="tab-Logs-30406204-b89c-4322-bff0-d07cd6be4404-bbef30a6-8b04-49c3-8520-818568ccaa79"]'
+      ).should("be.visible").click();
+      cy.get(
+         '[data-cy="tab-AssetLog-41efe1e0-c6ee-4abb-b67a-5871150b882f-9f5b25fb-c8f6-4fc4-adf1-4172cb0c7393"]'
+      ).should("be.visible").click();
+      cy.get(
+         '[data-cy="menu-item Add Assets Log fd0bbb13-cab0-4393-a29b-34b1cd466873 16966204-acbb-4a44-97a4-c1eb05d836a3"]'
+      ).should("be.visible").click();
+      cy.get('[class="webix_progress_state wxi-sync webix_spin"]')
+         .should("not.be.visible");
+      cy.get(
+         '[data-cy="LongText Asset Description f2b65cf6-5f67-4aa2-83e6-350cf0705ff1 7a3b8980-e30d-4135-8b01-a4e06fcac9f2"]'
+      )
+         .scrollIntoView()
+         .should("exist")
+         .type("Please work", { force: true })
+         .clear()
+         .type(text);
+      cy.get('[data-cy="button save 7a3b8980-e30d-4135-8b01-a4e06fcac9f2"]')
+         .should("exist")
+         .scrollIntoView()
+         .click();
+      cy.get(
+         '[data-cy="LongText Asset Description f2b65cf6-5f67-4aa2-83e6-350cf0705ff1 7a3b8980-e30d-4135-8b01-a4e06fcac9f2"]'
+      ).should("exist");
+      cy.get(
+         '[data-cy="ABViewGrid_11c6e28c-4503-41c2-a6ce-93098212568d_datatable"]'
+      ).contains("Hello World");
    });
    it("Test contactingAgencies", () => {
       saveAndCheck("logs", "contactingAgencies", "name");
