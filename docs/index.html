@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบบริหารจัดการข้อมูลเด็กและเยาวชน (CARs)</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=K2D&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
+                    <a href="/"><img src="/images/logo.jpg" width="80" height="90"/></a>
+                    <h1>ระบบบริหารจัดการข้อมูลเด็กและเยาวชน</h1>
+                    <h4>(Child at Risk Systems; CARs)</h4>
+                    <h6>ช่วยคุณจัดเก็บและเข้าถึงข้อมูลต่างๆของเด็กและเยาวชนได้อย่าง<br>ง่ายดาย ทันสมัยและปลอดภัยมากยิ่งขึ้น</h6><br>
+                    <h5 class="d-inline p-2">ใช้ฟรี 3 เดือน กรอกข้อมูลทางขวา</h5>
+                </div> 
+                <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 my-5">
+                    <div class="row mt-5">
+                      <img src="/images/screen1.jpg" alt="" width="320" height="140">
+                    </div>
+                    <div class="row mt-4">
+                       <img src="/images/screen2.jpg" alt="" width="320" height="140">
+                    </div>
+                </div>
+                <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                    <section>
+                        <div class="container1">
+                            <form action="https://formspree.io/f/xwkydelj" method="post" id="my-form">
+                               <div class="form-group">
+                                <label for="firstname">ชื่อ</label>
+                                <input type="text" id="firstname" name="firstname" required>
+                               </div>
+                                <div class="form-group">
+                                <label for="lastname">นามสกุล</label>    
+                                <input type="text" id="lastname" name="lastname" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">อีเมล</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="tel">เบอร์โทรศัพท์</label>
+                                <input type="tel" id="tel" name="tel" required>
+                            </div>
+                            <button type="submit">ลงทะเบียน</button>
+                            </form>
+                        </div>
+                        <div id="status"></div>
+                    </section>
+                </div> 
+            </div>
+        </div> 
+    </header>
+    <br>
+    <intro>
+        <h3>ทำไมต้อง CARs?</h3>
+        <p class="margin-top:10px text-center">เด็กไทยหลายพันคนที่อาศัยและเติบโตมาในบ้านเด็กโดยไม่มีพ่อแม่ พวกเขาอาจต้องเผชิญกับอนาคตที่ไม่มีประวัติหรือปราศจากสิ่งใดสิ่งหนึ่งที่อาจเปลี่ยนแปลงชีวิตของพวกเขาให้ดีขึ้นได้</p>
+        
+        <div class="suggest">
+            <iframe class="video" width="400" height="250" src="https://youtube.com/embed/aOd4qPDGy3g?autoplay=1&mute=0"></iframe>
+            <div class="intro1"><strong>Digiserve </strong>เป็นองค์กรคริสเตียนประจำประเทศไทย ได้พัฒนาระบบ<strong>&nbsp;Child at Risk System (CARs) </strong> ซึ่งเป็นเทคโนโลยีคลาวด์ (Cloud computing technology) ที่มีความปลอดภัยสูง เพื่อใช้เป็นคลังข้อมูลของเด็กทั้งหมดตลอดช่วงเวลาที่อยู่ในบ้านเด็ก <strong class="text-danger">สามารถนำระบบดังกล่าวไปใช้แทนกระดาษสำหรับบันทึกข้อมูลต่างๆของเด็ก ซึ่่งข้อมูลที่อยู่ในรูปแบบกระดาษอาจสูญหายได้ ส่งผลกระทบต่อเด็ก ทำให้เด็กเสียโอกาสอันพึงจะได้รับ รวมถึงทำให้เจ้าหน้าที่ประหยัดจำนวนแฟ้มเอกสารลงได้</strong>&nbsp;โดยระบบดังกล่าวยังรวมไปถึงระบบตรวจสอบสุขภาพที่คอยติดตามข้อมูลล่าสุดเกี่ยวกับความสมบูรณ์ของร่างกาย สังคม และจิตใจของเด็ก ซึ่งนักสังคมสงเคราะห์ เจ้าหน้าที่ พนักงาน พ่อแม่อุปถัมภ์ ทุกคนจะได้รับข้อมูลที่ถูกต้องและทันเวลา <strong> (Real-time)</strong> ของเด็กแต่ละคน เพื่อให้พวกเขาสามารถทำงานร่วมกันได้ ทำให้แน่ใจว่าเด็กมีสภาพแวดล้อมและโอกาสที่ดีที่สุดในการเปลี่ยนแปลงชีวิตให้ดียิ่งขึ้น <strong class="text-danger">ภายในระบบมีขั้นตอนการตรวจสอบสิทธิ์ของผู้ใช้งานในการเข้าถึงระบบ เพื่อป้องกันไม่ให้ผู้ที่ไม่ประสงค์ดีเข้าถึงข้อมูลต่างๆของเด็กและเยาวชนได้</strong></div>   
+
+        </div>
+    
+    </intro>
+
+
+    <hr style="width:70%;;margin-left:14%; border: 1px solid black;">
+
+    <main>
+       <div class="con-inside">
+            <h3>ภายใน CARs มีข้อมูลเด็กอะไรบ้าง?</h3>
+            <div class="inside">
+            <ol>
+                <li><b>ข้อมูลส่วนตัว</b> ภายในจะประกอบด้วย ประวัติส่วนตัวเด็ก ข้อมูลแรกรับ เอกสาร/หลักฐานเบื้องต้น และเอกสารหลักฐานเพิ่มเติมอื่นๆ</li>
+                <li><b>ข้อมูลครอบครัว</b> ภายในจะประกอบด้วย ชื่อและนามสกุลของพ่อแม่เด็ก สัญชาติ เชื้อชาติ สถานที่ทำงาน ที่อยู่ ศาสนา ระดับการศึกษา เลขบัตรประจำตัวประชาชน รายได้ต่อเดือน สภาพครอบครัว เบอร์โทรศัพท์ เป็นต้น</li>
+                <li><b>ข้อมูลด้านการศึกษา</b> ภายในจะประกอบด้วย ประวัติการศึกษาเด็ก ประวัติข้อมูลอาชีพเด็ก ผลการเรียนเด็กในแต่ละชั้นปี</li>
+                <li><b>บันทึกข้อมูล</b> ภายในจะประกอบด้วย ข้อมูลพฤติกรรมเด็ก ข้อมูลผู้เยี่ยมเยียน ข้อมูลการเยี่ยมบ้าน ข้อมูลการมีส่วนร่วมกิจกรรมของเด็ก ข้อมูลทรัพย์สินเด็กช่วงแรกรับ และบันทึกข้อมูลติดต่อกับหน่วยงานภายนอก</li>
+                <li><b>ข้อมูลด้านสุขภาพ</b> ภายในจะประกอบด้วย การตรวจประเมินร่างกายเบื้องต้น รายละเอียดทางกายภาพ การฉีดวัคซีน ข้อมูลด้านสุขภาพ การรักษาพยาบาล การเจริญเติบโต การพัฒนาการ การตรวจทางจิตวิทยา และการทดสอบทางกายภาพ</li>
+                <li><b>ข้อมูลด้านสังคมสงเคราะห์</b> ภายในจะประกอบด้วย ประวัติความเป็นมาของเด็ก การเยี่ยมบ้าน สวัสดิการสังคม และการวางแผนชีวิตให้แก่เด็ก</li>
+            </ol>
+            </div>
+       </div>
+
+       <div class="con-benefit">
+           <div class="benefit">
+               <h3>ประโยชน์ที่ได้จากการใช้ CARs</h3>
+           </div>
+   
+           <div class="row">
+               <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
+                   <div id="fast-con">
+                       <div id="fast">
+                           <h5>สะดวกและรวดเร็ว</h5>  
+                       </div>
+                       <div class="fast">
+                           <div class="big-font"><i class='bx bx-user'></i></div>
+                           <p>มูลนิธิสามารถบริหารจัดการข้อมูลต่างๆของเด็กได้อย่างมีประสิทธิภาพ สะดวก และรวดเร็ว ผ่านทาง CARs เมื่อเทียบกับการบริหารจัดการข้อมูลในรูปเแบบของกระดาษ (Paper)</p>
+                       </div>
+                   </div>
+   
+               </div> 
+               <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                   <div id="enter-con">
+                       <div id="enter">
+                           <h5>เข้าถึงข้อมูลเด็กได้ทุกที่ทุกเวลา</h5>  
+                       </div>
+                       <div class="enter">
+                           <div class="big-font"><i class='bx bx-wifi'></i></div>
+                           <p>มูลนิธิสามารถใช้ระบบดังกล่าว เพื่อเอื้อต่อการเข้าถึง และบันทึกข้อมูลต่างๆของเด็ก ตลอดจนรายงานให้แก่หน่วยงานต่างๆของภาครัฐ ได้ทุกที่ ทุกเวลา ผ่านทางเครือข่ายอินเทอร์เน็ต บนคอมพิวเตอร์ส่วนบุคคล เช่น โน้ตบุ๊กหรือคอมพิวเตอร์ตั้งโต๊ะ</p>
+                       </div>
+                   </div>
+   
+                   <div id="export-con">
+                       <div id="export">
+                           <h5>ส่งออกข้อมูลเด็ก</h5>  
+                       </div>
+                       <div class="export">
+                           <div class="big-font"><i class='bx bxs-report'></i></div>
+                           <p>มูลนิธิสามารถส่งออก (Export) ข้อมูลต่างๆของเด็กออกมาในรูปแบบของกระดาษ (Paper) ตลอดจนไฟล์นามสกุลดิจิทัลรูปแบบต่างๆ เช่น Word หรือ PDF เป็นต้น เพื่อรายงานให้แก่หน่วยงานต่างๆของภาครัฐได้</p>
+                       </div>
+                   </div>
+   
+               </div>
+               <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                   <div id="security-con">
+                       <div id="security">
+                           <h5>ความปลอดภัย</h5>  
+                       </div>
+                       <div class="security">
+                           <div class="big-font"><i class='bx bxs-lock'></i></div>
+                           <p>การจัดเก็บข้อมูลต่างๆของเด็กอยู่ในรูปแบบดิจิทัล เน้นความปลอดภัย เนื่องจากมีระบบป้องกันในการเข้าถึงข้อมูลต่างๆของเด็ก ที่สามารถจำกัดสิทธิ์การใช้งานของผู้ใช้งาน (User) ได้</p>
+                       </div>
+                   </div>
+               </div> 
+           </div>
+
+
+       </div>
+
+        <div class="get-cars">
+            <h3>ทำอย่างไรให้ได้ CARs มาใช้ในหน่วยงาน?</h3>
+            <img src="/images/path.jpg" alt="">
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="row text-left">
+                <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                    <h5 class="text-white">เกี่ยวกับเรา</h5>
+                    <p class="text-white-50 ps-4 text-center pt-3">
+                        เราเชื่อว่าทุกมูลนิธิต้องการการจัดการข้อมูลที่ดี ทีมงานของเราที่ DigiServe ต้องการใช้ประสบการณ์และเครื่องมือของเรามาร่วมกับมูลนิธิไทย เพื่อที่แต่ละมูลนิธิจะได้บรรลุเป้าหมายพันธกิจของตัวเอง ด้วยการนำเสนอการฝึกอบรม การให้การสนับสนุนด้านไอที และสร้างซอฟต์แวร์แบบกำหนดเอง เราหวังว่าจะช่วยให้มูลนิธิสามารถขจัดอุปสรรคด้านประสิทธิภาพการทำงานและบรรลุวัตถุประสงค์ได้
+                    </p>
+                   
+                </div>
+                <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
+                    <h5 class="text-white">ที่อยู่</h5>
+                    <div class="map-responsive">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3778.491898149323!2d98.93527591437174!3d18.731552767577572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30da3168c80dcacf%3A0xc5a8b54f45f89068!2sDigiServe!5e0!3m2!1sen!2sth!4v1658716560077!5m2!1sen!2sth" width="250" height="100" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    
+                </div>
+                <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                    <h5 class="text-white">ติดต่อเรา</h5>
+                    <p class="text-white-50 pe-1 text-center pt-3"><i class='bx bxs-phone fs-3'></i>081-7839490 คุณพร้อม</p>
+                    <p class="text-white-50 pe-1 text-center"><i class='bx bxs-phone fs-3'></i>093-1653103 คุณเค</p>
+                </div>
+                
+                <p class="pt-4 text-white text-center">
+                    @Copyright 2022 (childatrisk.in.th) All Rights Reserved | This template is made with by DigiServe team
+                </p>
+            </div>
+        </div>
+
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    <script src="/main.js"></script>
+    
+</body>
+</html>
