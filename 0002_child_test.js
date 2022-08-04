@@ -760,8 +760,8 @@ describe("Test add-new forms:", () => {
          '[data-cy="string Class Year 7e4a4937-f4a4-4ad7-95ae-06cb80c798dc bf3dfa10-80a5-455a-869d-c981daa2cdb3"]'
       )
          .click({ force: true })
-         .type("202", { force: true })
-         .should("have.value", "202");
+         .type("256", { force: true })
+         .should("have.value", "256");
       cy.get(
          '[data-cy="list Year 79d81f68-2e41-47fd-a7d4-ec89ccc7dc58 bf3dfa10-80a5-455a-869d-c981daa2cdb3"]'
       )
@@ -769,10 +769,10 @@ describe("Test add-new forms:", () => {
          .should("exist")
          .click({ force: true });
       cy.get(
-         '[data-cy="list options 2562 79d81f68-2e41-47fd-a7d4-ec89ccc7dc58 bf3dfa10-80a5-455a-869d-c981daa2cdb3"]'
+         '[data-cy="list options 2564 79d81f68-2e41-47fd-a7d4-ec89ccc7dc58 bf3dfa10-80a5-455a-869d-c981daa2cdb3"]'
       )
          .should("exist")
-         .contains("2562")
+         .contains("2021")
          .click();
       cy.get('[data-cy="button save bf3dfa10-80a5-455a-869d-c981daa2cdb3"]')
          .scrollIntoView()
@@ -787,7 +787,7 @@ describe("Test add-new forms:", () => {
          '[data-cy="ABViewGrid_2fae0fda-4262-4ef0-b1c8-e91fe2fc1d82_datatable"]'
       )
          .should("be.visible")
-         .contains("202");
+         .contains("256");
       cy.window().then((win) => {
          return win
             .$$("ABViewGrid_2fae0fda-4262-4ef0-b1c8-e91fe2fc1d82_datatable")
@@ -797,7 +797,7 @@ describe("Test add-new forms:", () => {
          '[data-cy="ABViewGrid_2fae0fda-4262-4ef0-b1c8-e91fe2fc1d82_datatable"]'
       )
          .should("be.visible")
-         .contains("2562");
+         .contains("2021");
       cy.get(".wxi-pencil").should("be.visible").click({ force: true });
       cy.get('div[view_id*="ABViewForm_3bf905ea"]').should("be.visible");
       cy.get(
@@ -805,14 +805,14 @@ describe("Test add-new forms:", () => {
       )
          .should("exist")
          .click({ force: true })
-         .type("0");
+         .type("3");
       cy.get(
          '[data-cy="list Year 79d81f68-2e41-47fd-a7d4-ec89ccc7dc58 3bf905ea-5a83-4412-a89e-5991325ae3a2"]'
       )
          .scrollIntoView()
          .should("exist")
          .click({ force: true });
-      cy.get(".webix_list_item").should("be.visible").contains("2563");
+      cy.get(".webix_list_item").should("be.visible").contains("2020");
       cy.get(
          '[data-cy="list options 2563 79d81f68-2e41-47fd-a7d4-ec89ccc7dc58 3bf905ea-5a83-4412-a89e-5991325ae3a2"]'
       )
@@ -835,7 +835,7 @@ describe("Test add-new forms:", () => {
          '[data-cy="ABViewGrid_2fae0fda-4262-4ef0-b1c8-e91fe2fc1d82_datatable"]'
       )
          .should("be.visible")
-         .contains("2020");
+         .contains("2563");
       cy.window().then((win) => {
          return win
             .$$("ABViewGrid_2fae0fda-4262-4ef0-b1c8-e91fe2fc1d82_datatable")
@@ -845,7 +845,7 @@ describe("Test add-new forms:", () => {
          '[data-cy="ABViewGrid_2fae0fda-4262-4ef0-b1c8-e91fe2fc1d82_datatable"]'
       )
          .should("be.visible")
-         .contains("2563");
+         .contains("2020");
    });
 
    // Logs //
