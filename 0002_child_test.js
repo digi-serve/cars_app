@@ -763,17 +763,11 @@ describe("Test add-new forms:", () => {
          .type("256", { force: true })
          .should("have.value", "256");
       cy.get(
-         '[data-cy="list Year 79d81f68-2e41-47fd-a7d4-ec89ccc7dc58 bf3dfa10-80a5-455a-869d-c981daa2cdb3"]'
+         '[data-cy="string Year 3508a12a-ab10-4a86-9b8a-cabfafd354aa bf3dfa10-80a5-455a-869d-c981daa2cdb3"]'
       )
          .scrollIntoView()
          .should("exist")
-         .click({ force: true });
-      cy.get(
-         '[data-cy="list options 2564 79d81f68-2e41-47fd-a7d4-ec89ccc7dc58 bf3dfa10-80a5-455a-869d-c981daa2cdb3"]'
-      )
-         .should("exist")
-         .contains("2021")
-         .click();
+         .type("202");
       cy.get('[data-cy="button save bf3dfa10-80a5-455a-869d-c981daa2cdb3"]')
          .scrollIntoView()
          .should("exist")
@@ -797,7 +791,7 @@ describe("Test add-new forms:", () => {
          '[data-cy="ABViewGrid_2fae0fda-4262-4ef0-b1c8-e91fe2fc1d82_datatable"]'
       )
          .should("be.visible")
-         .contains("2021");
+         .contains("202");
       cy.get(".wxi-pencil").should("be.visible").click({ force: true });
       cy.get('div[view_id*="ABViewForm_3bf905ea"]').should("be.visible");
       cy.get(
@@ -807,17 +801,11 @@ describe("Test add-new forms:", () => {
          .click({ force: true })
          .type("3");
       cy.get(
-         '[data-cy="list Year 79d81f68-2e41-47fd-a7d4-ec89ccc7dc58 3bf905ea-5a83-4412-a89e-5991325ae3a2"]'
+         '[data-cy="string Year 3508a12a-ab10-4a86-9b8a-cabfafd354aa 3bf905ea-5a83-4412-a89e-5991325ae3a2"]'
       )
          .scrollIntoView()
          .should("exist")
-         .click({ force: true });
-      cy.get(".webix_list_item").should("be.visible").contains("2020");
-      cy.get(
-         '[data-cy="list options 2563 79d81f68-2e41-47fd-a7d4-ec89ccc7dc58 3bf905ea-5a83-4412-a89e-5991325ae3a2"]'
-      )
-         .should("exist")
-         .click({ force: true });
+         .type("0");
       cy.get('[data-cy="button save 3bf905ea-5a83-4412-a89e-5991325ae3a2"]')
          .scrollIntoView()
          .should("exist")
