@@ -612,7 +612,7 @@
         "id": "26f66d40-a017-4ace-b46b-9aa0879bf615",
         "type": "object",
         "name": "Children",
-        "labelFormat": "{c59bf7d7-5f46-43d1-8799-58b8adb5b4f5} {be5d06ef-1175-41c7-b284-494e731a5950} {ec8dd00f-f229-49e0-b898-12f0dd40cdc3}",
+        "labelFormat": "{c59bf7d7-5f46-43d1-8799-58b8adb5b4f5} - {ec8dd00f-f229-49e0-b898-12f0dd40cdc3} {be5d06ef-1175-41c7-b284-494e731a5950}",
         "labelSettings": {
           "isNoneDisplay": "0",
           "isNoLabelDisplay": "0"
@@ -669,7 +669,12 @@
           "filterConditions": {
             "glue": "and"
           },
-          "sortFields": []
+          "sortFields": [
+            {
+              "key": "c59bf7d7-5f46-43d1-8799-58b8adb5b4f5",
+              "dir": "asc"
+            }
+          ]
         },
         "isSystemObject": "false",
         "translations": [
@@ -751,6 +756,12 @@
               ],
               "isDefaultView": "true",
               "name": "Default Grid",
+              "sortFields": [
+                {
+                  "key": "c59bf7d7-5f46-43d1-8799-58b8adb5b4f5",
+                  "dir": "asc"
+                }
+              ],
               "filterConditions": {
                 "glue": "and"
               },
@@ -37480,6 +37491,10 @@
               "glue": "and"
             },
             "sortFields": [
+              {
+                "key": "c59bf7d7-5f46-43d1-8799-58b8adb5b4f5",
+                "dir": "asc"
+              },
               {
                 "key": "be5d06ef-1175-41c7-b284-494e731a5950",
                 "dir": "asc"
