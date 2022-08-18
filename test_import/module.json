@@ -6390,21 +6390,6 @@
           "default": "none",
           "options": [
             {
-              "id": "1565164147815",
-              "text": "Mother",
-              "hex": "#F44336",
-              "translations": [
-                {
-                  "language_code": "en",
-                  "text": "Mother"
-                },
-                {
-                  "language_code": "th",
-                  "text": "มารดา"
-                }
-              ]
-            },
-            {
               "id": "1565164147888",
               "text": "Father",
               "hex": "#E91E63",
@@ -6420,6 +6405,21 @@
               ]
             },
             {
+              "id": "1565164147815",
+              "text": "Mother",
+              "hex": "#F44336",
+              "translations": [
+                {
+                  "language_code": "en",
+                  "text": "Mother"
+                },
+                {
+                  "language_code": "th",
+                  "text": "มารดา"
+                }
+              ]
+            },
+            {
               "id": "1565164148334",
               "text": "Step-Parent",
               "hex": "#9C27B0",
@@ -6431,6 +6431,96 @@
                 {
                   "language_code": "th",
                   "text": "พ่อแม่บุญธรรม"
+                }
+              ]
+            },
+            {
+              "id": "Uncle",
+              "text": "Uncle",
+              "hex": "#3F51B5",
+              "translations": [
+                {
+                  "language_code": "en",
+                  "text": "Uncle"
+                },
+                {
+                  "language_code": "th",
+                  "text": "ลุง, อา"
+                }
+              ]
+            },
+            {
+              "id": "Aunt",
+              "text": "Aunt",
+              "hex": "#673AB7",
+              "translations": [
+                {
+                  "language_code": "en",
+                  "text": "Aunt"
+                },
+                {
+                  "language_code": "th",
+                  "text": "ป้า, น้า"
+                }
+              ]
+            },
+            {
+              "id": "Brother",
+              "text": "Brother",
+              "hex": "#2196F3",
+              "translations": [
+                {
+                  "language_code": "en",
+                  "text": "Brother"
+                },
+                {
+                  "language_code": "th",
+                  "text": "พี่ชายน้องชาย"
+                }
+              ]
+            },
+            {
+              "id": "Brother-in-law",
+              "text": "Brother-in-law",
+              "hex": "#00BCD4",
+              "translations": [
+                {
+                  "language_code": "en",
+                  "text": "Brother-in-law"
+                },
+                {
+                  "language_code": "th",
+                  "text": "พี่เขยน้องเขย"
+                }
+              ]
+            },
+            {
+              "id": "Sister",
+              "text": "Sister",
+              "hex": "#03A9F4",
+              "translations": [
+                {
+                  "language_code": "en",
+                  "text": "Sister"
+                },
+                {
+                  "language_code": "th",
+                  "text": "พี่สาวน้องสาว"
+                }
+              ]
+            },
+            {
+              "id": "Sister-in-law",
+              "text": "Sister-in-law",
+              "hex": "#009688",
+              "translations": [
+                {
+                  "language_code": "en",
+                  "text": "Sister-in-law"
+                },
+                {
+                  "language_code": "th",
+                  "text": "พี่สะใภ้น้องสะใภ้"
                 }
               ]
             }
