@@ -1,0 +1,2476 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'K2D', sans-serif;
+    box-sizing: border-box;
+}
+html{
+    font-size: calc(60%+0.8vmin);
+}
+header{
+    background-color:#203F82;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.container h1{
+    color:white;
+    margin-top: 30px;
+}
+.container h4{
+    margin-top: 10px;
+    color: white;
+}
+.container h5{
+    color: white;
+    background-color: red;
+    font-size: 16px;
+}
+.container h6{
+    color:white;
+    margin-top: 20px;
+}
+.container img {
+    margin-top: 30px;
+    border-radius: 8px;
+}
+.section{
+    height: 100vh;
+    width: 100%;
+    background-color: aliceblue;
+    align-items: center;
+    justify-content: center;
+}
+.container1{
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0px 0px 20px #00000010;
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+.form-group{
+    width: 100%;
+    margin-top: 20px;
+    font-size: 14px;
+    color: black;
+}
+.form-group input {
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    border:1px solid #DE1303;
+    margin-top: 5px;
+}
+button[type="submit"]{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 4px;
+    font-size: 16px;
+    border-radius: 8px;
+    color: white;
+    background-color: red;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: .5s ease background-color;
+    display: block;
+}
+button[type="submit"]:hover{
+    background-color: blue;
+}  
+#status{
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+#status.success{
+    background-color: #7CE511;
+    color:white;
+    margin-bottom: 20px;
+    animation:status 4s ease forwards;
+}
+#status.error{
+    background-color: red;
+    color: white;
+    margin-bottom: 20px;
+    animation:status 4s ease forwards;
+}
+@keyframes status {
+    0% {
+      opacity: 1;
+      pointer-events: all;
+    }
+    90% {
+      opacity: 1;
+      pointer-events: all;
+    }
+    100% {
+      opacity: 0;
+      pointer-events: none;
+    }
+}
+intro {
+    display: block;
+}
+intro h3{
+    text-align: center;
+}
+.video{
+    display: block;
+    margin-left:10%;
+    margin-top: 2%;
+}
+intro .intro1{
+    max-width: 50%;
+    margin-left: 10%;
+    padding: 1%;
+    text-align:justify;
+    margin-top: 20px;
+    background-color: #d8d9d9;
+    border-radius: 10px;
+    margin-right: 10%;
+}
+.suggest{
+    display:inline-flex;
+}
+.container .benefit{
+    margin-top: 5%;
+}
+.container .benefit h4{
+    color: black;
+    text-align: center;
+}
+.con-inside{
+    background-color: #7fd6d0;
+    width: 80%;
+    height: 50%;
+    margin:0 auto;
+    text-align: left;
+    padding-left: 2%;
+    margin-top: -5px;
+    padding-bottom: 10px;
+}
+.con-inside h3{
+    margin: 0 auto;
+    padding-top: 20px;
+    text-align: center;
+}
+.inside{
+    color: black;
+    margin-top: 20px;
+    display:block;
+}
+.con-benefit{
+    background-color: #d8d9d9;
+    margin-top: 20px;
+    padding-bottom: 25px;
+}
+.benefit h3{
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 20px;
+}
+
+#fast-con{
+    display: inline-block;
+    text-align: center;
+    width: auto;
+    margin-left: 80px;
+}
+
+#fast{
+    background-color: #339933;
+    color:white;
+    margin-top: 30px;
+    opacity: 0.6;
+}
+.fast{
+    background-color: #CDE5B3;
+    color: black;
+    padding-top: 20px;
+    margin-top: -8px;
+}
+.big-font{
+    font-size: 70px;
+    text-align: center;
+}
+#enter-con{
+    display: inline-block;
+    text-align: center;
+    width: auto;
+}
+
+
+#enter{
+    background-color: #31A8E0;
+    color:white;
+    margin-top: 30px;
+    opacity: 0.6;
+}
+.enter{
+    background-color: #ADDBF2;
+    color: black;
+    padding-top: 20px;
+    margin-top: -8px;
+}
+
+#export-con{
+    display: inline-block;
+    text-align: center;
+    width: auto;
+}
+
+
+#export{
+    background-color: #7B67AE;
+    color:white;
+    margin-top: 10px;
+    opacity: 0.6;
+}
+.export{
+    background-color: #CBC2DF;
+    color: black;
+    padding-top: 20px;
+    margin-top: -8px;
+}
+
+#security-con{
+    display: inline-block;
+    text-align: center;
+    width:75%;
+}
+
+
+#security{
+    background-color: #FDB717;
+    color:white;
+    margin-top: 30px;
+    opacity: 0.6;
+}
+.security{
+    background-color: #FFE3A2;
+    color: black;
+    padding-top: 20px;
+    margin-top: -8px;
+}
+
+.get-cars{
+    text-align: center;
+    background-color: #4FB4C8;
+    padding-top: 20px;
+    padding-bottom: 25px;
+}
+
+.get-cars img{
+    width: 50%;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+.footer{
+    background-color: #26272b;
+    padding: 25px 20px 2px;
+}
+.footer h5{
+    text-align: center;
+}
+.map-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+    padding: 10px 50px;
+    margin: 0 auto;
+}
+
+
+@media only screen and (max-width: 390px)
+{
+    a
+    {
+        padding: 2px;
+    }
+    .container h1
+    {
+        font-size: 14px;
+    }
+    .container h4
+    {
+        font-size: 12px;
+    }
+    .container h6
+    {
+        font-size: 10px;
+        max-width:max-content;
+    }
+    .container h5
+    {
+        font-size: 6px;
+        font-weight: 200;
+    
+    }
+    .container img
+    {
+        width: auto;
+        object-fit: cover;
+    }
+
+    button[type="submit"]
+    {
+        font-size: 10px;
+        width: 100%;
+    }
+    .form-group
+    {
+        font-size: 12px;
+        margin:2px;
+    }
+    .form-group input{
+        width: 90px;
+        margin-left: -16px;
+    }
+    .container1{
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+    
+    intro h3
+    {
+        font-size: 14px;
+    }
+    .text-center
+    {
+        font-size: 10px;
+        padding: 1px;
+        margin: 15px;
+    }
+    intro .intro1
+    {
+        font-size: 10px;
+        max-width: 100%;
+        margin: 6%;
+        padding: 2%;
+        text-align:center;
+        margin-top: 12px;
+        background-color: #d8d9d9;
+        border-radius: 10px;
+        margin-right: 10%;
+    }
+    .video
+    {
+        width: 50%;
+        height: 20%;
+        margin: 18px;
+    }
+    .con-inside
+    {
+        background-color: #7fd6d0;
+        width: 80%;
+
+        margin:0 auto;
+        text-align: left;
+        padding-left: 2%;
+        margin-top: -5px;
+        padding-bottom: 10px;
+        flex-direction: column;
+        max-width: 100%;
+        width: 300px;
+    }
+    .con-inside h3
+    {
+        font-size: 14px;
+    }
+    .inside
+    {
+        font-size: 10px;
+        min-height: 100px;
+    }
+    .con-benefit
+    {
+        max-width: 100%;
+    }
+    .benefit h3
+    {
+        font-size: 14px;
+    }
+    
+    #fast-con{
+        margin: 10px;
+        margin-top: -10px;
+        
+    }
+
+    #fast h5{
+        font-size: 12px;
+    }
+
+    .fast p{
+        font-size: 10px;
+        margin-top: 14px;
+    }
+
+    #enter-con{
+        margin: -25px;
+        margin-top: -10px;
+    }
+
+    #enter h5{
+        font-size: 12px;
+    }
+
+    .enter p{
+        font-size: 10px;
+    }
+
+    #security-con{
+        margin: 10px;
+        margin-top: -10px;
+    }
+
+    #security h5{
+        font-size: 12px;
+    }
+    .security p{
+        font-size: 10px;
+    }
+    #export h5{
+        font-size: 12px;
+    }
+    .export p{
+        font-size: 10px;
+    }
+
+    .get-cars h3{
+        font-size: 14px;
+    }
+    .get-cars img{
+        width: 100%;
+    }
+
+    .footer{
+        margin: 0 auto;
+    }
+    .footer h5
+    {
+        font-size: 12px;
+    }
+    .text-white-50{
+        margin-left: -20px;
+    }
+    .map-responsive{
+        width: 160%;
+        margin: -30px;
+        margin-top: 50px;
+    }
+}
+
+
+@media only screen and (min-width: 390px)
+{
+    a
+    {
+        padding: 2px;
+    }
+    .container h1
+    {
+        font-size: 14px;
+    }
+    .container h4
+    {
+        font-size: 12px;
+    }
+    .container h6
+    {
+        font-size: 10px;
+        max-width: max-content;
+    }
+    .container h5
+    {
+        font-size: 8px;
+        font-weight: 200;
+    
+    }
+    .container img
+    {
+        width: auto;
+        object-fit: cover;
+    }
+
+    button[type="submit"]
+    {
+        font-size: 10px;
+        width: 100%;
+    }
+    .form-group
+    {
+        font-size: 12px;
+        margin:2px;
+    }
+    .form-group input{
+        width: 90px;
+        margin-left: -16px;
+    }
+    .container1{
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+
+    intro h3
+    {
+        font-size: 14px;
+    }
+    .text-center
+    {
+        font-size: 10px;
+        padding: 1px;
+        margin: 15px;
+    }
+    intro .intro1
+    {
+        font-size: 10px;
+        max-width: 100%;
+        margin: 6%;
+        padding: 2%;
+        text-align:center;
+        margin-top: 12px;
+        background-color: #d8d9d9;
+        border-radius: 10px;
+        margin-right: 10%;
+    }
+    .video
+    {
+        width: 40%;
+        height: 30%;
+        margin-left: 30px;
+        margin-top: 15px;
+    }
+    .con-inside
+    {
+        background-color: #7fd6d0;
+        width: 100%;
+        margin:0 auto;
+        text-align: left;
+        padding-left: 2%;
+        margin-top: -5px;
+        padding-bottom: 10px;
+        flex-direction: column;
+        max-width: 100%;
+        width: 300px;
+    }
+    .con-inside h3
+    {
+        font-size: 14px;
+    }
+    .inside
+    {
+        font-size: 10px;
+        min-height: 100px;
+    }
+    .con-benefit
+    {
+        max-width: 100%;
+    }
+    .benefit h3
+    {
+        font-size: 14px;
+    }
+    
+    #fast-con{
+        margin: 10px;
+        margin-top: -10px;
+        
+    }
+
+    #fast h5{
+        font-size: 12px;
+    }
+
+    .fast p{
+        font-size: 10px;
+        margin-top: 14px;
+    }
+
+    #enter-con{
+        margin: -25px;
+        margin-top: -10px;
+    }
+
+    #enter h5{
+        font-size: 12px;
+    }
+
+    .enter p{
+        font-size: 10px;
+    }
+
+    #security-con{
+        margin: 10px;
+        margin-top: -10px;
+    }
+
+    #security h5{
+        font-size: 12px;
+    }
+    .security p{
+        font-size: 10px;
+    }
+    #export h5{
+        font-size: 12px;
+    }
+    .export p{
+        font-size: 10px;
+    }
+
+    .get-cars h3{
+        font-size: 14px;
+    }
+    .get-cars img{
+        width: 100%;
+    }
+
+    .footer{
+        margin: 0 auto;
+    }
+    .footer h5
+    {
+        font-size: 12px;
+    }
+    .text-white-50{
+        margin-left: -5px;
+    }
+    .map-responsive{
+        width: 140%;
+        margin: -30px;
+        margin-top: 50px;
+    }
+}
+
+
+@media only screen and (min-width: 467px)
+{
+    a
+    {
+        padding: 2px;
+    }
+    .container h1
+    {
+        font-size: 14px;
+    }
+    .container h4
+    {
+        font-size: 12px;
+    }
+    .container h6
+    {
+        font-size: 10px;
+        max-width: max-content;
+    }
+    .container h5
+    {
+        font-size: 10px;
+        font-weight: 100;
+    
+    }
+    .container img
+    {
+        width: auto;
+        object-fit: cover;
+    }
+
+    button[type="submit"]
+    {
+        font-size: 12px;
+        width: 100%;
+    }
+    .form-group
+    {
+        font-size: 12px;
+        margin:2px;
+    }
+    .form-group input{
+        width: 110px;
+        margin-left: -14px;
+    }
+    .container1{
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+    intro{
+        margin-bottom: -55px;
+    }
+    intro h3
+    {
+        font-size: 14px;
+    }
+    .text-center
+    {
+        font-size: 12px;
+        padding: 1px;
+        margin: 15px;
+    }
+    intro .intro1
+    {
+        font-size: 10px;
+        max-width: 100%;
+        margin: 6%;
+        padding: 2%;
+        text-align:center;
+        margin-top: 12px;
+        background-color: #d8d9d9;
+        border-radius: 10px;
+        margin-right: 10%;
+    }
+    .video
+    {
+        width: 40%;
+        height: 30%;
+        margin-left: 30px;
+        margin-top: 15px;
+    }
+    .con-inside
+    {
+        background-color: #7fd6d0;
+        width: 100%;
+        margin:0 auto;
+        text-align: left;
+        padding-left: 2%;
+        margin-top: -5px;
+        padding-bottom: 10px;
+        flex-direction: column;
+        max-width: 100%;
+        width: 300px;
+    }
+    .con-inside h3
+    {
+        font-size: 14px;
+    }
+    .inside
+    {
+        font-size: 12px;
+        min-height: 100px;
+    }
+    .con-benefit
+    {
+        max-width: 100%;
+    }
+    .benefit h3
+    {
+        font-size: 14px;
+    }
+    
+    #fast-con{
+        margin: 18px;
+        margin-top: -10px;
+        
+    }
+
+    #fast h5{
+        font-size: 12px;
+    }
+
+    .fast p{
+        font-size: 10px;
+        margin-top: 14px;
+    }
+
+    #enter-con{
+        margin: -25px;
+        margin-top: -10px;
+    }
+
+    #enter h5{
+        font-size: 12px;
+    }
+
+    .enter p{
+        font-size: 10px;
+    }
+
+    #security-con{
+        margin: 10px;
+        margin-top: -10px;
+    }
+
+    #security h5{
+        font-size: 12px;
+    }
+    .security p{
+        font-size: 10px;
+    }
+    #export h5{
+        font-size: 12px;
+    }
+    .export p{
+        font-size: 10px;
+    }
+
+    .get-cars h3{
+        font-size: 14px;
+    }
+    .get-cars img{
+        width: 100%;
+    }
+
+    .footer{
+        margin: 0 auto;
+    }
+    .footer h5
+    {
+        font-size: 14px;
+    }
+    .text-white-50{
+        margin:-5px;
+    }
+    .map-responsive{
+        width: 140%;
+        margin: -30px;
+        margin-top: 50px;
+    }
+}
+
+@media only screen and (min-width: 521px)
+{
+    a
+    {
+        padding: 2px;
+    }
+    .container h1
+    {
+        font-size: 14px;
+    }
+    .container h4
+    {
+        font-size: 12px;
+    }
+    .container h6
+    {
+        font-size: 10px;
+        max-width: max-content;
+    }
+    .container h5
+    {
+        font-size: 10px;
+        font-weight: 100;
+    
+    }
+    .container img
+    {
+        width: auto;
+        object-fit: cover;
+    }
+
+    button[type="submit"]
+    {
+        font-size: 12px;
+        width: 100%;
+    }
+    .form-group
+    {
+        font-size: 14px;
+        margin:2px;
+    }
+    .form-group input{
+        width: 120px;
+        margin-left: -10px;
+    }
+    .container1{
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+    intro{
+        margin-bottom: -55px;
+    }
+    intro h3
+    {
+        font-size: 14px;
+    }
+    .text-center
+    {
+        font-size: 12px;
+        padding: 1px;
+        margin: 15px;
+    }
+    intro .intro1
+    {
+        font-size: 10px;
+        max-width: 100%;
+        margin: 6%;
+        padding: 2%;
+        text-align:center;
+        margin-top: 12px;
+        background-color: #d8d9d9;
+        border-radius: 10px;
+        margin-right: 10%;
+    }
+    .video
+    {
+        width: 40%;
+        height: 30%;
+        margin-left: 30px;
+        margin-top: 15px;
+    }
+    .con-inside
+    {
+        background-color: #7fd6d0;
+        width: 100%;
+        margin:0 auto;
+        text-align: left;
+        padding-left: 2%;
+        margin-top: -5px;
+        padding-bottom: 10px;
+        flex-direction: column;
+        max-width: 100%;
+        width: 300px;
+    }
+    .con-inside h3
+    {
+        font-size: 14px;
+    }
+    .inside
+    {
+        font-size: 12px;
+        min-height: 100px;
+    }
+    .con-benefit
+    {
+        max-width: 100%;
+    }
+    .benefit h3
+    {
+        font-size: 14px;
+    }
+    
+    #fast-con{
+        margin: 18px;
+        margin-top: -10px;
+        
+    }
+
+    #fast h5{
+        font-size: 12px;
+    }
+
+    .fast p{
+        font-size: 10px;
+        margin-top: 14px;
+    }
+
+    #enter-con{
+        margin: -25px;
+        margin-top: -10px;
+    }
+
+    #enter h5{
+        font-size: 12px;
+    }
+
+    .enter p{
+        font-size: 10px;
+    }
+
+    #security-con{
+        margin: 10px;
+        margin-top: -10px;
+    }
+
+    #security h5{
+        font-size: 12px;
+    }
+    .security p{
+        font-size: 10px;
+    }
+    #export h5{
+        font-size: 12px;
+    }
+    .export p{
+        font-size: 10px;
+    }
+
+    .get-cars h3{
+        font-size: 14px;
+    }
+    .get-cars img{
+        width: 100%;
+    }
+
+    .footer{
+        margin: 0 auto;
+    }
+    .footer h5
+    {
+        font-size: 14px;
+    }
+    .text-white-50{
+        margin:-5px;
+    }
+    .map-responsive{
+        width: 140%;
+        margin: -30px;
+        margin-top: 50px;
+    }
+}
+
+@media only screen and (min-width: 768px)
+{
+    a
+    {
+        padding: 2px;
+    }
+    .container h1
+    {
+        font-size: 16px;
+    }
+    .container h4
+    {
+        font-size: 14px;
+    }
+    .container h6
+    {
+        font-size: 12px;
+        max-width: max-content;
+    }
+    .container h5
+    {
+        font-size: 12px;
+        font-weight: 100;
+    
+    }
+    .container img
+    {
+        width: auto;
+        object-fit: cover;
+    }
+
+    button[type="submit"]
+    {
+        font-size: 12px;
+        width: 100%;
+    }
+    .form-group
+    {
+        font-size: 14px;
+        margin:2px;
+    }
+    .form-group input{
+        width: 200px;
+        margin-left: -14px;
+    }
+    .container1{
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+    intro{
+        margin-bottom: -55px;
+    }
+    intro h3
+    {
+        font-size: 16px;
+    }
+    .text-center
+    {
+        font-size: 14px;
+        padding: 1px;
+        margin: 15px;
+    }
+    intro .intro1
+    {
+        font-size: 12px;
+        max-width: 100%;
+        margin: 6%;
+        padding: 2%;
+        text-align:center;
+        margin-top: 12px;
+        background-color: #d8d9d9;
+        border-radius: 10px;
+        margin-right: 10%;
+    }
+    .video
+    {
+        width: 40%;
+        height: 30%;
+        margin-left: 50px;
+        margin-top: 15px;
+    }
+    .con-inside
+    {
+        background-color: #7fd6d0;
+        width: 100%;
+        margin:0 auto;
+        text-align: left;
+        padding-left: 2%;
+        margin-top: -5px;
+        padding-bottom: 10px;
+        flex-direction: column;
+        max-width: 100%;
+        width: 600px;
+    }
+    .con-inside h3
+    {
+        font-size: 16px;
+    }
+    .inside
+    {
+        font-size: 12px;
+        min-height: 100px;
+    }
+    .con-benefit
+    {
+        max-width: 100%;
+    }
+    .benefit h3
+    {
+        font-size: 16px;
+    }
+    
+    #fast-con{
+        margin: 30px;
+        margin-top: -10px;
+        
+    }
+
+    #fast h5{
+        font-size: 14px;
+    }
+
+    .fast p{
+        font-size: 12px;
+        margin-top: 14px;
+    }
+
+    #enter-con{
+        margin: -30px;
+        margin-top: -10px;
+    }
+
+    #enter h5{
+        font-size: 14px;
+    }
+
+    .enter p{
+        font-size: 12px;
+    }
+
+    #security-con{
+        margin: 30px;
+        margin-top: -10px;
+    }
+
+    #security h5{
+        font-size: 14px;
+    }
+    .security p{
+        font-size: 12px;
+    }
+    #export h5{
+        font-size: 14px;
+    }
+    .export p{
+        font-size: 12px;
+    }
+
+    .get-cars h3{
+        font-size: 16px;
+    }
+    .get-cars img{
+        width: 80%;
+    }
+
+    .footer{
+        margin: 0 auto;
+    }
+    .footer h5
+    {
+        font-size: 14px;
+    }
+    .text-white-50{
+        margin:-5px;
+    }
+    .map-responsive{
+        width: 120%;
+        margin: -30px;
+        margin-top: 50px;
+    }
+}
+
+@media only screen and (min-width: 992px)
+{
+    a
+    {
+        padding: 2px;
+    }
+    .container h1
+    {
+        font-size: 16px;
+    }
+    .container h4
+    {
+        font-size: 14px;
+    }
+    .container h6
+    {
+        font-size: 12px;
+        max-width: 350px;
+    }
+    .container h5
+    {
+        font-size: 12px;
+        font-weight: 100;
+    
+    }
+    .container img
+    {
+        width: auto;
+        object-fit: cover;
+    }
+
+    button[type="submit"]
+    {
+        font-size: 14px;
+        width: 100%;
+    }
+    .form-group
+    {
+        font-size: 14px;
+        margin:2px;
+    }
+    .form-group input{
+        width: 280px;
+        margin-left: -14px;
+    }
+    .container1{
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+    intro{
+        margin-bottom: -55px;
+    }
+    intro h3
+    {
+        font-size: 16px;
+    }
+    .text-center
+    {
+        font-size: 14px;
+        padding: 1px;
+        margin: 25px;
+    }
+    intro .intro1
+    {
+        font-size: 12px;
+        max-width: 100%;
+        margin: 6%;
+        padding: 2%;
+        text-align:center;
+        margin-top: 12px;
+        background-color: #d8d9d9;
+        border-radius: 10px;
+        margin-right: 10%;
+    }
+    .video
+    {
+        width: 40%;
+        height: 30%;
+        margin-left: 50px;
+        margin-top: 15px;
+    }
+    .con-inside
+    {
+        background-color: #7fd6d0;
+        width: 100%;
+        margin:0 auto;
+        text-align: left;
+        padding-left: 2%;
+        margin-top: -5px;
+        padding-bottom: 10px;
+        flex-direction: column;
+        max-width: 100%;
+        width: 800px;
+    }
+    .con-inside h3
+    {
+        font-size: 16px;
+    }
+    .inside
+    {
+        font-size: 14px;
+        min-height: 100px;
+    }
+    .con-benefit
+    {
+        max-width: 100%;
+    }
+    .benefit h3
+    {
+        font-size: 16px;
+    }
+    
+    #fast-con{
+        margin: 30px;
+        margin-top: -10px;
+        
+    }
+
+    #fast h5{
+        font-size: 14px;
+    }
+
+    .fast p{
+        font-size: 12px;
+        margin-top: 14px;
+    }
+
+    #enter-con{
+        margin: -30px;
+        margin-top: -10px;
+    }
+
+    #enter h5{
+        font-size: 14px;
+    }
+
+    .enter p{
+        font-size: 12px;
+    }
+
+    #security-con{
+        margin: 30px;
+        margin-top: -10px;
+    }
+
+    #security h5{
+        font-size: 14px;
+    }
+    .security p{
+        font-size: 12px;
+    }
+    #export h5{
+        font-size: 14px;
+    }
+    .export p{
+        font-size: 12px;
+    }
+
+    .get-cars h3{
+        font-size: 16px;
+    }
+    .get-cars img{
+        width: 60%;
+    }
+
+    .footer{
+        margin: 0 auto;
+    }
+    .footer h5
+    {
+        font-size: 14px;
+    }
+    .text-white-50{
+        margin:-5px;
+    }
+    .map-responsive{
+        width: 100%;
+        margin: 5px;
+        margin-top: 50px;
+    }
+}
+
+@media only screen and (min-width: 1024px)
+{
+    a
+    {
+        padding: 2px;
+    }
+    .container h1
+    {
+        font-size: 22px;
+    }
+    .container h4
+    {
+        font-size: 20px;
+    }
+    .container h6
+    {
+        font-size: 16px;
+        max-width: 400px;
+    }
+    .container h5
+    {
+        font-size: 16px;
+        font-weight: 100;
+    
+    }
+    .container img
+    {
+        width: auto;
+        object-fit: cover;
+    }
+
+    button[type="submit"]
+    {
+        font-size: 16px;
+        width: 100%;
+    }
+    .form-group
+    {
+        font-size: 14px;
+        margin:2px;
+    }
+    .form-group input{
+        width: 280px;
+        margin-left: -14px;
+    }
+    .container1{
+        width: 100%;
+        margin:20px;
+        margin-top: 30px;
+    }
+    intro{
+        margin-bottom: -55px;
+    }
+    intro h3
+    {
+        font-size: 20px;
+    }
+    .text-center
+    {
+        font-size: 16px;
+        padding: 1px;
+        margin-left:40px;
+    }
+    intro .intro1
+    {
+        font-size: 16px;
+        max-width: 100%;
+        margin: 6%;
+        padding: 2%;
+        text-align:center;
+        margin-top: 12px;
+        background-color: #d8d9d9;
+        border-radius: 10px;
+        margin-right: 10%;
+    }
+    .video
+    {
+        width: 50%;
+        margin-left: 70px;
+        margin-top: 15px;
+    }
+    .con-inside
+    {
+        background-color: #7fd6d0;
+        width: 100%;
+        margin:0 auto;
+        text-align: left;
+        padding-left: 2%;
+        margin-top: -5px;
+        padding-bottom: 10px;
+        flex-direction: column;
+        max-width: 100%;
+        width: 900px;
+    }
+    .con-inside h3
+    {
+        font-size: 20px;
+    }
+    .inside
+    {
+        font-size: 16px;
+        min-height: 100px;
+    }
+    .con-benefit
+    {
+        max-width: 100%;
+    }
+    .benefit h3
+    {
+        font-size: 20px;
+    }
+    
+    #fast-con{
+        margin: 40px;
+        margin-top: -10px;
+        
+    }
+
+    #fast h5{
+        font-size: 18px;
+    }
+
+    .fast p{
+        font-size: 16px;
+        margin-top: 14px;
+    }
+
+    #enter-con{
+        margin: -30px;
+        margin-top: -10px;
+    }
+
+    #enter h5{
+        font-size: 18px;
+    }
+
+    .enter p{
+        font-size: 16px;
+    }
+
+    #security-con{
+        margin: 40px;
+        margin-top: -10px;
+    }
+
+    #security h5{
+        font-size: 18px;
+    }
+    .security p{
+        font-size: 16px;
+    }
+    #export h5{
+        font-size: 18px;
+    }
+    .export p{
+        font-size: 16px;
+    }
+
+    .get-cars h3{
+        font-size: 20px;
+    }
+    .get-cars img{
+        width: 60%;
+    }
+
+    .footer{
+        margin: 0 auto;
+    }
+    .footer h5
+    {
+        font-size: 16px;
+    }
+    .text-white-50{
+        margin:-5px;
+        font-size: 14px;
+    }
+    .map-responsive{
+        width: 100%;
+        margin: 5px;
+        margin-top: 50px;
+    }
+}
+
+@media only screen and (min-width: 1200px)
+{
+    a
+    {
+        padding: 2px;
+    }
+    .container h1
+    {
+        font-size: 24px;
+    }
+    .container h4
+    {
+        font-size: 22px;
+    }
+    .container h6
+    {
+        font-size: 16px;
+        max-width: 400px;
+    }
+    .container h5
+    {
+        font-size: 16px;
+        font-weight: 100;
+    
+    }
+    .container img
+    {
+        width: auto;
+        object-fit: cover;
+    }
+
+    button[type="submit"]
+    {
+        font-size: 16px;
+        width: 100%;
+    }
+    .form-group
+    {
+        font-size: 16px;
+        margin:2px;
+        height: 90px;
+    }
+    .form-group input{
+        width: 340px;
+        margin-left: -14px;
+        max-width: 400px;
+    }
+    .container1{
+        width: 100%;
+        margin:40px;
+        margin-top: 30px;
+        max-width: 400px;
+    }
+    intro{
+        margin-bottom: -55px;
+    }
+    intro h3
+    {
+        font-size: 22px;
+    }
+    .text-center
+    {
+        font-size: 16px;
+        padding: 1px;
+        margin-left:2px;
+        margin-top:2px;
+    }
+    intro .intro1
+    {
+        font-size: 16px;
+        max-width: 100%;
+        margin: 6%;
+        padding: 2%;
+        text-align:center;
+        margin-top: 12px;
+        background-color: #d8d9d9;
+        border-radius: 10px;
+        margin-right: 10%;
+    }
+    .video
+    {
+        width: 450px;
+        height: 250px;
+        margin-left: 70px;
+        margin-top: 15px;
+    }
+    .con-inside
+    {
+        background-color: #7fd6d0;
+        width: 100%;
+        margin:0 auto;
+        text-align: left;
+        padding-left: 2%;
+        margin-top: -5px;
+        padding-bottom: 10px;
+        flex-direction: column;
+        max-width: 100%;
+        width: 80%;
+    }
+    .con-inside h3
+    {
+        font-size: 22px;
+    }
+    .inside
+    {
+        font-size: 16px;
+        min-height: 100px;
+    }
+    .con-benefit
+    {
+        max-width: 100%;
+    }
+    .benefit h3
+    {
+        font-size: 22px;
+    }
+    
+    #fast-con{
+        margin: 40px;
+        margin-top: -10px;
+        
+    }
+
+    #fast h5{
+        font-size: 20px;
+    }
+
+    .fast p{
+        font-size: 18px;
+        margin-top: 14px;
+    }
+
+    #enter-con{
+        margin: -30px;
+        margin-top: -10px;
+    }
+
+    #enter h5{
+        font-size: 20px;
+    }
+
+    .enter p{
+        font-size: 18px;
+    }
+
+    #security-con{
+        margin: 40px;
+        margin-top: -10px;
+    }
+
+    #security h5{
+        font-size: 20px;
+    }
+    .security p{
+        font-size: 18px;
+    }
+    #export h5{
+        font-size: 20px;
+    }
+    .export p{
+        font-size: 18px;
+    }
+
+    .get-cars h3{
+        font-size: 22px;
+    }
+    .get-cars img{
+        width: 50%;
+    }
+
+    .footer{
+        margin: 0 auto;
+    }
+    .footer h5
+    {
+        font-size: 18px;
+    }
+    .text-white-50{
+        margin:-5px;
+        font-size: 16px;
+    }
+    .map-responsive{
+        width: 100%;
+        margin: 5px;
+        margin-top: 50px;
+    }
+}
+
+
+
+
+
+/*
+@media only screen and (max-width: 1200px)
+{
+    a
+    {
+        padding: 2px;
+    }
+    .container h1
+    {
+        font-size: 14px;
+    }
+    .container h4
+    {
+        font-size: 12px;
+    }
+    .container h6
+    {
+        font-size: 10px;
+        max-width: 80px;
+    }
+    .container h5
+    {
+        font-size: 6px;
+        font-weight: 600;
+    
+    }
+    .container img
+    {
+        width: auto;
+        object-fit: cover;
+    }
+
+    button[type="submit"]
+    {
+        font-size: 7px;
+        width: 100%;
+    }
+    .form-group
+    {
+        font-size: 10px;
+        margin-left: -5px;
+        padding-left: 2px;
+    }
+    .form-group input{
+        width: 70px;
+        margin-left: -10px;
+    }
+    .container1{
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+    intro h3
+    {
+        font-size: 14px;
+    }
+    .text-center
+    {
+        font-size: 10px;
+        padding: 1px;
+        margin: 2px;
+    }
+    intro .intro1
+    {
+        font-size: 10px;
+        max-width: 100%;
+        margin: 6%;
+        padding: 2%;
+        text-align:center;
+        margin-top: 12px;
+        background-color: #d8d9d9;
+        border-radius: 10px;
+        margin-right: 10%;
+    }
+    .video
+    {
+        width: 50%;
+        height: 20%;
+        margin: 18px;
+    }
+    .con-inside
+    {
+        background-color: #7fd6d0;
+        width: 80%;
+
+        margin:0 auto;
+        text-align: left;
+        padding-left: 2%;
+        margin-top: -5px;
+        padding-bottom: 10px;
+        flex-direction: column;
+        max-width: 100%;
+        width: 300px;
+    }
+    .con-inside h3
+    {
+        font-size: 14px;
+    }
+    .inside
+    {
+        font-size: 10px;
+        min-height: 100px;
+    }
+    .con-benefit
+    {
+        max-width: 100%;
+    }
+    .benefit h3
+    {
+        font-size: 14px;
+    }
+    
+    #fast-con{
+        margin: 10px;
+        margin-top: -10px;
+        
+    }
+
+    #fast h5{
+        font-size: 12px;
+    }
+
+    .fast p{
+        font-size: 10px;
+        margin-top: 14px;
+    }
+
+    #enter-con{
+        margin: -25px;
+        margin-top: -10px;
+    }
+
+    #enter h5{
+        font-size: 12px;
+    }
+
+    .enter p{
+        font-size: 10px;
+    }
+
+    #security-con{
+        margin: 10px;
+        margin-top: -10px;
+    }
+
+    #security h5{
+        font-size: 12px;
+    }
+    .security p{
+        font-size: 10px;
+    }
+    #export h5{
+        font-size: 12px;
+    }
+    .export p{
+        font-size: 10px;
+    }
+
+    .get-cars h3{
+        font-size: 14px;
+    }
+    .get-cars img{
+        width: 100%;
+    }
+
+    .footer{
+        margin: 0 auto;
+    }
+    .footer h5
+    {
+        font-size: 12px;
+    }
+    .text-white-50{
+        margin-left: -20px;
+    }
+    .map-responsive{
+        width: 160%;
+        margin: -30px;
+        margin-top: 50px;
+    }
+}
+
+
+
+/*
+@media only screen and (min-width: 640px)
+{
+    a
+    {
+        padding: 2px;
+    }
+    .container h1
+    {
+        font-size: 16px;
+    }
+    .container h4
+    {
+        font-size: 14px;
+    }
+    .container h6
+    {
+        font-size: 12px;
+        max-width: 190px;
+    }
+    .container h5
+    {
+        font-size: 12px;
+    }
+    .container img
+    {
+        width: auto;
+        object-fit: cover;
+    }
+    intro h3
+    {
+        font-size: 16px;
+    }
+    .text-center
+    {
+        font-size: 12px;
+        padding: 1px;
+        margin: 2px;
+    }
+    intro .intro1
+    {
+        font-size: 10px;
+        max-width: 100%;
+        margin: 6%;
+        padding: 2%;
+        text-align:center;
+        margin-top: 12px;
+        background-color: #d8d9d9;
+        border-radius: 10px;
+        margin-right: 10%;
+    }
+    .video
+    {
+        width: 40%;
+        height: 40%;
+    }
+    .con-inside
+    {
+        background-color: #7fd6d0;
+        width: 60%;
+        
+        margin:0 auto;
+        text-align: left;
+        padding-left: 2%;
+        margin-top: -5px;
+        padding-bottom: 10px;
+    }
+    .con-inside
+    {
+        max-width: 100%;
+        flex-direction: column;
+    }
+    .con-inside h3
+    {
+        font-size: 16px;
+    }
+    .inside
+    {
+        font-size: 12px;
+        min-height: 100px;
+    }
+    .con-benefit
+    {
+        max-width: 100%;
+    }
+    .benefit h3
+    {
+        font-size: 16px;
+    }
+    #fast h5{
+        font-size: 14px;
+    }
+    .fast p{
+        font-size: 12px;
+    }
+    #enter h5{
+        font-size: 14px;
+    }
+    .enter p{
+        font-size: 12px;
+    }
+    #security h5{
+        font-size: 14px;
+    }
+    .security p{
+        font-size: 12px;
+    }
+    #export h5{
+        font-size: 14px;
+    }
+    .export p{
+        font-size: 12px;
+    }
+    .get-cars h3{
+        font-size: 16px;
+    }
+    .footer h5
+    {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (min-width: 768px)
+{
+    a
+    {
+        padding: 2px;
+    }
+    .container h1
+    {
+        font-size: 20px;
+    }
+    .container h4
+    {
+        font-size: 18px;
+    }
+    .container h5
+    {
+        font-size: 12px;
+    }
+    .container h6
+    {
+        font-size: 16px;
+        max-width: 190px;
+    }
+    .container img
+    {
+        width: auto;
+        object-fit: cover;
+    }
+    intro h3
+    {
+        font-size: 20px;
+    }
+    .text-center
+    {
+        font-size: 14px;
+        padding: 4px;
+        margin: 18px;
+    }
+    intro .intro1
+    {
+        font-size: 12px;
+        max-width: 100%;
+        margin-left: 8%;
+        padding: 2%;
+        text-align:center;
+        margin-top: 15px;
+        background-color: #d8d9d9;
+        border-radius: 10px;
+        margin-right: 10%;
+    }
+    .con-inside
+    {
+        background-color: #7fd6d0;
+        width: 70%;
+        height: 70%;
+        margin:0 auto;
+        text-align: left;
+        padding-left: 2%;
+        margin-top: -5px;
+        padding-bottom: 10px;
+    }
+    .con-inside
+    {
+        max-width: 100%;
+        flex-direction: column;
+    }
+    .con-inside h3
+    {
+        font-size: 20px;
+    }
+    .inside
+    {
+        font-size: 14px;
+        min-height: 100px;
+    }
+    .con-benefit
+    {
+        max-width: 100%;
+    }
+    .benefit h3
+    {
+        font-size: 20px;
+    }
+    #fast h5{
+        font-size: 16px;
+    }
+    .fast p{
+        font-size: 14px;
+    }
+    #enter h5{
+        font-size: 16px;
+    }
+    .enter p{
+        font-size: 14px;
+    }
+    #security h5{
+        font-size: 16px;
+    }
+    .security p{
+        font-size: 14px;
+    }
+    #export h5{
+        font-size: 16px;
+    }
+    .export p{
+        font-size: 14px;
+    }
+    .get-cars h3{
+        font-size: 20px;
+    }
+    .footer h5
+    {
+        font-size: 18px;
+    }
+}
+
+
+@media only screen and (min-width: 992px)
+{
+    a
+    {
+        padding: 2px;
+    }
+    .container h1
+    {
+        font-size: 20px;
+    }
+    .container h4
+    {
+        font-size: 18px;
+    }
+    .container h5
+    {
+        font-size: 12px;
+    }
+    .container h6
+    {
+        font-size: 16px;
+        max-width: 190px;
+    }
+    .container img
+    {
+        width: auto;
+        object-fit: cover;
+    }
+    intro h3
+    {
+        font-size: 20px;
+    }
+    .text-center
+    {
+        font-size: 14px;
+        padding: 4px;
+        margin: 18px;
+    }
+    intro .intro1
+    {
+        font-size: 12px;
+        max-width: 100%;
+        margin-left: 8%;
+        padding: 2%;
+        text-align:center;
+        margin-top: 15px;
+        background-color: #d8d9d9;
+        border-radius: 10px;
+        margin-right: 10%;
+    }
+    .con-inside
+    {
+        background-color: #7fd6d0;
+        width: 70%;
+        height: 70%;
+        margin:0 auto;
+        text-align: left;
+        padding-left: 2%;
+        margin-top: -5px;
+        padding-bottom: 10px;
+    }
+    .con-inside
+    {
+        max-width: 100%;
+        flex-direction: column;
+    }
+    .con-inside h3
+    {
+        font-size: 20px;
+    }
+    .inside
+    {
+        font-size: 14px;
+        min-height: 100px;
+    }
+    .con-benefit
+    {
+        max-width: 100%;
+    }
+    .benefit h3
+    {
+        font-size: 20px;
+    }
+    #fast h5{
+        font-size: 16px;
+    }
+    .fast p{
+        font-size: 14px;
+    }
+    #enter h5{
+        font-size: 16px;
+    }
+    .enter p{
+        font-size: 14px;
+    }
+    #security h5{
+        font-size: 16px;
+    }
+    .security p{
+        font-size: 14px;
+    }
+    #export h5{
+        font-size: 16px;
+    }
+    .export p{
+        font-size: 14px;
+    }
+    .get-cars h3{
+        font-size: 20px;
+    }
+    .footer h5
+    {
+        font-size: 18px;
+    }
+}
+
+
+/*
+@media only screen and (max-width: 320px)
+{
+    a
+    {
+        padding: 2px;
+    }
+    .container h1
+    {
+        font-size: 14px;
+    }
+    .container h4
+    {
+        font-size: 12px;
+    }
+    .container h6
+    {
+        font-size: 10px;
+        max-width: 100px;
+    }
+    .container h5
+    {
+        font-size: 6px;
+    
+    }
+    .container img
+    {
+        width: auto;
+        object-fit: cover;
+    }
+    .container1
+    {
+        width: 70px;
+    }
+    button[type="submit"]
+    {
+        font-size: 5px;
+    }
+    .form-group
+    {
+        font-size: 8px;
+    }
+    intro h3
+    {
+        font-size: 12px;
+    }
+    .text-center
+    {
+        font-size: 10px;
+        padding: 1px;
+        margin: 2px;
+    }
+    intro .intro1
+    {
+        font-size: 8px;
+        max-width: 100%;
+        margin: 6%;
+        padding: 2%;
+        text-align:center;
+        margin-top: 12px;
+        background-color: #d8d9d9;
+        border-radius: 10px;
+        margin-right: 10%;
+    }
+    .video
+    {
+        width: 40%;
+        height: auto%;
+    }
+    .con-inside
+    {
+        background-color: #7fd6d0;
+        width: 60%;
+        
+        margin:0 auto;
+        text-align: left;
+        padding-left: 2%;
+        margin-top: -5px;
+        padding-bottom: 10px;
+    }
+    .con-inside
+    {
+        max-width: 100%;
+        flex-direction: column;
+    }
+    .con-inside h3
+    {
+        font-size: 12px;
+    }
+    .inside
+    {
+        font-size: 10px;
+        min-height: 100px;
+    }
+    .con-benefit
+    {
+        max-width: 100%;
+        
+    }
+    .benefit {
+        padding: 2px;
+    }
+    .benefit h3
+    {
+        font-size: 12px;
+    }
+    #fast-con
+    {
+        margin-left: 18px;
+    }
+    #fast h5{
+        font-size: 12px;
+    }
+    .fast p{
+        font-size: 10px;
+    }
+    #enter h5{
+        font-size: 12px;
+    }
+    .enter p{
+        font-size: 10px;
+    }
+    #security h5{
+        font-size: 12px;
+    }
+    .security p{
+        font-size: 10px;
+    }
+    #export h5{
+        font-size: 12px;
+    }
+    .export p{
+        font-size: 10px;
+    }
+    .get-cars
+    {
+        margin-top: -20px;
+    }
+    .get-cars h3{
+        font-size: 12px;
+    }
+    .get-cars img
+    {
+        width: 100%;
+    }
+    .footer h5
+    {
+        font-size: 10px;
+    }
+    .text-white-50
+    {
+        font-size: 10px;
+        justify-content: center;
+    }
+    .gm-style img
+    {
+        width: 100%;
+    }
+}
