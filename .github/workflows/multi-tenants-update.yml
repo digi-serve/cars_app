@@ -1,0 +1,20 @@
+name: Cypress Test
+on:
+   # Allows user to trigger the workflow from GitHub's web UI
+   workflow_dispatch:
+
+jobs:
+# if its a push event and tests passed update ab_service_web           
+   multi-tenants-update:
+      name: Multi-Tenants Application Update
+      runs-on: ubuntu-latest
+      steps:
+         - uses: actions/checkout@v3
+            with:
+               path: .
+
+         - name: Preparing "package.json"
+           run: npm i
+   
+         - name: Multi-Tenants app update
+           run: npm start ${{ secrets.SERVER_CHILDATRISK_TENANT_ADMIN_URL }} ${{ secrets.SERVER_CHILDATRISK_TENANT_ADMIN_USER_TOKEN_ADMIN }}
