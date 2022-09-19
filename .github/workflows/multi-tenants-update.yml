@@ -1,4 +1,4 @@
-name: Cypress Test
+name: Multi-Tenant update
 on:
    # Allows user to trigger the workflow from GitHub's web UI
    workflow_dispatch:
@@ -10,8 +10,8 @@ jobs:
       runs-on: ubuntu-latest
       steps:
          - uses: actions/checkout@v3
-            with:
-               path: .
+           with:
+             path: .
 
          - name: Preparing "package.json"
            run: npm i
