@@ -1,0 +1,14 @@
+{
+    "name": "multitenants_app_update",
+    "version": "1.0.0",
+    "description": "",
+    "main": "multitenantsUpdate.js",
+    "scripts": {
+       "start": "node multitenantsUpdate.js"
+    },
+    "author": "guyyoo",
+    "license": "ISC",
+    "dependencies": {
+       "axios": "^0.27.2"
+    }
+}
