@@ -1,6 +1,7 @@
 import * as Common from "../../../../setup/common.js";
 
 import cyInterfaceCARS from "./test_setup/cy_interface/interface.json";
+import cyInterfaceChild from "./test_setup/cy_interface/interface_child.json";
 import cyInterfaceADMIN from "./test_setup/cy_interface/admin_interface.json";
 import example from "./test_example/example.json";
 import path from "path";
@@ -610,6 +611,57 @@ describe("Test Child:", () => {
             .basicInfo.page.basicInfo.form.editBasicInfo.button.save
       ).click();
 
+      // test the report update
+      cy.get(cyInterfaceChild.page.basicInfo.tab.admitInfo).click();
+      cy.get(
+         cyInterfaceChild.page.basicInfo.page.admitInfo.button.editAdmitInfo
+      ).should("be.visible");
+      cy.get(
+         cyInterfaceChild.page.basicInfo.page.admitInfo.button.fillReportData
+      ).click(); // is invisible in tiny window
+      cy.get('[data-cy^="string Reason Received 62a95880"]')
+         .should("be.visible")
+         .type("a")
+         .clear()
+         .type("test");
+      cy.get('[data-cy^="connectObject Child"]').should("not.exist");
+      cy.get('[data-cy^="button save"]')
+         .contains("Add Admission Info")
+         .scrollIntoView()
+         .click();
+
+      cy.get(".webix_spin").should("not.be.visible");
+
+      cy.get(".webix_button")
+         .contains("New data available. Click to reload.")
+         .click({ multiple: true });
+      //("[data-cy=\"\"]")
+      // prelim health exam
+      cy.get(
+         '[data-cy="LongText Other details 26a1aac4-edad-4780-9a74-8a4a97d5c5fa 08e287b8-6c5f-4205-9847-701e8607aa94"]'
+      )
+         .scrollIntoView()
+         .type("a")
+         .clear()
+         .type("healthTest");
+      cy.get('[data-cy^="button save"]')
+         .contains("Add New Health Info")
+         .scrollIntoView()
+         .click();
+      cy.get(".webix_spin").should("not.be.visible");
+      cy.get(".webix_button")
+         .contains("New data available. Click to reload.")
+         .click({ multiple: true });
+      cy.get(".webix_spin").should("not.be.visible");
+
+      cy.get('[data-cy^="LongText Other details"]')
+         .scrollIntoView()
+         .should("contain", "healthTest");
+
+      // cy.get('[data-cy^="string Reason Received"]')
+      //    .scrollIntoView()
+      //    .contains("test");
+      // .should("contain", "test");
       // prepare for assertion
       // TODO: shouldn't need to reload.
       childVisit();
