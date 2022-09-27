@@ -77,7 +77,8 @@
             },
             "admitInfo": {
                "button": {
-                  "editAdmitInfo": "[data-cy=\"menu-item Admission Info_3a46 cf368115-3a46-434b-b44e-6104b9bdb592 f076f340-9d27-45cf-b75e-c0930506235e\"]"
+                  "editAdmitInfo": "[data-cy=\"menu-item Admission Info_3a46 cf368115-3a46-434b-b44e-6104b9bdb592 f076f340-9d27-45cf-b75e-c0930506235e\"]",
+                  "fillReportData": "[data-cy=\"menu-item Fill Report Data 355880d1-a42a-40bc-878b-179932f72de5 f076f340-9d27-45cf-b75e-c0930506235e\"]"
                },
                "field": {},
                "form": {

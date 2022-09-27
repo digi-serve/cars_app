@@ -30,11 +30,11 @@ UNLOCK TABLES;
 
 LOCK TABLES `AB_CARS_AssetsLog` WRITE;
 INSERT INTO `AB_CARS_AssetsLog` (`uuid`, `created_at`, `updated_at`, `properties`, `Date`, `translations`, `Photo`, `Children`)
-VALUES ('cc0567e9-844e-4527-899e-fbfd7eef39ec', '2022-06-21 07:17:48', '2022-06-21 07:17:48', NULL, '2022-06-21', '[]', NULL, '0e41a300-4698-40c8-9c5f-f96ea2ceadf6');
+VALUES ('cc0567e9-844e-4527-899e-fbfd7eef39ec', '2022-06-21 07:17:48', '2022-06-21 07:17:48', NULL, '2022-06-21', '[{\"language_code\":\"en\",\"Asset Description\":\"no item reported\"}]', NULL, '0e41a300-4698-40c8-9c5f-f96ea2ceadf6');
 UNLOCK TABLES;
 
 LOCK TABLES `AB_CARS_AdmissionInfo` WRITE;
 INSERT INTO `AB_CARS_AdmissionInfo` (`uuid`, `created_at`, `updated_at`, `Reg Date`, `translations`, `Child`, `Recipient Staff`, `Initial Assets`)
-VALUES ('48e72e6d-4baa-4a5a-9e22-330994b677ba', '2022-06-21 07:18:40', '2022-06-21 07:18:40', '2022-06-21', '[{\"language_code\":\"en\",\"Submitter Name\":\"\",\"Reason Received\":\"\"}]', 
+VALUES ('48e72e6d-4baa-4a5a-9e22-330994b677ba', '2022-06-21 07:18:40', '2022-06-21 07:18:40', '2022-06-21', '[{\"language_code\":\"en\",\"Submitter Name\":\"\",\"Reason Received\":\"from sql data\"}]', 
 '0e41a300-4698-40c8-9c5f-f96ea2ceadf6', 'e746f80b-3fbe-4aeb-9fdf-2707740eeaca', 'cc0567e9-844e-4527-899e-fbfd7eef39ec');
 UNLOCK TABLES;

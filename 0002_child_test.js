@@ -594,37 +594,54 @@ describe("Test add-new forms:", () => {
    });
 
    // Checking the label of Initial Asset log
-   it("Test the label 'No Item Reported' of Initial Asset log", () => {
+   it.skip("Test the label 'No Item Reported' of Initial Asset log", () => {
       cy.get(cyInterfaceCHILD.page.basicInfo.tab.admitInfo)
          .should("exist")
          .click();
-      cy.get('[data-cy="menu-item Admission Info_3a46 cf368115-3a46-434b-b44e-6104b9bdb592 f076f340-9d27-45cf-b75e-c0930506235e"]')
+      cy.get(".webix_spin").should("not.be.visible");
+
+      cy.get(
+         '[data-cy="detail connected Child 9db31333-1cbf-429e-b3f7-46573a274054 8db15d0b-fd78-4b2b-975a-304b68a43054"]'
+      )
+         .should("be.visible")
+         .contains("Nakamoto");
+      cy.get(
+         '[data-cy="menu-item Admission Info_3a46 cf368115-3a46-434b-b44e-6104b9bdb592 f076f340-9d27-45cf-b75e-c0930506235e"]'
+      )
          .should("exist")
          .click();
-      cy.get('div[view_id*="ABViewContainer_cf368115"]')
-         .should("exist");
-      cy.get('[data-cy="connectObject Initial Assets 6daf2109-4bbe-4003-b69d-bed120b83ec2 575cd5ba-b217-46f1-9ab1-9ee67555daad"]')
+      cy.get(".webix_spin").should("not.be.visible");
+      cy.get('div[view_id*="ABViewContainer_cf368115"]').should("exist");
+      cy.get(
+         '[data-cy="connectObject Initial Assets 6daf2109-4bbe-4003-b69d-bed120b83ec2 575cd5ba-b217-46f1-9ab1-9ee67555daad"]'
+      )
          .scrollIntoView()
          .should("exist");
+      cy.get(
+         '[data-cy="string Submitter Name e6a79c8c-98ed-4dd8-a2fe-3b4506d46c9e 575cd5ba-b217-46f1-9ab1-9ee67555daad"]'
+      )
+         .scrollIntoView()
+         .type("slow")
+         .clear()
+         .type("concerned neighbor");
       cy.get('[data-cy="button save 575cd5ba-b217-46f1-9ab1-9ee67555daad"]')
          .scrollIntoView()
          .should("exist")
          .click({ force: true });
-      cy.get('[data-cy="Detail Admit Info 8db15d0b-fd78-4b2b-975a-304b68a43054"]')
-         .should("be.visible");
-      cy.get('[data-cy="detail connected Initial Assets 6daf2109-4bbe-4003-b69d-bed120b83ec2 8db15d0b-fd78-4b2b-975a-304b68a43054"]')
-         .should("be.visible");
-      cy.get('[data-cy="menu-item Admission Info_3a46 cf368115-3a46-434b-b44e-6104b9bdb592 f076f340-9d27-45cf-b75e-c0930506235e"]')
+      cy.get(
+         '[data-cy="Detail Admit Info 8db15d0b-fd78-4b2b-975a-304b68a43054"]'
+      ).should("be.visible");
+      cy.get(
+         '[data-cy="detail connected Initial Assets 6daf2109-4bbe-4003-b69d-bed120b83ec2 8db15d0b-fd78-4b2b-975a-304b68a43054"]'
+      ).should("be.visible");
+      cy.get(
+         '[data-cy="menu-item Admission Info_3a46 cf368115-3a46-434b-b44e-6104b9bdb592 f076f340-9d27-45cf-b75e-c0930506235e"]'
+      )
          .should("exist")
          .click();
-      cy.get('div[view_id*="ABViewContainer_cf368115"]')
-         .should("exist");
-      cy.get(".webix_warn")
-         .find(".webix_button")
-         .scrollIntoView()
-         .contains("New data available")
-         .click({ force: true });
-      cy.get('[data-cy="connectObject Initial Assets 6daf2109-4bbe-4003-b69d-bed120b83ec2 575cd5ba-b217-46f1-9ab1-9ee67555daad"]')
+      cy.get(
+         '[data-cy="connectObject Initial Assets 6daf2109-4bbe-4003-b69d-bed120b83ec2 575cd5ba-b217-46f1-9ab1-9ee67555daad"]'
+      )
          .scrollIntoView()
          .should("exist")
          .click({ force: true });
@@ -637,10 +654,12 @@ describe("Test add-new forms:", () => {
          .scrollIntoView()
          .should("exist")
          .click({ force: true });
-      cy.get('[data-cy="Detail Admit Info 8db15d0b-fd78-4b2b-975a-304b68a43054"]')
-         .should("be.visible");
-      cy.get('[data-cy="detail connected Initial Assets 6daf2109-4bbe-4003-b69d-bed120b83ec2 8db15d0b-fd78-4b2b-975a-304b68a43054"]')
-         .should("be.visible");
+      cy.get(
+         '[data-cy="Detail Admit Info 8db15d0b-fd78-4b2b-975a-304b68a43054"]'
+      ).should("be.visible");
+      cy.get(
+         '[data-cy="detail connected Initial Assets 6daf2109-4bbe-4003-b69d-bed120b83ec2 8db15d0b-fd78-4b2b-975a-304b68a43054"]'
+      ).should("be.visible");
       cy.visit("/");
       cy.get(
          '[data-cy="dataview item Children 0e41a300-4698-40c8-9c5f-f96ea2ceadf6 b3aa04d7-7528-40fb-b947-cef0c4dd52e9"]'
@@ -657,16 +676,24 @@ describe("Test add-new forms:", () => {
          .should("be.visible")
          .contains("Collapse Menu")
          .click({ force: true });
-      cy.get('[data-cy="Detail Admit Info 8db15d0b-fd78-4b2b-975a-304b68a43054"]')
-         .should("be.visible");
+      cy.get(
+         '[data-cy="Detail Admit Info 8db15d0b-fd78-4b2b-975a-304b68a43054"]'
+      ).should("be.visible");
       cy.get(
          '[data-cy="detail connected Child 9db31333-1cbf-429e-b3f7-46573a274054 8db15d0b-fd78-4b2b-975a-304b68a43054"]'
       )
          .should("be.visible")
          .contains("Nakamoto");
-      cy.get('[data-cy="detail connected Initial Assets 6daf2109-4bbe-4003-b69d-bed120b83ec2 8db15d0b-fd78-4b2b-975a-304b68a43054"]')
+
+      cy.get('[data-cy^="detail text Submitter Name"]')
+         .scrollIntoView()
+         .contains("concerned neighbor")
+         .should("exist");
+      cy.get(
+         '[data-cy="detail connected Initial Assets 6daf2109-4bbe-4003-b69d-bed120b83ec2 8db15d0b-fd78-4b2b-975a-304b68a43054"]'
+      )
          .should("be.visible")
-         .contains("No Item Reported");
+         .contains("from sql data");
    });
 
    // Education //
