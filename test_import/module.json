@@ -773,7 +773,7 @@
         }
       },
       "createdAt": "2020-10-07T03:02:06.000Z",
-      "updatedAt": "2022-08-18T08:26:25.000Z"
+      "updatedAt": "2022-09-29T04:48:44.000Z"
     },
     {
       "id": "be5d06ef-1175-41c7-b284-494e731a5950",
@@ -33699,7 +33699,8 @@
           "0bcd1570-a629-4a8c-a45c-e3d0de1035b9",
           "23f76693-6097-40e9-8b8c-f333513795a1",
           "2c58b4c5-d46b-4142-9791-a1ef03cb5d2d",
-          "72ca73ce-9e1b-4f18-8076-face07e38f95"
+          "72ca73ce-9e1b-4f18-8076-face07e38f95",
+          "e7590312-43ba-45dc-9893-9793da7bb6aa"
         ],
         "objectWorkspaceViews": {
           "currentViewID": "78e53239-be43-42c5-be60-b7e3d1045e4e",
@@ -34185,6 +34186,11 @@
             "alias": "5948ba81",
             "objectID": "feb5184f-bcef-4358-bbcf-85056dccdf85",
             "fieldID": "72ca73ce-9e1b-4f18-8076-face07e38f95"
+          },
+          {
+            "alias": "BASE_OBJECT",
+            "objectID": "26f66d40-a017-4ace-b46b-9aa0879bf615",
+            "fieldID": "e7590312-43ba-45dc-9893-9793da7bb6aa"
           }
         ],
         "where": {
@@ -34197,7 +34203,7 @@
         }
       },
       "createdAt": "2020-10-07T03:02:11.000Z",
-      "updatedAt": "2022-06-30T09:42:45.000Z"
+      "updatedAt": "2022-09-30T04:38:24.000Z"
     },
     {
       "id": "cc2d0cad-2ee9-4f9e-a6b3-0c554fe14e4a",
@@ -34208,6 +34214,9 @@
         "type": "query",
         "name": "Report Social Work",
         "labelFormat": "",
+        "labelSettings": {
+          "isNoLabelDisplay": 0
+        },
         "isImported": "0",
         "isExternal": "0",
         "tableName": "",
@@ -34290,7 +34299,8 @@
           "23f76693-6097-40e9-8b8c-f333513795a1",
           "2c58b4c5-d46b-4142-9791-a1ef03cb5d2d",
           "9f9817e9-68d7-44a9-b57e-8c1a41f37f13",
-          "2eb0acb5-ef2f-42f0-8396-11b23bb7b275"
+          "2eb0acb5-ef2f-42f0-8396-11b23bb7b275",
+          "e7590312-43ba-45dc-9893-9793da7bb6aa"
         ],
         "objectWorkspaceViews": {
           "currentViewID": "28d79820-2a26-40b7-b0a2-f4cf7a827745",
@@ -34679,6 +34689,11 @@
             "alias": "4ca22871",
             "objectID": "5c56157b-0a80-45a2-b607-b705c797d0dc",
             "fieldID": "2eb0acb5-ef2f-42f0-8396-11b23bb7b275"
+          },
+          {
+            "alias": "BASE_OBJECT",
+            "objectID": "26f66d40-a017-4ace-b46b-9aa0879bf615",
+            "fieldID": "e7590312-43ba-45dc-9893-9793da7bb6aa"
           }
         ],
         "where": {
@@ -34691,7 +34706,7 @@
         }
       },
       "createdAt": "2020-10-07T03:02:11.000Z",
-      "updatedAt": "2022-06-24T09:00:49.000Z"
+      "updatedAt": "2022-09-30T03:28:19.000Z"
     },
     {
       "id": "d11eeef1-13ed-4b73-979a-f1821edfe4e3",
