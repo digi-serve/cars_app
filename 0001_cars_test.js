@@ -867,6 +867,17 @@ describe("Test Home:", () => {
             data.text().includes(home.socialWorker) ? home.socialWorker : "",
             "Social Worker"
          ).to.eq(home.socialWorker);
+      });
+
+      cy.window().then((win) => {
+         return win
+            .$$("ABViewGrid_6aac7a56-c849-4833-bc7d-85dbadf649be_datatable")
+            .scrollTo(400, 1);
+      });
+
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.home.view.homes.container
+      ).should((data) => {
          expect(
             data.text().includes(home.address.addressNo)
                ? home.address.addressNo
