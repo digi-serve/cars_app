@@ -1004,10 +1004,10 @@ describe("Test add-new forms:", () => {
    });
 
    // Medical //
-   it.only("Test vaccination", () => {
+   it("Test vaccination", () => {
       saveAndCheck("medical", "vaccination", "otherVacc");
    });
-   it.only("Test healthInfo", () => {
+   it("Test healthInfo", () => {
       saveAndCheck("medical", "healthInfo", "injections");
       // cy.get(".webix_warn")
       //    .find(".webix_button")
@@ -1023,10 +1023,10 @@ describe("Test add-new forms:", () => {
       //    .contains(text)
       // checkForm("medical", "healthInfo", "injections");
    });
-   it.only("Test medicalRecord", () => {
+   it("Test medicalRecord", () => {
       saveAndCheck("medical", "medicalRecord", "symptoms");
    });
-   it.only("Test growthLog", () => {
+   it("Test growthLog", () => {
       save("medical", "growthLog", "note");
       cy.get(".webix_warn")
          .find(".webix_button")
@@ -1040,7 +1040,7 @@ describe("Test add-new forms:", () => {
       cy.get(cyInterfaceCHILD.page.medical.page.growthLog.grid).contains(text);
       checkForm("medical", "growthLog", "note");
    });
-   it.only("Test developmentLog", () => {
+   it("Test developmentLog", () => {
       save("medical", "developmentLog", "notes");
       cy.get(".webix_warn")
          .find(".webix_button")
@@ -1056,7 +1056,7 @@ describe("Test add-new forms:", () => {
       );
       checkForm("medical", "developmentLog", "notes");
    });
-   it.only("Test psychCheck", () => {
+   it("Test psychCheck", () => {
       saveAndCheck("medical", "psychCheck", "preAssessmentObservations");
       // cy.get(".webix_warn")
       //    .find(".webix_button")
@@ -1073,13 +1073,13 @@ describe("Test add-new forms:", () => {
       //    .log();
       // checkForm("medical", "psychCheck", "preAssessmentObservations");
    });
-   it.only("Test psychTest", () => {
+   it("Test psychTest", () => {
       // todo tool adding
       saveAndCheck("medical", "psychTest", "educationLevel");
    });
 
    // Social Work //
-   it.only("Test facts", () => {
+   it("Test facts", () => {
       let parent = "socialWork";
       let child = "facts";
       let field = "details";
@@ -1087,7 +1087,7 @@ describe("Test add-new forms:", () => {
       cy.get(cyInterfaceCHILD.tab[parent]).should("be.visible").click();
       saveAndCheck(parent, child, field, true);
    });
-   it.only("Test familyAssessment", () => {
+   it("Test familyAssessment", () => {
       let parent = "socialWork";
       let child = "familyAssessment";
       let field = "environment";
@@ -1131,10 +1131,10 @@ describe("Test add-new forms:", () => {
       cy.get(cyInterfaceCHILD.page[parent].page[child].grid).contains(text);
       checkForm(parent, child, field);
    });
-   it.only("Test socialWelfare", () => {
+   it("Test socialWelfare", () => {
       saveAndCheck("socialWork", "socialWelfare", "history");
    });
-   it.only("Test lifePlan", () => {
+   it("Test lifePlan", () => {
       let parent = "socialWork";
       let child = "lifePlan";
       let field = "action";
