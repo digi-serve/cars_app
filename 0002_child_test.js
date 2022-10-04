@@ -964,15 +964,22 @@ describe("Test add-new forms:", () => {
    it("Test assetLog", () => {
       cy.get(
          '[data-cy="tab-Logs-30406204-b89c-4322-bff0-d07cd6be4404-bbef30a6-8b04-49c3-8520-818568ccaa79"]'
-      ).should("be.visible").click();
+      )
+         .should("be.visible")
+         .click();
       cy.get(
          '[data-cy="tab-AssetLog-41efe1e0-c6ee-4abb-b67a-5871150b882f-9f5b25fb-c8f6-4fc4-adf1-4172cb0c7393"]'
-      ).should("be.visible").click();
+      )
+         .should("be.visible")
+         .click();
       cy.get(
          '[data-cy="menu-item Add Assets Log fd0bbb13-cab0-4393-a29b-34b1cd466873 16966204-acbb-4a44-97a4-c1eb05d836a3"]'
-      ).should("be.visible").click();
-      cy.get('[class="webix_progress_state wxi-sync webix_spin"]')
-         .should("not.be.visible");
+      )
+         .should("be.visible")
+         .click();
+      cy.get('[class="webix_progress_state wxi-sync webix_spin"]').should(
+         "not.be.visible"
+      );
       cy.get(
          '[data-cy="LongText Asset Description f2b65cf6-5f67-4aa2-83e6-350cf0705ff1 7a3b8980-e30d-4135-8b01-a4e06fcac9f2"]'
       )
@@ -997,10 +1004,10 @@ describe("Test add-new forms:", () => {
    });
 
    // Medical //
-   it("Test vaccination", () => {
+   it.only("Test vaccination", () => {
       saveAndCheck("medical", "vaccination", "otherVacc");
    });
-   it("Test healthInfo", () => {
+   it.only("Test healthInfo", () => {
       saveAndCheck("medical", "healthInfo", "injections");
       // cy.get(".webix_warn")
       //    .find(".webix_button")
@@ -1016,10 +1023,10 @@ describe("Test add-new forms:", () => {
       //    .contains(text)
       // checkForm("medical", "healthInfo", "injections");
    });
-   it("Test medicalRecord", () => {
+   it.only("Test medicalRecord", () => {
       saveAndCheck("medical", "medicalRecord", "symptoms");
    });
-   it("Test growthLog", () => {
+   it.only("Test growthLog", () => {
       save("medical", "growthLog", "note");
       cy.get(".webix_warn")
          .find(".webix_button")
@@ -1033,7 +1040,7 @@ describe("Test add-new forms:", () => {
       cy.get(cyInterfaceCHILD.page.medical.page.growthLog.grid).contains(text);
       checkForm("medical", "growthLog", "note");
    });
-   it("Test developmentLog", () => {
+   it.only("Test developmentLog", () => {
       save("medical", "developmentLog", "notes");
       cy.get(".webix_warn")
          .find(".webix_button")
@@ -1049,7 +1056,7 @@ describe("Test add-new forms:", () => {
       );
       checkForm("medical", "developmentLog", "notes");
    });
-   it("Test psychCheck", () => {
+   it.only("Test psychCheck", () => {
       saveAndCheck("medical", "psychCheck", "preAssessmentObservations");
       // cy.get(".webix_warn")
       //    .find(".webix_button")
@@ -1066,13 +1073,13 @@ describe("Test add-new forms:", () => {
       //    .log();
       // checkForm("medical", "psychCheck", "preAssessmentObservations");
    });
-   it("Test psychTest", () => {
+   it.only("Test psychTest", () => {
       // todo tool adding
       saveAndCheck("medical", "psychTest", "educationLevel");
    });
 
    // Social Work //
-   it("Test facts", () => {
+   it.only("Test facts", () => {
       let parent = "socialWork";
       let child = "facts";
       let field = "details";
@@ -1080,7 +1087,7 @@ describe("Test add-new forms:", () => {
       cy.get(cyInterfaceCHILD.tab[parent]).should("be.visible").click();
       saveAndCheck(parent, child, field, true);
    });
-   it("Test familyAssessment", () => {
+   it.only("Test familyAssessment", () => {
       let parent = "socialWork";
       let child = "familyAssessment";
       let field = "environment";
@@ -1116,13 +1123,18 @@ describe("Test add-new forms:", () => {
          .find(".webix_button")
          .filter(":visible")
          .click({ multiple: true, force: true });
+      cy.window().then((win) => {
+         return win
+            .$$("ABViewGrid_264a4c42-2647-4be8-90b4-42a2d82d8ea6_datatable")
+            .scrollTo(400, 1);
+      });
       cy.get(cyInterfaceCHILD.page[parent].page[child].grid).contains(text);
       checkForm(parent, child, field);
    });
-   it("Test socialWelfare", () => {
+   it.only("Test socialWelfare", () => {
       saveAndCheck("socialWork", "socialWelfare", "history");
    });
-   it("Test lifePlan", () => {
+   it.only("Test lifePlan", () => {
       let parent = "socialWork";
       let child = "lifePlan";
       let field = "action";
