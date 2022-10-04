@@ -767,7 +767,7 @@ describe("Test add-new forms:", () => {
    it("Test generalCourses", () => {
       saveAndCheck("education", "generalCourses", "school");
    });
-   it.only("Test file", () => {
+   it("Test file", () => {
       saveAndCheck("education", "schoolRecords", "subject");
    });
    it("Test Create and Edit Data of School Records", () => {
