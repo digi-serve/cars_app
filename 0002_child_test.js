@@ -518,6 +518,11 @@ describe("Test add-new forms:", () => {
          .find(".webix_button")
          .filter(":visible")
          .click({ multiple: true, force: true });
+      cy.get('div[view_id*="ABViewTab_bbef30a6"]')
+         .find(".webix_tree_item")
+         .should("be.visible")
+         .contains("Collapse Menu")
+         .click({ force: true });
       cy.get(cyInterfaceCHILD.page[parent].page[child].grid).contains(text);
       checkForm(parent, child, field);
    }
@@ -762,7 +767,7 @@ describe("Test add-new forms:", () => {
    it("Test generalCourses", () => {
       saveAndCheck("education", "generalCourses", "school");
    });
-   it("Test file", () => {
+   it.only("Test file", () => {
       saveAndCheck("education", "schoolRecords", "subject");
    });
    it("Test Create and Edit Data of School Records", () => {
@@ -794,7 +799,7 @@ describe("Test add-new forms:", () => {
       )
          .scrollIntoView()
          .should("exist")
-         .type("202");
+         .type("202", { force: true });
       cy.get('[data-cy="button save bf3dfa10-80a5-455a-869d-c981daa2cdb3"]')
          .scrollIntoView()
          .should("exist")
@@ -812,7 +817,7 @@ describe("Test add-new forms:", () => {
       cy.window().then((win) => {
          return win
             .$$("ABViewGrid_2fae0fda-4262-4ef0-b1c8-e91fe2fc1d82_datatable")
-            .scrollTo(400, 1);
+            .scrollTo(1000, 1);
       });
       cy.get(
          '[data-cy="ABViewGrid_2fae0fda-4262-4ef0-b1c8-e91fe2fc1d82_datatable"]'
@@ -854,7 +859,7 @@ describe("Test add-new forms:", () => {
       cy.window().then((win) => {
          return win
             .$$("ABViewGrid_2fae0fda-4262-4ef0-b1c8-e91fe2fc1d82_datatable")
-            .scrollTo(400, 1);
+            .scrollTo(1200, 1);
       });
       cy.get(
          '[data-cy="ABViewGrid_2fae0fda-4262-4ef0-b1c8-e91fe2fc1d82_datatable"]'
@@ -945,7 +950,7 @@ describe("Test add-new forms:", () => {
       cy.window().then((win) => {
          return win
             .$$("ABViewGrid_cc01e916-b85d-4470-8e95-ebe1cded8477_datatable")
-            .scrollTo(1400, 1);
+            .scrollTo(2000, 1);
       });
       // Should see 'www.google.com' in the Site URL Field
       cy.get(
