@@ -518,6 +518,11 @@ describe("Test add-new forms:", () => {
          .find(".webix_button")
          .filter(":visible")
          .click({ multiple: true, force: true });
+      cy.get('div[view_id*="ABViewTab_bbef30a6"]')
+         .find(".webix_tree_item")
+         .should("be.visible")
+         .contains("Collapse Menu")
+         .click({ force: true });
       cy.get(cyInterfaceCHILD.page[parent].page[child].grid).contains(text);
       checkForm(parent, child, field);
    }
@@ -794,7 +799,7 @@ describe("Test add-new forms:", () => {
       )
          .scrollIntoView()
          .should("exist")
-         .type("202");
+         .type("202", { force: true });
       cy.get('[data-cy="button save bf3dfa10-80a5-455a-869d-c981daa2cdb3"]')
          .scrollIntoView()
          .should("exist")
@@ -812,7 +817,7 @@ describe("Test add-new forms:", () => {
       cy.window().then((win) => {
          return win
             .$$("ABViewGrid_2fae0fda-4262-4ef0-b1c8-e91fe2fc1d82_datatable")
-            .scrollTo(400, 1);
+            .scrollTo(1000, 1);
       });
       cy.get(
          '[data-cy="ABViewGrid_2fae0fda-4262-4ef0-b1c8-e91fe2fc1d82_datatable"]'
@@ -854,7 +859,7 @@ describe("Test add-new forms:", () => {
       cy.window().then((win) => {
          return win
             .$$("ABViewGrid_2fae0fda-4262-4ef0-b1c8-e91fe2fc1d82_datatable")
-            .scrollTo(400, 1);
+            .scrollTo(1200, 1);
       });
       cy.get(
          '[data-cy="ABViewGrid_2fae0fda-4262-4ef0-b1c8-e91fe2fc1d82_datatable"]'
@@ -945,7 +950,7 @@ describe("Test add-new forms:", () => {
       cy.window().then((win) => {
          return win
             .$$("ABViewGrid_cc01e916-b85d-4470-8e95-ebe1cded8477_datatable")
-            .scrollTo(1400, 1);
+            .scrollTo(2000, 1);
       });
       // Should see 'www.google.com' in the Site URL Field
       cy.get(
@@ -959,15 +964,22 @@ describe("Test add-new forms:", () => {
    it("Test assetLog", () => {
       cy.get(
          '[data-cy="tab-Logs-30406204-b89c-4322-bff0-d07cd6be4404-bbef30a6-8b04-49c3-8520-818568ccaa79"]'
-      ).should("be.visible").click();
+      )
+         .should("be.visible")
+         .click();
       cy.get(
          '[data-cy="tab-AssetLog-41efe1e0-c6ee-4abb-b67a-5871150b882f-9f5b25fb-c8f6-4fc4-adf1-4172cb0c7393"]'
-      ).should("be.visible").click();
+      )
+         .should("be.visible")
+         .click();
       cy.get(
          '[data-cy="menu-item Add Assets Log fd0bbb13-cab0-4393-a29b-34b1cd466873 16966204-acbb-4a44-97a4-c1eb05d836a3"]'
-      ).should("be.visible").click();
-      cy.get('[class="webix_progress_state wxi-sync webix_spin"]')
-         .should("not.be.visible");
+      )
+         .should("be.visible")
+         .click();
+      cy.get('[class="webix_progress_state wxi-sync webix_spin"]').should(
+         "not.be.visible"
+      );
       cy.get(
          '[data-cy="LongText Asset Description f2b65cf6-5f67-4aa2-83e6-350cf0705ff1 7a3b8980-e30d-4135-8b01-a4e06fcac9f2"]'
       )
@@ -1111,6 +1123,11 @@ describe("Test add-new forms:", () => {
          .find(".webix_button")
          .filter(":visible")
          .click({ multiple: true, force: true });
+      cy.window().then((win) => {
+         return win
+            .$$("ABViewGrid_264a4c42-2647-4be8-90b4-42a2d82d8ea6_datatable")
+            .scrollTo(400, 1);
+      });
       cy.get(cyInterfaceCHILD.page[parent].page[child].grid).contains(text);
       checkForm(parent, child, field);
    });
