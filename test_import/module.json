@@ -104108,6 +104108,67 @@
       "updatedAt": "2022-06-24T09:00:49.000Z"
     },
     {
+      "id": "e49bb1e8-a6aa-4dc7-9b2a-ab207221285d",
+      "name": "Reports",
+      "type": "view",
+      "json": {
+        "id": "e49bb1e8-a6aa-4dc7-9b2a-ab207221285d",
+        "type": "view",
+        "key": "viewcontainer",
+        "icon": "braille",
+        "tabicon": "archive",
+        "settings": {
+          "columns": "1",
+          "removable": "true",
+          "movable": "true"
+        },
+        "translations": [
+          {
+            "language_code": "en",
+            "label": "Reports"
+          }
+        ],
+        "viewIDs": [
+          "8f3e9905-ffce-4212-ab45-938f1d390c5b"
+        ],
+        "position": {
+          "dx": 1,
+          "dy": 1
+        },
+        "isRoot": "false"
+      },
+      "createdAt": "2023-01-09T03:39:25.000Z",
+      "updatedAt": "2023-01-09T03:39:46.000Z"
+    },
+    {
+      "name": "Reports.reportsManager",
+      "type": "view",
+      "json": {
+        "type": "view",
+        "key": "reportsManager",
+        "icon": "wpforms",
+        "settings": {
+          "columnSpan": "1",
+          "rowSpan": "1"
+        },
+        "translations": [
+          {
+            "language_code": "en",
+            "label": "Reports.reportsManager"
+          }
+        ],
+        "position": {
+          "dx": 1,
+          "dy": 1
+        },
+        "isRoot": "false",
+        "id": "8f3e9905-ffce-4212-ab45-938f1d390c5b"
+      },
+      "id": "8f3e9905-ffce-4212-ab45-938f1d390c5b",
+      "createdAt": "2023-01-09T03:39:46.373Z",
+      "updatedAt": "2023-01-09T03:39:46.373Z"
+    },
+    {
       "id": "a5d12fce-be12-4fc8-8dcf-7e80ae4d889f",
       "name": "Social Worker.label",
       "type": "view",
