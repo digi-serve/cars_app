@@ -356,6 +356,7 @@
                                  "field": {
                                     "address": "[data-cy=\"detail connected Address a8a4d2f9-9de8-4f42-a6c4-026e435d3a86 31236bd0-91fa-46f1-b4e0-213b6fe5ef72\"]",
                                     "birthday": "[data-cy=\"detail text Birthday e7590312-43ba-45dc-9893-9793da7bb6aa 31236bd0-91fa-46f1-b4e0-213b6fe5ef72\"]",
+                                    "carsProject": "[data-cy=\"detail connected CARs Project20 5a580697-5167-423a-a076-28bd5ecfe328 31236bd0-91fa-46f1-b4e0-213b6fe5ef72\"]",
                                     "firstName": "[data-cy=\"detail text First Name ec8dd00f-f229-49e0-b898-12f0dd40cdc3 31236bd0-91fa-46f1-b4e0-213b6fe5ef72\"]",
                                     "gender": "[data-cy=\"detail text Gender e0c10ab9-4a1d-47b8-acc6-ab6326298c53 31236bd0-91fa-46f1-b4e0-213b6fe5ef72\"]",
                                     "home": "[data-cy=\"detail connected Home 0f323b4f-be4a-4ad9-84da-488cf3941820 31236bd0-91fa-46f1-b4e0-213b6fe5ef72\"]",
@@ -382,6 +383,7 @@
                                        "field": {
                                           "address": "[data-cy=\"connectObject Address a8a4d2f9-9de8-4f42-a6c4-026e435d3a86 87913802-0e45-4b9a-ad08-96ae87480977\"]",
                                           "birthday": "[data-cy=\"date Birthday e7590312-43ba-45dc-9893-9793da7bb6aa 87913802-0e45-4b9a-ad08-96ae87480977\"]",
+                                          "carsProject": "[data-cy=\"connectObject CARs Project20 5a580697-5167-423a-a076-28bd5ecfe328 87913802-0e45-4b9a-ad08-96ae87480977\"]",
                                           "firstName": "[data-cy=\"string First Name ec8dd00f-f229-49e0-b898-12f0dd40cdc3 87913802-0e45-4b9a-ad08-96ae87480977\"]",
                                           "gender": "[data-cy=\"list Gender e0c10ab9-4a1d-47b8-acc6-ab6326298c53 87913802-0e45-4b9a-ad08-96ae87480977\"]",
                                           "home": "[data-cy=\"connectObject Home 0f323b4f-be4a-4ad9-84da-488cf3941820 87913802-0e45-4b9a-ad08-96ae87480977\"]",
@@ -400,6 +402,9 @@
                                        "option": {
                                           "address": [
                                              "[data-cy=\"connectObject options cb46b6b4-dc25-4915-80f7-c1febf26da4a a8a4d2f9-9de8-4f42-a6c4-026e435d3a86 87913802-0e45-4b9a-ad08-96ae87480977\"]"
+                                          ],
+                                          "carsProject": [
+                                             "[data-cy=\"connectObject options cb46b6b4-dc25-4915-80f7-c1febf26da4a 5a580697-5167-423a-a076-28bd5ecfe328 87913802-0e45-4b9a-ad08-96ae87480977\"]"
                                           ],
                                           "relatives": []
                                        }
@@ -442,12 +447,14 @@
                                        "field": {
                                           "title": "[data-cy=\"string Title 4bef656d-e062-41c3-93ce-cfc7e5b42176 f807c3b6-1359-4cb6-823f-ccc1bf676e97\"]",
                                           "date": "[data-cy=\"date Date bd2de56e-f76d-4ae4-81a5-cb2a03af0f4c f807c3b6-1359-4cb6-823f-ccc1bf676e97\"]",
-                                          "text": "[data-cy^=\"textbox rich Text\"]",
+                                          "text": "[data-cy^=\"textbox rich Text 1ab9a889-d470-4eb9-9efa-305f47b6cac5 f807c3b6-1359-4cb6-823f-ccc1bf676e97\"]",
                                           "file": "[data-cy=\"connectObject File47 bd49d7b7-697b-4f0f-a4f4-12ca407fdc65 f807c3b6-1359-4cb6-823f-ccc1bf676e97\"]",
                                           "categories": "[data-cy=\"connectObject Categories 84157ae7-caf3-4eae-bdf4-bf374b837d3c f807c3b6-1359-4cb6-823f-ccc1bf676e97\"]"
                                        },
                                        "option": {
-                                          "file": [],
+                                          "file": [
+                                             "[data-cy=\"connectObject options 16c2d1b8-4bbe-4f8d-b80e-5dc9ab61846c bd49d7b7-697b-4f0f-a4f4-12ca407fdc65 f807c3b6-1359-4cb6-823f-ccc1bf676e97\"]"
+                                          ],
                                           "categories": [
                                              "[data-cy=\"connectObject options 43ab8092-5878-4cf4-a98f-6e8798ff2117 84157ae7-caf3-4eae-bdf4-bf374b837d3c f807c3b6-1359-4cb6-823f-ccc1bf676e97\"]"
                                           ]
@@ -466,13 +473,16 @@
                                        "field": {
                                           "title": "[data-cy=\"string Title 4bef656d-e062-41c3-93ce-cfc7e5b42176 8129e697-a2a3-4fd1-a576-ec758cd54662\"]",
                                           "date": "[data-cy=\"date Date bd2de56e-f76d-4ae4-81a5-cb2a03af0f4c 8129e697-a2a3-4fd1-a576-ec758cd54662\"]",
-                                          "text": "[data-cy^=\"textbox rich\"]",
+                                          "text": "[data-cy^=\"textbox rich Text d63f21d8-ac2f-4e3f-8038-f2c778942b5e 8129e697-a2a3-4fd1-a576-ec758cd54662\"]",
                                           "file": "[data-cy=\"connectObject File47 bd49d7b7-697b-4f0f-a4f4-12ca407fdc65 8129e697-a2a3-4fd1-a576-ec758cd54662\"]",
                                           "categories": "[data-cy=\"connectObject Categories 84157ae7-caf3-4eae-bdf4-bf374b837d3c 8129e697-a2a3-4fd1-a576-ec758cd54662\"]"
                                        },
                                        "option": {
                                           "file": [
                                              "[data-cy=\"connectObject options 16c2d1b8-4bbe-4f8d-b80e-5dc9ab61846c bd49d7b7-697b-4f0f-a4f4-12ca407fdc65 8129e697-a2a3-4fd1-a576-ec758cd54662\"]"
+                                          ],
+                                          "categories": [
+                                             "[data-cy=\"connectObject options 43ab8092-5878-4cf4-a98f-6e8798ff2117 84157ae7-caf3-4eae-bdf4-bf374b837d3c f807c3b6-1359-4cb6-823f-ccc1bf676e97\"]"
                                           ]
                                        }
                                     },

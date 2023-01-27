@@ -88,7 +88,6 @@ describe("Test Social Worker Note:", () => {
          )
          .should("be.visible")
          .click({ multiple: true, force: true });
-
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.grid
@@ -100,7 +99,6 @@ describe("Test Social Worker Note:", () => {
          .find(".webix_cell")
          .should("be.visible")
          .click({ multiple: true, force: true });
-
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.editNote.field.title
@@ -122,14 +120,12 @@ describe("Test Social Worker Note:", () => {
       ).type(note.date);
       // cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.form.editNote.field.date).click();
       // cy.get(".webix_cal_icon_today").click()
-
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.editNote.field.text
       )
          .click()
          .type(note.text);
-
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.editNote.field.file
@@ -137,15 +133,12 @@ describe("Test Social Worker Note:", () => {
          .should("be.visible")
          .click();
       cy.get(
-         '[data-cy^="connectObject options 16c2d1b8-4bbe-4f8d-b80e-5dc9ab61846c bd49d7b7-697b-4f0f-a4f4-12ca407fdc65 8129e697-a2a3-4fd1-a576-ec758cd54662"]'
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .socialWork.page.notes.form.editNote.option.file[0]
       )
          .should("be.visible")
          .click();
-
-      cy.get(
-         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
-            .socialWork.page.notes.form.editNote.field.text
-      ).click();
+      cy.get(".webix_button").contains("Select").click();
 
       // TODO multiple item bug again
       // //cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.form.addCategory.label).type(note.category);
@@ -182,7 +175,6 @@ describe("Test Social Worker Note:", () => {
          .should((data) => {
             cy.log(data);
          });
-
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.grid
@@ -243,8 +235,8 @@ describe("Test Social Worker Note:", () => {
          title: "Hello World",
          date: "01/01/2021",
          text: "This is a note etc etc",
-         category: "New Category",
-         file: "New File",
+         category: "Important Test",
+         file: "123.file",
       };
 
       // act
@@ -290,26 +282,60 @@ describe("Test Social Worker Note:", () => {
       ).click();
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .socialWork.page.notes.form.addNote.field.categories
+      )
+         .should("be.visible")
+         .parent()
+         .click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .socialWork.page.notes.form.addNote.option.categories[0]
+      )
+         .should("be.visible")
+         .click();
+
+      // TODO
+      // cy.get(
+      //    cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+      //       .socialWork.page.notes.form.addCategory.label
+      // )
+      //    .should("be.visible")
+      //    .type("Please work")
+      //    .clear()
+      //    .type(note.category);
+
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.addNote.field.file
       )
+         .should("be.visible")
          .parent()
-         .find(".fa-plus")
-         .click({ force: true });
-      cy.get(
-         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
-            .socialWork.page.notes.form.addFile.label
-      )
-         .should("not.be.disabled")
-         .type("Please work")
-         .clear()
-         .type(note.file);
-      cy.get(
-         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
-            .socialWork.page.notes.form.addFile.button.save
-      )
-         .filter(":visible")
          .click();
-      cy.get(".webix_spin").should("not.be.visible");
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .socialWork.page.notes.form.addNote.option.file[0]
+      )
+         .should("be.visible")
+         .click();
+      cy.get(".webix_button").contains("Select").click();
+
+      // TODO
+      // cy.get(
+      //    cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+      //       .socialWork.page.notes.form.addFile.label
+      // )
+      //    .should("not.be.disabled")
+      //    .type("Please work")
+      //    .clear()
+      //    .type(note.file);
+
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .socialWork.page.notes.form.addNote.field.text
+      )
+         .click()
+         .type(note.text);
+
       // uncomment these when fixed
       // .should("not.be.visible");
       // cy.get(
@@ -321,23 +347,23 @@ describe("Test Social Worker Note:", () => {
       cy.log(
          "Placeholder things to make test complete: if the popup close is fixed these will need to be removed."
       );
-      cy.get(".webix_button")
-         .filter(":visible")
-         .contains("Close")
-         .click({ force: true, multiple: true });
-      cy.get(
-         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
-            .socialWork.page.notes.form.addNote.field.file
-      )
-         .find(".webix_multicombo_input")
-         .click({ force: true });
+      // cy.get(".webix_button")
+      //    .filter(":visible")
+      //    .contains("Close")
+      //    .click({ force: true, multiple: true });
+      // cy.get(
+      //    cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+      //       .socialWork.page.notes.form.addNote.field.file
+      // )
+      //    .find(".webix_multicombo_input")
+      //    .click({ force: true });
       // cy.get(".webix_list_item")
       //    .contains("New File")
       //    .click({ force: true });
-      cy.get(
-         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
-            .socialWork.page.notes.form.addNote.field.title
-      ).click();
+      // cy.get(
+      //    cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+      //       .socialWork.page.notes.form.addNote.field.title
+      // ).click();
       // END REMOVE
 
       // cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.form.addNote.field.categories).click();
@@ -346,28 +372,7 @@ describe("Test Social Worker Note:", () => {
       //    cyInterfaceCARS.page.socialWorker.page.children.view.child.page
       //       .socialWork.page.notes.form.addNote.add.category
       // ).click();
-      cy.get(
-         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
-            .socialWork.page.notes.form.addNote.field.categories
-      )
-         .parent()
-         .find(".fa-plus")
-         .click({ force: true });
-      cy.get(
-         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
-            .socialWork.page.notes.form.addCategory.label
-      )
-         .should("be.visible")
-         .type("Please work")
-         .clear()
-         .type(note.category);
-      cy.get(
-         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
-            .socialWork.page.notes.form.addCategory.button.save
-      )
-         .filter(":visible")
-         .click();
-      cy.get(".webix_spin").should("not.be.visible");
+
       // cy.get(
       //    cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.form.addNote.field.categories
       // )
@@ -378,24 +383,24 @@ describe("Test Social Worker Note:", () => {
       cy.log(
          "Placeholder things to make test complete: if the popup close is fixed these will need to be removed."
       );
-      cy.get(".webix_button")
-         .filter(":visible")
-         .contains("Close")
-         .click({ force: true, multiple: true });
-      cy.get(
-         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
-            .socialWork.page.notes.form.addNote.field.categories
-      )
-         .find(".webix_multicombo_input")
-         .click();
+      // cy.get(".webix_button")
+      //    .filter(":visible")
+      //    .contains("Close")
+      //    .click({ force: true, multiple: true });
+      // cy.get(
+      //    cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+      //       .socialWork.page.notes.form.addNote.field.categories
+      // )
+      //    .find(".webix_multicombo_input")
+      //    .click();
       // cy.get(".webix_list_item")
       //    .contains("New ")
       //    .parent()
       //    .click({ force: true });
-      cy.get(
-         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
-            .socialWork.page.notes.form.addNote.field.title
-      ).click();
+      // cy.get(
+      //    cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+      //       .socialWork.page.notes.form.addNote.field.title
+      // ).click();
       // END REMOVE
 
       //save
@@ -403,7 +408,6 @@ describe("Test Social Worker Note:", () => {
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.addNote.button.save
       ).click();
-
       cy.get(".webix_spin").should("not.be.visible");
 
       // prepare for assertion
@@ -412,7 +416,6 @@ describe("Test Social Worker Note:", () => {
       cy.get(".webix_button").contains("Click to reload").click();
 
       //assert
-
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.grid
@@ -454,13 +457,21 @@ describe("Test Social Worker Note:", () => {
             .socialWork.page.notes.grid
       ).contains("Hello World");
       cy.get(
+         '[data-cy="ABViewGrid_a2e24efa-2b3a-4f62-9861-62743e194689_datatable"]'
+      ).should("be.visible");
+      cy.window().then((win) => {
+         return win
+            .$$("ABViewGrid_a2e24efa-2b3a-4f62-9861-62743e194689_datatable")
+            .scrollTo(500, 0);
+      });
+      cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.grid
       ).contains(note.category);
-      // cy.get(
-      //    cyInterfaceCARS.page.socialWorker.page.children.view.child.page
-      //       .socialWork.page.notes.grid
-      // ).contains(note.file);
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .socialWork.page.notes.grid
+      ).contains(note.file);
    });
 });
 

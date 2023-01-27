@@ -104245,6 +104245,10 @@
           {
             "language_code": "en",
             "label": "Reports"
+          },
+          {
+            "language_code": "th",
+            "label": "รายงาน"
           }
         ],
         "viewIDs": [
