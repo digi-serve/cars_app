@@ -632,7 +632,7 @@ describe("Test Child:", () => {
          .type("a")
          .clear()
          .type("test");
-      cy.get('[data-cy^="connectObject Child"]').should("exist").click();
+      cy.get('[data-cy^="connectObject Child"]').should("be.visible").click();
       cy.get(
          '[data-cy="connectObject options 0e41a300-4698-40c8-9c5f-f96ea2ceadf6 9db31333-1cbf-429e-b3f7-46573a274054 5027cd9a-ee6d-4505-bdbd-8e7432ebeafc"]'
       )
