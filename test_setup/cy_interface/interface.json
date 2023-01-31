@@ -605,7 +605,6 @@
             "staff": {
                "view": {}
             },
-            // TODO Change to data-cy
             "reports": {
                "button": {
                   "allReports": "[view_id=\"$toggle1\"]",
