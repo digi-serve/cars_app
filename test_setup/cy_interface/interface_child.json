@@ -347,17 +347,23 @@
       },
       "medical": {
          "page": {
-            "Prelim Health Exam": {
+            "prelimHealthExam": {
                "button": {
-                  "edit": "[data-cy=\"menu\"]"
+                  "edit": "[data-cy=\"menu-item Edit Prelim Health Exam 23274639-f071-428f-91cf-4e214cf7bcf2 6bb524ff-829f-4a84-babd-06a6a4038ff0\"]"
                },
                "form": {
                   "edit": {
                      "fields": {
-                        "no": "[data-cy=\"string\"]"
+                        "children": "[data-cy=\"connectObject Prelim Health Exam 89e02b1d-48b7-497b-ab8a-3bfd44247580 09f1a01e-a83a-44e1-b2c6-379251f3736c\"]",
+                        "otherDetails": "[data-cy=\"LongText Other details 26a1aac4-edad-4780-9a74-8a4a97d5c5fa 09f1a01e-a83a-44e1-b2c6-379251f3736c\"]"
                      },
                      "button": {
-                        "save": "[data-cy=\"button\"]"
+                        "save": "[data-cy=\"button save 09f1a01e-a83a-44e1-b2c6-379251f3736c\"]"
+                     },
+                     "option": {
+                        "children": [
+                           "[data-cy=\"connectObject options 0e41a300-4698-40c8-9c5f-f96ea2ceadf6 89e02b1d-48b7-497b-ab8a-3bfd44247580 09f1a01e-a83a-44e1-b2c6-379251f3736c\"]"
+                        ]
                      }
                   }
                },
@@ -488,7 +494,7 @@
             }
          },
          "tab": {
-            "healthExam": "[data-cy=\"tab-PrelimHealth Exam-d0e4162b-fd98-41aa-9ef4-a409f10e14e4-af0e3654-9110-4daf-a248-ea03dadf3f5a\"]",
+            "prelimHealthExam": "[data-cy=\"tab-PrelimHealth Exam-d0e4162b-fd98-41aa-9ef4-a409f10e14e4-af0e3654-9110-4daf-a248-ea03dadf3f5a\"]",
             "physicalDetails": "[data-cy=\"tab-PrelimPhysical Details -81ec7dc5-e27d-43cc-977a-5a422a42059b-af0e3654-9110-4daf-a248-ea03dadf3f5a\"]",
             "vaccination": "[data-cy=\"tab-Vaccination-3e698789-8da6-4529-ab39-eb7ab7feaaf3-af0e3654-9110-4daf-a248-ea03dadf3f5a\"]",
             "healthInfo": "[data-cy=\"tab-HealthInfo-8aca8a6c-9bc4-489c-8802-9e8f89dbfcaf-af0e3654-9110-4daf-a248-ea03dadf3f5a\"]",

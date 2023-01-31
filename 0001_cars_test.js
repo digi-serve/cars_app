@@ -584,6 +584,14 @@ describe("Test Child:", () => {
       ).click();
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .basicInfo.page.basicInfo.form.editBasicInfo.field.carsProject
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .basicInfo.page.basicInfo.form.editBasicInfo.option.carsProject[0]
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .basicInfo.page.basicInfo.form.editBasicInfo.field.idExpireDate
       ).type(child.idExpireDate);
       cy.get(
@@ -624,39 +632,77 @@ describe("Test Child:", () => {
          .type("a")
          .clear()
          .type("test");
-      cy.get('[data-cy^="connectObject Child"]').should("not.exist");
-      cy.get('[data-cy^="button save"]')
-         .contains("Add Admission Info")
-         .scrollIntoView()
+      cy.get('[data-cy^="connectObject Child"]').should("be.visible").click();
+      cy.get(
+         '[data-cy="connectObject options 0e41a300-4698-40c8-9c5f-f96ea2ceadf6 9db31333-1cbf-429e-b3f7-46573a274054 5027cd9a-ee6d-4505-bdbd-8e7432ebeafc"]'
+      )
+         .contains("SatoshiNakamoto")
          .click();
+      cy.get('[data-cy^="button save"]')
+         .contains("Save Admission Info")
+         .scrollIntoView()
+         .click({ force: true });
 
       cy.get(".webix_spin").should("not.be.visible");
 
       cy.get(".webix_button")
          .contains("New data available. Click to reload.")
-         .click({ multiple: true });
+         .click({ multiple: true }); //Pop-up not close
       //("[data-cy=\"\"]")
       // prelim health exam
+      childVisit();
+      cy.get(cyInterfaceChild.tab.medical).click({ force: true });
       cy.get(
-         '[data-cy="LongText Other details 26a1aac4-edad-4780-9a74-8a4a97d5c5fa 08e287b8-6c5f-4205-9847-701e8607aa94"]'
+         cyInterfaceChild.page.medical.page.prelimHealthExam.button.edit
+      ).click();
+      cy.get(
+         cyInterfaceChild.page.medical.page.prelimHealthExam.form.edit.fields
+            .children
+      ).click();
+      cy.get(
+         cyInterfaceChild.page.medical.page.prelimHealthExam.form.edit.option
+            .children[0]
+      ).click();
+      cy.get(
+         cyInterfaceChild.page.medical.page.prelimHealthExam.form.edit.fields
+            .otherDetails
       )
          .scrollIntoView()
          .type("a")
          .clear()
          .type("healthTest");
-      cy.get('[data-cy^="button save"]')
-         .contains("Add New Health Info")
+      cy.get(
+         cyInterfaceChild.page.medical.page.prelimHealthExam.form.edit.button
+            .save
+      ).click();
+      cy.get(
+         cyInterfaceChild.page.medical.page.prelimHealthExam.button.edit
+      ).click();
+      cy.get(
+         cyInterfaceChild.page.medical.page.prelimHealthExam.form.edit.fields
+            .otherDetails
+      )
+         .scrollIntoView()
+         .should("contain", "healthTest");
+      cy.get(
+         '[data-cy="menu-item Prelim Health Exam d0e4162b-fd98-41aa-9ef4-a409f10e14e4 00c4e9d1-aded-455f-a0ec-56dec6f048e2"]'
+      ).click();
+      cy.get(cyInterfaceChild.page.medical.tab.healthInfo).click();
+      cy.get(cyInterfaceChild.page.medical.page.healthInfo.button.add).click();
+      cy.get(
+         cyInterfaceChild.page.medical.page.healthInfo.form.add.fields
+            .injections
+      ).type("completed");
+      cy.get(cyInterfaceChild.page.medical.page.healthInfo.form.add.button.save)
          .scrollIntoView()
          .click();
       cy.get(".webix_spin").should("not.be.visible");
-      cy.get(".webix_button")
+      cy.get(".webix_warn")
+         .find(".webix_button")
+         .should("be.visible")
          .contains("New data available. Click to reload.")
-         .click({ multiple: true });
+         .click({ multiple: true, force: true });
       cy.get(".webix_spin").should("not.be.visible");
-
-      cy.get('[data-cy^="LongText Other details"]')
-         .scrollIntoView()
-         .should("contain", "healthTest");
 
       // cy.get('[data-cy^="string Reason Received"]')
       //    .scrollIntoView()
@@ -1472,6 +1518,76 @@ describe("Test Staff:", () => {
             "Username"
          ).to.eq("");
       });
+   });
+});
+
+// TODO Change to data-cy
+describe("Test Report Manager:", () => {
+   it("Test Add New Report", () => {
+      //act
+      Common.RunSQL(cy, folderName, [
+         "init_db_for_viewing_a_child_profile.sql",
+      ]);
+      openCars();
+      cy.get(cyInterfaceCARS.page.socialWorker.tab.reports).click();
+      cy.get(cyInterfaceCARS.page.socialWorker.page.reports.button.new)
+         .contains("New")
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.reports.form.new.field
+            .reportName
+      )
+         .find("[type='text']")
+         .should("be.visible")
+         .clear()
+         .type("Latest Report");
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.reports.form.new.field
+            .description
+      )
+         .find("textarea")
+         .should("be.visible")
+         .clear()
+         .type("Updated Data");
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.reports.form.new.field
+            .dataSource
+      )
+         .scrollIntoView()
+         .find(".wxi-menu-down")
+         .should("be.visible")
+         .click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.reports.form.new.option
+            .dataSource[0]
+      )
+         .scrollIntoView()
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.reports.form.new.button.save
+      )
+         .contains("Save")
+         .should("exist")
+         .click();
+      cy.get(cyInterfaceCARS.page.socialWorker.page.reports.button.allReports)
+         .contains("All reports")
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.reports.form.new.field.reports
+      )
+         .should("be.visible")
+         .contains("Latest Report")
+         .scrollIntoView()
+         .click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.reports.view.reports.viewGrid
+      )
+         .find(".webix_ss_center")
+         .should("be.visible")
+         .contains("Nakamoto");
    });
 });
 
