@@ -1521,6 +1521,76 @@ describe("Test Staff:", () => {
    });
 });
 
+// TODO Change to data-cy
+describe("Test Report Manager:", () => {
+   it("Test Add New Report", () => {
+      //act
+      Common.RunSQL(cy, folderName, [
+         "init_db_for_viewing_a_child_profile.sql",
+      ]);
+      openCars();
+      cy.get(cyInterfaceCARS.page.socialWorker.tab.reports).click();
+      cy.get(cyInterfaceCARS.page.socialWorker.page.reports.button.new)
+         .contains("New")
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.reports.form.new.field
+            .reportName
+      )
+         .find("[type='text']")
+         .should("be.visible")
+         .clear()
+         .type("Latest Report");
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.reports.form.new.field
+            .description
+      )
+         .find("textarea")
+         .should("be.visible")
+         .clear()
+         .type("Updated Data");
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.reports.form.new.field
+            .dataSource
+      )
+         .scrollIntoView()
+         .find(".wxi-menu-down")
+         .should("be.visible")
+         .click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.reports.form.new.option
+            .dataSource[0]
+      )
+         .scrollIntoView()
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.reports.form.new.button.save
+      )
+         .contains("Save")
+         .should("exist")
+         .click();
+      cy.get(cyInterfaceCARS.page.socialWorker.page.reports.button.allReports)
+         .contains("All reports")
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.reports.form.new.field.reports
+      )
+         .should("be.visible")
+         .contains("Latest Report")
+         .scrollIntoView()
+         .click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.reports.view.reports.viewGrid
+      )
+         .find(".webix_ss_center")
+         .should("be.visible")
+         .contains("Nakamoto");
+   });
+});
+
 describe("Test Social Worker Note:", () => {
    const note = example.note[0];
    it("Test Edit Note", () => {

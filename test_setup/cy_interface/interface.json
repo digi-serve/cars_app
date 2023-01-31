@@ -604,12 +604,49 @@
             },
             "staff": {
                "view": {}
+            },
+            // TODO Change to data-cy
+            "reports": {
+               "button": {
+                  "allReports": "[view_id=\"$toggle1\"]",
+                  "new": "[view_id=\"$button270\"]"
+               },
+               "form": {
+                  "new": {
+                     "button": {
+                        "joinData": "",
+                        "cancel": "",
+                        "save": "[view_id=\"$button273\"]"
+                     },
+                     "field": {
+                        "reports" : "[view_id=\"$list67\"]",
+                        "reportName": "[view_id=\"$text3\"]",
+                        "description": "[view_id=\"$textarea1\"]",
+                        "dataSource": "[view_id=\"$combo1\"]"
+                     },
+                     "option": {
+                        "allReports": [
+                           ""
+                        ],
+                        "dataSource": [
+                           "div[webix_l_id=\"39032bc8-38c7-4581-aaea-9fb4b5d3b111\"]"
+                        ]
+                     }
+                  }
+               },
+               "view": {
+                  "reports": {
+                     "container": "",
+                     "viewGrid": "[view_id^=\"ABViewReportManager_\"]"
+                  }
+               }
             }
          },
          "tab": {
             "children": "[data-cy=\"tab Children 8beb9e43-947a-4390-93dd-651a9733e941 4d0bcb94-bb0d-4179-a325-be1cf7f92399\"]",
             "home": "[data-cy=\"tab Homes d86538b7-d394-4d9c-b7b9-8cf717d304e7 4d0bcb94-bb0d-4179-a325-be1cf7f92399\"]",
-            "staff": "[data-cy=\"tab Staff 0dce9ea5-3c0b-4017-984d-7c3e07e1d8ad 4d0bcb94-bb0d-4179-a325-be1cf7f92399\"]"
+            "staff": "[data-cy=\"tab Staff 0dce9ea5-3c0b-4017-984d-7c3e07e1d8ad 4d0bcb94-bb0d-4179-a325-be1cf7f92399\"]",
+            "reports": "[data-cy=\"tab Reports 87bfbf9a-589d-4317-9e5d-da4c0f8787b1 4d0bcb94-bb0d-4179-a325-be1cf7f92399\"]"
          }
       }
    },
