@@ -414,7 +414,7 @@
                                     "reports": {
                                        "button": {
                                           "close": "",
-                                          "dowloads": {
+                                          "downloads": {
                                              "one": "[data-cy=\"docx download Reports 98f89441-1ce2-4586-a139-845731ce08c8\"]",
                                              "twoA": "[data-cy=\"docx download Reports a0568c6b-e62b-4be0-8ab3-896e0f312409\"]",
                                              "twoB": "[data-cy=\"docx download Reports 4ed6e840-be3d-4096-b0fc-50eeca5d5d9d\"]",

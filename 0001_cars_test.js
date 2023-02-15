@@ -794,11 +794,11 @@ describe("Test Report:", () => {
 
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
-            .basicInfo.page.basicInfo.page.reports.button.dowloads.one
+            .basicInfo.page.basicInfo.page.reports.button.downloads.one
       ).find(".fa-file-word-o");
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
-            .basicInfo.page.basicInfo.page.reports.button.dowloads.one
+            .basicInfo.page.basicInfo.page.reports.button.downloads.one
       ).click({ force: true });
 
       // prepare for assertion
@@ -806,7 +806,7 @@ describe("Test Report:", () => {
       // assert
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
-            .basicInfo.page.basicInfo.page.reports.button.dowloads.one
+            .basicInfo.page.basicInfo.page.reports.button.downloads.one
       ).then((data) => {
          // cy.exec(`ls ${path.join("cypress", "downloads")}`).should((files) => {
          //    cy.log(files);
