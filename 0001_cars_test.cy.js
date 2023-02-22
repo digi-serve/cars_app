@@ -31,10 +31,6 @@ const importModule = () => {
    cy.request("POST", "/test/import", {
       file: `imports/${folderName}/test_import/module.json`,
    });
-
-   //fix file import
-   const commands = ["reset", "import-files"];
-   Common.RunSQL(cy, folderName, commands);
 };
 
 const openCars = () => {
