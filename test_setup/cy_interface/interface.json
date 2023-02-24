@@ -608,14 +608,14 @@
             "reports": {
                "button": {
                   "allReports": "[view_id=\"$toggle1\"]",
-                  "new": "[view_id=\"$button270\"]"
+                  "new": "button.webix_button.webix_img_btn"
                },
                "form": {
                   "new": {
                      "button": {
                         "joinData": "",
                         "cancel": "",
-                        "save": "[view_id=\"$button273\"]"
+                        "save": "button.webix_button.webix_img_btn"
                      },
                      "field": {
                         "reports" : "[view_id=\"$list67\"]",
