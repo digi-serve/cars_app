@@ -4777,7 +4777,7 @@
           },
           {
             "language_code": "th",
-            "label": "ความสัมพันธ์กับเด็ก"
+            "label": "ความสัมพันธ์"
           }
         ]
       },
@@ -6434,6 +6434,36 @@
                 {
                   "language_code": "th",
                   "text": "พ่อแม่บุญธรรม"
+                }
+              ]
+            },
+            {
+              "id": "Grandfather",
+              "text": "Grandfather",
+              "hex": "#4CAF50",
+              "translations": [
+                {
+                  "language_code": "en",
+                  "text": "Grandfather"
+                },
+                {
+                  "language_code": "th",
+                  "text": "ปู่, ตา"
+                }
+              ]
+            },
+            {
+              "id": "Grandmother",
+              "text": "Grandmother",
+              "hex": "#8BC34A",
+              "translations": [
+                {
+                  "language_code": "en",
+                  "text": "Grandmother"
+                },
+                {
+                  "language_code": "th",
+                  "text": "ย่า, ยาย"
                 }
               ]
             },
