@@ -119,7 +119,7 @@ beforeEach(() => {
 describe("Test Child:", () => {
    const childrenIndex = 0;
    const child = example.children[childrenIndex];
-   it.only("Test Adding New Child", () => {
+   it("Test Adding New Child", () => {
       //arrange
       const photoPath = path.join(
          "..",
