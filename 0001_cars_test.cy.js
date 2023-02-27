@@ -679,7 +679,7 @@ describe("Test Child:", () => {
             .otherDetails
       )
          .scrollIntoView()
-         .should("contain", "healthTest");
+         .should("have.value", "healthTest");
       cy.get(
          '[data-cy="menu-item Prelim Health Exam d0e4162b-fd98-41aa-9ef4-a409f10e14e4 00c4e9d1-aded-455f-a0ec-56dec6f048e2"]'
       ).click();
