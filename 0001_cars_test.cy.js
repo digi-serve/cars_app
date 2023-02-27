@@ -31,10 +31,6 @@ const importModule = () => {
    cy.request("POST", "/test/import", {
       file: `imports/${folderName}/test_import/module.json`,
    });
-
-   //fix file import
-   const commands = ["reset", "import-files"];
-   Common.RunSQL(cy, folderName, commands);
 };
 
 const openCars = () => {
@@ -127,7 +123,7 @@ describe("Test Child:", () => {
       //arrange
       const photoPath = path.join(
          "..",
-         "integration",
+         "e2e",
          `${folderName}`,
          "test_example",
          "images",
@@ -683,7 +679,7 @@ describe("Test Child:", () => {
             .otherDetails
       )
          .scrollIntoView()
-         .should("contain", "healthTest");
+         .should("have.value", "healthTest");
       cy.get(
          '[data-cy="menu-item Prelim Health Exam d0e4162b-fd98-41aa-9ef4-a409f10e14e4 00c4e9d1-aded-455f-a0ec-56dec6f048e2"]'
       ).click();
@@ -794,11 +790,11 @@ describe("Test Report:", () => {
 
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
-            .basicInfo.page.basicInfo.page.reports.button.dowloads.one
+            .basicInfo.page.basicInfo.page.reports.button.downloads.one
       ).find(".fa-file-word-o");
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
-            .basicInfo.page.basicInfo.page.reports.button.dowloads.one
+            .basicInfo.page.basicInfo.page.reports.button.downloads.one
       ).click({ force: true });
 
       // prepare for assertion
@@ -806,7 +802,7 @@ describe("Test Report:", () => {
       // assert
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
-            .basicInfo.page.basicInfo.page.reports.button.dowloads.one
+            .basicInfo.page.basicInfo.page.reports.button.downloads.one
       ).then((data) => {
          // cy.exec(`ls ${path.join("cypress", "downloads")}`).should((files) => {
          //    cy.log(files);

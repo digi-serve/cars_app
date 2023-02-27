@@ -172,7 +172,7 @@ describe("Test Social Worker Note:", () => {
                .socialWork.page.notes.columns[1]
          )
          .find(".webix_row_select")
-         .should((data) => {
+         .then((data) => {
             cy.log(data);
          });
       cy.get(
