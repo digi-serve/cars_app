@@ -778,6 +778,418 @@ describe("Test Child:", () => {
    });
 });
 
+describe("Test dataFilter Widget:", () => {
+   const childrenIndexOne = 1;
+   const childrenIndexTwo = 2;
+   const childOne = example.children[childrenIndexOne];
+   const childTwo = example.children[childrenIndexTwo];
+
+   it("Test Adding More Children", () => {
+      //arrange
+      const photoPathOne = path.join(
+         "..",
+         "e2e",
+         `${folderName}`,
+         "test_example",
+         "images",
+         childOne.profilePhoto
+      );
+      const fileExtensionOne = childOne.profilePhoto.match(/(.+)\.(.+)$/)[2];
+
+      //arrange
+      const photoPathTwo = path.join(
+         "..",
+         "e2e",
+         `${folderName}`,
+         "test_example",
+         "images",
+         childTwo.profilePhoto
+      );
+      const fileExtensionTwo = childTwo.profilePhoto.match(/(.+)\.(.+)$/)[2];
+
+      //act
+      Common.RunSQL(cy, folderName, ["init_db_for_adding_new_child.sql"]);
+      openCars();
+      cy.get(cyInterfaceCARS.tab.socialWorker).click();
+      cy.get(cyInterfaceCARS.page.socialWorker.tab.children).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.button.addChildren
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .no
+      )
+         .should("be.visible")
+         .click()
+         .type(childOne.no);
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .firstName
+      ).type(childOne.firstName);
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .lastName
+      ).type(childOne.lastName);
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .nickname
+      ).type(childOne.nickname);
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .profilePhoto
+      )
+         .invoke("attr", "data-uploader-id")
+         .then((uploader) => {
+            cy.fixture(photoPathOne).then((data) => {
+               const blob = Cypress.Blob.base64StringToBlob(
+                  data,
+                  `image/${fileExtensionOne}`
+               );
+               const file = new File([blob], photoPathOne, {
+                  type: `image/${fileExtensionOne}`,
+               });
+               cy.window().then((win) => {
+                  return win
+                     .$$(uploader)
+                     .addFile(file, file.size, fileExtensionOne);
+               });
+            });
+         });
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .birthday
+      ).type(childOne.birthday);
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .birthday
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .gender
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.option
+            .gender[0]
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .religion
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.option
+            .religion[1]
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .race
+      ).type(childOne.race);
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .nationality
+      ).type(childOne.nationality);
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .home
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.option
+            .home[0]
+      )
+         .should("be.visible")
+         .click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .typeReceived
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.option
+            .typeReceived[1]
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .timeReceivedfor
+      ).type(childOne.timeReceivedfor);
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .relatives
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.option
+            .relatives[0]
+      )
+         .should("be.visible")
+         .click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .relatives
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .carsProject
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.option
+            .project[0]
+      )
+         .should("be.visible")
+         .click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.button
+            .save
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.children.container
+      ).should("not.be.empty");
+
+      // Add Another Child
+      cy.visit("/"); // Refresh
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.button.addChildren
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .no
+      )
+         .should("be.visible")
+         .click()
+         .type(childTwo.no);
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .firstName
+      ).type(childTwo.firstName);
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .lastName
+      ).type(childTwo.lastName);
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .nickname
+      ).type(childTwo.nickname);
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .profilePhoto
+      )
+         .invoke("attr", "data-uploader-id")
+         .then((uploader) => {
+            cy.fixture(photoPathTwo).then((data) => {
+               const blob = Cypress.Blob.base64StringToBlob(
+                  data,
+                  `image/${fileExtensionTwo}`
+               );
+               const file = new File([blob], photoPathTwo, {
+                  type: `image/${fileExtensionTwo}`,
+               });
+               cy.window().then((win) => {
+                  return win
+                     .$$(uploader)
+                     .addFile(file, file.size, fileExtensionTwo);
+               });
+            });
+         });
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .birthday
+      ).type(childTwo.birthday);
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .birthday
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .gender
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.option
+            .gender[1]
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .religion
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.option
+            .religion[1]
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .race
+      ).type(childTwo.race);
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .nationality
+      ).type(childTwo.nationality);
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .home
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.option
+            .home[0]
+      )
+         .should("be.visible")
+         .click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .typeReceived
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.option
+            .typeReceived[1]
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .timeReceivedfor
+      ).type(childTwo.timeReceivedfor);
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .relatives
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.option
+            .relatives[0]
+      )
+         .should("be.visible")
+         .click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .relatives
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .carsProject
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.option
+            .project[0]
+      )
+         .should("be.visible")
+         .click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.button
+            .save
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.children.container
+      ).should("not.be.empty");
+   });
+   it("Test Add Filter", () => {
+      //act
+      Common.RunSQL(cy, folderName, ["init_db_for_data_filter_widget.sql"]);
+      openCars();
+      cy.get(
+         "[data-cy='ABViewDataFilter_aba0b86a-763b-46e2-9f1d-1cc4a9772fef filter button']"
+      )
+         .should("exist")
+         .click();
+      cy.get(
+         'div[class*="webix_view webix_control webix_el_button webix_primary"]'
+      )
+         .find(".webix_button")
+         .should("exist")
+         .contains("Add filter")
+         .click();
+      cy.get(".webix_inp_static").eq(0).should("be.visible").click();
+      cy.get('div[webix_l_id="First Name"]').contains("First Name").click();
+      cy.get(".webix_el_box")
+         .find("[type='text']")
+         .eq(5)
+         .should("exist")
+         .click()
+         .type("r");
+      cy.get(".webix_button").should("exist").contains("Apply").click();
+      cy.get(
+         'div[class*="webix_view webix_control webix_el_button webix_primary"]'
+      )
+         .find(".webix_button")
+         .should("exist")
+         .contains("Add filter")
+         .click();
+      cy.get(".webix_inp_static").eq(1).should("be.visible").click();
+      cy.get('div[webix_l_id="is_not_empty"]').contains("is not empty").click();
+      cy.get(".webix_button").should("exist").contains("Apply").click();
+      cy.get(
+         'div[class*="webix_view webix_control webix_el_button webix_primary"]'
+      )
+         .find(".webix_button")
+         .should("exist")
+         .contains("Add filter")
+         .click();
+      cy.get(".webix_inp_static").eq(0).should("be.visible").click();
+      cy.get('div[webix_l_id="No"]').contains("No").click();
+      cy.get(".webix_el_box")
+         .find("[type='text']")
+         .eq(5)
+         .should("exist")
+         .click()
+         .type(3);
+      cy.get(".webix_button").should("exist").contains("Apply").click();
+      cy.get(
+         'div[class*="webix_view webix_control webix_el_button webix_primary"]'
+      )
+         .find(".webix_button")
+         .eq(4)
+         .should("exist")
+         .contains("Save")
+         .click();
+      cy.get(
+         "[data-cy='ABViewDataFilter_aba0b86a-763b-46e2-9f1d-1cc4a9772fef filter button']"
+      )
+         .should("exist")
+         .click();
+      cy.get(".wxi-dots").eq(0).should("be.visible").click();
+      cy.get('div[webix_l_id="delete"]').contains("Delete").click();
+      cy.get(
+         'div[class*="webix_view webix_control webix_el_button webix_primary"]'
+      )
+         .find(".webix_button")
+         .eq(4)
+         .should("exist")
+         .contains("Save")
+         .click();
+   });
+   it("Test Add New Sort and Global Search", () => {
+      //act
+      Common.RunSQL(cy, folderName, ["init_db_for_data_filter_widget.sql"]);
+      openCars();
+      cy.get(
+         '[data-cy="ABViewDataFilter_aba0b86a-763b-46e2-9f1d-1cc4a9772fef sort button"]'
+      )
+         .should("exist")
+         .click();
+      cy.get(".webix_el_box")
+         .find("[type='combo']")
+         .eq(1)
+         .should("exist")
+         .click();
+      cy.get('div[webix_l_id="e7590312-43ba-45dc-9893-9793da7bb6aa"]')
+         .eq(6)
+         .should("exist")
+         .contains("Birthday")
+         .click();
+      cy.get(".webix_danger").eq(1).should("be.visible").click();
+      cy.get(".webix_segment_N").eq(0).should("be.visible").click();
+      cy.get(".webix_el_box")
+         .find("[type='combo']")
+         .eq(1)
+         .should("exist")
+         .click();
+      cy.get('div[webix_l_id="be5d06ef-1175-41c7-b284-494e731a5950"]')
+         .eq(2)
+         .should("exist")
+         .contains("Last Name")
+         .click();
+      cy.get(
+         '[data-cy="ABViewDataFilter_aba0b86a-763b-46e2-9f1d-1cc4a9772fef global search"]'
+      )
+         .should("be.visible")
+         .click()
+         .type("Britney");
+      cy.get(
+         '[data-cy="dataview container Children b3aa04d7-7528-40fb-b947-cef0c4dd52e9"]'
+      ).should("be.visible");
+   });
+});
+
 describe("Test Report:", () => {
    it("Export basic report", () => {
       //act
