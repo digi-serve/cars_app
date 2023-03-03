@@ -898,7 +898,7 @@ describe("Test dataFilter Widget:", () => {
 });
 
 describe("Test Report:", () => {
-   it.only("Export basic report", () => {
+   it("Export basic report", () => {
       //act
       Common.RunSQL(cy, folderName, ["init_db_default.sql"]);
       childVisit();
