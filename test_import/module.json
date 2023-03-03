@@ -2783,7 +2783,7 @@
           },
           {
             "language_code": "th",
-            "label": "ความสัมพันธ์"
+            "label": "ความสัมพันธ์กับเด็ก"
           }
         ]
       },
@@ -14782,36 +14782,6 @@
                 {
                   "language_code": "th",
                   "text": "พ่อแม่บุญธรรม"
-                }
-              ]
-            },
-            {
-              "id": "Grandfather",
-              "text": "Grandfather",
-              "hex": "#4CAF50",
-              "translations": [
-                {
-                  "language_code": "en",
-                  "text": "Grandfather"
-                },
-                {
-                  "language_code": "th",
-                  "text": "ปู่, ตา"
-                }
-              ]
-            },
-            {
-              "id": "Grandmother",
-              "text": "Grandmother",
-              "hex": "#8BC34A",
-              "translations": [
-                {
-                  "language_code": "en",
-                  "text": "Grandmother"
-                },
-                {
-                  "language_code": "th",
-                  "text": "ย่า, ยาย"
                 }
               ]
             },
@@ -41036,10 +41006,10 @@
         "icon": "clone",
         "name": "Add Children",
         "settings": {
-          "columns": 1,
+          "columns": "1",
           "type": "popup",
-          "removable": true,
-          "movable": true,
+          "removable": "true",
+          "movable": "true",
           "gravity": [
             "1"
           ],
@@ -41047,8 +41017,7 @@
           "popupHeight": "450",
           "pageWidth": "",
           "fixedPageWidth": "0",
-          "pageBackground": "ab-background-default",
-          "height": 0
+          "pageBackground": "ab-background-default"
         },
         "accessLevels": {
           "128ac31f-29b0-4848-aa22-48ca1f63bb4b": "2",
@@ -41068,15 +41037,14 @@
           "850f8a95-75f8-45a9-9251-078677cdfb1f"
         ],
         "position": {
-          "dx": 1,
-          "dy": 1
+          "dx": "1",
+          "dy": "1"
         },
-        "isRoot": false,
-        "myAppID": "45c62df9-ddd6-4744-84d6-50a2d549289d",
-        "pageIDs": []
+        "isRoot": "false",
+        "myAppID": "45c62df9-ddd6-4744-84d6-50a2d549289d"
       },
       "createdAt": "2020-10-07T03:02:11.000Z",
-      "updatedAt": "2023-03-01T03:53:14.000Z"
+      "updatedAt": "2022-06-24T09:00:45.000Z"
     },
     {
       "id": "850f8a95-75f8-45a9-9251-078677cdfb1f",
@@ -41089,16 +41057,16 @@
         "icon": "list-alt",
         "name": "Add Children.form",
         "settings": {
-          "columns": 1,
-          "labelWidth": 170,
+          "columns": "1",
+          "labelWidth": "170",
           "dataviewID": "39032bc8-38c7-4581-aaea-9fb4b5d3b111",
-          "showLabel": 1,
+          "showLabel": "1",
           "labelPosition": "left",
-          "height": 200,
-          "clearOnLoad": 1,
-          "removable": true,
-          "movable": true,
-          "clearOnSave": 0,
+          "height": "200",
+          "clearOnLoad": "1",
+          "removable": "true",
+          "movable": "true",
+          "clearOnSave": "0",
           "submitRules": [
             {
               "selectedAction": "ABViewRuleActionFormSubmitRuleClosePopup",
@@ -41221,7 +41189,6 @@
             }
           ]
         },
-        "accessLevels": {},
         "translations": [
           {
             "language_code": "en",
@@ -41251,15 +41218,15 @@
           "2c545645-6c87-4662-b017-437683185b41"
         ],
         "position": {
-          "x": 0,
-          "y": 1,
-          "dx": 1,
-          "dy": 1
+          "x": "0",
+          "y": "0",
+          "dx": "1",
+          "dy": "1"
         },
-        "isRoot": false
+        "isRoot": "false"
       },
       "createdAt": "2020-10-07T03:02:11.000Z",
-      "updatedAt": "2023-03-01T03:48:06.000Z"
+      "updatedAt": "2022-06-24T09:00:45.000Z"
     },
     {
       "id": "8f0f4399-a636-47c6-8e6e-6f5837556405",
@@ -103731,7 +103698,7 @@
           "17d7c444-ebb9-4c19-bdf3-61e2f44a2b81",
           "b3aa04d7-7528-40fb-b947-cef0c4dd52e9",
           "90d779a7-f886-42b0-8761-acd5d91bb9cf",
-          "aba0b86a-763b-46e2-9f1d-1cc4a9772fef"
+          "5a8500be-fa1a-45ac-b7ac-8354f782dfa1"
         ],
         "position": {
           "dx": 1,
@@ -103740,7 +103707,7 @@
         "isRoot": false
       },
       "createdAt": "2020-10-07T03:02:11.000Z",
-      "updatedAt": "2023-03-01T04:07:10.000Z"
+      "updatedAt": "2023-03-03T07:05:17.000Z"
     },
     {
       "id": "17d7c444-ebb9-4c19-bdf3-61e2f44a2b81",
@@ -103834,7 +103801,7 @@
         "isRoot": false
       },
       "createdAt": "2020-10-07T03:02:11.000Z",
-      "updatedAt": "2023-03-01T04:02:04.000Z"
+      "updatedAt": "2023-03-03T07:05:17.000Z"
     },
     {
       "id": "b3aa04d7-7528-40fb-b947-cef0c4dd52e9",
@@ -103887,7 +103854,7 @@
         "isRoot": false
       },
       "createdAt": "2020-10-07T03:02:11.000Z",
-      "updatedAt": "2023-03-01T04:02:04.000Z"
+      "updatedAt": "2023-03-03T07:05:17.000Z"
     },
     {
       "id": "6e922466-231d-47d8-b4b6-58841b6dabd2",
@@ -103969,14 +103936,14 @@
         "isRoot": false
       },
       "createdAt": "2021-07-12T09:23:39.000Z",
-      "updatedAt": "2023-03-01T04:02:04.000Z"
+      "updatedAt": "2023-03-03T07:05:17.000Z"
     },
     {
-      "id": "aba0b86a-763b-46e2-9f1d-1cc4a9772fef",
+      "id": "5a8500be-fa1a-45ac-b7ac-8354f782dfa1",
       "name": "Children.data-filter",
       "type": "view",
       "json": {
-        "id": "aba0b86a-763b-46e2-9f1d-1cc4a9772fef",
+        "id": "5a8500be-fa1a-45ac-b7ac-8354f782dfa1",
         "type": "view",
         "key": "data-filter",
         "icon": "filter",
@@ -104008,8 +103975,8 @@
         },
         "isRoot": false
       },
-      "createdAt": "2023-03-01T04:02:00.000Z",
-      "updatedAt": "2023-03-01T04:03:10.000Z"
+      "createdAt": "2023-03-03T07:05:13.000Z",
+      "updatedAt": "2023-03-03T07:05:26.000Z"
     },
     {
       "id": "d86538b7-d394-4d9c-b7b9-8cf717d304e7",
@@ -108807,8 +108774,8 @@
   "roles": [
     {
       "uuid": "128ac31f-29b0-4848-aa22-48ca1f63bb4b",
-      "created_at": "2023-03-01T03:40:04.000Z",
-      "updated_at": "2023-03-01T03:40:04.000Z",
+      "created_at": "2023-03-03T07:03:33.000Z",
+      "updated_at": "2023-03-03T07:03:33.000Z",
       "properties": null,
       "translations": [
         {
@@ -108823,8 +108790,8 @@
       "scopes": [
         {
           "uuid": "546509fe-26fc-4dbe-8346-5748a96dc6ca",
-          "created_at": "2023-03-01T03:40:04.000Z",
-          "updated_at": "2023-03-01T03:40:04.000Z",
+          "created_at": "2023-03-03T07:03:33.000Z",
+          "updated_at": "2023-03-03T07:03:33.000Z",
           "properties": null,
           "translations": [
             {
@@ -108884,8 +108851,8 @@
     },
     {
       "uuid": "fe92a821-9ac5-41b6-b564-173ce32ad61d",
-      "created_at": "2023-03-01T03:40:04.000Z",
-      "updated_at": "2023-03-01T03:40:04.000Z",
+      "created_at": "2023-03-03T07:03:33.000Z",
+      "updated_at": "2023-03-03T07:03:33.000Z",
       "properties": null,
       "translations": [
         {
