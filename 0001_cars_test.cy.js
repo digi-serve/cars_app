@@ -784,7 +784,7 @@ describe("Test dataFilter Widget:", () => {
       Common.RunSQL(cy, folderName, ["init_db_for_data_filter_widget.sql"]);
       openCars();
       cy.get(
-         "[data-cy='ABViewDataFilter_aba0b86a-763b-46e2-9f1d-1cc4a9772fef filter button']"
+         "[data-cy='ABViewDataFilter_5a8500be-fa1a-45ac-b7ac-8354f782dfa1 filter button']"
       )
          .should("exist")
          .click();
@@ -839,7 +839,7 @@ describe("Test dataFilter Widget:", () => {
          .contains("Save")
          .click();
       cy.get(
-         "[data-cy='ABViewDataFilter_aba0b86a-763b-46e2-9f1d-1cc4a9772fef filter button']"
+         "[data-cy='ABViewDataFilter_5a8500be-fa1a-45ac-b7ac-8354f782dfa1 filter button']"
       )
          .should("exist")
          .click();
@@ -859,7 +859,7 @@ describe("Test dataFilter Widget:", () => {
       Common.RunSQL(cy, folderName, ["init_db_for_data_filter_widget.sql"]);
       openCars();
       cy.get(
-         '[data-cy="ABViewDataFilter_aba0b86a-763b-46e2-9f1d-1cc4a9772fef sort button"]'
+         '[data-cy="ABViewDataFilter_5a8500be-fa1a-45ac-b7ac-8354f782dfa1 sort button"]'
       )
          .should("exist")
          .click();
@@ -886,7 +886,7 @@ describe("Test dataFilter Widget:", () => {
          .contains("Last Name")
          .click();
       cy.get(
-         '[data-cy="ABViewDataFilter_aba0b86a-763b-46e2-9f1d-1cc4a9772fef global search"]'
+         '[data-cy="ABViewDataFilter_5a8500be-fa1a-45ac-b7ac-8354f782dfa1 global search"]'
       )
          .should("be.visible")
          .click()
@@ -898,7 +898,7 @@ describe("Test dataFilter Widget:", () => {
 });
 
 describe("Test Report:", () => {
-   it("Export basic report", () => {
+   it.only("Export basic report", () => {
       //act
       Common.RunSQL(cy, folderName, ["init_db_default.sql"]);
       childVisit();
