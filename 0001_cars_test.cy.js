@@ -778,6 +778,125 @@ describe("Test Child:", () => {
    });
 });
 
+describe("Test dataFilter Widget:", () => {
+   it("Test Add Filter", () => {
+      //act
+      Common.RunSQL(cy, folderName, ["init_db_for_data_filter_widget.sql"]);
+      openCars();
+      cy.get(
+         "[data-cy='ABViewDataFilter_a4537949-5dd8-4596-9b35-3c854751242d filter button']"
+      )
+         .should("exist")
+         .click();
+      cy.get(
+         'div[class*="webix_view webix_control webix_el_button webix_primary"]'
+      )
+         .find(".webix_button")
+         .should("exist")
+         .contains("Add filter")
+         .click();
+      cy.get(".webix_inp_static").eq(0).should("be.visible").click();
+      cy.get('div[webix_l_id="First Name"]').contains("First Name").click();
+      cy.get(".webix_el_box")
+         .find("[type='text']")
+         .eq(5)
+         .should("exist")
+         .click()
+         .type("r");
+      cy.get(".webix_button").should("exist").contains("Apply").click();
+      cy.get(
+         'div[class*="webix_view webix_control webix_el_button webix_primary"]'
+      )
+         .find(".webix_button")
+         .should("exist")
+         .contains("Add filter")
+         .click();
+      cy.get(".webix_inp_static").eq(1).should("be.visible").click();
+      cy.get('div[webix_l_id="is_not_empty"]').contains("is not empty").click();
+      cy.get(".webix_button").should("exist").contains("Apply").click();
+      cy.get(
+         'div[class*="webix_view webix_control webix_el_button webix_primary"]'
+      )
+         .find(".webix_button")
+         .should("exist")
+         .contains("Add filter")
+         .click();
+      cy.get(".webix_inp_static").eq(0).should("be.visible").click();
+      cy.get('div[webix_l_id="No"]').contains("No").click();
+      cy.get(".webix_el_box")
+         .find("[type='text']")
+         .eq(5)
+         .should("exist")
+         .click()
+         .type(3);
+      cy.get(".webix_button").should("exist").contains("Apply").click();
+      cy.get(
+         'div[class*="webix_view webix_control webix_el_button webix_primary"]'
+      )
+         .find(".webix_button")
+         .eq(4)
+         .should("exist")
+         .contains("Save")
+         .click();
+      cy.get(
+         "[data-cy='ABViewDataFilter_a4537949-5dd8-4596-9b35-3c854751242d filter button']"
+      )
+         .should("exist")
+         .click();
+      cy.get(".wxi-dots").eq(0).should("be.visible").click();
+      cy.get('div[webix_l_id="delete"]').contains("Delete").click();
+      cy.get(
+         'div[class*="webix_view webix_control webix_el_button webix_primary"]'
+      )
+         .find(".webix_button")
+         .eq(4)
+         .should("exist")
+         .contains("Save")
+         .click();
+   });
+   it("Test Add New Sort and Global Search", () => {
+      //act
+      Common.RunSQL(cy, folderName, ["init_db_for_data_filter_widget.sql"]);
+      openCars();
+      cy.get(
+         '[data-cy="ABViewDataFilter_a4537949-5dd8-4596-9b35-3c854751242d sort button"]'
+      )
+         .should("exist")
+         .click();
+      cy.get(".webix_el_box")
+         .find("[type='combo']")
+         .eq(1)
+         .should("exist")
+         .click();
+      cy.get('div[webix_l_id="e7590312-43ba-45dc-9893-9793da7bb6aa"]')
+         .eq(6)
+         .should("exist")
+         .contains("Birthday")
+         .click();
+      cy.get(".webix_danger").eq(1).should("be.visible").click();
+      cy.get(".webix_segment_N").eq(0).should("be.visible").click();
+      cy.get(".webix_el_box")
+         .find("[type='combo']")
+         .eq(1)
+         .should("exist")
+         .click();
+      cy.get('div[webix_l_id="be5d06ef-1175-41c7-b284-494e731a5950"]')
+         .eq(2)
+         .should("exist")
+         .contains("Last Name")
+         .click();
+      cy.get(
+         '[data-cy="ABViewDataFilter_a4537949-5dd8-4596-9b35-3c854751242d global search"]'
+      )
+         .should("be.visible")
+         .click()
+         .type("Britney");
+      cy.get(
+         '[data-cy="dataview container Children b3aa04d7-7528-40fb-b947-cef0c4dd52e9"]'
+      ).should("be.visible");
+   });
+});
+
 describe("Test Report:", () => {
    it("Export basic report", () => {
       //act
