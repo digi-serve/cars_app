@@ -439,6 +439,7 @@ describe("Test Child:", () => {
       childVisit();
       // cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.tab.basicInfo).click();
       // cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.basicInfo.tab.basicInfo).click();
+      childVisit(); // Reload Again
 
       // assert
       cy.get(
@@ -564,6 +565,8 @@ describe("Test Child:", () => {
       childVisit(childrenIndex);
       // cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.tab.basicInfo).click();
       // cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.basicInfo.tab.basicInfo).click();
+      childVisit(); // Reload Again
+
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .basicInfo.page.basicInfo.button.editBasicInfo
@@ -640,12 +643,6 @@ describe("Test Child:", () => {
          .click({ force: true });
 
       cy.get(".webix_spin").should("not.be.visible");
-
-      cy.get(".webix_button")
-         .contains("New data available. Click to reload.")
-         .click({ multiple: true }); //Pop-up not close
-      //("[data-cy=\"\"]")
-      // prelim health exam
       childVisit();
       cy.get(cyInterfaceChild.tab.medical).click({ force: true });
       cy.get(
@@ -693,13 +690,6 @@ describe("Test Child:", () => {
          .scrollIntoView()
          .click();
       cy.get(".webix_spin").should("not.be.visible");
-      cy.get(".webix_warn")
-         .find(".webix_button")
-         .should("be.visible")
-         .contains("New data available. Click to reload.")
-         .click({ multiple: true, force: true });
-      cy.get(".webix_spin").should("not.be.visible");
-
       // cy.get('[data-cy^="string Reason Received"]')
       //    .scrollIntoView()
       //    .contains("test");
@@ -796,10 +786,12 @@ describe("Test dataFilter Widget:", () => {
          .contains("Add filter")
          .click();
       cy.get(".webix_inp_static").eq(0).should("be.visible").click();
-      cy.get('div[webix_l_id="First Name"]').contains("First Name").click();
-      cy.get(".webix_el_box")
+      cy.get('div[webix_l_id="ec8dd00f-f229-49e0-b898-12f0dd40cdc3"]')
+         .contains("First Name")
+         .click();
+      cy.get(".webix_el_text")
          .find("[type='text']")
-         .eq(5)
+         .eq(2)
          .should("exist")
          .click()
          .type("r");
@@ -822,10 +814,12 @@ describe("Test dataFilter Widget:", () => {
          .contains("Add filter")
          .click();
       cy.get(".webix_inp_static").eq(0).should("be.visible").click();
-      cy.get('div[webix_l_id="No"]').contains("No").click();
-      cy.get(".webix_el_box")
+      cy.get('div[webix_l_id="c59bf7d7-5f46-43d1-8799-58b8adb5b4f5"]')
+         .contains("No")
+         .click();
+      cy.get(".webix_el_text")
          .find("[type='text']")
-         .eq(5)
+         .eq(2)
          .should("exist")
          .click()
          .type(3);
@@ -1654,7 +1648,7 @@ describe("Test Report Manager:", () => {
             .reportName
       )
          .find("[type='text']")
-         .should("be.visible")
+         .should("exist")
          .clear()
          .type("Latest Report");
       cy.get(

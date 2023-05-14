@@ -543,7 +543,7 @@ describe("Test add-new forms:", () => {
    });
 
    // Checking the label of Initial Asset log
-   it.skip("Test the label 'No Item Reported' of Initial Asset log", () => {
+   it("Test the label 'No Item Reported' of Initial Asset log", () => {
       cy.get(cyInterfaceCHILD.page.basicInfo.tab.admitInfo)
          .should("exist")
          .click();
@@ -743,8 +743,14 @@ describe("Test add-new forms:", () => {
       )
          .scrollIntoView()
          .should("exist")
-         .type("202", { force: true });
-      cy.get('[data-cy="button save bf3dfa10-80a5-455a-869d-c981daa2cdb3"]')
+         .type("202", { force: true })
+         .should("have.value", "202");
+      cy.get(
+         '[data-cy="button save bf3dfa10-80a5-455a-869d-c981daa2cdb3"] .webix_spin'
+      ).should("not.exist");
+      cy.get(
+         cyInterfaceCHILD.page.education.page.schoolRecords.form.add.button.save
+      )
          .scrollIntoView()
          .should("exist")
          .contains("Save")
@@ -769,20 +775,28 @@ describe("Test add-new forms:", () => {
          .should("be.visible")
          .contains("202");
       cy.get(".wxi-pencil").should("be.visible").click({ force: true });
-      cy.get('div[view_id*="ABViewForm_3bf905ea"]').should("be.visible");
+      cy.get(".webix_spin").should("not.be.visible");
+      cy.get('div[view_id*="ABViewForm_3bf905ea"]').should("exist");
       cy.get(
          '[data-cy="string Class Year 7e4a4937-f4a4-4ad7-95ae-06cb80c798dc 3bf905ea-5a83-4412-a89e-5991325ae3a2"]'
       )
          .should("exist")
          .click({ force: true })
-         .type("3");
+         .type("3", { force: true })
+         .should("have.value", "2563");
       cy.get(
          '[data-cy="string Year 3508a12a-ab10-4a86-9b8a-cabfafd354aa 3bf905ea-5a83-4412-a89e-5991325ae3a2"]'
       )
          .scrollIntoView()
          .should("exist")
-         .type("0");
-      cy.get('[data-cy="button save 3bf905ea-5a83-4412-a89e-5991325ae3a2"]')
+         .type("0", { force: true })
+         .should("have.value", "2020");
+      cy.get(
+         '[data-cy="button save bf3dfa10-80a5-455a-869d-c981daa2cdb3"] .webix_spin'
+      ).should("not.exist");
+      cy.get(
+         cyInterfaceCHILD.page.education.page.schoolRecords.form.add.button.save
+      )
          .scrollIntoView()
          .should("exist")
          .contains("Save")
@@ -861,33 +875,34 @@ describe("Test add-new forms:", () => {
          // eslint-disable-next-line prettier/prettier
          .should("not.be.visible");
       cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.fields[field])
-         .scrollIntoView()
          .should("exist")
          .type("Please work", { force: true })
          .clear()
          .type(text);
+      cy.get(cyInterfaceCHILD.page.logs.page.homeVisit.form.add.fields.address)
+         .should("exist")
+         .click();
+      cy.get(cyInterfaceCHILD.page.logs.page.homeVisit.form.add.option.address)
+         .should("exist")
+         .click();
+      cy.get(cyInterfaceCHILD.page.logs.page.homeVisit.form.add.fields.contact)
+         .should("exist")
+         .click();
+      cy.get(cyInterfaceCHILD.page.logs.page.homeVisit.form.add.option.contact)
+         .should("exist")
+         .click();
+
       // Scroll to see and type the URL location on 'Site URL Field'
-      cy.get(
-         '[data-cy="string Site URL 72ca73ce-9e1b-4f18-8076-face07e38f95 a0658515-5b59-48de-9176-d0822a97fdc9"]'
-      )
+      cy.get(cyInterfaceCHILD.page.logs.page.homeVisit.form.add.fields.siteUrl)
          .scrollIntoView()
          .should("exist")
          .type("www.google.com");
+
       cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.button.save)
          // .scrollIntoView()
          .should("exist")
          .scrollIntoView()
          .click();
-      cy.get(
-         cyInterfaceCHILD.page[parent].page[child].form.add.fields[field]
-      ).should("not.be.visible"); // wait until popup goes away
-      cy.get(
-         '[data-cy="string Site URL 72ca73ce-9e1b-4f18-8076-face07e38f95 a0658515-5b59-48de-9176-d0822a97fdc9"]'
-      ).should("not.be.visible"); // wait until popup goes away
-      cy.get(".webix_warn")
-         .find(".webix_button")
-         .filter(":visible")
-         .click({ multiple: true, force: true });
       cy.get(cyInterfaceCHILD.page[parent].page[child].grid).contains(text);
 
       // Scroll to see the 'Site URL Field'

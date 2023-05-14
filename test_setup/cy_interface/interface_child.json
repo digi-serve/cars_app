@@ -275,12 +275,17 @@
                         "no": "[data-cy=\"string Visit No dc788ca6-65ef-4195-a4f5-cb1b23d745f7 a0658515-5b59-48de-9176-d0822a97fdc9\"]",
                         "address": "[data-cy=\"connectObject Address dac28c37-4c4e-4399-8b4e-d2062fd83864 a0658515-5b59-48de-9176-d0822a97fdc9\"]",
                         "contact": "[data-cy=\"connectObject Contact 1eac5f24-edce-4b9e-9d5b-008b680eb6b9 a0658515-5b59-48de-9176-d0822a97fdc9\"]",
-                        "map": "[data-cy=\"string\"]",
+                        "map": "[data-cy=\"fieldcustom image Map 61c4dcfc-64ac-43b0-9fa1-36bcfb949872 a0658515-5b59-48de-9176-d0822a97fdc9\"]",
+                        "siteUrl": "[data-cy=\"string Site URL 72ca73ce-9e1b-4f18-8076-face07e38f95 a0658515-5b59-48de-9176-d0822a97fdc9\"]",
                         "familyMembers": "[data-cy=\"connectObject Family Members becaf60e-3c66-4f2b-9057-d1ed0521d144 a0658515-5b59-48de-9176-d0822a97fdc9\"]",
                         "visitDate": "[data-cy=\"date Visit Date 2fde7974-f8c2-4bfa-87b0-620af3d7a007 a0658515-5b59-48de-9176-d0822a97fdc9\"]"
                      },
                      "button": {
                         "save": "[data-cy=\"button save a0658515-5b59-48de-9176-d0822a97fdc9\"]"
+                     },
+                     "option": {
+                        "address": "[data-cy=\"connectObject options cb46b6b4-dc25-4915-80f7-c1febf26da4a dac28c37-4c4e-4399-8b4e-d2062fd83864 a0658515-5b59-48de-9176-d0822a97fdc9\"]",
+                        "contact": "[data-cy=\"connectObject options c58fc0e3-d3a7-4616-a701-ded0536f8b77 1eac5f24-edce-4b9e-9d5b-008b680eb6b9 a0658515-5b59-48de-9176-d0822a97fdc9\"]"
                      }
                   }
                },
