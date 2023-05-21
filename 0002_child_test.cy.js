@@ -1052,20 +1052,37 @@ describe("Test add-new forms:", () => {
       saveAndCheck("medical", "vaccination", "otherVacc");
    });
    it("Test healthInfo", () => {
-      saveAndCheck("medical", "healthInfo", "injections");
-      // cy.get(".webix_warn")
-      //    .find(".webix_button")
-      //    .first() //Two buttons are in the dom need to get the first
-      //    .should("be.visible")
-      //    .click();
-      // cy.window().then((win) => {
-      //    return win
-      //       .$$("ABViewGrid_cc56027a-81f0-4da0-8d56-eb7c91bee1a5_datatable")
-      //       .scrollTo(1200, 0);
-      // });
-      // cy.get(cyInterfaceCHILD.page.medical.page.healthInfo.grid)
-      //    .contains(text)
-      // checkForm("medical", "healthInfo", "injections");
+      cy.get(cyInterfaceCHILD.tab.medical).should("be.visible").click();
+      cy.get(cyInterfaceCHILD.page.medical.tab.healthInfo)
+         .should("exist")
+         .click();
+      cy.get(cyInterfaceCHILD.page.medical.page.healthInfo.button.add)
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCHILD.page.medical.page.healthInfo.form.add.fields
+            .injections
+      )
+         .should("exist")
+         .type(text, { force: true })
+         .clear()
+         .type(text, { force: true }); // Type Again
+      cy.get(cyInterfaceCHILD.page.medical.page.healthInfo.form.add.button.save)
+         .scrollIntoView()
+         .should("exist")
+         .click({ force: true });
+      cy.get(cyInterfaceCHILD.page.medical.page.healthInfo.grid)
+         .should("be.visible")
+         .contains(text);
+      cy.window().then((win) => {
+         return win
+            .$$("ABViewGrid_cc56027a-81f0-4da0-8d56-eb7c91bee1a5_datatable")
+            .scrollTo(1600, 0);
+      });
+      cy.get(cyInterfaceCHILD.page.medical.page.healthInfo.grid)
+         .should("be.visible")
+         .and("contain", "A +")
+         .and("contain", "Negative");
    });
    it("Test medicalRecord", () => {
       saveAndCheck("medical", "medicalRecord", "symptoms");

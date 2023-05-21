@@ -463,8 +463,22 @@
                         "save": "[data-cy=\"button save 6cf6b40c-dd14-4de1-8d60-910de8f52924\"]"
                      },
                      "fields": {
-                        "date": "[data-cy=\"date Date 4a3a9940-8157-4a79-bd99-d45e15a36a5c e2e2a548-0473-4bbe-8840-f86c09fed2c3\"]",
-                        "injections": "[data-cy=\"LongText Injections f521e239-4448-4ded-a6a8-47b8b51090fd 6cf6b40c-dd14-4de1-8d60-910de8f52924\"]"
+                        "bloodGroup": "[data-cy=\"list Blood Group f7430423-1372-4332-8fcc-52793f20046b 6cf6b40c-dd14-4de1-8d60-910de8f52924\"]",
+                        "examDate": "[data-cy=\"date Date 9938a840-01b6-4f59-bd7c-0bd91279e906 6cf6b40c-dd14-4de1-8d60-910de8f52924\"]",
+                        "hivTestResult": "[data-cy=\"list HIV Test Result bc4cc2cb-5ea5-4573-8897-d4e46fe4b224 6cf6b40c-dd14-4de1-8d60-910de8f52924\"]",
+                        "injections": "[data-cy=\"LongText Injections f521e239-4448-4ded-a6a8-47b8b51090fd 6cf6b40c-dd14-4de1-8d60-910de8f52924\"]",
+                        "staff": "[data-cy=\"connectObject Recipient Staff c6b5b995-e1ac-4771-8329-b405ca746211 6cf6b40c-dd14-4de1-8d60-910de8f52924\"]"
+                     },
+                     "option": {
+                        "bloodGroup": [
+                           "[data-cy=\"list options 1554886633058 f7430423-1372-4332-8fcc-52793f20046b 6cf6b40c-dd14-4de1-8d60-910de8f52924\"]"
+                        ],
+                        "hivTestResult": [
+                           "[data-cy=\"list options 1507774763717 bc4cc2cb-5ea5-4573-8897-d4e46fe4b224 6cf6b40c-dd14-4de1-8d60-910de8f52924\"]"
+                        ],
+                        "staff": [
+                           "[data-cy=\"connectObject options e746f80b-3fbe-4aeb-9fdf-2707740eeaca c6b5b995-e1ac-4771-8329-b405ca746211 6cf6b40c-dd14-4de1-8d60-910de8f52924\"]"
+                        ]
                      }
                   }
                },
