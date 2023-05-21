@@ -119,6 +119,7 @@ beforeEach(() => {
 describe("Test Child:", () => {
    const childrenIndex = 0;
    const child = example.children[childrenIndex];
+
    it("Test Adding New Child", () => {
       //arrange
       const photoPath = path.join(
@@ -134,6 +135,7 @@ describe("Test Child:", () => {
       //act
       Common.RunSQL(cy, folderName, ["init_db_for_adding_new_child.sql"]);
       openCars();
+
       cy.get(cyInterfaceCARS.tab.socialWorker).click();
       cy.get(cyInterfaceCARS.page.socialWorker.tab.children).click();
       cy.get(
@@ -158,7 +160,6 @@ describe("Test Child:", () => {
          cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
             .nickname
       ).type(child.nickname);
-
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
             .profilePhoto
@@ -180,9 +181,7 @@ describe("Test Child:", () => {
                });
             });
          });
-
       // cy.wait(500);
-
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
             .birthday
@@ -257,7 +256,7 @@ describe("Test Child:", () => {
       ).click();
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.option
-            .project[0]
+            .carsProject[0]
       )
          .should("be.visible")
          .click();
@@ -265,13 +264,11 @@ describe("Test Child:", () => {
          cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.button
             .save
       ).click();
-
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.children.container
       ).should("not.be.empty");
 
-      //assert
-      //assert in the Children container
+      // assert in the Children container
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.children.container
       ).should((data) => {
@@ -307,29 +304,26 @@ describe("Test Child:", () => {
       // perhaps these can be checked in the sql?
       // admit info generated
       // prelim health exam generated
-      // physcial details generated
+      // physical details generated
       // vaccination generated (and connected)
       // growth log generated (and connected)
       // asset log generated (and connected)
    });
 
    it("Test Adding Child on top of existing", () => {
-      //
       // When staff wanted to add new orphan;
       // After they clicked save, the new data replaced the recent data.
-      //
+
       //act
       Common.RunSQL(cy, folderName, [
          "init_db_for_viewing_a_child_profile.sql",
       ]);
-
       childVisit();
 
       // point the cursor at the existing child: this should be cleared later
       cy.get(
          '[data-cy^="menu-item Social Worker 5fea4e7b-f6ee-42da-a702-60d6d6c48f71"]'
       ).click();
-
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.button.addChildren
       ).click();
@@ -352,9 +346,7 @@ describe("Test Child:", () => {
          cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
             .nickname
       ).type("Hank Hill");
-
       // cy.wait(500);
-
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
             .birthday
@@ -367,6 +359,16 @@ describe("Test Child:", () => {
          cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
             .gender
       ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
+            .relatives
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.option
+            .relatives[0]
+      )
+         .should("be.visible")
+         .click();
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.field
             .home
@@ -383,20 +385,16 @@ describe("Test Child:", () => {
       ).click();
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.option
-            .project[0]
+            .carsProject[0]
       )
          .should("be.visible")
          .click();
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.button
             .save
-      ).click();
-
-      cy.get(
-         cyInterfaceCARS.page.socialWorker.page.children.form.addChildren.button
-            .save
-      ).should("not.be.visible");
-
+      )
+         .should("be.visible")
+         .click();
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.children.container
       )
@@ -431,18 +429,17 @@ describe("Test Child:", () => {
    });
 
    it("Test Viewing A Child's Profile", () => {
-      // act
+      //act
       Common.RunSQL(cy, folderName, [
          "init_db_for_viewing_a_child_profile.sql",
       ]);
-
-      // prepare for assertion
       childVisit();
+
       // cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.tab.basicInfo).click();
       // cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.basicInfo.tab.basicInfo).click();
       childVisit(); // Reload Again
 
-      // assert
+      //assert
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .basicInfo.page.basicInfo.field.timeReceivedfor
@@ -564,6 +561,7 @@ describe("Test Child:", () => {
       //act
       Common.RunSQL(cy, folderName, ["init_db_for_editing_a_child.sql"]);
       childVisit(childrenIndex);
+
       // cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.tab.basicInfo).click();
       // cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.basicInfo.tab.basicInfo).click();
       childVisit(); // Reload Again
@@ -617,7 +615,11 @@ describe("Test Child:", () => {
       ).click();
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
-            .basicInfo.page.basicInfo.form.editBasicInfo.field.address
+            .basicInfo.page.basicInfo.form.editBasicInfo.field.relatives
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .basicInfo.page.basicInfo.form.editBasicInfo.option.relatives[0]
       ).click();
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
@@ -646,8 +648,7 @@ describe("Test Child:", () => {
       cy.get('[data-cy^="button save"]')
          .contains("Save Admission Info")
          .scrollIntoView()
-         .click({ force: true });
-
+         .click({ multiple: true, force: true });
       cy.get(".webix_spin").should("not.be.visible");
       childVisit();
       cy.get(cyInterfaceChild.tab.medical).click({ force: true });
@@ -794,6 +795,7 @@ describe("Test dataFilter Widget:", () => {
       //act
       Common.RunSQL(cy, folderName, ["init_db_for_data_filter_widget.sql"]);
       openCars();
+
       cy.get(
          "[data-cy='ABViewDataFilter_a4537949-5dd8-4596-9b35-3c854751242d filter button']"
       )
@@ -859,7 +861,9 @@ describe("Test dataFilter Widget:", () => {
          .should("exist")
          .click();
       cy.get(".wxi-dots").eq(0).should("be.visible").click();
-      cy.get('div[webix_l_id="delete"]').contains("Delete").click();
+      cy.get('div[webix_l_id="delete"]')
+         .contains("Delete")
+         .click({ force: true });
       cy.get(
          'div[class*="webix_view webix_control webix_el_button webix_primary"]'
       )
@@ -869,10 +873,12 @@ describe("Test dataFilter Widget:", () => {
          .contains("Save")
          .click();
    });
+
    it("Test Add New Sort and Global Search", () => {
       //act
       Common.RunSQL(cy, folderName, ["init_db_for_data_filter_widget.sql"]);
       openCars();
+
       cy.get(
          '[data-cy="ABViewDataFilter_a4537949-5dd8-4596-9b35-3c854751242d sort button"]'
       )
@@ -917,11 +923,11 @@ describe("Test Report:", () => {
       //act
       Common.RunSQL(cy, folderName, ["init_db_default.sql"]);
       childVisit();
+
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .basicInfo.page.basicInfo.button.reports
       ).click();
-
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .basicInfo.page.basicInfo.page.reports.button.downloads.one
@@ -931,9 +937,7 @@ describe("Test Report:", () => {
             .basicInfo.page.basicInfo.page.reports.button.downloads.one
       ).click({ force: true });
 
-      // prepare for assertion
-
-      // assert
+      //assert
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .basicInfo.page.basicInfo.page.reports.button.downloads.one
@@ -965,10 +969,12 @@ describe("Test Report:", () => {
 describe("Test Home:", () => {
    const homesIndex = 0;
    const home = example.homes[homesIndex];
+
    it("Test Add New Home", () => {
-      // act
+      //act
       Common.RunSQL(cy, folderName, ["init_db_for_adding_new_home.sql"]);
       openCars();
+
       cy.get(cyInterfaceCARS.page.socialWorker.tab.home).click();
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.home.button.addChildrenHome
@@ -1023,10 +1029,9 @@ describe("Test Home:", () => {
          cyInterfaceCARS.page.socialWorker.page.home.form.addChildrenHome.button
             .save
       ).click();
-
       cy.get(cyInterfaceCARS.page.socialWorker.tab.children).click();
       cy.get(cyInterfaceCARS.page.socialWorker.tab.home).click();
-      // assert
+
       // assert in the Home container
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.home.view.homes.container
@@ -1044,13 +1049,11 @@ describe("Test Home:", () => {
             "Social Worker"
          ).to.eq(home.socialWorker);
       });
-
       cy.window().then((win) => {
          return win
             .$$("ABViewGrid_6aac7a56-c849-4833-bc7d-85dbadf649be_datatable")
             .scrollTo(400, 1);
       });
-
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.home.view.homes.container
       ).should((data) => {
@@ -1093,7 +1096,6 @@ describe("Test Home:", () => {
             "Staff"
          ).to.eq(home.staff);
       });
-
       cy.window()
          .then((win) => {
             console.log(win);
@@ -1119,9 +1121,10 @@ describe("Test Home:", () => {
    });
 
    it("Test Update existing Home", () => {
-      // act
+      //act
       Common.RunSQL(cy, folderName, ["init_db_for_updating_existing_home.sql"]);
       homeAdministrationVisit(homesIndex);
+
       cy.get(
          cyInterfaceCARS.page.administration.page.home.view.home.form.field
             .phoneNumber
@@ -1131,11 +1134,11 @@ describe("Test Home:", () => {
             .save
       ).click();
 
-      // prepare for assertion
+      //prepare for assertion
       cy.get(cyInterfaceCARS.tab.socialWorker).click();
       cy.get(cyInterfaceCARS.page.socialWorker.tab.home).click();
 
-      // assert
+      //assert
       cy.window()
          .then((win) => {
             console.log(win);
@@ -1164,8 +1167,9 @@ describe("Test Home:", () => {
 describe("Test Project:", () => {
    const projectIndex = 0;
    const project = example.projects[projectIndex];
+
    it("Test Add New Project", () => {
-      // act
+      //act
       Common.RunSQL(cy, folderName, ["init_db_for_adding_new_project.sql"]);
       openCars();
 
@@ -1200,11 +1204,9 @@ describe("Test Project:", () => {
          cyInterfaceCARS.page.administration.page.project.form.addProject.button
             .save
       ).click();
-
       cy.get(cyInterfaceCARS.page.administration.tab.home).click();
       cy.get(cyInterfaceCARS.page.administration.tab.project).click();
 
-      // assert
       // assert in the Home container
       cy.get(
          cyInterfaceCARS.page.administration.page.project.view.projects.detail
@@ -1233,11 +1235,12 @@ describe("Test Project:", () => {
    });
 
    it("Test Update existing Project", () => {
-      // act
+      //act
       Common.RunSQL(cy, folderName, [
          "init_db_for_updating_existing_project.sql",
       ]);
       openCars();
+
       cy.get(cyInterfaceCARS.tab.administration).click();
       cy.get(cyInterfaceCARS.page.administration.tab.project).click();
       cy.get(
@@ -1284,11 +1287,10 @@ describe("Test Project:", () => {
             .button.save
       ).click();
 
-      //prepare for assertion
+      // prepare for assertion
       cy.get(cyInterfaceCARS.page.administration.tab.home).click();
       cy.get(cyInterfaceCARS.page.administration.tab.project).click();
 
-      // assert
       // assert in the Home container
       cy.get(
          cyInterfaceCARS.page.administration.page.project.view.projects.project
@@ -1297,13 +1299,12 @@ describe("Test Project:", () => {
 });
 
 describe("Test Staff:", () => {
-   it.skip("Test Add New Staff", () => {
-      // arrange
+   it("Test Add New Staff", () => {
+      //arrange
       var staff = example.staff[1];
-
       Common.RunSQL(cy, folderName, ["init_db_for_adding_new_staff.sql"]);
 
-      // Create in CARs
+      //Create in CARs
       openCars();
 
       cy.get(cyInterfaceCARS.tab.administration).click();
@@ -1331,22 +1332,25 @@ describe("Test Staff:", () => {
          cyInterfaceCARS.page.administration.page.staff.form.addStaff.field
             .phone
       ).type(staff.phone);
-
+      cy.get(
+         cyInterfaceCARS.page.administration.page.staff.form.addStaff.field
+            .carsProject
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.administration.page.staff.form.addStaff.option
+            .carsProject[0]
+      )
+         .should("be.visible")
+         .click();
       cy.get(
          cyInterfaceCARS.page.administration.page.staff.form.addStaff.field.home
       ).click();
-
       cy.get(
          cyInterfaceCARS.page.administration.page.staff.form.addStaff.option
             .home[0]
       )
          .should("be.visible")
          .click();
-
-      cy.get(
-         cyInterfaceCARS.page.administration.page.staff.form.addStaff.field.home
-      ).click();
-
       cy.get(
          cyInterfaceCARS.page.administration.page.staff.form.addStaff.field
             .staffUser
@@ -1355,22 +1359,20 @@ describe("Test Staff:", () => {
       // this should work
       // cy.get(cyInterfaceCARS.page.administration.page.staff.form.addStaff.option.staffUser[1]).click().wait(250);
       // option 2
+
       cy.get(
          cyInterfaceCARS.page.administration.page.staff.form.addStaff.option
             .staffUser[1]
       )
          .should("be.visible")
          .click();
-
       cy.get(
          cyInterfaceCARS.page.administration.page.staff.form.addStaff.button
             .save
       ).click();
-
       // cy.get(cyInterfaceCARS.page.administration.tab.home).click().wait(700);
       // cy.get(cyInterfaceCARS.page.administration.tab.staff).click().wait(2500);
 
-      // assert
       // assert in the Home container
       cy.get(
          cyInterfaceCARS.page.administration.page.staff.view.staff.detail
@@ -1409,15 +1411,15 @@ describe("Test Staff:", () => {
             "User"
          ).to.contain(staff.staffUser);
          // a800412a-ff61-4dad-aba5-7163b80ffa25
-         //detail text Staff User 5cfb8cb4-26db-4204-a4d0-7c822eda4291 513d727e-e395-4f46-b9a0-31f3a687a336
+         // detail text Staff User 5cfb8cb4-26db-4204-a4d0-7c822eda4291 513d727e-e395-4f46-b9a0-31f3a687a336
       });
    });
 
-   it.skip("Test Update existing Staff", () => {
-      // arrange
+   it("Test Update existing Staff", () => {
+      //arrange
       var staff = example.staff[1];
 
-      // act
+      //act
       Common.RunSQL(cy, folderName, [
          "init_db_for_updating_existing_staff.sql",
       ]);
@@ -1425,8 +1427,10 @@ describe("Test Staff:", () => {
 
       cy.get(cyInterfaceCARS.tab.administration).click();
       cy.get(cyInterfaceCARS.page.administration.tab.staff).click();
+
       // this randomly fails
-      //cy.get(cyInterfaceCARS.page.administration.page.staff.view.staff.container).trigger('mouseover').wait(500);
+      // cy.get(cyInterfaceCARS.page.administration.page.staff.view.staff.container).trigger('mouseover').wait(500);
+
       cy.get(cyInterfaceCARS.page.administration.page.staff.button.editStaff)
          .invoke("show")
          .click({ force: true });
@@ -1462,7 +1466,6 @@ describe("Test Staff:", () => {
          cyInterfaceCARS.page.administration.page.staff.form.editStaff.field
             .phone
       ).type(staff.phone);
-
       cy.get(
          cyInterfaceCARS.page.administration.page.staff.form.editStaff.field
             .home
@@ -1473,7 +1476,6 @@ describe("Test Staff:", () => {
       )
          .should("be.visible")
          .click();
-
       cy.get(
          cyInterfaceCARS.page.administration.page.staff.form.editStaff.field
             .staffUser
@@ -1484,30 +1486,24 @@ describe("Test Staff:", () => {
       // cy.get(cyInterfaceCARS.page.administration.page.staff.button.editStaff)
       // cy.get(".webix_view webix_window webix_popup")
       //   .find(".webix_list_item ")
-      //   .should((data) =>{
+      //   .should((data) => {
       //     cy.log(data)
-      //     // expect(data.text().includes(staff.position) ? staff.position: "", "Worker").to.eq(staff.position);
+      //     expect(data.text().includes(staff.position) ? staff.position: "", "Worker").to.eq(staff.position);
       //   })
 
       cy.get(
          cyInterfaceCARS.page.administration.page.staff.form.editStaff.option
             .staffUser[1]
       ).click();
-
-      //cy.get(cyInterfaceCARS.page.administration.page.staff.form.editStaff.option.staffUser).click();
-      //.find(".webix_list_item")
-
-      //cy.get(cyInterfaceCARS.page.administration.page.staff.form.editStaff.option.staffUser).click().wait(50);
-
+      // .find(".webix_list_item")
+      // cy.get(cyInterfaceCARS.page.administration.page.staff.form.editStaff.option.staffUser).click().wait(50);
       cy.get(
          cyInterfaceCARS.page.administration.page.staff.form.editStaff.button
             .save
       ).click();
-
       // cy.get(cyInterfaceCARS.page.administration.tab.home).click().wait(700);
       // cy.get(cyInterfaceCARS.page.administration.tab.staff).click().wait(700);
 
-      // assert
       // assert in the Home container
       cy.get(
          cyInterfaceCARS.page.administration.page.staff.view.staff.detail
@@ -1545,11 +1541,12 @@ describe("Test Staff:", () => {
          ).to.contain(staff.staffUser);
       });
    });
+
    it("Test Remove existing Staff", () => {
-      // arrange
+      //arrange
       var staff = example.staff[2];
 
-      // act
+      //act
       Common.RunSQL(cy, folderName, [
          "init_db_for_removing_existing_staff.sql",
       ]);
@@ -1573,12 +1570,11 @@ describe("Test Staff:", () => {
          .filter(":visible")
          .click();
 
-      // Remove in CARs
+      //Remove in CARs
       openCars();
 
       cy.get(cyInterfaceCARS.tab.administration).click();
       cy.get(cyInterfaceCARS.page.administration.tab.staff).click();
-
       cy.get(
          cyInterfaceCARS.page.administration.page.staff.button.editStaff
       ).click({ force: true }); // force needed because element only appears when hovered
@@ -1594,17 +1590,22 @@ describe("Test Staff:", () => {
       )
          .find(".webix_multicombo_delete")
          .click();
-
+      cy.get(
+         cyInterfaceCARS.page.administration.page.staff.form.editStaff.field
+            .home
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.administration.page.staff.form.editStaff.option
+            .home[0]
+      ).click();
       cy.get(
          cyInterfaceCARS.page.administration.page.staff.form.editStaff.field
             .staffUser
       ).click();
-
       cy.get(
          cyInterfaceCARS.page.administration.page.staff.form.editStaff.option
             .staffUser[0]
       ).click();
-
       cy.get(
          cyInterfaceCARS.page.administration.page.staff.form.editStaff.button
             .save
@@ -1614,7 +1615,6 @@ describe("Test Staff:", () => {
       // cy.get(cyInterfaceCARS.page.administration.tab.home).click().wait(700);
       // cy.get(cyInterfaceCARS.page.administration.tab.staff).click().wait(700);
 
-      // assert
       // assert in the Home container
       cy.get(
          cyInterfaceCARS.page.administration.page.staff.view.staff.detail
@@ -1659,6 +1659,7 @@ describe("Test Report Manager:", () => {
          "init_db_for_viewing_a_child_profile.sql",
       ]);
       openCars();
+
       cy.get(cyInterfaceCARS.page.socialWorker.tab.reports).click();
       cy.get(cyInterfaceCARS.page.socialWorker.page.reports.button.new)
          .contains("New")
@@ -1706,11 +1707,13 @@ describe("Test Report Manager:", () => {
          .should("exist")
          .click();
       cy.get(
-         cyInterfaceCARS.page.socialWorker.page.reports.form.new.field.reports
+         cyInterfaceCARS.page.socialWorker.page.reports.view.reports.container
       )
-         .should("be.visible")
-         .contains("Latest Report")
+         .find(".webix_list_item")
+         .eq(4)
          .scrollIntoView()
+         .should("exist")
+         .contains("Latest Report")
          .click();
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.reports.view.reports.viewGrid
@@ -1723,6 +1726,7 @@ describe("Test Report Manager:", () => {
 
 describe("Test Social Worker Note:", () => {
    const note = example.note[0];
+
    it("Test Edit Note", () => {
       //act
       Common.RunSQL(cy, folderName, ["init_db_for_updating_existing_note.sql"]);
@@ -1732,7 +1736,6 @@ describe("Test Social Worker Note:", () => {
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.grid
       ).find(".webix_cell");
-
       cy.window().then((win) => {
          return win
             .$$(
@@ -1741,7 +1744,6 @@ describe("Test Social Worker Note:", () => {
             )
             .scrollTo(10000, 0);
       });
-
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.grid
@@ -1749,17 +1751,14 @@ describe("Test Social Worker Note:", () => {
          .find(".edit")
          .should("be.visible")
          .click({ force: true });
-
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.editNote.field.title
       ).should("be.visible");
-
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.editNote.field.title
       ).clear();
-
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.editNote.field.title
@@ -1767,7 +1766,7 @@ describe("Test Social Worker Note:", () => {
          .click()
          .type(note.title);
 
-      // Date
+      //Date
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.editNote.field.date
@@ -1781,8 +1780,18 @@ describe("Test Social Worker Note:", () => {
       // cy.get(".webix_cal_icon_today").click()
 
       // TODO this has no data-cy
-      //cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.form.editNote.field.text).clear().type(note.text);
+      // cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.form.editNote.field.text).clear().type(note.text);
 
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .socialWork.page.notes.form.editNote.field.categories
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .socialWork.page.notes.form.editNote.option.categories[0]
+      )
+         .should("be.visible")
+         .click();
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.editNote.field.file
@@ -1806,8 +1815,9 @@ describe("Test Social Worker Note:", () => {
 
       // prepare for assertion
       // click reload data button
+
       // TODO replace with data-cy
-      //cy.find('.webix_view webix_control webix_el_button webix_primary webix_warn').click();
+      // cy.find('.webix_view webix_control webix_el_button webix_primary webix_warn').click();
 
       cy.window().then((win) => {
          return win
@@ -1817,7 +1827,6 @@ describe("Test Social Worker Note:", () => {
             )
             .scrollTo(0, 0);
       });
-
       // cy.get(
       //    cyInterfaceCARS.page.socialWorker.page.children.view.child.page
       //       .socialWork.page.notes.grid
@@ -1843,11 +1852,11 @@ describe("Test Social Worker Note:", () => {
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.grid
       ).contains(note.title);
-
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.grid
       ).contains(note.date);
+
       // .get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.grid)
       // .find(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.columns[2])
       // .find(".webix_row_select")
@@ -1862,6 +1871,7 @@ describe("Test Social Worker Note:", () => {
       //   expect(data.text().includes(note.category) ? note.category: "", "category").to.eq(note.category);
       // })
       // 4 is the child
+
       cy.window().then((win) => {
          return win
             .$$(
@@ -1870,7 +1880,6 @@ describe("Test Social Worker Note:", () => {
             )
             .scrollTo(10000, 0);
       });
-
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.grid
@@ -1878,7 +1887,6 @@ describe("Test Social Worker Note:", () => {
    });
 
    it("Test Add New Note", () => {
-      // TODO act
       //act
       Common.RunSQL(cy, folderName, ["init_db_for_adding_new_note.sql"]);
       navToNote();
@@ -1887,7 +1895,6 @@ describe("Test Social Worker Note:", () => {
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.button.addNote
       ).click();
-
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.addNote.field.title
@@ -1897,7 +1904,6 @@ describe("Test Social Worker Note:", () => {
          .type("Please work")
          .clear()
          .type(note.title);
-
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.addNote.field.date
@@ -1907,7 +1913,6 @@ describe("Test Social Worker Note:", () => {
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.addNote.field.date
       ).type(note.date);
-
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.addNote.field.categories
@@ -1920,33 +1925,34 @@ describe("Test Social Worker Note:", () => {
          .click();
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
-            .socialWork.page.notes.form.addNote.field.categories
+            .socialWork.page.notes.form.addNote.field.file
       ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .socialWork.page.notes.form.addNote.option.file[0]
+      )
+         .should("be.visible")
+         .click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .socialWork.page.notes.form.addNote.field.file
+      ).click();
+
       //save
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.addNote.button.save
       ).click();
 
-      // prepare for assertion
-      // click reload data button
-      // TODO replace with data-cy
-      cy.get(".webix_warn")
-         .find(".webix_button")
-         .should("be.visible")
-         .click({ multiple: true, force: true });
-
       //assert
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.grid
       ).find(".webix_cell");
-
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.grid
       ).contains(note.date);
-
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.grid

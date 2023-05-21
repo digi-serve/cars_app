@@ -85,6 +85,7 @@
                         "save": "[data-cy=\"button save 0eab74c9-f13b-4343-ab71-5e50875f8403\"]"
                      },
                      "field": {
+                        "carsProject": "[data-cy=\"connectObject CARs Project 60e1fa49-2ea3-4e5b-b11b-a6e497c6b784 0eab74c9-f13b-4343-ab71-5e50875f8403\"]",
                         "firstName": "[data-cy=\"string First Name 151535fe-c83c-4821-b031-74f24e2aa48b 0eab74c9-f13b-4343-ab71-5e50875f8403\"]",
                         "home": "[data-cy=\"connectObject Home ea33376e-a991-497f-93e1-8d853cc27de2 0eab74c9-f13b-4343-ab71-5e50875f8403\"]",
                         "lastName": "[data-cy=\"string Last Name 0a3ce77d-796f-4d35-a98c-50b0c369580e 0eab74c9-f13b-4343-ab71-5e50875f8403\"]",
@@ -285,7 +286,9 @@
                         }
                      },
                      "option": {
-                        "carsProject": [],
+                        "carsProject": [
+                           "[data-cy=\"connectObject options cb46b6b4-dc25-4915-80f7-c1febf26da4a 5a580697-5167-423a-a076-28bd5ecfe328 850f8a95-75f8-45a9-9251-078677cdfb1f\"]"
+                        ],
                         "gender": [
                            "[data-cy=\"list options 1507525545560 e0c10ab9-4a1d-47b8-acc6-ab6326298c53 850f8a95-75f8-45a9-9251-078677cdfb1f\"]",
                            "[data-cy=\"list options 1507525545633 e0c10ab9-4a1d-47b8-acc6-ab6326298c53 850f8a95-75f8-45a9-9251-078677cdfb1f\"]",
@@ -293,9 +296,6 @@
                         ],
                         "home": [
                            "[data-cy=\"connectObject options 696cfe80-8a3e-477f-a566-3c14dac1cc2d 0f323b4f-be4a-4ad9-84da-488cf3941820 850f8a95-75f8-45a9-9251-078677cdfb1f\"]"
-                        ],
-                        "project": [
-                           "[data-cy=\"connectObject options cb46b6b4-dc25-4915-80f7-c1febf26da4a 5a580697-5167-423a-a076-28bd5ecfe328 850f8a95-75f8-45a9-9251-078677cdfb1f\"]"
                         ],
                         "relatives": [
                            "[data-cy=\"connectObject options c58fc0e3-d3a7-4616-a701-ded0536f8b77 1cd932b9-d70e-49e1-aef6-083ffe2a54d7 850f8a95-75f8-45a9-9251-078677cdfb1f\"]"
@@ -404,7 +404,9 @@
                                           "carsProject": [
                                              "[data-cy=\"connectObject options cb46b6b4-dc25-4915-80f7-c1febf26da4a 5a580697-5167-423a-a076-28bd5ecfe328 87913802-0e45-4b9a-ad08-96ae87480977\"]"
                                           ],
-                                          "relatives": []
+                                          "relatives": [
+                                             "[data-cy=\"connectObject options c58fc0e3-d3a7-4616-a701-ded0536f8b77 1cd932b9-d70e-49e1-aef6-083ffe2a54d7 87913802-0e45-4b9a-ad08-96ae87480977\"]"
+                                          ]
                                        }
                                     }
                                  },
@@ -616,22 +618,12 @@
                "form": {
                   "new": {
                      "button": {
-<<<<<<< HEAD
-                        "joinData": "",
-                        "cancel": "",
-                        "save": "button.webix_button.webix_img_btn"
-                     },
-                     "field": {
-                        "reports" : "[view_id=\"$list67\"]",
-                        "reportName": "[view_id=\"$text3\"]",
-=======
                         "cancel": "button.webix_button.webix_img_btn",
                         "joinData": "[view_id=\"$button280\"]",
                         "save": "button.webix_button.webix_img_btn"
                      },
                      "field": {
                         "dataSource": "[view_id=\"$combo1\"]",
->>>>>>> 4da85dd (Fixed Test)
                         "description": "[view_id=\"$textarea1\"]",
                         "reportName": "[view_id=\"$text3\"]"
                      },
@@ -645,7 +637,7 @@
                },
                "view": {
                   "reports": {
-                     "container": "",
+                     "container": ".webix_rpt_list",
                      "viewGrid": "[view_id^=\"ABViewReportManager_\"]"
                   }
                }

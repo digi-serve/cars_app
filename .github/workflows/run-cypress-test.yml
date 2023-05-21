@@ -1,53 +1,53 @@
 name: Cypress Test
 on:
-   # Run on any commit to the #master branch
-   push:
-      branches: [master]
+  # Run on any commit to the #master branch
+  push:
+    branches: [master]
 
-   # Run on pull requests into the #master branch
+  # Run on pull requests into the #master branch
 
-   pull_request:
-      branches: [master]
+  pull_request:
+    branches: [master]
 
-   # Allows user to trigger the workflow from GitHub's web UI
-   workflow_dispatch:
+  # Allows user to trigger the workflow from GitHub's web UI
+  workflow_dispatch:
 
 jobs:
-   cypress-test:
-      runs-on: ubuntu-latest
-      env:
-         CYPRESS_RESPONSE_TIMEOUT: 200000
-         CYPRESS_DEFAULT_COMMAND_TIMEOUT: 30000
-         CYPRESS_RETRIES: 2
-      steps:
-         # Setup
-         - uses: digi-serve/ab-install-action@v1
-           with:
-              folder: ab
-              port: 8080
+  cypress-test:
+    runs-on: ubuntu-latest
+    env:
+      CYPRESS_RESPONSE_TIMEOUT: 200000
+      CYPRESS_DEFAULT_COMMAND_TIMEOUT: 30000
+      CYPRESS_RETRIES: 2
+    steps:
+      # Setup
+      - uses: digi-serve/ab-install-action@v1
+        with:
+          folder: ab
+          port: 8080
 
-         # Up
-         - name: Bring up AppBuilder
-           run: ./UP.sh -q -t
-           working-directory: ./ab
+      # Up
+      - name: Bring up AppBuilder
+        run: ./UP.sh -q -t
+        working-directory: ./ab
 
-         - name: Check out
-           uses: actions/checkout@v3
-           with:
-              path: ab/test/e2e/cypress/e2e/cars_app
-   
-         - name: Wait for AB
-           uses: ifaxity/wait-on-action@v1
-           with:
-             resource: http://localhost:8080
-             timeout: 300000
+      - name: Check out
+        uses: actions/checkout@v3
+        with:
+          path: ab/test/e2e/cypress/e2e/cars_app
 
-         - name: Run Cypress Tests
-           run: npm run test:e2e:app -- --browser chrome
-           working-directory: ./ab
+      - name: Wait for AB
+        uses: ifaxity/wait-on-action@v1.1.0
+        with:
+          resource: http://localhost:8080
+          timeout: 300000
 
-         - uses: actions/upload-artifact@v2
-           if: failure()
-           with:
-              name: cypress-screenshots
-              path: ./ab/test/e2e/cypress/screenshots
+      - name: Run Cypress Tests
+        run: npm run test:e2e:app -- --browser chrome
+        working-directory: ./ab
+
+      - uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: ./ab/test/e2e/cypress/screenshots

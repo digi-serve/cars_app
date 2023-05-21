@@ -9,6 +9,7 @@ const cyInterfaceCommon = {
       menu: '[data-cy="portal_work_menu_sidebar"]',
    },
 };
+
 const folderName = __dirname.match(/[^\\/]+$/);
 
 const importModule = () => {
@@ -37,7 +38,6 @@ const childVisit = () => {
 };
 
 // End to End Testing
-
 describe("Test Social Worker Note:", () => {
    before(() => {
       Common.ResetDB(cy);
@@ -139,9 +139,27 @@ describe("Test Social Worker Note:", () => {
          .should("be.visible")
          .click();
       cy.get(".webix_button").contains("Select").click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .socialWork.page.notes.form.editNote.field.categories
+      )
+         .should("be.visible")
+         .click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .socialWork.page.notes.form.editNote.option.categories[0]
+      )
+         .should("be.visible")
+         .click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .socialWork.page.notes.form.editNote.field.categories
+      )
+         .should("be.visible")
+         .click();
 
       // TODO multiple item bug again
-      // //cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.form.addCategory.label).type(note.category);
+      // cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.form.addCategory.label).type(note.category);
       // cy.get(
       //   cyInterfaceCARS.page.socialWorker.page.children.view.child.page
       //     .socialWork.page.notes.form.editNote.field.categories
@@ -159,8 +177,6 @@ describe("Test Social Worker Note:", () => {
       )
          .should("be.visible")
          .click();
-
-      // prepare for assertion
 
       //assert
       cy.get(
@@ -205,6 +221,7 @@ describe("Test Social Worker Note:", () => {
                "Date"
             ).to.eq(note.date);
          });
+
       // .get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.grid)
       // .find(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.columns[2])
       // .find(".webix_row_select")
@@ -344,11 +361,6 @@ describe("Test Social Worker Note:", () => {
       ).click();
       cy.get(".webix_spin").should("not.be.visible");
 
-      // prepare for assertion
-      // click reload data button
-      // TODO replace with data-cy
-      cy.get(".webix_button").contains("Click to reload").click();
-
       //assert
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
@@ -380,12 +392,14 @@ describe("Test Social Worker Note:", () => {
                "Date"
             ).to.eq(note.date);
          });
+
       // .get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.grid)
       // .find(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.columns[2])
       // .find(".webix_row_select")
       // .should((data) => {
       //    expect(data.text().includes(note.text) ? note.text : "", "text").to.eq(note.text);
       // })
+
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.grid
@@ -438,7 +452,7 @@ describe("Test add-new forms:", () => {
          .should("be.visible")
          .click();
       // wait for loading to go away
-      // eslint-disable-next-line prettier/prettier
+
       cy.get('[class="webix_progress_state wxi-sync webix_spin"]')
          // eslint-disable-next-line prettier/prettier
          .should("not.be.visible");
@@ -449,7 +463,6 @@ describe("Test add-new forms:", () => {
          .clear({ force: true })
          .type(text, { force: true });
       cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.button.save)
-         // .scrollIntoView()
          .should("exist")
          .scrollIntoView()
          .click();
@@ -460,10 +473,10 @@ describe("Test add-new forms:", () => {
    function saveAndCheck(parent, child, field, isTopTab) {
       // cy.log(parent, child, field);
       save(parent, child, field, isTopTab || null);
-      cy.get(".webix_warn")
-         .find(".webix_button")
-         .filter(":visible")
-         .click({ multiple: true, force: true });
+      // cy.get(".webix_warn")
+      //    .find(".webix_button")
+      //    .filter(":visible")
+      //    .click({ multiple: true, force: true });
       cy.get('div[view_id*="ABViewTab_bbef30a6"]')
          .find(".webix_tree_item")
          .should("be.visible")
@@ -476,6 +489,7 @@ describe("Test add-new forms:", () => {
       cy.get(cyInterfaceCHILD.page[parent].page[child].button.add)
          .should("be.visible")
          .click();
+
       // sometimes the NEW DATA dissapears on its own.
       // If it does this during the .get, cypress will
       // disconnect from the DOM; therefor it is better to wait
@@ -510,6 +524,7 @@ describe("Test add-new forms:", () => {
       // clickIfExist("[class=\"webix_view webix_control webix_el_button webix_primary webix_warn\"]")
       // cy.get('button').contains("Click to reload")
    }
+
    it("Test file", () => {
       //act
       cy.get(cyInterfaceCHILD.page.basicInfo.tab.files)
@@ -535,10 +550,6 @@ describe("Test add-new forms:", () => {
          .should("exist")
          .click();
 
-      cy.get(".webix_warn")
-         .find(".webix_button")
-         .should("be.visible")
-         .click({ multiple: true, force: true });
       // should contain new data in grid
       cy.get(cyInterfaceCHILD.page.basicInfo.page.files.grid).contains(text);
       checkForm("basicInfo", "files", "label");
@@ -550,14 +561,13 @@ describe("Test add-new forms:", () => {
          .should("exist")
          .click();
       cy.get(".webix_spin").should("not.be.visible");
-
       cy.get(
          '[data-cy="detail connected Child 9db31333-1cbf-429e-b3f7-46573a274054 8db15d0b-fd78-4b2b-975a-304b68a43054"]'
       )
          .should("be.visible")
          .contains("Nakamoto");
       cy.get(
-         '[data-cy="menu-item Admission Info_3a46 cf368115-3a46-434b-b44e-6104b9bdb592 f076f340-9d27-45cf-b75e-c0930506235e"]'
+         cyInterfaceCHILD.page.basicInfo.page.admitInfo.button.editAdmitInfo
       )
          .should("exist")
          .click();
@@ -570,7 +580,6 @@ describe("Test add-new forms:", () => {
          cyInterfaceCHILD.page.basicInfo.page.admitInfo.form.editAdmitInfo.field
             .nameOfDeliverer
       )
-         .scrollIntoView()
          .type("slow")
          .clear()
          .type("concerned neighbor");
@@ -595,7 +604,6 @@ describe("Test add-new forms:", () => {
       )
          .should("be.visible")
          .contains("Nakamoto");
-
       cy.get('[data-cy^="detail text Submitter Name"]')
          .should("be.visible")
          .contains("concerned neighbor");
@@ -606,11 +614,12 @@ describe("Test add-new forms:", () => {
          .contains("no item reported");
    });
 
-   // Education //
+   // Education
    it("Test educationInfo", () => {
       let parent = "education";
       let child = "educationInfo";
       let field = "school";
+
       cy.get(cyInterfaceCHILD.tab[parent]).should("be.visible").click();
       cy.get(cyInterfaceCHILD.page[parent].page[child].button.add)
          .should("be.visible")
@@ -619,6 +628,7 @@ describe("Test add-new forms:", () => {
          .type("Please work")
          .clear()
          .type(text);
+
       // Does Education Transcript field exist
       cy.get(".file-data-field-icon").should("be.visible");
 
@@ -627,16 +637,14 @@ describe("Test add-new forms:", () => {
       cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.button.save)
          .should("exist")
          .click();
-      cy.get(".webix_warn")
-         .find(".webix_button")
-         .should("be.visible")
-         .click({ multiple: true, force: true });
       cy.get(cyInterfaceCHILD.page[parent].page[child].grid).contains(text);
       checkForm(parent, child, field);
    });
+
    it("Test careerInfo", () => {
       // TODO grid is too small, needs to scroll
-      //saveAndCheck("education","careerInfo","workPlace")
+
+      // saveAndCheck("education","careerInfo","workPlace")
       let parent = "education";
       let child = "careerInfo";
       let field = "workPlace";
@@ -647,8 +655,7 @@ describe("Test add-new forms:", () => {
          .click();
       cy.get(cyInterfaceCHILD.page[parent].page[child].button.add)
          .should("be.visible")
-         .click()
-         .should("be.visible");
+         .click();
       cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.fields[field])
          .type("Please work")
          .clear()
@@ -656,10 +663,6 @@ describe("Test add-new forms:", () => {
       cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.button.save)
          .should("exist")
          .click();
-      cy.get(".webix_warn")
-         .find(".webix_button")
-         .should("be.visible")
-         .click({ multiple: true, force: true });
       cy.get(
          '[data-cy="ABViewGrid_6589f264-8e4d-4775-b90b-4e6f44cdeb52_datatable"]'
       ).should("be.visible");
@@ -671,38 +674,34 @@ describe("Test add-new forms:", () => {
       cy.get(cyInterfaceCHILD.page[parent].page[child].grid).contains(text);
       checkForm(parent, child, field);
    });
+
    it("Test generalCourses", () => {
       saveAndCheck("education", "generalCourses", "school");
    });
+
    it("Test file", () => {
       saveAndCheck("education", "schoolRecords", "subject");
    });
+
    it("Test Create and Edit Data of School Records", () => {
-      cy.get(
-         '[data-cy="tab-Education-55641379-f712-497c-abe8-7a7b3e3091e0-bbef30a6-8b04-49c3-8520-818568ccaa79"]'
-      )
-         .should("be.visible")
-         .click();
-      cy.get(
-         '[data-cy="tab-SchoolRecords-ea8b6c3b-84f5-43ed-8f1c-65d0e73b0edc-d071e58a-baa8-4312-b8df-320b5f04c22a"]'
-      )
+      cy.get(cyInterfaceCHILD.tab.education).should("be.visible").click();
+      cy.get(cyInterfaceCHILD.page.education.tab.schoolRecords)
          .should("exist")
          .click();
-      cy.get(
-         '[data-cy="menu-item Add School Records 1eb85e88-a729-48fd-a7fc-cc1d3072f843 e520d8da-6e67-4b8f-a88f-2004c81ec813"]'
-      )
+      cy.get(cyInterfaceCHILD.page.education.page.schoolRecords.button.add)
          .should("exist")
          .click();
       cy.get('div[view_id*="ABViewContainer_1eb85e88"]').should("be.visible");
       cy.get('div[view_id*="ABViewFormTextbox_d87b2981"]').should("exist");
       cy.get(
-         '[data-cy="string Class Year 7e4a4937-f4a4-4ad7-95ae-06cb80c798dc bf3dfa10-80a5-455a-869d-c981daa2cdb3"]'
+         cyInterfaceCHILD.page.education.page.schoolRecords.form.add.fields
+            .classYear
       )
          .click({ force: true })
          .type("256", { force: true })
          .should("have.value", "256");
       cy.get(
-         '[data-cy="string Year 3508a12a-ab10-4a86-9b8a-cabfafd354aa bf3dfa10-80a5-455a-869d-c981daa2cdb3"]'
+         cyInterfaceCHILD.page.education.page.schoolRecords.form.add.fields.year
       )
          .scrollIntoView()
          .should("exist")
@@ -717,14 +716,8 @@ describe("Test add-new forms:", () => {
          .scrollIntoView()
          .should("exist")
          .contains("Save")
-         .click();
-      cy.get(".webix_warn")
-         .find(".webix_button")
-         .should("be.visible")
-         .click({ multiple: true, force: true });
-      cy.get(
-         '[data-cy="ABViewGrid_2fae0fda-4262-4ef0-b1c8-e91fe2fc1d82_datatable"]'
-      )
+         .click({ force: true });
+      cy.get(cyInterfaceCHILD.page.education.page.schoolRecords.grid)
          .should("be.visible")
          .contains("256");
       cy.window().then((win) => {
@@ -732,23 +725,22 @@ describe("Test add-new forms:", () => {
             .$$("ABViewGrid_2fae0fda-4262-4ef0-b1c8-e91fe2fc1d82_datatable")
             .scrollTo(1000, 1);
       });
-      cy.get(
-         '[data-cy="ABViewGrid_2fae0fda-4262-4ef0-b1c8-e91fe2fc1d82_datatable"]'
-      )
+      cy.get(cyInterfaceCHILD.page.education.page.schoolRecords.grid)
          .should("be.visible")
          .contains("202");
       cy.get(".wxi-pencil").should("be.visible").click({ force: true });
       cy.get(".webix_spin").should("not.be.visible");
       cy.get('div[view_id*="ABViewForm_3bf905ea"]').should("exist");
       cy.get(
-         '[data-cy="string Class Year 7e4a4937-f4a4-4ad7-95ae-06cb80c798dc 3bf905ea-5a83-4412-a89e-5991325ae3a2"]'
+         cyInterfaceCHILD.page.education.page.schoolRecords.form.add.fields
+            .classYear
       )
          .should("exist")
          .click({ force: true })
          .type("3", { force: true })
          .should("have.value", "2563");
       cy.get(
-         '[data-cy="string Year 3508a12a-ab10-4a86-9b8a-cabfafd354aa 3bf905ea-5a83-4412-a89e-5991325ae3a2"]'
+         cyInterfaceCHILD.page.education.page.schoolRecords.form.add.fields.year
       )
          .scrollIntoView()
          .should("exist")
@@ -764,17 +756,15 @@ describe("Test add-new forms:", () => {
          .should("exist")
          .contains("Save")
          .click({ force: true });
-      cy.get(
-         '[data-cy="ABViewGrid_2fae0fda-4262-4ef0-b1c8-e91fe2fc1d82_datatable"]'
-      ).should("be.visible");
+      cy.get(cyInterfaceCHILD.page.education.page.schoolRecords.grid).should(
+         "be.visible"
+      );
       cy.window().then((win) => {
          return win
             .$$("ABViewGrid_2fae0fda-4262-4ef0-b1c8-e91fe2fc1d82_datatable")
             .scrollTo(1, 400);
       });
-      cy.get(
-         '[data-cy="ABViewGrid_2fae0fda-4262-4ef0-b1c8-e91fe2fc1d82_datatable"]'
-      )
+      cy.get(cyInterfaceCHILD.page.education.page.schoolRecords.grid)
          .should("be.visible")
          .contains("2563");
       cy.window().then((win) => {
@@ -782,14 +772,12 @@ describe("Test add-new forms:", () => {
             .$$("ABViewGrid_2fae0fda-4262-4ef0-b1c8-e91fe2fc1d82_datatable")
             .scrollTo(1200, 1);
       });
-      cy.get(
-         '[data-cy="ABViewGrid_2fae0fda-4262-4ef0-b1c8-e91fe2fc1d82_datatable"]'
-      )
+      cy.get(cyInterfaceCHILD.page.education.page.schoolRecords.grid)
          .should("be.visible")
          .contains("2020");
    });
 
-   // Logs //
+   // Logs
    it("Test behaviorLog", () => {
       cy.get(cyInterfaceCHILD.tab.logs).should("be.visible").click();
       cy.get(cyInterfaceCHILD.page.logs.tab.behaviorLog)
@@ -837,6 +825,7 @@ describe("Test add-new forms:", () => {
          .should("be.visible")
          .contains("John Lennon");
    });
+
    it("Test visitorLog", () => {
       cy.get(cyInterfaceCHILD.tab.logs).should("be.visible").click();
       cy.get(cyInterfaceCHILD.page.logs.tab.visitorLog).should("exist").click();
@@ -898,6 +887,7 @@ describe("Test add-new forms:", () => {
          .should("be.visible")
          .contains("AlanSmith");
    });
+
    it("Test homeVisit", () => {
       cy.get(cyInterfaceCHILD.tab.logs).should("be.visible").click();
       cy.get(cyInterfaceCHILD.page.logs.tab.homeVisit).should("exist").click();
@@ -956,6 +946,7 @@ describe("Test add-new forms:", () => {
          .should("be.visible")
          .contains("www.google.com");
    });
+
    it("Test participationLog", () => {
       cy.get(cyInterfaceCHILD.tab.logs).should("be.visible").click();
       cy.get(cyInterfaceCHILD.page.logs.tab.participationLog)
@@ -1008,49 +999,45 @@ describe("Test add-new forms:", () => {
    });
 
    it("Test assetLog", () => {
-      cy.get(
-         '[data-cy="tab-Logs-30406204-b89c-4322-bff0-d07cd6be4404-bbef30a6-8b04-49c3-8520-818568ccaa79"]'
-      )
+      cy.get(cyInterfaceCHILD.tab.logs).should("be.visible").click();
+      cy.get(cyInterfaceCHILD.page.logs.tab.assetLog)
          .should("be.visible")
          .click();
-      cy.get(
-         '[data-cy="tab-AssetLog-41efe1e0-c6ee-4abb-b67a-5871150b882f-9f5b25fb-c8f6-4fc4-adf1-4172cb0c7393"]'
-      )
-         .should("be.visible")
-         .click();
-      cy.get(
-         '[data-cy="menu-item Add Assets Log fd0bbb13-cab0-4393-a29b-34b1cd466873 16966204-acbb-4a44-97a4-c1eb05d836a3"]'
-      )
+      cy.get(cyInterfaceCHILD.page.logs.page.assetLog.button.add)
          .should("be.visible")
          .click();
       cy.get('[class="webix_progress_state wxi-sync webix_spin"]').should(
          "not.be.visible"
       );
       cy.get(
-         '[data-cy="LongText Asset Description f2b65cf6-5f67-4aa2-83e6-350cf0705ff1 7a3b8980-e30d-4135-8b01-a4e06fcac9f2"]'
+         cyInterfaceCHILD.page.logs.page.assetLog.form.add.fields
+            .assetDescription
       )
          .scrollIntoView()
          .should("exist")
          .type("Please work", { force: true })
          .clear()
          .type(text);
-      cy.get('[data-cy="button save 7a3b8980-e30d-4135-8b01-a4e06fcac9f2"]')
+      cy.get(cyInterfaceCHILD.page.logs.page.assetLog.form.add.button.save)
          .should("exist")
          .scrollIntoView()
          .click();
       cy.get(
-         '[data-cy="LongText Asset Description f2b65cf6-5f67-4aa2-83e6-350cf0705ff1 7a3b8980-e30d-4135-8b01-a4e06fcac9f2"]'
+         cyInterfaceCHILD.page.logs.page.assetLog.form.add.fields
+            .assetDescription
       ).should("exist");
       cy.get(cyInterfaceCHILD.page.logs.page.assetLog.grid).contains(text);
    });
+
    it("Test contactingAgencies", () => {
       saveAndCheck("logs", "contactingAgencies", "name");
    });
 
-   // Medical //
+   // Medical
    it("Test vaccination", () => {
       saveAndCheck("medical", "vaccination", "otherVacc");
    });
+
    it("Test healthInfo", () => {
       cy.get(cyInterfaceCHILD.tab.medical).should("be.visible").click();
       cy.get(cyInterfaceCHILD.page.medical.tab.healthInfo)
@@ -1084,15 +1071,13 @@ describe("Test add-new forms:", () => {
          .and("contain", "A +")
          .and("contain", "Negative");
    });
+
    it("Test medicalRecord", () => {
       saveAndCheck("medical", "medicalRecord", "symptoms");
    });
+
    it("Test growthLog", () => {
       save("medical", "growthLog", "note");
-      cy.get(".webix_warn")
-         .find(".webix_button")
-         .should("be.visible")
-         .click({ multiple: true, force: true });
       cy.window().then((win) => {
          return win
             .$$("ABViewGrid_11ae8a02-ba79-4e33-bf1f-dd3475e0ee2c_datatable")
@@ -1101,6 +1086,7 @@ describe("Test add-new forms:", () => {
       cy.get(cyInterfaceCHILD.page.medical.page.growthLog.grid).contains(text);
       checkForm("medical", "growthLog", "note");
    });
+
    it("Test developmentLog", () => {
       cy.get(cyInterfaceCHILD.tab.medical).should("be.visible").click();
       cy.get(cyInterfaceCHILD.page.medical.tab.developmentLog)
@@ -1163,6 +1149,7 @@ describe("Test add-new forms:", () => {
          .should("be.visible")
          .contains("John Lennon");
    });
+
    it("Test psychCheck", () => {
       saveAndCheck("medical", "psychCheck", "preAssessmentObservations");
       // cy.get(".webix_warn")
@@ -1180,6 +1167,7 @@ describe("Test add-new forms:", () => {
       //    .log();
       // checkForm("medical", "psychCheck", "preAssessmentObservations");
    });
+
    it("Test psychTest", () => {
       cy.get(cyInterfaceCHILD.tab.medical).should("be.visible").click();
       cy.get(cyInterfaceCHILD.page.medical.tab.psychTest)
@@ -1211,15 +1199,17 @@ describe("Test add-new forms:", () => {
       });
    });
 
-   // Social Work //
+   // Social Work
    it("Test facts", () => {
       let parent = "socialWork";
       let child = "facts";
       let field = "details";
+
       cy.log(parent, child, field);
       cy.get(cyInterfaceCHILD.tab[parent]).should("be.visible").click();
       saveAndCheck(parent, child, field, true);
    });
+
    it("Test familyAssessment", () => {
       let parent = "socialWork";
       let child = "familyAssessment";
@@ -1245,17 +1235,12 @@ describe("Test add-new forms:", () => {
          .clear()
          .type(text);
       cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.button.save)
-         // .scrollIntoView()
          .should("exist")
          .scrollIntoView()
          .click({ force: true });
       cy.get(
          cyInterfaceCHILD.page[parent].page[child].form.add.button.save
       ).should("not.exist"); // wait until popup goes away
-      cy.get(".webix_warn")
-         .find(".webix_button")
-         .filter(":visible")
-         .click({ multiple: true, force: true });
       cy.window().then((win) => {
          return win
             .$$("ABViewGrid_264a4c42-2647-4be8-90b4-42a2d82d8ea6_datatable")
@@ -1264,6 +1249,7 @@ describe("Test add-new forms:", () => {
       cy.get(cyInterfaceCHILD.page[parent].page[child].grid).contains(text);
       checkForm(parent, child, field);
    });
+
    it("Test socialWelfare", () => {
       cy.get(cyInterfaceCHILD.tab.socialWork).should("be.visible").click();
       cy.get(cyInterfaceCHILD.page.socialWork.tab.socialWelfare)
@@ -1295,10 +1281,12 @@ describe("Test add-new forms:", () => {
          .should("be.visible")
          .contains(text);
    });
+
    it("Test lifePlan", () => {
       let parent = "socialWork";
       let child = "lifePlan";
       let field = "action";
+
       save(parent, child, field, null);
       // cy.get(".webix_warn").find(".webix_button").filter(":visible").click();
       cy.get(cyInterfaceCHILD.page[parent].page[child].grid).contains(text);
