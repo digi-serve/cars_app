@@ -12,7 +12,7 @@ Cypress.on("uncaught:exception", () => {
    return false;
 });
 
-// common setup
+// Common Setup
 const cyInterfaceCommon = {
    button: {
       menu: '[data-cy="portal_work_menu_sidebar"]',
@@ -302,7 +302,8 @@ describe("Test Child:", () => {
             "Birthday"
          ).to.eq(child.birthday);
       });
-      // TODO assert that:
+
+      // TODO assert that
       // perhaps these can be checked in the sql?
       // admit info generated
       // prelim health exam generated
@@ -419,7 +420,7 @@ describe("Test Child:", () => {
          ).to.eq("Stone");
       });
 
-      // is it still here on refresh?
+      // Is it still here on refresh?
       openCars();
       cy.get('[data-cy^="dataview container Children"]')
          .contains(child.firstName)
@@ -577,10 +578,15 @@ describe("Test Child:", () => {
       )
          .should("be.visible")
          .type(child.idIssueDate);
+
+      // Type Again
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .basicInfo.page.basicInfo.form.editBasicInfo.field.idIssueDate
-      ).click();
+      )
+         .should("be.visible")
+         .type(child.idIssueDate);
+
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .basicInfo.page.basicInfo.form.editBasicInfo.field.carsProject
@@ -618,7 +624,7 @@ describe("Test Child:", () => {
             .basicInfo.page.basicInfo.form.editBasicInfo.button.save
       ).click();
 
-      // test the report update
+      // Test the report update
       cy.get(cyInterfaceChild.page.basicInfo.tab.admitInfo).click();
       cy.get(
          cyInterfaceChild.page.basicInfo.page.admitInfo.button.editAdmitInfo
@@ -658,6 +664,22 @@ describe("Test Child:", () => {
       ).click();
       cy.get(
          cyInterfaceChild.page.medical.page.prelimHealthExam.form.edit.fields
+            .growthRecord
+      ).click();
+      cy.get(
+         cyInterfaceChild.page.medical.page.prelimHealthExam.form.edit.option
+            .growthRecord[0]
+      ).click();
+      cy.get(
+         cyInterfaceChild.page.medical.page.prelimHealthExam.form.edit.fields
+            .physicalDetails
+      ).click();
+      cy.get(
+         cyInterfaceChild.page.medical.page.prelimHealthExam.form.edit.option
+            .physicalDetails[0]
+      ).click();
+      cy.get(
+         cyInterfaceChild.page.medical.page.prelimHealthExam.form.edit.fields
             .otherDetails
       )
          .scrollIntoView()
@@ -693,9 +715,8 @@ describe("Test Child:", () => {
       // cy.get('[data-cy^="string Reason Received"]')
       //    .scrollIntoView()
       //    .contains("test");
-      // .should("contain", "test");
-      // prepare for assertion
-      // TODO: shouldn't need to reload.
+
+      // TODO shouldn't need to reload
       childVisit();
 
       //assert
@@ -1330,7 +1351,8 @@ describe("Test Staff:", () => {
          cyInterfaceCARS.page.administration.page.staff.form.addStaff.field
             .staffUser
       ).click();
-      // // this should work:
+
+      // this should work
       // cy.get(cyInterfaceCARS.page.administration.page.staff.form.addStaff.option.staffUser[1]).click().wait(250);
       // option 2
       cy.get(
@@ -1457,10 +1479,9 @@ describe("Test Staff:", () => {
             .staffUser
       ).click();
 
-      //// TODO this selector isn't working???
-      //cy.get(cyInterfaceCARS.page.administration.page.staff.form.editStaff.option.staffUser[0]).click();
-
-      // //cy.get(cyInterfaceCARS.page.administration.page.staff.button.editStaff)
+      // TODO this selector isn't working?
+      // cy.get(cyInterfaceCARS.page.administration.page.staff.form.editStaff.option.staffUser[0]).click();
+      // cy.get(cyInterfaceCARS.page.administration.page.staff.button.editStaff)
       // cy.get(".webix_view webix_window webix_popup")
       //   .find(".webix_list_item ")
       //   .should((data) =>{
@@ -1833,6 +1854,7 @@ describe("Test Social Worker Note:", () => {
       // .should((data) => {
       //   expect(data.text().includes(note.text) ? note.text: "", "text").to.eq(note.text);
       // })
+
       // .get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.grid)
       // .find(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.columns[3])
       // .find(".webix_row_select")

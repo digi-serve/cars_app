@@ -2,7 +2,8 @@ import * as Common from "../../../../setup/common.js";
 
 import cyInterfaceCARS from "./test_setup/cy_interface/interface.json";
 import cyInterfaceCHILD from "./test_setup/cy_interface/interface_child.json";
-// common setup
+
+// Common Setup
 const cyInterfaceCommon = {
    button: {
       menu: '[data-cy="portal_work_menu_sidebar"]',
@@ -22,8 +23,7 @@ Cypress.on("uncaught:exception", () => {
    return false;
 });
 
-// CARS setup
-
+// CARS Setup
 const childVisit = () => {
    cy.get(cyInterfaceCommon.button.menu).should("be.visible").click();
    cy.get(cyInterfaceCARS.navigator).should("be.visible").click();
@@ -51,9 +51,9 @@ describe("Test Social Worker Note:", () => {
    });
 
    it("Test Edit Note", () => {
-      // TODO test longtext field
+      // TODO Test Longtext Field
 
-      // arrange
+      //arrange
       const staff = "Alice";
       const note = {
          title: "Hello World",
@@ -219,6 +219,7 @@ describe("Test Social Worker Note:", () => {
       // 4 is the child
       // .find(".webix_ss_right")
       // .scrollTo("right")
+
       // .get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.grid)
       // .find(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.columns[5])
       // .find(".webix_row_select")
@@ -227,9 +228,9 @@ describe("Test Social Worker Note:", () => {
       // });
    });
 
-   // this example is acting very unpredictabaly.
+   // This example is acting very unpredictabaly.
    it("Test Add New Note", () => {
-      // arrange
+      //arrange
       const staff = "Alice";
       const note = {
          title: "Hello World",
@@ -239,7 +240,7 @@ describe("Test Social Worker Note:", () => {
          file: "123.file",
       };
 
-      // act
+      //act
       Common.RunSQL(cy, folderName, ["init_db_for_adding_new_note.sql"]);
       cy.visit("/");
       childVisit();
@@ -419,6 +420,7 @@ describe("Test add-new forms:", () => {
    beforeEach(() => {
       Common.RunSQL(cy, folderName, ["reset_db.sql"]);
       Common.RunSQL(cy, folderName, ["init_db_for_updating_a_childs_data.sql"]);
+      Common.RunSQL(cy, folderName, ["init_db_for_adding_new_form.sql"]);
       Common.AuthLogin(cy);
       cy.visit("/");
       childVisit();
@@ -526,9 +528,9 @@ describe("Test add-new forms:", () => {
          .type("Please work")
          .clear()
          .type(text);
-      //
-      // TODO add file
-      //
+
+      // TODO Add File
+
       cy.get(cyInterfaceCHILD.page.basicInfo.page.files.form.add.button.save)
          .should("exist")
          .click();
@@ -559,75 +561,35 @@ describe("Test add-new forms:", () => {
       )
          .should("exist")
          .click();
-      cy.get(".webix_spin").should("not.be.visible");
       cy.get('div[view_id*="ABViewContainer_cf368115"]').should("exist");
       cy.get(
-         '[data-cy="connectObject Initial Assets 6daf2109-4bbe-4003-b69d-bed120b83ec2 575cd5ba-b217-46f1-9ab1-9ee67555daad"]'
-      )
-         .scrollIntoView()
-         .should("exist");
+         cyInterfaceCHILD.page.basicInfo.page.admitInfo.form.editAdmitInfo.field
+            .initialAssets
+      ).should("exist");
       cy.get(
-         '[data-cy="string Submitter Name e6a79c8c-98ed-4dd8-a2fe-3b4506d46c9e 575cd5ba-b217-46f1-9ab1-9ee67555daad"]'
+         cyInterfaceCHILD.page.basicInfo.page.admitInfo.form.editAdmitInfo.field
+            .nameOfDeliverer
       )
          .scrollIntoView()
          .type("slow")
          .clear()
          .type("concerned neighbor");
-      cy.get('[data-cy="button save 575cd5ba-b217-46f1-9ab1-9ee67555daad"]')
-         .scrollIntoView()
-         .should("exist")
-         .click({ force: true });
       cy.get(
-         '[data-cy="Detail Admit Info 8db15d0b-fd78-4b2b-975a-304b68a43054"]'
-      ).should("be.visible");
-      cy.get(
-         '[data-cy="detail connected Initial Assets 6daf2109-4bbe-4003-b69d-bed120b83ec2 8db15d0b-fd78-4b2b-975a-304b68a43054"]'
-      ).should("be.visible");
-      cy.get(
-         '[data-cy="menu-item Admission Info_3a46 cf368115-3a46-434b-b44e-6104b9bdb592 f076f340-9d27-45cf-b75e-c0930506235e"]'
-      )
-         .should("exist")
-         .click();
-      cy.get(
-         '[data-cy="connectObject Initial Assets 6daf2109-4bbe-4003-b69d-bed120b83ec2 575cd5ba-b217-46f1-9ab1-9ee67555daad"]'
+         cyInterfaceCHILD.page.basicInfo.page.admitInfo.form.editAdmitInfo
+            .button.save
       )
          .scrollIntoView()
          .should("exist")
          .click({ force: true });
-      cy.get(".webix_el_box")
-         .find('input[type="combo"]')
-         .eq(3)
-         .should("exist")
-         .click({ force: true });
-      cy.get('[data-cy="button save 575cd5ba-b217-46f1-9ab1-9ee67555daad"]')
-         .scrollIntoView()
-         .should("exist")
-         .click({ force: true });
-      cy.get(
-         '[data-cy="Detail Admit Info 8db15d0b-fd78-4b2b-975a-304b68a43054"]'
-      ).should("be.visible");
-      cy.get(
-         '[data-cy="detail connected Initial Assets 6daf2109-4bbe-4003-b69d-bed120b83ec2 8db15d0b-fd78-4b2b-975a-304b68a43054"]'
-      ).should("be.visible");
-      cy.visit("/");
-      cy.get(
-         '[data-cy="dataview item Children 0e41a300-4698-40c8-9c5f-f96ea2ceadf6 b3aa04d7-7528-40fb-b947-cef0c4dd52e9"]'
-      )
-         .should("exist")
-         .click({ force: true });
-      cy.get(
-         '[data-cy="tab-AdmitInfo-5b134ce2-7f78-473f-8b0b-e538fcfcf779-a6be43b2-27fc-4b60-aaed-1627393b52da"]'
-      )
-         .should("exist")
-         .click();
+      cy.get(".webix_spin").should("not.be.visible");
       cy.get('div[view_id*="ABViewTab_bbef30a6"]')
          .find(".webix_tree_item")
          .should("be.visible")
          .contains("Collapse Menu")
          .click({ force: true });
-      cy.get(
-         '[data-cy="Detail Admit Info 8db15d0b-fd78-4b2b-975a-304b68a43054"]'
-      ).should("be.visible");
+      cy.get(cyInterfaceCHILD.page.basicInfo.page.admitInfo.grid).should(
+         "be.visible"
+      );
       cy.get(
          '[data-cy="detail connected Child 9db31333-1cbf-429e-b3f7-46573a274054 8db15d0b-fd78-4b2b-975a-304b68a43054"]'
       )
@@ -635,14 +597,13 @@ describe("Test add-new forms:", () => {
          .contains("Nakamoto");
 
       cy.get('[data-cy^="detail text Submitter Name"]')
-         .scrollIntoView()
-         .contains("concerned neighbor")
-         .should("exist");
+         .should("be.visible")
+         .contains("concerned neighbor");
       cy.get(
          '[data-cy="detail connected Initial Assets 6daf2109-4bbe-4003-b69d-bed120b83ec2 8db15d0b-fd78-4b2b-975a-304b68a43054"]'
       )
          .should("be.visible")
-         .contains("from sql data");
+         .contains("no item reported");
    });
 
    // Education //
@@ -660,7 +621,9 @@ describe("Test add-new forms:", () => {
          .type(text);
       // Does Education Transcript field exist
       cy.get(".file-data-field-icon").should("be.visible");
-      // TODO add file test
+
+      // TODO Add File Test
+
       cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.button.save)
          .should("exist")
          .click();
@@ -828,53 +791,120 @@ describe("Test add-new forms:", () => {
 
    // Logs //
    it("Test behaviorLog", () => {
-      // Cannot click on already viewed child page
-      let parent = "logs";
-      let child = "behaviorLog";
-      let field = "process";
-      cy.get(cyInterfaceCHILD.tab[parent]).should("be.visible").click();
-      saveAndCheck(parent, child, field, true);
+      cy.get(cyInterfaceCHILD.tab.logs).should("be.visible").click();
+      cy.get(cyInterfaceCHILD.page.logs.tab.behaviorLog)
+         .should("exist")
+         .click();
+      cy.get(cyInterfaceCHILD.page.logs.page.behaviorLog.button.add)
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCHILD.page.logs.page.behaviorLog.form.add.fields.process
+      )
+         .should("exist")
+         .type(text);
+      cy.get(
+         cyInterfaceCHILD.page.logs.page.behaviorLog.form.add.fields
+            .behaviorDate
+      )
+         .should("exist")
+         .type("17/05/2023");
+      cy.get(
+         cyInterfaceCHILD.page.logs.page.behaviorLog.form.add.fields.recordedBy
+      )
+         .scrollIntoView()
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCHILD.page.logs.page.behaviorLog.form.add.option
+            .recordedBy[0]
+      )
+         .should("exist")
+         .click();
+      cy.get(cyInterfaceCHILD.page.logs.page.behaviorLog.form.add.button.save)
+         .scrollIntoView()
+         .should("exist")
+         .click();
+      cy.get(cyInterfaceCHILD.page.logs.page.behaviorLog.grid)
+         .should("be.visible")
+         .contains(text);
+      cy.window().then((win) => {
+         return win
+            .$$("ABViewGrid_c2e31c4e-8a5d-4bc0-bafe-4db95ff03d69_datatable")
+            .scrollTo(600, 0);
+      });
+      cy.get(cyInterfaceCHILD.page.logs.page.behaviorLog.grid)
+         .should("be.visible")
+         .contains("John Lennon");
    });
    it("Test visitorLog", () => {
-      // TODO this has a lot more to test about it
-      // sub-forms
-      // [+] address
-      // [+] visitor
-
-      save("logs", "visitorLog", "details");
-      cy.get(".webix_warn")
-         .find(".webix_button")
-         .should("be.visible")
-         .click({ multiple: true, force: true });
+      cy.get(cyInterfaceCHILD.tab.logs).should("be.visible").click();
+      cy.get(cyInterfaceCHILD.page.logs.tab.visitorLog).should("exist").click();
+      cy.get(cyInterfaceCHILD.page.logs.page.visitorLog.button.add)
+         .should("exist")
+         .click();
+      cy.get(cyInterfaceCHILD.page.logs.page.visitorLog.form.add.fields.child)
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCHILD.page.logs.page.visitorLog.form.add.option.child[0]
+      )
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCHILD.page.logs.page.visitorLog.form.add.fields.recordDate
+      )
+         .should("exist")
+         .type("17/05/2023");
+      cy.get(cyInterfaceCHILD.page.logs.page.visitorLog.form.add.fields.visitor)
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCHILD.page.logs.page.visitorLog.form.add.option.visitor[0]
+      )
+         .should("exist")
+         .click();
+      cy.get(cyInterfaceCHILD.page.logs.page.visitorLog.form.add.fields.address)
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCHILD.page.logs.page.visitorLog.form.add.option.address[0]
+      )
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCHILD.page.logs.page.visitorLog.form.add.fields.recordedBy
+      )
+         .scrollIntoView()
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCHILD.page.logs.page.visitorLog.form.add.option
+            .recordedBy[0]
+      )
+         .should("exist")
+         .click();
+      cy.get(cyInterfaceCHILD.page.logs.page.visitorLog.form.add.button.save)
+         .scrollIntoView()
+         .should("exist")
+         .click();
+      cy.get(".webix_spin").should("not.be.visible");
       cy.window().then((win) => {
          return win
             .$$("ABViewGrid_75501667-a822-453a-a676-0e274977468e_datatable")
-            .scrollTo(500, 0);
+            .scrollTo(600, 0);
       });
-      cy.get(
-         '[data-cy="ABViewGrid_75501667-a822-453a-a676-0e274977468e_datatable"]'
-      ).contains(text);
-      checkForm("logs", "visitorLog", "details");
+      cy.get(cyInterfaceCHILD.page.logs.page.visitorLog.grid)
+         .should("be.visible")
+         .contains("AlanSmith");
    });
    it("Test homeVisit", () => {
-      let parent = "logs";
-      let child = "homeVisit";
-      let field = "no";
-
-      cy.get(cyInterfaceCHILD.tab[parent]).should("be.visible").click();
-      cy.get(cyInterfaceCHILD.page[parent].tab[child])
-         .should("be.visible")
+      cy.get(cyInterfaceCHILD.tab.logs).should("be.visible").click();
+      cy.get(cyInterfaceCHILD.page.logs.tab.homeVisit).should("exist").click();
+      cy.get(cyInterfaceCHILD.page.logs.page.homeVisit.button.add)
+         .should("exist")
          .click();
-
-      cy.get(cyInterfaceCHILD.page[parent].page[child].button.add)
-         .should("be.visible")
-         .click();
-      // wait for loading to go away
-      // eslint-disable-next-line prettier/prettier
-      cy.get('[class="webix_progress_state wxi-sync webix_spin"]')
-         // eslint-disable-next-line prettier/prettier
-         .should("not.be.visible");
-      cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.fields[field])
+      cy.get(cyInterfaceCHILD.page.logs.page.homeVisit.form.add.fields.visitNo)
          .should("exist")
          .type("Please work", { force: true })
          .clear()
@@ -882,44 +912,101 @@ describe("Test add-new forms:", () => {
       cy.get(cyInterfaceCHILD.page.logs.page.homeVisit.form.add.fields.address)
          .should("exist")
          .click();
-      cy.get(cyInterfaceCHILD.page.logs.page.homeVisit.form.add.option.address)
+      cy.get(
+         cyInterfaceCHILD.page.logs.page.homeVisit.form.add.option.address[0]
+      )
          .should("exist")
          .click();
       cy.get(cyInterfaceCHILD.page.logs.page.homeVisit.form.add.fields.contact)
          .should("exist")
          .click();
-      cy.get(cyInterfaceCHILD.page.logs.page.homeVisit.form.add.option.contact)
+      cy.get(
+         cyInterfaceCHILD.page.logs.page.homeVisit.form.add.option.contact[0]
+      )
          .should("exist")
          .click();
-
-      // Scroll to see and type the URL location on 'Site URL Field'
+      cy.get(
+         cyInterfaceCHILD.page.logs.page.homeVisit.form.add.fields.familyMembers
+      )
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCHILD.page.logs.page.homeVisit.form.add.option
+            .familyMembers[0]
+      )
+         .should("exist")
+         .click();
       cy.get(cyInterfaceCHILD.page.logs.page.homeVisit.form.add.fields.siteUrl)
          .scrollIntoView()
          .should("exist")
          .type("www.google.com");
-
-      cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.button.save)
-         // .scrollIntoView()
-         .should("exist")
+      cy.get(cyInterfaceCHILD.page.logs.page.homeVisit.form.add.button.save)
          .scrollIntoView()
+         .should("exist")
          .click();
-      cy.get(cyInterfaceCHILD.page[parent].page[child].grid).contains(text);
-
-      // Scroll to see the 'Site URL Field'
+      cy.get(cyInterfaceCHILD.page.logs.page.homeVisit.grid)
+         .should("be.visible")
+         .contains(text);
       cy.window().then((win) => {
          return win
             .$$("ABViewGrid_cc01e916-b85d-4470-8e95-ebe1cded8477_datatable")
-            .scrollTo(2000, 1);
+            .scrollTo(1600, 0);
       });
-      // Should see 'www.google.com' in the Site URL Field
-      cy.get(
-         '[data-cy="ABViewGrid_cc01e916-b85d-4470-8e95-ebe1cded8477_datatable"]'
-      ).contains("www.google.com");
-      checkForm(parent, child, field);
+      cy.get(cyInterfaceCHILD.page.logs.page.homeVisit.grid)
+         .should("be.visible")
+         .contains("www.google.com");
    });
    it("Test participationLog", () => {
-      saveAndCheck("logs", "participationLog", "behavior");
+      cy.get(cyInterfaceCHILD.tab.logs).should("be.visible").click();
+      cy.get(cyInterfaceCHILD.page.logs.tab.participationLog)
+         .should("exist")
+         .click();
+      cy.get(cyInterfaceCHILD.page.logs.page.participationLog.button.add)
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCHILD.page.logs.page.participationLog.form.add.fields.date
+      )
+         .should("exist")
+         .type("17/05/2023", { force: true });
+      cy.get(
+         cyInterfaceCHILD.page.logs.page.participationLog.form.add.fields
+            .behavior
+      )
+         .should("exist")
+         .type(text);
+      cy.get(
+         cyInterfaceCHILD.page.logs.page.participationLog.form.add.fields
+            .recordedBy
+      )
+         .scrollIntoView()
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCHILD.page.logs.page.participationLog.form.add.option
+            .recordedBy[0]
+      )
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCHILD.page.logs.page.participationLog.form.add.button.save
+      )
+         .scrollIntoView()
+         .should("exist")
+         .click();
+      cy.get(cyInterfaceCHILD.page.logs.page.participationLog.grid)
+         .should("be.visible")
+         .contains(text);
+      cy.window().then((win) => {
+         return win
+            .$$("ABViewGrid_8d8ee503-9a5e-4f81-ad8b-07d4b9133f59_datatable")
+            .scrollTo(600, 0);
+      });
+      cy.get(cyInterfaceCHILD.page.logs.page.participationLog.grid)
+         .should("be.visible")
+         .contains("John Lennon");
    });
+
    it("Test assetLog", () => {
       cy.get(
          '[data-cy="tab-Logs-30406204-b89c-4322-bff0-d07cd6be4404-bbef30a6-8b04-49c3-8520-818568ccaa79"]'
@@ -954,9 +1041,7 @@ describe("Test add-new forms:", () => {
       cy.get(
          '[data-cy="LongText Asset Description f2b65cf6-5f67-4aa2-83e6-350cf0705ff1 7a3b8980-e30d-4135-8b01-a4e06fcac9f2"]'
       ).should("exist");
-      cy.get(
-         '[data-cy="ABViewGrid_11c6e28c-4503-41c2-a6ce-93098212568d_datatable"]'
-      ).contains("Hello World");
+      cy.get(cyInterfaceCHILD.page.logs.page.assetLog.grid).contains(text);
    });
    it("Test contactingAgencies", () => {
       saveAndCheck("logs", "contactingAgencies", "name");
@@ -973,11 +1058,11 @@ describe("Test add-new forms:", () => {
       //    .first() //Two buttons are in the dom need to get the first
       //    .should("be.visible")
       //    .click();
-      // // cy.window().then((win) => {
-      // //    return win
-      // //       .$$("ABViewGrid_cc56027a-81f0-4da0-8d56-eb7c91bee1a5_datatable")
-      // //       .scrollTo(1200, 0);
-      // // });
+      // cy.window().then((win) => {
+      //    return win
+      //       .$$("ABViewGrid_cc56027a-81f0-4da0-8d56-eb7c91bee1a5_datatable")
+      //       .scrollTo(1200, 0);
+      // });
       // cy.get(cyInterfaceCHILD.page.medical.page.healthInfo.grid)
       //    .contains(text)
       // checkForm("medical", "healthInfo", "injections");
@@ -1000,20 +1085,66 @@ describe("Test add-new forms:", () => {
       checkForm("medical", "growthLog", "note");
    });
    it("Test developmentLog", () => {
-      save("medical", "developmentLog", "notes");
-      cy.get(".webix_warn")
-         .find(".webix_button")
+      cy.get(cyInterfaceCHILD.tab.medical).should("be.visible").click();
+      cy.get(cyInterfaceCHILD.page.medical.tab.developmentLog)
+         .should("exist")
+         .click();
+      cy.get(cyInterfaceCHILD.page.medical.page.developmentLog.button.add)
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCHILD.page.medical.page.developmentLog.form.add.fields
+            .developmentDate
+      )
+         .should("exist")
+         .type("17/05/2023", { force: true });
+      cy.get(
+         cyInterfaceCHILD.page.medical.page.developmentLog.form.add.fields
+            .developmentType
+      )
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCHILD.page.medical.page.developmentLog.form.add.option
+            .developmentType[0]
+      )
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCHILD.page.medical.page.developmentLog.form.add.fields.notes
+      )
+         .should("exist")
+         .type(text);
+      cy.get(
+         cyInterfaceCHILD.page.medical.page.developmentLog.form.add.fields
+            .recordedBy
+      )
+         .scrollIntoView()
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCHILD.page.medical.page.developmentLog.form.add.option
+            .recordedBy[0]
+      )
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCHILD.page.medical.page.developmentLog.form.add.button.save
+      )
+         .scrollIntoView()
+         .should("exist")
+         .click();
+      cy.get(cyInterfaceCHILD.page.medical.page.developmentLog.grid)
          .should("be.visible")
-         .click({ multiple: true, force: true });
+         .contains("Social Dev");
       cy.window().then((win) => {
          return win
             .$$("ABViewGrid_c1304fbf-e972-4a14-b73a-976fca4823f1_datatable")
-            .scrollTo(1200, 0);
+            .scrollTo(600, 0);
       });
-      cy.get(cyInterfaceCHILD.page.medical.page.developmentLog.grid).contains(
-         text
-      );
-      checkForm("medical", "developmentLog", "notes");
+      cy.get(cyInterfaceCHILD.page.medical.page.developmentLog.grid)
+         .should("be.visible")
+         .contains("John Lennon");
    });
    it("Test psychCheck", () => {
       saveAndCheck("medical", "psychCheck", "preAssessmentObservations");
@@ -1033,8 +1164,34 @@ describe("Test add-new forms:", () => {
       // checkForm("medical", "psychCheck", "preAssessmentObservations");
    });
    it("Test psychTest", () => {
-      // todo tool adding
-      saveAndCheck("medical", "psychTest", "educationLevel");
+      cy.get(cyInterfaceCHILD.tab.medical).should("be.visible").click();
+      cy.get(cyInterfaceCHILD.page.medical.tab.psychTest)
+         .should("exist")
+         .click();
+      cy.get(cyInterfaceCHILD.page.medical.page.psychTest.button.add)
+         .should("exist")
+         .click();
+      cy.get(cyInterfaceCHILD.page.medical.page.psychTest.form.add.fields.date)
+         .should("exist")
+         .type("17/05/2023", { force: true });
+      cy.get(
+         cyInterfaceCHILD.page.medical.page.psychTest.form.add.fields
+            .educationLevel
+      )
+         .should("exist")
+         .type(text);
+      cy.get(cyInterfaceCHILD.page.medical.page.psychTest.form.add.button.save)
+         .scrollIntoView()
+         .should("exist")
+         .click();
+      cy.get(cyInterfaceCHILD.page.medical.page.psychTest.grid)
+         .should("be.visible")
+         .contains(text);
+      cy.window().then((win) => {
+         return win
+            .$$("ABViewGrid_5faf2ee0-dbf7-4567-942f-069a4a18dc16_datatable")
+            .scrollTo(1000, 0);
+      });
    });
 
    // Social Work //
@@ -1060,10 +1217,10 @@ describe("Test add-new forms:", () => {
          .should("be.visible")
          .click();
       // wait for loading to go away
-      // eslint-disable-next-line prettier/prettier
-      cy.get('[class="webix_progress_state wxi-sync webix_spin"]')
-         // eslint-disable-next-line prettier/prettier
-         .should("not.be.visible");
+
+      cy.get('[class="webix_progress_state wxi-sync webix_spin"]').should(
+         "not.be.visible"
+      );
       cy.get(cyInterfaceCHILD.page[parent].page[child].form.add.fields[field])
          .scrollIntoView()
          .should("exist")
@@ -1091,7 +1248,35 @@ describe("Test add-new forms:", () => {
       checkForm(parent, child, field);
    });
    it("Test socialWelfare", () => {
-      saveAndCheck("socialWork", "socialWelfare", "history");
+      cy.get(cyInterfaceCHILD.tab.socialWork).should("be.visible").click();
+      cy.get(cyInterfaceCHILD.page.socialWork.tab.socialWelfare)
+         .should("exist")
+         .click();
+      cy.get(cyInterfaceCHILD.page.socialWork.page.socialWelfare.button.add)
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCHILD.page.socialWork.page.socialWelfare.form.add.fields
+            .recordedDate
+      )
+         .should("exist")
+         .type("17/05/2023", { force: true });
+      cy.get(
+         cyInterfaceCHILD.page.socialWork.page.socialWelfare.form.add.fields
+            .history
+      )
+         .should("exist")
+         .type(text);
+      cy.get(
+         cyInterfaceCHILD.page.socialWork.page.socialWelfare.form.add.button
+            .save
+      )
+         .scrollIntoView()
+         .should("exist")
+         .click();
+      cy.get(cyInterfaceCHILD.page.socialWork.page.socialWelfare.grid)
+         .should("be.visible")
+         .contains(text);
    });
    it("Test lifePlan", () => {
       let parent = "socialWork";
