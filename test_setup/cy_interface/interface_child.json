@@ -577,7 +577,13 @@
                         "date": "[data-cy=\"date Date 2dfc57c3-4b77-4e52-b4f4-72ef9d2ee7e7 91eeeacd-cef5-40f4-889c-d30aefb863cd\"]",
                         "educationLevel": "[data-cy=\"string Education Level 0d1d28f4-b055-45cc-8ddb-4a5007fffffa 91eeeacd-cef5-40f4-889c-d30aefb863cd\"]",
                         "problems": "[data-cy=\"string Problems b4bb4db9-db3d-4165-a1a4-66cc44f4c58b 91eeeacd-cef5-40f4-889c-d30aefb863cd\"]",
+                        "psychologist": "[data-cy=\"string Psychologist 4fcdffde-baad-4c71-93c7-28061de82878 91eeeacd-cef5-40f4-889c-d30aefb863cd\"]",
                         "psychTool": "[data-cy=\"connectObject Psych Tool864 6e2a3c84-cf77-48b1-babc-5a68faf16124 91eeeacd-cef5-40f4-889c-d30aefb863cd\"]"
+                     },
+                     "option": {
+                        "psychTool": [
+                           "[data-cy=\"connectObject options a8101cc6-7b50-4166-8703-661e6122b7c0 6e2a3c84-cf77-48b1-babc-5a68faf16124 91eeeacd-cef5-40f4-889c-d30aefb863cd\"]"
+                        ]
                      }
                   }
                },

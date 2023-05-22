@@ -1185,6 +1185,28 @@ describe("Test add-new forms:", () => {
       )
          .should("exist")
          .type(text);
+      cy.get(
+         cyInterfaceCHILD.page.medical.page.psychTest.form.add.fields.psychTool
+      )
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCHILD.page.medical.page.psychTest.form.add.option
+            .psychTool[0]
+      )
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCHILD.page.medical.page.psychTest.form.add.fields.psychTool
+      )
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCHILD.page.medical.page.psychTest.form.add.fields
+            .psychologist
+      )
+         .should("exist")
+         .type("Welcome");
       cy.get(cyInterfaceCHILD.page.medical.page.psychTest.form.add.button.save)
          .scrollIntoView()
          .should("exist")
@@ -1195,8 +1217,11 @@ describe("Test add-new forms:", () => {
       cy.window().then((win) => {
          return win
             .$$("ABViewGrid_5faf2ee0-dbf7-4567-942f-069a4a18dc16_datatable")
-            .scrollTo(1000, 0);
+            .scrollTo(1200, 0);
       });
+      cy.get(cyInterfaceCHILD.page.medical.page.psychTest.grid)
+         .should("be.visible")
+         .contains("Welcome");
    });
 
    // Social Work

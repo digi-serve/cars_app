@@ -8,5 +8,5 @@ LOCK TABLES `AB_CARS_FamilyMembers` WRITE;
 INSERT INTO `AB_CARS_FamilyMembers` (`uuid`, `created_at`, `updated_at`, `properties`, `No`, `translations`, `Date of Birth`, `Child`) VALUES ("f752e232-b655-4982-9128-eb43f6095b65", "2023-05-17 10:47:22", "2023-05-17 10:47:22", NULL, "1", '[{\"language_code\":\"en\",\"First Name\":\"Alan\",\"Last Name\":\"Smith\",\"Relationship\":\"Friend\",\"Note\":\"\"}]', "2023-05-17", "0e41a300-4698-40c8-9c5f-f96ea2ceadf6");
 UNLOCK TABLES;
 LOCK TABLES `AB_CARS_PsychTool` WRITE;
-INSERT INTO `AB_CARS_PsychTool` (`uuid`, `created_at`, `updated_at`, `properties`, `Date`, `translations`, `Psych Tests`) VALUES ("a8101cc6-7b50-4166-8703-661e6122b7c0", "2023-05-20 17:00:49", "2023-05-20 17:00:49", NULL, "2023-05-17", '[{\"language_code\":\"en\",\"Tool\":\"Wheel Chair\"}]', "5141ae17-b084-45c3-b0f1-183df9ea3d09");
+INSERT INTO `AB_CARS_PsychTool` (`uuid`, `created_at`, `updated_at`, `properties`, `Date`, `translations`) VALUES ("a8101cc6-7b50-4166-8703-661e6122b7c0", "2023-05-20 17:00:49", "2023-05-20 17:00:49", NULL, "2023-05-17", '[{\"language_code\":\"en\",\"Tool\":\"Wheel Chair\"}]');
 UNLOCK TABLES;
