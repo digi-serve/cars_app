@@ -95,6 +95,11 @@
                         "initialBloodTest": "[data-cy=\"connectObject Initial Blood Test 3c4fc60c-8e64-4e6e-b9b1-bbdf5c95be1f 575cd5ba-b217-46f1-9ab1-9ee67555daad\"]",
                         "nameOfDeliverer": "[data-cy=\"string Submitter Name e6a79c8c-98ed-4dd8-a2fe-3b4506d46c9e 575cd5ba-b217-46f1-9ab1-9ee67555daad\"]",
                         "staff": "[data-cy=\"connectObject Recipient Staff a0710a1c-405c-4790-9df8-8bc303acb252 575cd5ba-b217-46f1-9ab1-9ee67555daad\"]"
+                     },
+                     "option": {
+                        "initialBloodTest": [
+                           "[data-cy=\"connectObject options e91c9cd9-e435-4ed6-9d3a-2a4be179cbb4 3c4fc60c-8e64-4e6e-b9b1-bbdf5c95be1f 575cd5ba-b217-46f1-9ab1-9ee67555daad\"]"
+                        ]
                      }
                   }
                },

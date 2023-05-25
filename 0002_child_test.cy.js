@@ -584,6 +584,18 @@ describe("Test add-new forms:", () => {
          .clear()
          .type("concerned neighbor");
       cy.get(
+         cyInterfaceCHILD.page.basicInfo.page.admitInfo.form.editAdmitInfo.field
+            .initialBloodTest
+      )
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCHILD.page.basicInfo.page.admitInfo.form.editAdmitInfo
+            .option.initialBloodTest[0]
+      )
+         .should("exist")
+         .click();
+      cy.get(
          cyInterfaceCHILD.page.basicInfo.page.admitInfo.form.editAdmitInfo
             .button.save
       )
@@ -717,6 +729,7 @@ describe("Test add-new forms:", () => {
          .should("exist")
          .contains("Save")
          .click({ force: true });
+      cy.get(".webix_spin").should("not.be.visible");
       cy.get(cyInterfaceCHILD.page.education.page.schoolRecords.grid)
          .should("be.visible")
          .contains("256");
@@ -756,6 +769,7 @@ describe("Test add-new forms:", () => {
          .should("exist")
          .contains("Save")
          .click({ force: true });
+      cy.get(".webix_spin").should("not.be.visible");
       cy.get(cyInterfaceCHILD.page.education.page.schoolRecords.grid).should(
          "be.visible"
       );
@@ -791,12 +805,6 @@ describe("Test add-new forms:", () => {
       )
          .should("exist")
          .type(text);
-      cy.get(
-         cyInterfaceCHILD.page.logs.page.behaviorLog.form.add.fields
-            .behaviorDate
-      )
-         .should("exist")
-         .type("17/05/2023");
       cy.get(
          cyInterfaceCHILD.page.logs.page.behaviorLog.form.add.fields.recordedBy
       )
@@ -840,11 +848,6 @@ describe("Test add-new forms:", () => {
       )
          .should("exist")
          .click();
-      cy.get(
-         cyInterfaceCHILD.page.logs.page.visitorLog.form.add.fields.recordDate
-      )
-         .should("exist")
-         .type("17/05/2023");
       cy.get(cyInterfaceCHILD.page.logs.page.visitorLog.form.add.fields.visitor)
          .should("exist")
          .click();
@@ -955,11 +958,6 @@ describe("Test add-new forms:", () => {
       cy.get(cyInterfaceCHILD.page.logs.page.participationLog.button.add)
          .should("exist")
          .click();
-      cy.get(
-         cyInterfaceCHILD.page.logs.page.participationLog.form.add.fields.date
-      )
-         .should("exist")
-         .type("17/05/2023", { force: true });
       cy.get(
          cyInterfaceCHILD.page.logs.page.participationLog.form.add.fields
             .behavior
@@ -1097,12 +1095,6 @@ describe("Test add-new forms:", () => {
          .click();
       cy.get(
          cyInterfaceCHILD.page.medical.page.developmentLog.form.add.fields
-            .developmentDate
-      )
-         .should("exist")
-         .type("17/05/2023", { force: true });
-      cy.get(
-         cyInterfaceCHILD.page.medical.page.developmentLog.form.add.fields
             .developmentType
       )
          .should("exist")
@@ -1176,9 +1168,6 @@ describe("Test add-new forms:", () => {
       cy.get(cyInterfaceCHILD.page.medical.page.psychTest.button.add)
          .should("exist")
          .click();
-      cy.get(cyInterfaceCHILD.page.medical.page.psychTest.form.add.fields.date)
-         .should("exist")
-         .type("17/05/2023", { force: true });
       cy.get(
          cyInterfaceCHILD.page.medical.page.psychTest.form.add.fields
             .educationLevel
@@ -1283,12 +1272,6 @@ describe("Test add-new forms:", () => {
       cy.get(cyInterfaceCHILD.page.socialWork.page.socialWelfare.button.add)
          .should("exist")
          .click();
-      cy.get(
-         cyInterfaceCHILD.page.socialWork.page.socialWelfare.form.add.fields
-            .recordedDate
-      )
-         .should("exist")
-         .type("17/05/2023", { force: true });
       cy.get(
          cyInterfaceCHILD.page.socialWork.page.socialWelfare.form.add.fields
             .history
