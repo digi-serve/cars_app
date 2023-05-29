@@ -1,0 +1,12 @@
+LOCK TABLES `AB_CARS_Vaccinations` WRITE;
+INSERT INTO `AB_CARS_Vaccinations` (`uuid`, `created_at`, `updated_at`, `properties`, `translations`, `Date`, `Vacc Status`, `Record Date`, `Vaccinations`, `Recipient Staff`) VALUES ("15384f51-5549-475f-a35f-0c03e0432dfb", "2023-05-17 09:03:26", "2023-05-17 09:03:26", NULL, '[{\"language_code\":\"en\",\"Other Vacc\":\"Influenza\"}]', "2023-05-17", "1507774760910", "2023-05-17", "0e41a300-4698-40c8-9c5f-f96ea2ceadf6", "e746f80b-3fbe-4aeb-9fdf-2707740eeaca");
+UNLOCK TABLES;
+LOCK TABLES `AB_CARS_BasicHealthInfo` WRITE;
+INSERT INTO `AB_CARS_BasicHealthInfo` (`uuid`, `created_at`, `updated_at`, `properties`, `Date`, `Blood Group`, `HIV Test Result`, `Record Date`, `Children`, `Recipient Staff`) VALUES ("e91c9cd9-e435-4ed6-9d3a-2a4be179cbb4", "2023-05-17 09:10:55", "2023-05-17 09:10:55", NULL, "2023-05-17", "1554886633058", "1507774763717", "2023-05-17", "0e41a300-4698-40c8-9c5f-f96ea2ceadf6", "e746f80b-3fbe-4aeb-9fdf-2707740eeaca");
+UNLOCK TABLES;
+LOCK TABLES `AB_CARS_FamilyMembers` WRITE;
+INSERT INTO `AB_CARS_FamilyMembers` (`uuid`, `created_at`, `updated_at`, `properties`, `No`, `translations`, `Date of Birth`, `Child`) VALUES ("f752e232-b655-4982-9128-eb43f6095b65", "2023-05-17 10:47:22", "2023-05-17 10:47:22", NULL, "1", '[{\"language_code\":\"en\",\"First Name\":\"Alan\",\"Last Name\":\"Smith\",\"Relationship\":\"Friend\",\"Note\":\"\"}]', "2023-05-17", "0e41a300-4698-40c8-9c5f-f96ea2ceadf6");
+UNLOCK TABLES;
+LOCK TABLES `AB_CARS_PsychTool` WRITE;
+INSERT INTO `AB_CARS_PsychTool` (`uuid`, `created_at`, `updated_at`, `properties`, `Date`, `translations`) VALUES ("a8101cc6-7b50-4166-8703-661e6122b7c0", "2023-05-20 17:00:49", "2023-05-20 17:00:49", NULL, "2023-05-17", '[{\"language_code\":\"en\",\"Tool\":\"Wheel Chair\"}]');
+UNLOCK TABLES;
