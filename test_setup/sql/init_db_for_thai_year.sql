@@ -1,0 +1,3 @@
+LOCK TABLES `SITE_USER` WRITE;
+UPDATE `SITE_USER` SET `languageCode`='th'
+WHERE `uuid`='a63515fc-9413-4aae-8222-d4e07ab398d8';

@@ -424,7 +424,8 @@
                                           }
                                        }
                                     }
-                                 }
+                                 },
+                                 "grid": "div[view_id=\"ABViewContainer_3c31f463-e873-4e4d-80d1-bfae0296c3e2\"]"
                               }
                            },
                            "tab": {

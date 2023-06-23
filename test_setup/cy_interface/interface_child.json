@@ -126,6 +126,7 @@
          "tab": {
             "admitInfo": "[data-cy=\"tab-AdmitInfo-5b134ce2-7f78-473f-8b0b-e538fcfcf779-a6be43b2-27fc-4b60-aaed-1627393b52da\"]",
             "basicInfo": "[data-cy=\"tab-BasicInfo-3c31f463-e873-4e4d-80d1-bfae0296c3e2-a6be43b2-27fc-4b60-aaed-1627393b52da\"]",
+            "collapseMenu": "[data-cy=\"tab-collapseMenu-ABViewTab_a6be43b2-27fc-4b60-aaed-1627393b52da_collapseMenu\"]",
             "documents": "[data-cy=\"tab-Documents-13c435f2-1da9-4287-bea4-970aaf881bd5-a6be43b2-27fc-4b60-aaed-1627393b52da\"]",
             "files": "[data-cy=\"tab-Files-0f232467-6a85-4366-91a6-bf69a180565f-a6be43b2-27fc-4b60-aaed-1627393b52da\"]"
          }
@@ -770,6 +771,7 @@
    },
    "tab": {
       "basicInfo": "[data-cy=\"tab-BasicInfo-8a41a127-98ed-43d1-bcc7-a58630cb7610-bbef30a6-8b04-49c3-8520-818568ccaa79\"]",
+      "collapseMenu": "[data-cy=\"tab-collapseMenu-ABViewTab_bbef30a6-8b04-49c3-8520-818568ccaa79_collapseMenu\"]",
       "education": "[data-cy=\"tab-Education-55641379-f712-497c-abe8-7a7b3e3091e0-bbef30a6-8b04-49c3-8520-818568ccaa79\"]",
       "logs": "[data-cy=\"tab-Logs-30406204-b89c-4322-bff0-d07cd6be4404-bbef30a6-8b04-49c3-8520-818568ccaa79\"]",
       "medical": "[data-cy=\"tab-Medical-cb990b79-dcee-4a43-b093-36e1850435de-bbef30a6-8b04-49c3-8520-818568ccaa79\"]",
