@@ -1184,7 +1184,9 @@ describe("Test Home:", () => {
       cy.get(
          cyInterfaceCARS.page.administration.page.home.view.home.form.field
             .phoneNumber
-      ).type(home.phoneNumber);
+      )
+         .clear()
+         .type(home.phoneNumber);
       cy.get(
          cyInterfaceCARS.page.administration.page.home.view.home.form.button
             .save
@@ -1827,11 +1829,12 @@ describe("Test Social Worker Note:", () => {
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.editNote.field.date
       ).click();
-      cy.get(".webix_cal_icon_clear").click();
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.editNote.field.date
-      ).type(note.date);
+      )
+         .clear()
+         .type(note.date);
       // cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.form.editNote.field.date).click();
       // cy.get(".webix_cal_icon_today").click()
 
@@ -1964,7 +1967,6 @@ describe("Test Social Worker Note:", () => {
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.addNote.field.date
       ).click();
-      cy.get(".webix_cal_icon_clear").click();
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.addNote.field.date

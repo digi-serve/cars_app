@@ -306,6 +306,37 @@
                            "[data-cy=\"connectObject options f752e232-b655-4982-9128-eb43f6095b65 20cf53e2-e566-4bfa-8e70-395f56f7640e 978eec5a-1bdd-42cd-95d0-4e6c54e2cab7\"]"
                         ]
                      }
+                  },
+                  "edit": {
+                     "button": {
+                        "addAddress": "div[view_id=\"6e752cd0-defa-4b81-bd87-a68fabb7a1d8_80c2a3a8-e15f-47bf-b6b3-8c1ffcb7e85f_popup_add_new_button1687609502794\"]",
+                        "addVisitor": "div[view_id=\"ee2ed175-8e45-4b20-bb26-b608c322a949_f1da905d-fa99-40b1-82cf-754d4449645e_popup_add_new_button1687609502794\"]",
+                        "save": "[data-cy=\"button save 6e1b4c55-fe5f-4f77-b397-efd4c7fdebbd\"]"
+                     },
+                     "fields": {
+                        "address": "[data-cy=\"connectObject Address 9dd47339-90f6-4f31-bc0a-4636d55152ec 6e1b4c55-fe5f-4f77-b397-efd4c7fdebbd\"]",
+                        "child": "[data-cy=\"connectObject Children 64df3173-4723-4908-8bec-9a61350d41fe 6e1b4c55-fe5f-4f77-b397-efd4c7fdebbd\"]",
+                        "date": "[data-cy=\"date Date ca3e0aac-eb33-46f0-82b2-8f44dffa63e6 6e1b4c55-fe5f-4f77-b397-efd4c7fdebbd\"]",
+                        "details": "[data-cy=\"LongText Notes ccd24fed-9643-44ce-8890-082b6366d239 6e1b4c55-fe5f-4f77-b397-efd4c7fdebbd\"]",
+                        "recordDate": "[data-cy=\"date Record Date a40b3f8a-39f0-4efb-954f-99ba1b28b54c 6e1b4c55-fe5f-4f77-b397-efd4c7fdebbd\"]",
+                        "recordedBy": "[data-cy=\"connectObject Recorded by f272d0b3-855d-467b-9438-3971ba00213d 6e1b4c55-fe5f-4f77-b397-efd4c7fdebbd\"]",
+                        "visitor": "[data-cy=\"connectObject Visitor 20cf53e2-e566-4bfa-8e70-395f56f7640e 6e1b4c55-fe5f-4f77-b397-efd4c7fdebbd\"]",
+                        "visitedByList": "[data-cy=\"list Visited By List 56d3614b-8fb8-46ab-8ddd-e829ec4b1959 6e1b4c55-fe5f-4f77-b397-efd4c7fdebbd\"]"
+                     },
+                     "option": {
+                        "address": [
+                           "[data-cy=\"connectObject options cb46b6b4-dc25-4915-80f7-c1febf26da4a 9dd47339-90f6-4f31-bc0a-4636d55152ec 6e1b4c55-fe5f-4f77-b397-efd4c7fdebbd\"]"
+                        ],
+                        "child": [
+                           "[data-cy=\"connectObject options 0e41a300-4698-40c8-9c5f-f96ea2ceadf6 64df3173-4723-4908-8bec-9a61350d41fe 6e1b4c55-fe5f-4f77-b397-efd4c7fdebbd\"]"
+                        ],
+                        "recordedBy": [
+                           "[data-cy=\"connectObject options e746f80b-3fbe-4aeb-9fdf-2707740eeaca f272d0b3-855d-467b-9438-3971ba00213d 6e1b4c55-fe5f-4f77-b397-efd4c7fdebbd\"]"
+                        ],
+                        "visitor": [
+                           "[data-cy=\"connectObject options f752e232-b655-4982-9128-eb43f6095b65 20cf53e2-e566-4bfa-8e70-395f56f7640e 6e1b4c55-fe5f-4f77-b397-efd4c7fdebbd\"]"
+                        ]
+                     }
                   }
                },
                "grid": "[data-cy=\"ABViewGrid_75501667-a822-453a-a676-0e274977468e_datatable\"]"
