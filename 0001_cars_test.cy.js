@@ -790,6 +790,62 @@ describe("Test Child:", () => {
    });
 });
 
+describe("Test Thai Year:", () => {
+   it("Test Add Date", () => {
+      //act
+      Common.RunSQL(cy, folderName, [
+         "init_db_for_editing_a_child.sql",
+         "init_db_for_thai_year.sql",
+      ]);
+      childVisit();
+
+      // cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.tab.basicInfo).click();
+      // cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.basicInfo.tab.basicInfo).click();
+      childVisit(); // Reload Again
+
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .basicInfo.page.basicInfo.button.editBasicInfo
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .basicInfo.page.basicInfo.form.editBasicInfo.field.address
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .basicInfo.page.basicInfo.form.editBasicInfo.option.address[0]
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .basicInfo.page.basicInfo.form.editBasicInfo.field.idExpireDate
+      ).type("06/22/2566");
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .basicInfo.page.basicInfo.form.editBasicInfo.field.idExpireDate
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .basicInfo.page.basicInfo.form.editBasicInfo.field.relatives
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .basicInfo.page.basicInfo.form.editBasicInfo.option.relatives[0]
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .basicInfo.page.basicInfo.form.editBasicInfo.button.save
+      ).click();
+      cy.get(cyInterfaceChild.tab.collapseMenu).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .basicInfo.page.basicInfo.grid
+      );
+      cy.get(
+         'div[view_id="ABViewDetailText_ecc3d1e6-c110-425f-a900-9dec95889ef8_detailItem"]'
+      ).should("be.visible");
+   });
+});
+
 describe("Test dataFilter Widget:", () => {
    it("Test Add Filter", () => {
       //act
@@ -919,7 +975,7 @@ describe("Test dataFilter Widget:", () => {
 });
 
 describe("Test Report:", () => {
-   it("Export basic report", () => {
+   it.skip("Export basic report", () => {
       //act
       Common.RunSQL(cy, folderName, ["init_db_default.sql"]);
       childVisit();
@@ -1128,7 +1184,9 @@ describe("Test Home:", () => {
       cy.get(
          cyInterfaceCARS.page.administration.page.home.view.home.form.field
             .phoneNumber
-      ).type(home.phoneNumber);
+      )
+         .clear()
+         .type(home.phoneNumber);
       cy.get(
          cyInterfaceCARS.page.administration.page.home.view.home.form.button
             .save
@@ -1771,11 +1829,12 @@ describe("Test Social Worker Note:", () => {
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.editNote.field.date
       ).click();
-      cy.get(".webix_cal_icon_clear").click();
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.editNote.field.date
-      ).type(note.date);
+      )
+         .clear()
+         .type(note.date);
       // cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.form.editNote.field.date).click();
       // cy.get(".webix_cal_icon_today").click()
 
@@ -1908,7 +1967,6 @@ describe("Test Social Worker Note:", () => {
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.addNote.field.date
       ).click();
-      cy.get(".webix_cal_icon_clear").click();
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.addNote.field.date

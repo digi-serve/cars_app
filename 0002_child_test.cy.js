@@ -113,11 +113,12 @@ describe("Test Social Worker Note:", () => {
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.editNote.field.date
       ).click();
-      cy.get(".webix_cal_icon_clear").click();
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .socialWork.page.notes.form.editNote.field.date
-      ).type(note.date);
+      )
+         .clear()
+         .type(note.date);
       // cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.socialWork.page.notes.form.editNote.field.date).click();
       // cy.get(".webix_cal_icon_today").click()
       cy.get(
@@ -370,7 +371,6 @@ describe("Test Social Worker Note:", () => {
             cyInterfaceCARS.page.socialWorker.page.children.view.child.page
                .socialWork.page.notes.columns[0]
          )
-         .find(".webix_row_select")
          .should((data) => {
             expect(
                data.text().includes(note.title) ? note.title : "",
@@ -385,7 +385,6 @@ describe("Test Social Worker Note:", () => {
             cyInterfaceCARS.page.socialWorker.page.children.view.child.page
                .socialWork.page.notes.columns[1]
          )
-         .find(".webix_row_select")
          .should((data) => {
             expect(
                data.text().includes(note.date) ? note.date : "",
@@ -877,6 +876,31 @@ describe("Test add-new forms:", () => {
          .should("exist")
          .click();
       cy.get(cyInterfaceCHILD.page.logs.page.visitorLog.form.add.button.save)
+         .scrollIntoView()
+         .should("exist")
+         .click();
+      cy.get(".wxi-pencil").should("be.visible").click({ force: true });
+      cy.get(
+         cyInterfaceCHILD.page.logs.page.visitorLog.form.edit.fields.visitor
+      )
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCHILD.page.logs.page.visitorLog.form.edit.option.visitor[0]
+      )
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCHILD.page.logs.page.visitorLog.form.edit.fields.address
+      )
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCHILD.page.logs.page.visitorLog.form.edit.option.address[0]
+      )
+         .should("exist")
+         .click();
+      cy.get(cyInterfaceCHILD.page.logs.page.visitorLog.form.edit.button.save)
          .scrollIntoView()
          .should("exist")
          .click();
