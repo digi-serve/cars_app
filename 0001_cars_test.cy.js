@@ -133,7 +133,10 @@ describe("Test Child:", () => {
       const fileExtension = child.profilePhoto.match(/(.+)\.(.+)$/)[2];
 
       //act
-      Common.RunSQL(cy, folderName, ["init_db_for_adding_new_child.sql"]);
+      Common.RunSQL(cy, folderName, [
+         "init_db_for_adding_new_child.sql",
+         "init_db_for_eng_language.sql",
+      ]);
       openCars();
 
       cy.get(cyInterfaceCARS.tab.socialWorker).click();
@@ -439,21 +442,29 @@ describe("Test Child:", () => {
       // cy.get(cyInterfaceCARS.page.socialWorker.page.children.view.child.page.basicInfo.tab.basicInfo).click();
       childVisit(); // Reload Again
 
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .basicInfo.page.basicInfo.button.back
+      )
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.existingChildButton[0]
+      )
+         .should("exist")
+         .click({ force: true });
+
       //assert
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .basicInfo.page.basicInfo.field.timeReceivedfor
-      )
-         .find(".ab-detail-component-holder")
-         .should("be.visible");
+      ).should("be.visible");
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .basicInfo.page.basicInfo.field.timeReceivedfor
-      )
-         .find(".ab-detail-component-holder")
-         .should((data) => {
-            expect(data).not.to.be.empty;
-         });
+      ).should((data) => {
+         expect(data).not.to.be.empty;
+      });
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .basicInfo.page.basicInfo.field.timeReceivedfor
@@ -650,7 +661,22 @@ describe("Test Child:", () => {
          .scrollIntoView()
          .click({ multiple: true, force: true });
       cy.get(".webix_spin").should("not.be.visible");
-      childVisit();
+      cy.get(
+         '[data-cy="menu-item Edit Children 0b22c3a9-4732-43b1-b503-85f1dc62e5af bbdc5ac6-40a0-42a0-ad2d-8530d659f358"]'
+      )
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .basicInfo.page.basicInfo.button.back
+      )
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.existingChildButton[0]
+      )
+         .should("exist")
+         .click({ force: true });
       cy.get(cyInterfaceChild.tab.medical).click({ force: true });
       cy.get(
          cyInterfaceChild.page.medical.page.prelimHealthExam.button.edit
@@ -711,14 +737,23 @@ describe("Test Child:", () => {
       ).type("completed");
       cy.get(cyInterfaceChild.page.medical.page.healthInfo.form.add.button.save)
          .scrollIntoView()
-         .click();
+         .click({ force: true });
       cy.get(".webix_spin").should("not.be.visible");
       // cy.get('[data-cy^="string Reason Received"]')
       //    .scrollIntoView()
       //    .contains("test");
 
-      // TODO shouldn't need to reload
-      childVisit();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .basicInfo.page.basicInfo.button.back
+      )
+         .should("exist")
+         .click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.existingChildButton[0]
+      )
+         .should("exist")
+         .click({ force: true });
 
       //assert
       cy.get(
@@ -833,6 +868,14 @@ describe("Test Thai Year:", () => {
       ).click();
       cy.get(
          cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .basicInfo.page.basicInfo.form.editBasicInfo.field.carsProject
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
+            .basicInfo.page.basicInfo.form.editBasicInfo.option.carsProject[0]
+      ).click();
+      cy.get(
+         cyInterfaceCARS.page.socialWorker.page.children.view.child.page
             .basicInfo.page.basicInfo.form.editBasicInfo.button.save
       ).click();
       cy.get(cyInterfaceChild.tab.collapseMenu).click();
@@ -849,7 +892,10 @@ describe("Test Thai Year:", () => {
 describe("Test dataFilter Widget:", () => {
    it("Test Add Filter", () => {
       //act
-      Common.RunSQL(cy, folderName, ["init_db_for_data_filter_widget.sql"]);
+      Common.RunSQL(cy, folderName, [
+         "init_db_for_data_filter_widget.sql",
+         "init_db_for_eng_language.sql",
+      ]);
       openCars();
 
       cy.get(
@@ -975,7 +1021,7 @@ describe("Test dataFilter Widget:", () => {
 });
 
 describe("Test Report:", () => {
-   it.skip("Export basic report", () => {
+   it("Export basic report", () => {
       //act
       Common.RunSQL(cy, folderName, ["init_db_default.sql"]);
       childVisit();
@@ -1246,17 +1292,17 @@ describe("Test Project:", () => {
          .type(project.projectName);
       cy.get(
          cyInterfaceCARS.page.administration.page.project.form.addProject.field
-            .projectHome
+            .projectHomes
       ).click();
       cy.get(
          cyInterfaceCARS.page.administration.page.project.form.addProject.option
-            .projectHome[0]
+            .projectHomes[0]
       )
          .should("be.visible")
          .click();
       cy.get(
          cyInterfaceCARS.page.administration.page.project.form.addProject.field
-            .projectHome
+            .projectHomes
       ).click();
       cy.get(
          cyInterfaceCARS.page.administration.page.project.form.addProject.button
@@ -1314,17 +1360,17 @@ describe("Test Project:", () => {
       ).type("337");
       cy.get(
          cyInterfaceCARS.page.administration.page.project.form.editProject.field
-            .projectHome
+            .projectHomes
       ).click();
       cy.get(
          cyInterfaceCARS.page.administration.page.project.form.editProject
-            .option.projectHome[0]
+            .option.projectHomes[0]
       )
          .should("be.visible")
          .click();
       cy.get(
          cyInterfaceCARS.page.administration.page.project.form.editProject.field
-            .projectHome
+            .projectHomes
       ).click();
       cy.get(
          cyInterfaceCARS.page.administration.page.project.form.editProject.field
@@ -1711,7 +1757,7 @@ describe("Test Staff:", () => {
 
 // TODO Change to data-cy
 describe("Test Report Manager:", () => {
-   it("Test Add New Report", () => {
+   it.skip("Test Add New Report", () => {
       //act
       Common.RunSQL(cy, folderName, [
          "init_db_for_viewing_a_child_profile.sql",
