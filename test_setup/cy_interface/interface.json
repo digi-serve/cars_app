@@ -81,7 +81,7 @@
                "form": {
                   "addStaff": {
                      "button": {
-                        "close": ".webix_scroll_cont > .webix_view:nth-child(2) .webix_button",
+                        "close": "[data-cy=\"Popup Close Button Add Staff f6952af4-58d2-47c9-91ff-59137ade2b04\"]",
                         "save": "[data-cy=\"button save 0eab74c9-f13b-4343-ab71-5e50875f8403\"]"
                      },
                      "field": {
@@ -108,7 +108,7 @@
                   },
                   "editStaff": {
                      "button": {
-                        "close": ".webix_scroll_cont > .webix_view:nth-child(2) .webix_button",
+                        "close": "[data-cy=\"Popup Close Button Edit Staff 71306d72-9200-43b4-ab96-1d1f8487d972\"]",
                         "save": "[data-cy=\"button save d7a6b341-3140-4f8e-bedf-2ae8bc2e4186\"]"
                      },
                      "field": {
@@ -151,14 +151,16 @@
                "form": {
                   "addProject": {
                      "button": {
+                        "close": "[data-cy=\"Popup Close Button Add Project c994d74d-425f-4de1-86aa-fb1858127d80\"]",
                         "save": "[data-cy=\"button save e0cb6a73-34f6-464f-8acb-9b3747fc1cb6\"]"
                      },
                      "field": {
+                        "logo": "[data-cy=\"fieldcustom image Logo 1eeeb334-c4ff-46ec-88be-4f787618374b e0cb6a73-34f6-464f-8acb-9b3747fc1cb6\"]",
                         "name": "[data-cy=\"string Name 9f9817e9-68d7-44a9-b57e-8c1a41f37f13 e0cb6a73-34f6-464f-8acb-9b3747fc1cb6\"]",
-                        "projectHome": "[data-cy=\"connectObject Project Homes f9f7fdc8-cd57-44c5-b18d-2af4b0bf09e9 e0cb6a73-34f6-464f-8acb-9b3747fc1cb6\"]"
+                        "projectHomes": "[data-cy=\"connectObject Project Homes f9f7fdc8-cd57-44c5-b18d-2af4b0bf09e9 e0cb6a73-34f6-464f-8acb-9b3747fc1cb6\"]"
                      },
                      "option": {
-                        "projectHome": [
+                        "projectHomes": [
                            "[data-cy=\"connectObject options 696cfe80-8a3e-477f-a566-3c14dac1cc2d f9f7fdc8-cd57-44c5-b18d-2af4b0bf09e9 e0cb6a73-34f6-464f-8acb-9b3747fc1cb6\"]"
                         ]
                      }
@@ -169,11 +171,11 @@
                      },
                      "field": {
                         "name": "[data-cy=\"string Name 9f9817e9-68d7-44a9-b57e-8c1a41f37f13 84a84d56-9574-467b-85d6-df949c454c9e\"]",
-                        "projectHome": "[data-cy=\"connectObject Project Homes f9f7fdc8-cd57-44c5-b18d-2af4b0bf09e9 84a84d56-9574-467b-85d6-df949c454c9e\"]",
+                        "projectHomes": "[data-cy=\"connectObject Project Homes f9f7fdc8-cd57-44c5-b18d-2af4b0bf09e9 84a84d56-9574-467b-85d6-df949c454c9e\"]",
                         "projectStaff": "[data-cy=\"connectObject Staff737 8a2b66b7-4e6c-405e-a3be-11edb75df265 84a84d56-9574-467b-85d6-df949c454c9e\"]"
                      },
                      "option": {
-                        "projectHome": [
+                        "projectHomes": [
                            "[data-cy=\"connectObject options 696cfe80-8a3e-477f-a566-3c14dac1cc2e f9f7fdc8-cd57-44c5-b18d-2af4b0bf09e9 84a84d56-9574-467b-85d6-df949c454c9e\"]"
                         ],
                         "projectStaff": [
@@ -348,6 +350,7 @@
                            "page": {
                               "basicInfo": {
                                  "button": {
+                                    "back": "[data-cy=\"menu-item Social Worker 5fea4e7b-f6ee-42da-a702-60d6d6c48f71 4e1ac1ed-b62b-4110-a324-7a8fcef632f8\"]",
                                     "editBasicInfo": "[data-cy=\"menu-item test form_1ff4 2f795fa4-1ff4-4d24-bb74-6edecb5fdf1f 32ed0146-0bfb-4916-a226-c721be7cc868\"]",
                                     "reports": "[data-cy=\"menu-item Reports_83ff 30e12327-83ff-453d-bbd3-4dc4618af3c9 32ed0146-0bfb-4916-a226-c721be7cc868\"]"
                                  },
