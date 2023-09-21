@@ -28587,7 +28587,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]1 Child Basic Info"
+            "label": "1 Child Basic Info"
           }
         ],
         "fieldIDs": [
@@ -41975,7 +41975,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.tab"
+            "label": "Basic Info.tab"
           }
         ],
         "viewIDs": [
@@ -42160,7 +42160,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail"
+            "label": "Basic Info.detail"
           }
         ],
         "viewIDs": [
@@ -42215,7 +42215,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail.detailimage"
+            "label": "Basic Info.detail.detailimage"
           }
         ],
         "position": {
@@ -42251,7 +42251,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail.detailtext"
+            "label": "Basic Info.detail.detailtext"
           }
         ],
         "position": {
@@ -42287,7 +42287,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail.detailselectivity"
+            "label": "Basic Info.detail.detailselectivity"
           }
         ],
         "position": {
@@ -42323,7 +42323,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail.detailselectivity"
+            "label": "Basic Info.detail.detailselectivity"
           }
         ],
         "position": {
@@ -42359,7 +42359,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail.detailtext"
+            "label": "Basic Info.detail.detailtext"
           }
         ],
         "position": {
@@ -42395,7 +42395,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail.detailtext"
+            "label": "Basic Info.detail.detailtext"
           }
         ],
         "position": {
@@ -42431,7 +42431,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail.detailtext"
+            "label": "Basic Info.detail.detailtext"
           }
         ],
         "position": {
@@ -42467,7 +42467,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail.detailtext"
+            "label": "Basic Info.detail.detailtext"
           }
         ],
         "position": {
@@ -42503,7 +42503,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail.detailtext"
+            "label": "Basic Info.detail.detailtext"
           }
         ],
         "position": {
@@ -42539,7 +42539,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail.detailtext"
+            "label": "Basic Info.detail.detailtext"
           }
         ],
         "position": {
@@ -42575,7 +42575,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail.detailtext"
+            "label": "Basic Info.detail.detailtext"
           }
         ],
         "position": {
@@ -42611,7 +42611,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail.detailtext"
+            "label": "Basic Info.detail.detailtext"
           }
         ],
         "position": {
@@ -42647,7 +42647,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail.detailtext"
+            "label": "Basic Info.detail.detailtext"
           }
         ],
         "position": {
@@ -42683,7 +42683,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail.detailtext"
+            "label": "Basic Info.detail.detailtext"
           }
         ],
         "position": {
@@ -42719,7 +42719,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail.detailtext"
+            "label": "Basic Info.detail.detailtext"
           }
         ],
         "position": {
@@ -42755,7 +42755,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail.detailtext"
+            "label": "Basic Info.detail.detailtext"
           }
         ],
         "position": {
@@ -45316,7 +45316,7 @@
             "language_code": "th",
             "filelabel": "#1 สรุปผลข้อมูลเด็กเบื้องต้น.docx",
             "buttonlabel": "แอพพลิเคชั่นพื้นฐาน",
-            "label": "[th]Basic Info.docxBuilder"
+            "label": "Basic Info.docxBuilder"
           }
         ],
         "position": {
@@ -78478,7 +78478,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Edit Basic Info.menu"
+            "label": "Edit Basic Info.menu"
           }
         ],
         "position": {
@@ -103869,7 +103869,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Children.dataview"
+            "label": "Children.dataview"
           }
         ],
         "viewIDs": [
@@ -103904,18 +103904,18 @@
         "translations": [
           {
             "language_code": "en",
-            "text": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"0\">\n<tbody>\n<tr>\n<td width=\"100\" height=\"100\"><img style=\"object-fit: cover; border-radius: 5px;\" src=\"{Profile Photo}\" alt=\"\" width=\"100\" height=\"100\" /></td>\n<td width=\"10\">&nbsp;</td>\n<td><strong>Registration number (TH):</strong> {No}<br />\n<h4>{First Name} {Last Name} <span style=\"opacity: 0.6;\">({Nickname})</span></h4>\n{Home}<br /><span class=\"fa fa-calendar\">&nbsp;</span> {Birthday} <small style=\"color: #999;\">(<small>{Current Age}</small>)</small></td>\n</tr>\n</tbody>\n</table>",
+            "text": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"0\">\n<tbody>\n<tr>\n<td width=\"100\" height=\"100\"><img style=\"object-fit: cover; border-radius: 5px;\" src=\"{Profile Photo}\" alt=\"\" width=\"100\" height=\"100\" /></td>\n<td width=\"10\">&nbsp;</td>\n<td><strong>Registration Number :</strong> {No}<br />\n<h4>{First Name} {Last Name} <span style=\"opacity: 0.6;\">({Nickname})</span></h4>\n{Home}<br /><span class=\"fa fa-calendar\">&nbsp;</span> {Birthday} <small style=\"color: #999;\">(<small>{Current Age}</small>)</small></td>\n</tr>\n</tbody>\n</table>",
             "label": "Children.dataview.text"
           },
           {
             "language_code": "th",
             "text": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"0\">\n<tbody>\n<tr>\n<td width=\"100\" height=\"100\"><img style=\"object-fit: cover; border-radius: 5px;\" src=\"{รูปประวัติ}\" alt=\"\" width=\"100\" height=\"100\" /></td>\n<td width=\"10\">&nbsp;</td>\n<td><strong>เลขทะเบียน (ทป):</strong> {เลขทะเบียน (ทป)}<br />\n<h4>{ชื่อจริง} {นามสกุล} <span style=\"opacity: 0.6;\">({ชื่อเล่น})</span></h4>\n{บ้านเด็ก}<br /><span class=\"fa fa-calendar\">&nbsp;</span> {วัน/เดือน/ปีเกิด} <small style=\"color: #999;\">(<small>{อายุปัจจุบัน}</small>)</small></td>\n</tr>\n</tbody>\n</table>",
-            "label": "[th]Children.dataview.text"
+            "label": "Children.dataview.text"
           },
           {
             "language_code": "ko",
             "text": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"0\">\n<tbody>\n<tr>\n<td width=\"100\" height=\"100\"><img src=\"{Profile Photo}\" alt=\"\" width=\"100%\" /></td>\n<td width=\"10\">&nbsp;</td>\n<td><strong>No:</strong> {No}&nbsp;<br />\n<h4>{First Name} {Last Name}</h4>\n{Home}<br /><span class=\"fa fa-calendar\">&nbsp;</span> {Birthday} <small style=\"color: #999;\">({Current Age})</small></td>\n</tr>\n</tbody>\n</table>",
-            "label": "[ko]Children.dataview.text"
+            "label": "Children.dataview.text"
           }
         ],
         "position": {
