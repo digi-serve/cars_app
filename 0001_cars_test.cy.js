@@ -55,7 +55,7 @@ const homeAdministrationVisit = () => {
    cy.get(cyInterfaceCARS.tab.administration).should("be.visible").click();
    cy.get(cyInterfaceCARS.page.administration.tab.home)
       .should("be.visible")
-      .click();
+      .click({ force: true });
    cy.get(cyInterfaceCARS.page.administration.page.home.view.home.button).click(
       {
          force: true,
@@ -276,7 +276,7 @@ describe("Test Child:", () => {
          cyInterfaceCARS.page.socialWorker.page.children.view.children.container
       ).should((data) => {
          expect(
-            data.text().includes(`Registration number (TH): ${child.no}`)
+            data.text().includes(`Registration Number : ${child.no}`)
                ? child.no
                : "",
             "Registration number"
@@ -409,7 +409,7 @@ describe("Test Child:", () => {
          cyInterfaceCARS.page.socialWorker.page.children.view.children.container
       ).should((data) => {
          expect(
-            data.text().includes(`Registration number (TH): 1337`) ? 1337 : "",
+            data.text().includes(`Registration Number : 1337`) ? 1337 : "",
             "Registration number"
          ).to.eq(1337);
          expect(data.text().includes(`Bob`) ? "Bob" : "", "First Name").to.eq(
