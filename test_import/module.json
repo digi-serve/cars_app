@@ -28587,7 +28587,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]1 Child Basic Info"
+            "label": "1 Child Basic Info"
           }
         ],
         "fieldIDs": [
@@ -41975,7 +41975,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.tab"
+            "label": "Basic Info.tab"
           }
         ],
         "viewIDs": [
@@ -42160,7 +42160,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail"
+            "label": "Basic Info.detail"
           }
         ],
         "viewIDs": [
@@ -42215,7 +42215,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail.detailimage"
+            "label": "Basic Info.detail.detailimage"
           }
         ],
         "position": {
@@ -42251,7 +42251,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail.detailtext"
+            "label": "Basic Info.detail.detailtext"
           }
         ],
         "position": {
@@ -42287,7 +42287,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail.detailselectivity"
+            "label": "Basic Info.detail.detailselectivity"
           }
         ],
         "position": {
@@ -42323,7 +42323,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail.detailselectivity"
+            "label": "Basic Info.detail.detailselectivity"
           }
         ],
         "position": {
@@ -42359,7 +42359,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail.detailtext"
+            "label": "Basic Info.detail.detailtext"
           }
         ],
         "position": {
@@ -42395,7 +42395,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail.detailtext"
+            "label": "Basic Info.detail.detailtext"
           }
         ],
         "position": {
@@ -42431,7 +42431,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail.detailtext"
+            "label": "Basic Info.detail.detailtext"
           }
         ],
         "position": {
@@ -42467,7 +42467,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail.detailtext"
+            "label": "Basic Info.detail.detailtext"
           }
         ],
         "position": {
@@ -42503,7 +42503,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail.detailtext"
+            "label": "Basic Info.detail.detailtext"
           }
         ],
         "position": {
@@ -42539,7 +42539,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail.detailtext"
+            "label": "Basic Info.detail.detailtext"
           }
         ],
         "position": {
@@ -42575,7 +42575,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail.detailtext"
+            "label": "Basic Info.detail.detailtext"
           }
         ],
         "position": {
@@ -42611,7 +42611,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail.detailtext"
+            "label": "Basic Info.detail.detailtext"
           }
         ],
         "position": {
@@ -42647,7 +42647,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail.detailtext"
+            "label": "Basic Info.detail.detailtext"
           }
         ],
         "position": {
@@ -42683,7 +42683,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail.detailtext"
+            "label": "Basic Info.detail.detailtext"
           }
         ],
         "position": {
@@ -42719,7 +42719,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail.detailtext"
+            "label": "Basic Info.detail.detailtext"
           }
         ],
         "position": {
@@ -42755,7 +42755,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Basic Info.detail.detailtext"
+            "label": "Basic Info.detail.detailtext"
           }
         ],
         "position": {
@@ -45316,7 +45316,7 @@
             "language_code": "th",
             "filelabel": "#1 สรุปผลข้อมูลเด็กเบื้องต้น.docx",
             "buttonlabel": "แอพพลิเคชั่นพื้นฐาน",
-            "label": "[th]Basic Info.docxBuilder"
+            "label": "Basic Info.docxBuilder"
           }
         ],
         "position": {
@@ -78478,7 +78478,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Edit Basic Info.menu"
+            "label": "Edit Basic Info.menu"
           }
         ],
         "position": {
@@ -103869,7 +103869,7 @@
           },
           {
             "language_code": "th",
-            "label": "[th]Children.dataview"
+            "label": "Children.dataview"
           }
         ],
         "viewIDs": [
@@ -103904,18 +103904,18 @@
         "translations": [
           {
             "language_code": "en",
-            "text": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"0\">\n<tbody>\n<tr>\n<td width=\"100\" height=\"100\"><img style=\"object-fit: cover; border-radius: 5px;\" src=\"{Profile Photo}\" alt=\"\" width=\"100\" height=\"100\" /></td>\n<td width=\"10\">&nbsp;</td>\n<td><strong>Registration number (TH):</strong> {No}<br />\n<h4>{First Name} {Last Name} <span style=\"opacity: 0.6;\">({Nickname})</span></h4>\n{Home}<br /><span class=\"fa fa-calendar\">&nbsp;</span> {Birthday} <small style=\"color: #999;\">(<small>{Current Age}</small>)</small></td>\n</tr>\n</tbody>\n</table>",
+            "text": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"0\">\n<tbody>\n<tr>\n<td width=\"100\" height=\"100\"><img style=\"object-fit: cover; border-radius: 5px;\" src=\"{Profile Photo}\" alt=\"\" width=\"100\" height=\"100\" /></td>\n<td width=\"10\">&nbsp;</td>\n<td><strong>Registration Number :</strong> {No}<br />\n<h4>{First Name} {Last Name} <span style=\"opacity: 0.6;\">({Nickname})</span></h4>\n{Home}<br /><span class=\"fa fa-calendar\">&nbsp;</span> {Birthday} <small style=\"color: #999;\">(<small>{Current Age}</small>)</small></td>\n</tr>\n</tbody>\n</table>",
             "label": "Children.dataview.text"
           },
           {
             "language_code": "th",
             "text": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"0\">\n<tbody>\n<tr>\n<td width=\"100\" height=\"100\"><img style=\"object-fit: cover; border-radius: 5px;\" src=\"{รูปประวัติ}\" alt=\"\" width=\"100\" height=\"100\" /></td>\n<td width=\"10\">&nbsp;</td>\n<td><strong>เลขทะเบียน (ทป):</strong> {เลขทะเบียน (ทป)}<br />\n<h4>{ชื่อจริง} {นามสกุล} <span style=\"opacity: 0.6;\">({ชื่อเล่น})</span></h4>\n{บ้านเด็ก}<br /><span class=\"fa fa-calendar\">&nbsp;</span> {วัน/เดือน/ปีเกิด} <small style=\"color: #999;\">(<small>{อายุปัจจุบัน}</small>)</small></td>\n</tr>\n</tbody>\n</table>",
-            "label": "[th]Children.dataview.text"
+            "label": "Children.dataview.text"
           },
           {
             "language_code": "ko",
             "text": "<table style=\"border-collapse: collapse; width: 100%;\" border=\"0\">\n<tbody>\n<tr>\n<td width=\"100\" height=\"100\"><img src=\"{Profile Photo}\" alt=\"\" width=\"100%\" /></td>\n<td width=\"10\">&nbsp;</td>\n<td><strong>No:</strong> {No}&nbsp;<br />\n<h4>{First Name} {Last Name}</h4>\n{Home}<br /><span class=\"fa fa-calendar\">&nbsp;</span> {Birthday} <small style=\"color: #999;\">({Current Age})</small></td>\n</tr>\n</tbody>\n</table>",
-            "label": "[ko]Children.dataview.text"
+            "label": "Children.dataview.text"
           }
         ],
         "position": {
@@ -109015,6 +109015,80 @@
       "6bc13bfc-5883-4a10-9e43-3562aba9e6a3"
     ]
   },
+  "scopes": [
+    {
+      "uuid": "546509fe-26fc-4dbe-8346-5748a96dc6ca",
+      "created_at": "2023-03-03T08:41:59.000Z",
+      "updated_at": "2023-03-03T08:41:59.000Z",
+      "properties": null,
+      "translations": [
+        {
+          "language_code": "en",
+          "name": "A project",
+          "description": ""
+        }
+      ],
+      "objectIds": [
+        "0314ca6a-3482-4235-9af3-43596a28c97f",
+        "0c468a6f-d217-4e2a-bfb0-9420dfe02587",
+        "116451a8-5946-4426-be25-495d8fde55fe",
+        "17dcf48e-7445-4fde-9afc-61be2836ed4f",
+        "26d07acc-3a05-4442-821a-dab4b7de0795",
+        "26f66d40-a017-4ace-b46b-9aa0879bf615",
+        "2bb74d42-6239-4bf3-bdc5-e2c4c4d11eeb",
+        "353f3dd9-7834-4c1e-9a14-d8ca701067ec",
+        "405eb066-1704-45d4-8c50-f635b9e2d915",
+        "42729e9c-5869-47af-bb1f-518d589cbb0e",
+        "5a5348cc-7685-4488-9c99-3432cd10597d",
+        "5c56157b-0a80-45a2-b607-b705c797d0dc",
+        "6ccda4a3-9cd8-44f0-87f0-c7baf6d7a293",
+        "7a3a142a-bf79-4c84-9467-deae7e3b64ed",
+        "7a4e8b2b-e368-44bc-97ec-9b9a6cd57298",
+        "7b5fefa9-6a78-4a28-bfa9-9743f23623bd",
+        "8467e8c1-b2ae-411f-bef3-d49a7db3c7c2",
+        "90e072a6-5cab-4ba0-a479-a5d1d375440b",
+        "91b72b02-efcb-4498-8b13-cfe44a849561",
+        "97b521aa-d338-4337-9926-212e9f56f115",
+        "9b8e8ec8-d6c6-4ac7-b14e-12b792cc472a",
+        "a828e25c-5fc3-4d4e-ae59-4cf69001b4ee",
+        "ad967402-8975-4afb-bcc6-fc75ca645c1c",
+        "afda960f-9f72-4fb2-8afd-c9661eaf80de",
+        "b39a3264-a9cc-4dc9-b84f-c81d4d9f5d6c",
+        "b546da41-d43a-43e8-b0a2-e86488fdaab4",
+        "b86a4a23-a443-4744-9506-84ae74be9879",
+        "bc232b72-0848-4036-b861-fbffe91fc1d6",
+        "bd822d48-93b1-401f-842f-4297adbb908c",
+        "c39e5e21-6ab6-4241-8135-7b405c82c652",
+        "d535e048-02a7-466c-b7c7-e1d862a1973c",
+        "d9ca465d-0b93-419b-be94-8cc0c704c23c",
+        "e6c6214c-d64b-4fed-9a87-6faa2ddecf4a",
+        "f2879b63-2460-4282-98d4-7b04b7a28a33",
+        "f3d047d3-e161-428d-b832-89458ff1c163",
+        "feb5184f-bcef-4358-bbcf-85056dccdf85",
+        "ff0c8281-351b-4c57-ba6e-c491f2328ba4"
+      ],
+      "Filters": null,
+      "allowAll": 0,
+      "createdBy": null
+    },
+    {
+      "uuid": "838beeb9-0a13-4b0f-9780-0d47e67f3752",
+      "created_at": "2020-05-13T09:49:53.000Z",
+      "updated_at": null,
+      "properties": null,
+      "translations": [
+        {
+          "language_code": "en",
+          "name": "All Access",
+          "description": "Provide Full Data Access to All Objects."
+        }
+      ],
+      "objectIds": null,
+      "Filters": null,
+      "allowAll": 1,
+      "createdBy": null
+    }
+  ],
   "roles": [
     {
       "uuid": "128ac31f-29b0-4848-aa22-48ca1f63bb4b",
@@ -109031,63 +109105,6 @@
       "Default Role": 0,
       "users__relation": [],
       "ProcessForm30__relation": [],
-      "scopes": [
-        {
-          "uuid": "546509fe-26fc-4dbe-8346-5748a96dc6ca",
-          "created_at": "2023-03-03T08:41:59.000Z",
-          "updated_at": "2023-03-03T08:41:59.000Z",
-          "properties": null,
-          "translations": [
-            {
-              "language_code": "en",
-              "name": "A project",
-              "description": ""
-            }
-          ],
-          "objectIds": [
-            "0314ca6a-3482-4235-9af3-43596a28c97f",
-            "0c468a6f-d217-4e2a-bfb0-9420dfe02587",
-            "116451a8-5946-4426-be25-495d8fde55fe",
-            "17dcf48e-7445-4fde-9afc-61be2836ed4f",
-            "26d07acc-3a05-4442-821a-dab4b7de0795",
-            "26f66d40-a017-4ace-b46b-9aa0879bf615",
-            "2bb74d42-6239-4bf3-bdc5-e2c4c4d11eeb",
-            "353f3dd9-7834-4c1e-9a14-d8ca701067ec",
-            "405eb066-1704-45d4-8c50-f635b9e2d915",
-            "42729e9c-5869-47af-bb1f-518d589cbb0e",
-            "5a5348cc-7685-4488-9c99-3432cd10597d",
-            "5c56157b-0a80-45a2-b607-b705c797d0dc",
-            "6ccda4a3-9cd8-44f0-87f0-c7baf6d7a293",
-            "7a3a142a-bf79-4c84-9467-deae7e3b64ed",
-            "7a4e8b2b-e368-44bc-97ec-9b9a6cd57298",
-            "7b5fefa9-6a78-4a28-bfa9-9743f23623bd",
-            "8467e8c1-b2ae-411f-bef3-d49a7db3c7c2",
-            "90e072a6-5cab-4ba0-a479-a5d1d375440b",
-            "91b72b02-efcb-4498-8b13-cfe44a849561",
-            "97b521aa-d338-4337-9926-212e9f56f115",
-            "9b8e8ec8-d6c6-4ac7-b14e-12b792cc472a",
-            "a828e25c-5fc3-4d4e-ae59-4cf69001b4ee",
-            "ad967402-8975-4afb-bcc6-fc75ca645c1c",
-            "afda960f-9f72-4fb2-8afd-c9661eaf80de",
-            "b39a3264-a9cc-4dc9-b84f-c81d4d9f5d6c",
-            "b546da41-d43a-43e8-b0a2-e86488fdaab4",
-            "b86a4a23-a443-4744-9506-84ae74be9879",
-            "bc232b72-0848-4036-b861-fbffe91fc1d6",
-            "bd822d48-93b1-401f-842f-4297adbb908c",
-            "c39e5e21-6ab6-4241-8135-7b405c82c652",
-            "d535e048-02a7-466c-b7c7-e1d862a1973c",
-            "d9ca465d-0b93-419b-be94-8cc0c704c23c",
-            "e6c6214c-d64b-4fed-9a87-6faa2ddecf4a",
-            "f2879b63-2460-4282-98d4-7b04b7a28a33",
-            "f3d047d3-e161-428d-b832-89458ff1c163",
-            "feb5184f-bcef-4358-bbcf-85056dccdf85",
-            "ff0c8281-351b-4c57-ba6e-c491f2328ba4"
-          ],
-          "Filters": null,
-          "allowAll": 0,
-          "createdBy": null
-        }
-      ],
       "users": [],
       "ProcessForm30": [],
       "name": "Project Worker",
@@ -109108,25 +109125,6 @@
       "Default Role": 0,
       "users__relation": [],
       "ProcessForm30__relation": [],
-      "scopes": [
-        {
-          "uuid": "838beeb9-0a13-4b0f-9780-0d47e67f3752",
-          "created_at": "2020-05-13T09:49:53.000Z",
-          "updated_at": null,
-          "properties": null,
-          "translations": [
-            {
-              "language_code": "en",
-              "name": "All Access",
-              "description": "Provide Full Data Access to All Objects."
-            }
-          ],
-          "objectIds": null,
-          "Filters": null,
-          "allowAll": 1,
-          "createdBy": null
-        }
-      ],
       "users": [],
       "ProcessForm30": [],
       "name": "Social Worker",
